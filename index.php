@@ -47,15 +47,15 @@
 </tr>
 </table>
 <p>
-  <button class="btn btn-1 hover-filled-slide-down" id="button_calculate">
-    <span>Calculate</span>
-  </button>
-
-
-  <button class="btn btn-1 hover-filled-slide-right">
+<div class="btn-holder">
+  <button class="btn btn-1 hover-filled-slide-right" id="button_calculate">
     <span>hover me</span>
   </button>
-  
+  <button class="btn btn-1 hover-filled-opacity">
+    <span>hover me</span>
+  </button>
+</div>
+
     </div>
   </div>
 
