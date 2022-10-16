@@ -153,10 +153,21 @@ body{
     color: rgb(28, 31, 30);
     transition: 0.2s 0.1s;
   }
- .btn.hover-filled-slide-down::before {
-    bottom: 0; left: 0; right: 0; 
+
+/* 4. hover-filled-slide-right */
+.btn.hover-filled-slide-right::before {
+    top:0; bottom: 0; right: 0;
     height: 100%; width: 100%;
   }
-  .btn.hover-filled-slide-down:hover::before {
-    height: 0%;
+  .btn.hover-filled-slide-right:hover::before {
+    width: 0%;
+  }
+
+  /* 9. hover-slide-right */
+.btn.hover-slide-right::before {
+    top: 0; bottom: 0; left: 0; 
+    height: 100%; width: 0%;
+  }
+  .btn.hover-slide-right:hover::before {
+    width: 100%;
   }

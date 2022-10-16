@@ -51,6 +51,11 @@
     <span>Calculate</span>
   </button>
 
+
+  <button class="btn btn-1 hover-filled-slide-right">
+    <span>hover me</span>
+  </button>
+  
     </div>
   </div>
 
