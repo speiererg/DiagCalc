@@ -28,21 +28,21 @@
 <table>
   <tr>
   <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
-  <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte"></td>
-  <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte"></td>
-  <td><input type="text" id="input1_4" value=""></td>
-
-</tr>
-<tr>
   <td><input type="text" id="input2_1" value="Herzinsuffizienz"></td>
+  <td><input type="text" id="input3_1" value="NYHA I "></td>
+<tr>
+  <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte"></td>
   <td><input type="text" id="input2_2" value=""></td>
-  <td><input type="text" id="input2_3" value=""></td>
-  <td><input type="text" id="input2_4" value=""></td>
+  <td><input type="text" id="input3_2" value="NYHA II"></td>
 </tr>
 <tr>
-  <td><input type="text" id="input3_1" value="NYHA I "></td>
-  <td><input type="text" id="input3_2" value="NYHA II"></td>
+  <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte"></td>
+  <td><input type="text" id="input2_3" value=""></td>
   <td><input type="text" id="input3_3" value="NYHA III"></td>
+</tr>
+<tr>
+<td><input type="text" id="input1_4" value=""></td>
+  <td><input type="text" id="input2_4" value=""></td>
   <td><input type="text" id="input3_4" value="NYHA IV"></td>
 </tr>
 </table>
