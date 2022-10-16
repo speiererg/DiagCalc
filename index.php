@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html id="allHtml">
 
@@ -17,18 +15,20 @@
   </div>
   <div id="headerbar"></div>
 
-  <div id="#summary"></div>
-
   <div id="navigationbar">
     <ul>
       <li><a id="navPageMain">Main</a></li>
       <li><a id="navPageCalculator">Calculator</a></li>
     </ul>
   </div>
+
   <div id="headerbar"></div>
 
   <div id="maincontent">
     <div id="mainpage">
+
+
+
     </div>
   </div>
 
@@ -40,6 +40,4 @@
 
 
 </body>
-
-
 </html>
