@@ -13,8 +13,6 @@ function document_addeventlistener(){
 }
 
 function click_calculate(){
-console.log(document.getElementById('input1a').value)
-
 for (let i=1;i<=modifier_nbr;i++){
     let array_inputs_oneModifier = [];
 for (let k=1;k<=modifierTyp_nbr;k++){
