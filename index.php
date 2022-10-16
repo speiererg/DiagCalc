@@ -31,6 +31,8 @@
   <td><input type="text" id="input1a" value="Linksführende dekompensierte"></td>
   <td><input type="text" id="input1b" value="Rechtsführende dekompensierte"></td>
   <td><input type="text" id="input1c" value="Biventrikuläre dekompensierte"></td>
+  <td><input type="text" id="input1d" value=""></td>
+
 </tr>
 <tr>
   <td><input type="text" id="input2a" value="Herzinsuffizienz"></td>
