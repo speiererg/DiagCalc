@@ -28,7 +28,8 @@ for (let k=1;k<=modifierTyp_nbr;k++){
     array_inputs_value.push(array_inputs_oneModifier);
 
 }
-console.log(array_inputs)
+console.log(array_inputs_value)
+console.log(array_inputs_itemNbr)
 
 }
 
