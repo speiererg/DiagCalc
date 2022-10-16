@@ -27,29 +27,30 @@
     <div id="mainpage">
 <table>
   <tr>
-  <td><input type="text" id="input1a" value="Linksführende dekompensierte" class="input_modifier"></td>
-  <td><input type="text" id="input1b" value="Rechtsführende dekompensierte"></td>
-  <td><input type="text" id="input1c" value="Biventrikuläre dekompensierte"></td>
-  <td><input type="text" id="input1d" value=""></td>
+  <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
+  <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte"></td>
+  <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte"></td>
+  <td><input type="text" id="input1_4" value=""></td>
 
 </tr>
 <tr>
-  <td><input type="text" id="input2a" value="Herzinsuffizienz"></td>
-  <td><input type="text" id="input2b" value=""></td>
-  <td><input type="text" id="input2c" value=""></td>
-  <td><input type="text" id="input2d" value=""></td>
+  <td><input type="text" id="input2_1" value="Herzinsuffizienz"></td>
+  <td><input type="text" id="input2_2" value=""></td>
+  <td><input type="text" id="input2_3" value=""></td>
+  <td><input type="text" id="input2_4" value=""></td>
 </tr>
 <tr>
-  <td><input type="text" id="input3a" value="NYHA I "></td>
-  <td><input type="text" id="input3b" value="NYHA II"></td>
-  <td><input type="text" id="input3c" value="NYHA III"></td>
-  <td><input type="text" id="input3d" value="NYHA IV"></td>
+  <td><input type="text" id="input3_1" value="NYHA I "></td>
+  <td><input type="text" id="input3_2" value="NYHA II"></td>
+  <td><input type="text" id="input3_3" value="NYHA III"></td>
+  <td><input type="text" id="input3_4" value="NYHA IV"></td>
 </tr>
 </table>
 <p>
-<div class="btn-holder">
-  <button class="btn btn-1 hover-filled-slide-right" id="button_calculate">Calculate</button>
-</div>
+  <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
+<p>
+  <input type="text" id="diag_result" readonly>
+
 
     </div>
   </div>

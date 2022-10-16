@@ -1,3 +1,6 @@
+var modifier_nbr = 3
+var modifierTyp_nbr = 4
+var array_inputs = [];
 
 // Loading 
 function loadingIndex(){
@@ -11,6 +14,16 @@ function document_addeventlistener(){
 
 function click_calculate(){
 console.log(document.getElementById('input1a').value)
+
+for (let i=1;i<=modifier_nbr;i++){
+    let array_inputs_oneModifier = [];
+for (let k=1;k<=modifierTyp_nbr;k++){
+array_inputs_oneModifier.push(document.getElementById(`input${i}_${k}`))
+}
+    array_inputs.push("Lemon");
+
+}
+console.log(array_inputs)
 
 }
 
