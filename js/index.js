@@ -16,7 +16,11 @@ function click_calculate(){
 for (let i=1;i<=modifier_nbr;i++){
     let array_inputs_oneModifier = [];
 for (let k=1;k<=modifierTyp_nbr;k++){
-array_inputs_oneModifier.push(document.getElementById(`input${i}_${k}`).value)
+    let input_value = document.getElementById(`input${i}_${k}`).value
+    if (document.getElementById(`input${i}_${k}`).value!=''){
+        array_inputs_oneModifier.push(input_value)
+
+    }
 }
     array_inputs.push(array_inputs_oneModifier);
 
