@@ -47,9 +47,8 @@
 </tr>
 </table>
 <p>
-  <h1>Calculate</h1>
-  <button class="btn btn-1 hover-filled-slide-down">
-    <span>hover me</span>
+  <button class="btn btn-1 hover-filled-slide-down" id="button_calculate">
+    <span>Calculate</span>
   </button>
 
     </div>
