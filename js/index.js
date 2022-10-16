@@ -18,7 +18,7 @@ for (let i=1;i<=modifier_nbr;i++){
 for (let k=1;k<=modifierTyp_nbr;k++){
 array_inputs_oneModifier.push(document.getElementById(`input${i}_${k}`))
 }
-    array_inputs.push("Lemon");
+    array_inputs.push(array_inputs_oneModifier);
 
 }
 console.log(array_inputs)
