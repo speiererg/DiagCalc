@@ -2,7 +2,7 @@
 <html id="allHtml">
 
 <head>
-  <title>Cockpit EMRIS</title>
+  <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
   <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
   <link rel="icon" type="image/png" href="images/choice.png" />
