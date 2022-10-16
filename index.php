@@ -11,7 +11,6 @@
 <body>
 
   <div id="header">
-    <select id="patientSelect" class="patientSelect"></select>
   </div>
   <div id="headerbar"></div>
 
