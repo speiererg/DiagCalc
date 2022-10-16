@@ -25,7 +25,7 @@ for (let k=1;k<=modifierTyp_nbr;k++){
     }
 }
     array_inputs_itemNbr.push(item_nbr)
-    array_inputs.push(array_inputs_oneModifier);
+    array_inputs_value.push(array_inputs_oneModifier);
 
 }
 console.log(array_inputs)
