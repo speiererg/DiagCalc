@@ -28,7 +28,7 @@
     <div id="mainpage">
 <table>
   <tr>
-  <td><input type="text" id="input1a" value="Linksführende dekompensierte"></td>
+  <td><input type="text" id="input1a" value="Linksführende dekompensierte" class="input_modifier"></td>
   <td><input type="text" id="input1b" value="Rechtsführende dekompensierte"></td>
   <td><input type="text" id="input1c" value="Biventrikuläre dekompensierte"></td>
   <td><input type="text" id="input1d" value=""></td>
@@ -49,7 +49,9 @@
 </table>
 <p>
   <h1>Calculate</h1>
-
+  <button class="btn btn-1 hover-filled-slide-down">
+    <span>hover me</span>
+  </button>
 
     </div>
   </div>

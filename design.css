@@ -28,6 +28,16 @@
      width:50px;
  }
 
+
+ .btn.hover-filled-slide-down::before {
+    bottom: 0; left: 0; right: 0; 
+    height: 100%; width: 100%;
+  }
+  .btn.hover-filled-slide-down:hover::before {
+    height: 0%;
+  }
+
+  
  /* --------   Deroulants Design ----------- */
 
  .deroulants {
