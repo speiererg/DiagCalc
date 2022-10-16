@@ -26,6 +26,25 @@
 
   <div id="maincontent">
     <div id="mainpage">
+<table>
+  <tr>
+  <td><input type="text" id="input1a" value="Linksführende dekompensierte"></td>
+  <td><input type="text" id="input1b" value="Rechtsführende dekompensierte"></td>
+  <td><input type="text" id="input1c" value="Biventrikuläre dekompensierte"></td>
+</tr>
+<tr>
+  <td><input type="text" id="input2a" value="Herzinsuffizienz"></td>
+  <td><input type="text" id="input2b" value=""></td>
+  <td><input type="text" id="input2c" value=""></td>
+  <td><input type="text" id="input2d" value=""></td>
+</tr>
+<tr>
+  <td><input type="text" id="input3a" value="NYHA I "></td>
+  <td><input type="text" id="input3b" value="NYHA II"></td>
+  <td><input type="text" id="input3c" value="NYHA III"></td>
+  <td><input type="text" id="input3d" value="NYHA IV"></td>
+</tr>
+</table>
 
 
 
