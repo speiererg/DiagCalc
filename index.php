@@ -11,9 +11,6 @@
 </head>
 
 <body>
-  <?php
-  include "popUp.php";
-  ?>
 
   <div id="header">
     <select id="patientSelect" class="patientSelect"></select>
@@ -24,16 +21,8 @@
 
   <div id="navigationbar">
     <ul>
-      <li><a id="selectPageKurven">Kurven</a></li>
-      <li><a id="selectPageVerordnungen">Verordnungen</a></li>
-      <li><a id="selectPageRespiration"><img src="images/respiration.png" class="navigationbarButton"> Respiration</a></li>
-      <li><a id="selectPageBilanzierung">Bilanzierung</a></li>
-      <li><a id="selectPagePicco">PicCo</a></li>
-      <li><a id="selectPagePatientInfos">PatientInfos</a></li>
-      <li style="float:right;"><a href="login/profile.php"><input value="<?= $_SESSION['name'] ?>" id="actualUsername" class="inputHide" disabled><img src="images/user.png" class="navigationbarButton"></a></li>
-      <li style="float:right;"><a class="REARed" id="REAButton">REA</a></li>
-      <li style="float:right;" id="neueVerordnungLi"><a id="selectPageVerordnungen2" style="font-style:italic;">Neue Verordnung</a></li>
-      <li style="float:right;"><a><img src="images/stn.png" id="savepage" class="navigationbarButton"></a></li>
+      <li><a id="navPageMain">Main</a></li>
+      <li><a id="navPageCalculator">Calculator</a></li>
     </ul>
   </div>
   <div id="headerbar"></div>
@@ -45,9 +34,6 @@
 
 
   <div id="footer">
-    <div id="textActualUser" style="float: right; font-size: 0.8em; margin: 10px;"></div>
-    <input value="<?= $_SESSION['role'] ?>" id="actualRole" style="display:none" disabled>
-
   </div>
 
   <script src="js/index.js"></script>
