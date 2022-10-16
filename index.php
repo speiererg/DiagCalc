@@ -47,7 +47,8 @@
   <td><input type="text" id="input3d" value="NYHA IV"></td>
 </tr>
 </table>
-
+<p>
+  <h1>Calculate</h1>
 
 
     </div>
