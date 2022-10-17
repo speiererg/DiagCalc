@@ -46,11 +46,11 @@ function click_calculate() {
 
 
 function create_calculator_output() {
-    document.getElementById('table_output_calculator').innerHTML="";
+    document.getElementById('table_output_calculator').innerHTML = "";
     for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
             for (let modifier3 = 0; modifier3 < array_inputs_itemNbr[2]; modifier3++) {
-                console.log(modifier1,modifier2,modifier3)
+                console.log(modifier1, modifier2, modifier3)
                 let row_output_calculator = document.createElement('tr')
                 let row_output_calculator_Column = document.createElement('td')
                 let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
@@ -62,8 +62,17 @@ function create_calculator_output() {
     }
 }
 
-function addInputRow(){
+function addInputRow() {
     console.log('add Input Row')
+
+    let row_input = document.createElement('tr')
+    for (let i = 0; i < modifier_nbr; i++) {
+        let column_input = document.createElement('td')
+        let input_inut = document.createElement('input')
+        column_input.appendChild(input_inut)
+        row_input.appendChild(column_input)
+    }
+    document.getElementById('table_input').appendChild(row_input)
 }
 
 

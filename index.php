@@ -25,7 +25,7 @@
 
   <div id="maincontent">
     <div id="mainpage">
-<table>
+<table id="table_input">
   <tr>
   <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
   <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier"></td>
@@ -45,8 +45,9 @@
   <td><input type="text" id="input2_4" value="" class="input_modifier"></td>
   <td><input type="text" id="input3_4" value="NYHA IV" class="input_modifier"></td>
 </tr>
+
 </table>
-<img src="img/plus.png" id="img_button_add_row">
+<img src="img/plus.png" id="img_button_add_row" width="50" height="50">
 <p>
   <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
 <p>
