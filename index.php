@@ -16,7 +16,7 @@
 
   <div id="navigationbar">
     <ul>
-      <li><a id="navPageMain">Main</a></li>
+      <li><a id="navPageMain">Main2</a></li>
       <li><a id="navPageCalculator">Calculator</a></li>
     </ul>
   </div>
