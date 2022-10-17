@@ -138,6 +138,7 @@ function addInputColumn() {
     
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
+        let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${modifier_nbr +1}_${i+1}`);
         input_input.setAttribute('class', `input_modifier`);
         column_input.appendChild(input_input)
