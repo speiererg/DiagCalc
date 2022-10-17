@@ -33,6 +33,7 @@ function click_calculate() {
 array_calculator.unshift(1) 
 for (let i = modifier_nbr; i>1;i--){
 array_calculator.unshift(array_calculator[0]*array_inputs_itemNbr[i-1])
+console.log(i)
 }
 
     console.log(array_inputs_value)
