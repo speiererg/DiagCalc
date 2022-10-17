@@ -82,8 +82,6 @@ function addInputRow() {
     modifierTyp_nbr++
 }
 
-
-
 console.log('test2')
 loadingIndex()
 

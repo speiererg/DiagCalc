@@ -23,6 +23,7 @@
 
   <div id="headerbar"></div>
 
+  
   <div id="maincontent">
     <div id="mainpage">
       <table class="CSS_contentTable">
