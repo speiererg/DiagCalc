@@ -3,6 +3,7 @@ var modifierSub_nbr = 4
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
+var array_hiden_inputs = []
 
 // Loading 
 function loadingIndex() {
@@ -13,15 +14,20 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
 
-    for (let i = 1; i <= modifier_nbr; i++) { document.getElementById(`radio_input_${i}`).addEventListener('click', function (){click_radio_input(i)})
-}
+    for (let i = 1; i <= modifier_nbr; i++) {
+        document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
+    }
 }
 
 function click_radio_input(radio_input_id) {
-    for (let i = 2; i <= modifier_nbr; i++) {
+    for (let i=0;i<array_hiden_inputs.length;i++){document.getElementById(array_hiden_inputs[i]).style.display = "block"}
+    array_hiden_inputs =[]
+    for (let i = 2; i <= modifierSub_nbr; i++) {
         document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
         document.getElementById(`input${radio_input_id}_${i}`).value = ""
+        array_hiden_inputs.push(`input${radio_input_id}_${i}`);
     }
+    
 }
 
 function click_calculate() {
