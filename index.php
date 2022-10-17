@@ -30,7 +30,7 @@
           <td>
             <table id="table_input">
               <tr>
-                <td><input type="checkbox" id="checkbox_input_1" checked></td>
+                <td><input type="checkbox" id="checkbox_input_1" label="salut" checked></td>
                 <td><input type="checkbox" id="checkbox_input_1"checked></td>
                 <td><input type="checkbox" id="checkbox_input_1"checked></td>
               </tr>  
