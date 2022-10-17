@@ -12,17 +12,21 @@ function loadingIndex() {
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+
+    document.getElementById('radio_input_1').addEventListener('click', function test(){console.log('test sadfkj')})
+
     let radio_input_DOM = document.querySelectorAll(".radio_input")
     console.log(document.getElementById('img_button_add_row'))
     console.log(radio_input_DOM[1])
-    for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(event))}
+    for (let i = 0; i < radio_input_DOM.length; i++) { radio_input_DOM[i].addEventListener('click', click_radio_input(event)) }
 }
 
 function click_radio_input(radio_input) {
-    console.log('click',radio_input)
-    for (let i=2;i<=modifier_nbr;i++){
+    console.log('click', radio_input)
+    for (let i = 2; i <= modifier_nbr; i++) {
         document.getElementById(`input${radio_input.value}_${i}`).style.display = "none";
-        document.getElementById(`input${radio_input.value}_${i}`).value=""}
+        document.getElementById(`input${radio_input.value}_${i}`).value = ""
+    }
 }
 
 function click_calculate() {
