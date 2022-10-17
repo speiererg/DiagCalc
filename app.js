@@ -20,14 +20,14 @@ function document_addeventlistener() {
 }
 
 function click_radio_input(radio_input_id) {
-    for (let i=0;i<array_hiden_inputs.length;i++){document.getElementById(array_hiden_inputs[i]).style.display = "block"}
-    array_hiden_inputs =[]
+    for (let i = 0; i < array_hiden_inputs.length; i++) { document.getElementById(array_hiden_inputs[i]).style.display = "block" }
+    array_hiden_inputs = []
     for (let i = 2; i <= modifierSub_nbr; i++) {
         document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
         document.getElementById(`input${radio_input_id}_${i}`).value = ""
         array_hiden_inputs.push(`input${radio_input_id}_${i}`);
     }
-    
+
 }
 
 function click_calculate() {
@@ -37,11 +37,22 @@ function click_calculate() {
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
-        for (let k = 1; k <= modifierSub_nbr; k++) {
-            let input_value = document.getElementById(`input${i}_${k}`).value
-            if (document.getElementById(`input${i}_${k}`).value != '') {
+        let modifierSub_iterate = 1
+        if (document.getElementById(`checkbox_input_${i}`).checked == true) {
+            modifierSub_iterate = 0
+        }
+        for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
+            if (k == 0) {
                 item_nbr++
-                array_inputs_oneModifier.push(input_value)
+                array_inputs_oneModifier.push('')
+            } else {
+                let input_value = document.getElementById(`input${i}_${k}`).value
+                if (input_value != '') {
+                    item_nbr++
+                    array_inputs_oneModifier.push(input_value)
+
+                }
+
             }
         }
         array_inputs_itemNbr.push(item_nbr)
