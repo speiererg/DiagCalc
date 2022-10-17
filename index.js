@@ -64,8 +64,6 @@ function create_calculator_output() {
 
 
 function addInputRow() {
-    console.log('add Input Row')
-
     let row_input = document.createElement('tr')
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
@@ -76,6 +74,7 @@ function addInputRow() {
     document.getElementById('table_input').appendChild(row_input)
     modifierTyp_nbr++
 }
+
 
 
 console.log('test8')
