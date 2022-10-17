@@ -144,7 +144,7 @@ function addInputColumn() {
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i+1}`).appendChild(column_input)
     }
-    modifier_nbr++
+    modifierSub_nbr++
 }
 
 loadingIndex()
