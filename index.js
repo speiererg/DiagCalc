@@ -45,6 +45,7 @@ function click_calculate() {
 
 
 function create_calculator_output() {
+    document.getElementById('table_output_calculator').innerHTML="";
     for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
             for (let modifier3 = 0; modifier3 < array_inputs_itemNbr[2]; modifier3++) {
@@ -54,7 +55,6 @@ function create_calculator_output() {
                 let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
                 row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
                 row_output_calculator.appendChild(row_output_calculator_Column)
-                document.getElementById('table_output_calculator').innerHTML="";
                 document.getElementById('table_output_calculator').appendChild(row_output_calculator);
             }
         }
