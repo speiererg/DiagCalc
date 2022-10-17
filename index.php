@@ -51,6 +51,10 @@
 <p>
   <input type="text" id="diag_result" readonly>
 
+  <div >
+  <table id="table_output_calculator">
+  </table>
+</div>
 
     </div>
   </div>
