@@ -13,7 +13,7 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     let radio_input_DOM = document.getElementsByClassName('radio_input')
-    for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(event)); }
+    for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(radio_input_DOM[i])); }
 }
 
 function click_radio_input(radio_input_nbr) {
