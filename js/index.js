@@ -43,10 +43,12 @@ function click_calculate() {
     console.log(array_inputs_value)
     console.log(array_inputs_itemNbr)
     console.log(array_calculator)
+    create_calculator_output()
 }
 
 
 function create_calculator_output() {
+    console.log("launch create calculator")
     for (let modifier1 = 0; modifier1 < array_calculator[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_calculator[1]; modifier2++) {
             for (let modifier3 = 0; modifier3 < array_calculator[2]; modifier3++) {
