@@ -118,6 +118,7 @@ body{
 
  .CSS_contentTable td {
   vertical-align: top;
+  border: 1px solid black;
  }
 
   /* --------   Button Design ----------- */
