@@ -71,7 +71,7 @@
             <input type="text" id="diag_result" readonly>
           </td>
           <td>
-          <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input"></br>
+          <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
           <img src="img/plus.png" id="img_button_add_column" width="50" height="50">
 
           </td>
