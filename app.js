@@ -137,7 +137,7 @@ function addInputColumn() {
     column_input_checkbox.appendChild(input_checkbox);
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
     
-    
+    console.log(modifierSub_nbr)
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
