@@ -103,6 +103,7 @@ function create_calculator_output() {
 
 function addInputRow() {
     let row_input = document.createElement('tr')
+    row_input.setAttribute('id',`tr_input_${modifierSub_nbr+1}`)
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
