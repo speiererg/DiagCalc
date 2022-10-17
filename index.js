@@ -64,7 +64,7 @@ function create_calculator_output() {
 
 
 
-console.log('test3')
+console.log('test4')
 loadingIndex()
 
 
