@@ -23,7 +23,7 @@ function click_radio_input(radio_input_id) {
     if (array_hiden_ID != ""){
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
-        for (let i = 2; i < modifierSub_nbr; i++) {document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block"}
+        for (let i = 2; i <= modifierSub_nbr; i++) {document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block"}
     }
     for (let i = 2; i <= modifierSub_nbr; i++) {
         document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
