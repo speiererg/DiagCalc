@@ -38,10 +38,11 @@ function click_calculate() {
         console.log(i)
     }
 
-    console.log(array_inputs_value)
-    console.log(array_inputs_itemNbr)
-    console.log(array_calculator)
-    create_calculator_output()
+    console.log(array_inputs_value);
+    console.log(array_inputs_itemNbr);
+    console.log(array_calculator);
+    create_calculator_output();
+    console.log('test launch')
 }
 
 
