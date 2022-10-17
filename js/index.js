@@ -15,6 +15,9 @@ function document_addeventlistener() {
 }
 
 function click_calculate() {
+    var array_inputs_value = [];
+    var array_inputs_itemNbr = [];
+    var array_calculator = [];
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
@@ -30,16 +33,16 @@ function click_calculate() {
     }
 
     // Creation du array_Calculator
-array_calculator.unshift(1) 
-for (let i = modifier_nbr; i>1;i--){
-    console.log('test')
-array_calculator.unshift(array_calculator[0]*array_inputs_itemNbr[i-1])
-console.log(i)
-}
+    array_calculator.unshift(1)
+    for (let i = modifier_nbr; i > 1; i--) {
+        console.log('test')
+        array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
+        console.log(i)
+    }
 
     console.log(array_inputs_value)
     console.log(array_inputs_itemNbr)
-console.log(array_calculator)
+    console.log(array_calculator)
 }
 
 
