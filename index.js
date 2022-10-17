@@ -56,7 +56,8 @@ function create_calculator_output() {
                 let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
                 row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
                 row_output_calculator.appendChild(row_output_calculator_Column)
-                document.getElementById('table_output_calculator').appendChild(row_output_calculator)
+                document.getElementById('table_output_calculator').innerHTML="";
+                document.getElementById('table_output_calculator').appendChild(row_output_calculator);
                 console.log(calculated_diag)
             }
         }
