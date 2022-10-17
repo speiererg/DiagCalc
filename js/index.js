@@ -52,9 +52,11 @@ function create_calculator_output() {
             for (let modifier3 = 0; modifier3 < array_calculator[2]; modifier3++) {
                 let row_output_calculator = document.createElement('tr')
                 let row_output_calculator_Column = document.createElement('td')
-                row_output_calculator_Column.appendChild(document.createTextNode(`${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`));
+                let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
+                row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
                 row_output_calculator.appendChild(row_output_calculator_Column)
                 document.getElementById('table_output_calculator').appendChild(row_output_calculator)
+                console.log(calculated_diag)
             }
         }
     }
