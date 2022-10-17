@@ -46,7 +46,7 @@
   <td><input type="text" id="input3_4" value="NYHA IV" class="input_modifier"></td>
 </tr>
 </table>
-<img src="img/plus.png>
+<img src="img/plus.png">
 <p>
   <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
 <p>
