@@ -13,7 +13,7 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     let radio_input_DOM = document.getElementsByClassName('radio_input')
-    console.log(radio_input_DOM)
+    console.log(radio_input_DOM[1])
     radio_input_DOM.forEach(radio_input_DOM => {
         radio_input_DOM.addEventListener('click', click_radio_input(event));
     })
