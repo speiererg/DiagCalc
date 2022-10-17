@@ -13,7 +13,7 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
 
-    for (let i = 1; i <= modifier_nbr; i++) { document.getElementById(`radio_input_${i}`).addEventListener('click', click_radio_input(i))
+    for (let i = 1; i <= modifier_nbr; i++) { document.getElementById(`radio_input_${i}`).addEventListener('click', function (){click_radio_input(i)})
 }
 }
 
