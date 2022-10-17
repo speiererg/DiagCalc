@@ -39,7 +39,7 @@ function click_calculate() {
         let item_nbr = 0
         let modifierSub_iterate = 1
         console.log(`checkbox_input_${i}`)
-        if (document.getElementById(`checkbox_input_${i}`).checked == true) {
+        if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
             modifierSub_iterate = 0
         }
         for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
