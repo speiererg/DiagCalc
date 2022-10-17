@@ -3,7 +3,7 @@ var modifierSub_nbr = 4
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
-var array_hiden_inputs = []
+var array_hiden_ID = "";
 
 // Loading 
 function loadingIndex() {
@@ -20,14 +20,17 @@ function document_addeventlistener() {
 }
 
 function click_radio_input(radio_input_id) {
-    for (let i = 0; i < array_hiden_inputs.length; i++) { document.getElementById(array_hiden_inputs[i]).style.display = "block" }
-    array_hiden_inputs = []
+    if (array_hiden_ID != ""){
+        document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
+        document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
+        for (let i = 2; i < modifierSub_nbr; i++) {document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block"}
+    }
     for (let i = 2; i <= modifierSub_nbr; i++) {
         document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
         document.getElementById(`input${radio_input_id}_${i}`).value = ""
         document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
         document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
-        array_hiden_inputs.push(`input${radio_input_id}_${i}`);
+        array_hiden_ID = radio_input_id
     }
 
 }
