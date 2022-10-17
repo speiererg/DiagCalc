@@ -85,6 +85,10 @@ function click_calculate() {
 function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
+    for (let modifier_number =0; modifier_number<modifier_nbr;modifier_number++){
+
+        
+    }
     for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
             for (let modifier3 = 0; modifier3 < array_inputs_itemNbr[2]; modifier3++) {
