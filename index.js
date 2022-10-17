@@ -11,6 +11,7 @@ function loadingIndex() {
 
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
+    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
 }
 
 function click_calculate() {
@@ -61,7 +62,9 @@ function create_calculator_output() {
     }
 }
 
-
+function addInputRow(){
+    console.log('add Input Row')
+}
 
 
 console.log('test5')
