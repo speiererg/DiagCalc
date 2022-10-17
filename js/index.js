@@ -31,7 +31,7 @@ function click_calculate() {
 
     // Creation du array_Calculator
 array_calculator.unshift(1) 
-for (let i = modifier_nbr; i>0;i--){
+for (let i = modifier_nbr; i>1;i--){
 array_calculator.unshift(array_calculator[0]*array_inputs_itemNbr[i-1])
 }
 
