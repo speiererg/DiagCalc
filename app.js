@@ -38,6 +38,7 @@ function click_calculate() {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
         let modifierSub_iterate = 1
+        console.log(`checkbox_input_${i}`)
         if (document.getElementById(`checkbox_input_${i}`).checked == true) {
             modifierSub_iterate = 0
         }
