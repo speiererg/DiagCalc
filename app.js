@@ -142,7 +142,7 @@ function addInputColumn() {
         input_input.setAttribute('id', `input${modifier_nbr +1}_${i+1}`);
         input_input.setAttribute('class', `input_modifier`);
         column_input.appendChild(input_input)
-        document.getElementById(`tr_input_${modifier_nbr+1}`).appendChild(column_input)
+        document.getElementById(`tr_input_${i+1}`).appendChild(column_input)
     }
     modifier_nbr++
 }
