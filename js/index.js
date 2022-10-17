@@ -18,6 +18,7 @@ function click_calculate() {
     array_inputs_value = [];
     array_inputs_itemNbr = [];
     array_calculator = [];
+    console.log(array_inputs_value)
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
