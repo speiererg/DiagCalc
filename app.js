@@ -94,9 +94,12 @@ function create_calculator_output() {
 function addInputRow() {
     let row_input = document.createElement('tr')
     for (let i = 0; i < modifier_nbr; i++) {
-        let column_input = document.createElement('td')
-        let input_input = document.createElement('input')
-        column_input.appendChild(input_input);
+
+        if (document.getElementById(`radio_input_${i + 1}`).checked == false) {
+            let column_input = document.createElement('td')
+            let input_input = document.createElement('input')
+            column_input.appendChild(input_input)
+        }
         input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('class', `input_modifier`);
         row_input.appendChild(column_input)
