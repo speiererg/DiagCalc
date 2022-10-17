@@ -16,9 +16,11 @@ function document_addeventlistener() {
     for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(radio_input_DOM[i])); }
 }
 
-function click_radio_input(radio_input_nbr) {
-    console.log(radio_input_nbr)
-    console.log(radio_input_nbr.value)
+function click_radio_input(radio_input) {
+    
+    for (let i=2;i<=modifier_nbr;i++){
+        document.getElementById(`input${radio_input.value}_${i}`).style.display = "none";
+        document.getElementById(`input${radio_input.value}_${i}`).value=""}
 }
 
 function click_calculate() {
