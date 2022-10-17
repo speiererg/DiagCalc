@@ -68,7 +68,8 @@ function addInputRow() {
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
         let input_inut = document.createElement('input')
-        column_input.appendChild(input_inut)
+        column_input.appendChild(input_inut);
+        column_input.setAttribute('id',`input${modifierTyp_nbr+1}_${i}`);
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
