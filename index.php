@@ -29,6 +29,11 @@
         <tr>
           <td>
             <table id="table_input">
+             <tr>
+                <td><input type="radio" id="radio_input_1" name="radio_input" value="radio_input_1"></td>
+                <td><input type="radio" id="radio_input_2" name="radio_input" value="radio_input_2" checked></td>
+                <td><input type="radio" id="radio_input_3" name="radio_input" value="radio_input_3"></td>
+              </tr>  
               <tr>
                 <td><input type="checkbox" id="checkbox_input_1" checked>Not required</td>
                 <td><input type="checkbox" id="checkbox_input_1"checked>Not required</td>
