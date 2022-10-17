@@ -1,153 +1,160 @@
+:root {
+  --main-bg-color: #faf9fe;
+  --div-color: #f6ffee;
+  --div-color-hell: #cfe7f3;
+  --div-color-dunkel: #6b9bda;
+  --div-seperation: #0d3896;
+  --fontfamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
+}
 
-:root
-{    --main-bg-color: #faf9fe;
-   --div-color: #f6ffee;
-   --div-color-hell: #e8f0e4;
-   --div-color-dunkel: #6fa550;
-   --div-seperation: #344e2c;
-   --fontfamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
- }
-
- .colorTEST{
-    color: #b9b9b9;
- }
+.colorTEST {
+  color: #b9b9b9;
+}
 
 /* --------   Navigationbar Design ----------- */
 
-#navigationbar li a.REARed{
-    background-color: #d60d0d;
-    font-weight: bold;
-    }     
+#navigationbar li a.REARed {
+  background-color: #d60d0d;
+  font-weight: bold;
+}
+
 #navigationbar ul {
-       list-style-type: none;
-       margin: 0;
-       padding: 0;
-       overflow: hidden;
-       background-color: var(--div-color-dunkel);
-       }
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: var(--div-color-dunkel);
+}
 
-   #navigationbar li {
-       float: left;
-       }
+#navigationbar li {
+  float: left;
+}
 
-   #navigationbar li a {
-       display: block;
-       color: white;
-       text-align: center;
-       padding: 3px 8px 3px 8px;
-       text-decoration: none;
-       border-right: 4px solid var(--div-seperation);
-       }
+#navigationbar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 3px 8px 3px 8px;
+  text-decoration: none;
+  border-right: 4px solid var(--div-seperation);
+}
 
 
 
-   #navigationbar li a:hover {
-       background-color: var(--div-seperation);
-       }
+#navigationbar li a:hover {
+  background-color: var(--div-seperation);
+}
 
- 
-    .navigationbarButton
-    {
-        width: 15px;
-        height:15px;
-        margin:0px;
-        padding:0px;
-        border: 0px;
-        border-radius: 1px;
-        vertical-align: middle;  
-    }
+
+.navigationbarButton {
+  width: 15px;
+  height: 15px;
+  margin: 0px;
+  padding: 0px;
+  border: 0px;
+  border-radius: 1px;
+  vertical-align: middle;
+}
 
 /* --------   Page Structure ----------- */
-body{
-   font-family: var(--fontfamily);
-   margin: 0px;
-   padding: 0px;
-   font-size: 0.9em;
+body {
+  font-family: var(--fontfamily);
+  margin: 0px;
+  padding: 0px;
+  font-size: 0.9em;
 }
 
 #header {
-   color: #418b41;
-   text-align: center;
-   background-color: var(--div-color);
-   margin: 0px;
-   padding: 0px;
+  color: #418b41;
+  text-align: center;
+  background-color: var(--div-color);
+  margin: 0px;
+  padding: 0px;
 }
 
 
 #headerbar {
-   background-color:var(--div-seperation);
-   margin: 0px;
-   padding: 0px;
-   height:3px;
-   width:100%;
+  background-color: var(--div-seperation);
+  margin: 0px;
+  padding: 0px;
+  height: 3px;
+  width: 100%;
 }
 
 #mainpage {
-    width: 100%;
-    background-color: white;
-    padding: 0px;
-    margin:0px;
-  }
+  width: 100%;
+  background-color: white;
+  padding: 0px;
+  margin: 0px;
+}
 
-#maincontent {  
-   display: flex;
-   flex-wrap: nowrap;
-   flex-direction: row;
-   width:100%;
-   padding:0px;
-   margin:0px;
- }
+#maincontent {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
 
 
 #sidebar {
-   flex: 40%;
-   background-color: #f1f1f1;
+  flex: 40%;
+  background-color: #f1f1f1;
   margin: 30px;
   margin-right: 50px;
-   padding: 20px;
- }
+  padding: 20px;
+}
 
- 
-  /* --------   Content Table Design ----------- */
 
- .CSS_contentTable {
+/* --------   Content Table Design ----------- */
+
+.CSS_contentTable {
   border: 1px solid black;
- }
+}
 
- .CSS_contentTable td {
+.CSS_contentTable td {
   vertical-align: top;
-  border: 1px solid black;
- }
+}
 
-  /* --------   Button Design ----------- */
-  .btn-holder {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    max-width: 1000px;
-    margin: 10px auto 35px;
-  }
-  .btn {
-    position: relative;
-    display: inline-block;
-    width: auto; height: auto;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    margin: 0px 25px 15px;
-    min-width: 150px;
-  }
-    .btn span {         
-      position: relative;
-      display: inline-block;
-      font-size: 14px;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      top: 0; left: 0;
-      width: 100%;
-      padding: 15px 20px;
-      transition: 0.3s;
-    }
+/* --------   Input Table Design ----------- */
+.input_modifier {
+  border: solid 2px var(--div-seperation);
+  background-color: var(--div-color-hell)
+}
+
+/* --------   Button Design ----------- */
+.btn-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 10px auto 35px;
+}
+
+.btn {
+  position: relative;
+  display: inline-block;
+  width: auto;
+  height: auto;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  margin: 0px 25px 15px;
+  min-width: 150px;
+}
+
+.btn span {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 20px;
+  transition: 0.3s;
+}
