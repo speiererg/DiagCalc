@@ -58,21 +58,15 @@ function create_calculator_output() {
                 row_output_calculator.appendChild(row_output_calculator_Column)
                 document.getElementById('table_output_calculator').innerHTML="";
                 document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-                console.log(calculated_diag)
             }
         }
     }
-
 }
 
 
 
 
-
-
-
-
-
+console.log('test2')
 loadingIndex()
 
 
