@@ -15,9 +15,9 @@ function document_addeventlistener() {
 }
 
 function click_calculate() {
-    var array_inputs_value = [];
-    var array_inputs_itemNbr = [];
-    var array_calculator = [];
+    array_inputs_value = [];
+    array_inputs_itemNbr = [];
+    array_calculator = [];
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
