@@ -74,6 +74,7 @@ function addInputRow() {
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
+    modifierTyp_nbr++
 }
 
 
