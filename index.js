@@ -70,6 +70,7 @@ function addInputRow() {
         let input_inut = document.createElement('input')
         column_input.appendChild(input_inut);
         column_input.setAttribute('id',`input${modifierTyp_nbr+1}_${i}`);
+        column_input.setAttribute('class',`input_modifier`);
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
