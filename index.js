@@ -48,6 +48,7 @@ function create_calculator_output() {
     for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
             for (let modifier3 = 0; modifier3 < array_inputs_itemNbr[2]; modifier3++) {
+                console.log(modifier1,modifier2,modifier3)
                 let row_output_calculator = document.createElement('tr')
                 let row_output_calculator_Column = document.createElement('td')
                 let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
