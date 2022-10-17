@@ -13,6 +13,8 @@ function loadingIndex() {
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
+
 
     for (let i = 0; i <= modifier_nbr; i++) {
         document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
