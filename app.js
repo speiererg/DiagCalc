@@ -13,6 +13,8 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     let radio_input_DOM = document.getElementsByClassName('radio_input')
+    console.log(document.getElementById('img_button_add_row'))
+    console.log(radio_input_DOM[1])
     for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(event))}
 }
 
@@ -86,7 +88,6 @@ function addInputRow() {
     modifierTyp_nbr++
 }
 
-console.log('test2')
 loadingIndex()
 
 
