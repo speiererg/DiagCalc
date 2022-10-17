@@ -12,11 +12,15 @@ function loadingIndex() {
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementsByClassName('radio_input').addEventListener('click', click_radio_input(this.value))
+    let radio_input_DOM = document.getElementsByClassName('radio_input')
+    radio_input_DOM.forEach(radio_input_DOM => {
+        radio_input_DOM.addEventListener('click', click_radio_input(event));
+    })
 }
 
-function click_radio_input(radio_input_nbr){
+function click_radio_input(radio_input_nbr) {
     console.log(radio_input_nbr)
+    console.log(radio_input_nbr.value)
 }
 
 function click_calculate() {
@@ -74,8 +78,8 @@ function addInputRow() {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
         column_input.appendChild(input_input);
-        input_input.setAttribute('id',`input${i+1}_${modifierTyp_nbr+1}`);
-        input_input.setAttribute('class',`input_modifier`);
+        input_input.setAttribute('id', `input${i + 1}_${modifierTyp_nbr + 1}`);
+        input_input.setAttribute('class', `input_modifier`);
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
