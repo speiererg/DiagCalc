@@ -79,7 +79,7 @@ function addInputRow() {
 
 
 
-console.log('test8')
+console.log('test1')
 loadingIndex()
 
 
