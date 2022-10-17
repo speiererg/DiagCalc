@@ -76,7 +76,7 @@
   <div id="footer">
   </div>
 
-  <script src="index.js"></script>
+  <script src="app.js"></script>
 
 
 </body>
