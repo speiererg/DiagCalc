@@ -12,7 +12,7 @@ function loadingIndex() {
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementsByClassName('radio_input_1').addEventListener('click', click_radio_input(this.value))
+    document.getElementsByClassName('radio_input').addEventListener('click', click_radio_input(this.value))
 }
 
 function click_radio_input(radio_input_nbr){
@@ -84,7 +84,7 @@ function addInputRow() {
 
 
 
-console.log('test1')
+console.log('test2')
 loadingIndex()
 
 
