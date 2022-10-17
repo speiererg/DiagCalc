@@ -113,6 +113,36 @@ function addInputRow() {
     modifierSub_nbr++
 }
 
+function addInputColumn() {
+    let input_radio= document.createElement('input');
+    input_radio.setAttribute('type','radio')
+    input_radio.setAttribute('name','radio_input')
+    input_radio.setAttribute('class','radio_input')
+    input_radio.setAttribute('value',`${modifier_nbr+1}`)
+    input_radio.setAttribute('id',`radio_input_${modifier_nbr+1}`)
+    let column_input_radio = document.createElement('td')
+    column_input_radio.appendChild(input_radio);
+    document.getElementById('tr_input_radio').appendChild(column_input_radio)
+
+    let input_checkbox = document.createElement('input');
+    input_checkbox.setAttribute('type','checkbox')
+    input_checkbox.setAttribute('checked','true')
+    input_checkbox.setAttribute('id',`checkbox_input_${modifier_nbr+1}`)
+    let column_input_checkbox = document.createElement('td')
+    column_input_checkbox.appendChild(input_checkbox);
+    document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
+    
+    
+    for (let i = 0; i < modifierSub_nbr; i++) {
+        let column_input = document.createElement('td')
+        input_input.setAttribute('id', `input${modifier_nbr +1}_${i+1}`);
+        input_input.setAttribute('class', `input_modifier`);
+        column_input.appendChild(input_input)
+        document.getElementById(`tr_input_${modifier_nbr+1}`).appendChild(column_input)
+    }
+    modifier_nbr++
+}
+
 loadingIndex()
 
 

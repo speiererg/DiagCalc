@@ -30,33 +30,33 @@
         <tr>
           <td>
             <table id="table_input">
-             <tr>
+             <tr id="tr_input_radio">
                 <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input"></td>
                 <td><input type="radio" id="radio_input_2" name="radio_input" value="2" class="radio_input"></td>
                 <td><input type="radio" id="radio_input_3" name="radio_input" value="3" class="radio_input"></td>
               </tr>  
-              <tr>
+              <tr id="tr_input_checkbox">
                 <td><input type="checkbox" id="checkbox_input_1" checked>Not required</td>
                 <td><input type="checkbox" id="checkbox_input_2"checked>Not required</td>
                 <td><input type="checkbox" id="checkbox_input_3"checked>Not required</td>
               </tr>  
-              <tr>
+              <tr id="tr_input_1">
                 <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
                 <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier"></td>
                 <td><input type="text" id="input3_1" value="NYHA I " class="input_modifier"></td>
               </tr>
-              <tr>
+              <tr id="tr_input_2">
                 <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte" class="input_modifier"></td>
                 <td><input type="text" id="input2_2" value="" class="input_modifier"></td>
                 <td><input type="text" id="input3_2" value="NYHA II" class="input_modifier"></td>
               </tr>
-              <tr>
+              <tr id="tr_input_3">
               
                 <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte" class="input_modifier"></td>
                 <td><input type="text" id="input2_3" value="" class="input_modifier"></td>
                 <td><input type="text" id="input3_3" value="NYHA III" class="input_modifier"></td>
               </tr>
-              <tr>
+              <tr id="tr_input_4">
              
                 <td><input type="text" id="input1_4" value="" class="input_modifier"></td>
                 <td><input type="text" id="input2_4" value="" class="input_modifier"></td>
