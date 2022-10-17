@@ -128,7 +128,6 @@ function addInputColumn() {
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
-    document.getElementById(`radio_input_${modifier_nbr+1}`).addEventListener('click', function () { click_radio_input(modifier_nbr+1) })
 
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type','checkbox')
@@ -148,6 +147,8 @@ function addInputColumn() {
         document.getElementById(`tr_input_${i+1}`).appendChild(column_input)
     }
     modifier_nbr++
+    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
+
 }
 
 loadingIndex()
