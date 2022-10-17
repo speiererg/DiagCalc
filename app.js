@@ -14,25 +14,26 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
 
-    for (let i = 1; i <= modifier_nbr; i++) {
+    for (let i = 0; i <= modifier_nbr; i++) {
         document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
     }
 }
 
 function click_radio_input(radio_input_id) {
-    if (array_hiden_ID != ""){
+    if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
-        for (let i = 2; i <= modifierSub_nbr; i++) {document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block"}
+        for (let i = 2; i <= modifierSub_nbr; i++) { document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" }
     }
-    for (let i = 2; i <= modifierSub_nbr; i++) {
-        document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
-        document.getElementById(`input${radio_input_id}_${i}`).value = ""
-        document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
-        document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
-        array_hiden_ID = radio_input_id
+    if (radio_input_id = !0) {
+        for (let i = 2; i <= modifierSub_nbr; i++) {
+            document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`input${radio_input_id}_${i}`).value = ""
+            document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
+            document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
+            array_hiden_ID = radio_input_id
+        }
     }
-
 }
 
 function click_calculate() {
@@ -100,11 +101,11 @@ function addInputRow() {
     let row_input = document.createElement('tr')
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
-            let input_input = document.createElement('input')
-            input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
-            input_input.setAttribute('class', `input_modifier`);
-            if (document.getElementById(`radio_input_${i + 1}`).checked == true) {input_input.setAttribute("style", "display:none")}
-            column_input.appendChild(input_input)
+        let input_input = document.createElement('input')
+        input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
+        input_input.setAttribute('class', `input_modifier`);
+        if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
+        column_input.appendChild(input_input)
 
         row_input.appendChild(column_input)
     }
