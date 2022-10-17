@@ -25,10 +25,10 @@
 
   <div id="maincontent">
     <div id="mainpage">
-      <table>
+      <table class="CSS_contentTable">
         <tr>
           <td>
-            <table id="table_input">
+            <table id="table_input" >
               <tr>
                 <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
                 <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier"></td>

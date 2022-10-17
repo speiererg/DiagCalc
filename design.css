@@ -109,6 +109,12 @@ body{
  }
 
  
+  /* --------   Content Table Design ----------- */
+
+ .CSS_contentTable {
+  border: 1px solid black;
+ }
+
   /* --------   Button Design ----------- */
   .btn-holder {
     display: flex;
