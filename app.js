@@ -22,6 +22,7 @@ function document_addeventlistener() {
 }
 
 function click_radio_input(radio_input_id) {
+    console.log(radio_input_id)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
