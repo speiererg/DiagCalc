@@ -25,6 +25,8 @@ function click_radio_input(radio_input_id) {
     for (let i = 2; i <= modifierSub_nbr; i++) {
         document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
         document.getElementById(`input${radio_input_id}_${i}`).value = ""
+        document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
+        document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
         array_hiden_inputs.push(`input${radio_input_id}_${i}`);
     }
 
@@ -96,12 +98,12 @@ function addInputRow() {
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
 
-        if (document.getElementById(`radio_input_${i + 1}`).checked == false) {    
+  
             let input_input = document.createElement('input')
             input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
             input_input.setAttribute('class', `input_modifier`);
+            if (document.getElementById(`radio_input_${i + 1}`).checked == true) {input_input.setAttribute("style", "display:none")}
             column_input.appendChild(input_input)
-        }
 
         row_input.appendChild(column_input)
     }
