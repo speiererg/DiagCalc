@@ -14,7 +14,7 @@ function document_addeventlistener() {
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     let radio_input_DOM = document.querySelectorAll(".radio_input")
     console.log(document.getElementById('img_button_add_row'))
-    console.log(radio_input_DOM)
+    console.log(radio_input_DOM[1])
     for (let i=0; i<radio_input_DOM.length;i++){radio_input_DOM[i].addEventListener('click', click_radio_input(event))}
 }
 
