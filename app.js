@@ -1,5 +1,5 @@
 var modifier_nbr = 3
-var modifierTyp_nbr = 4
+var modifierSub_nbr = 4
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
@@ -13,19 +13,14 @@ function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
 
-    document.getElementById('radio_input_1').addEventListener('click', function test(){console.log('test sadfkj')})
-
-    let radio_input_DOM = document.querySelectorAll(".radio_input")
-    console.log(document.getElementById('img_button_add_row'))
-    console.log(radio_input_DOM[1])
-    for (let i = 0; i < radio_input_DOM.length; i++) { radio_input_DOM[i].addEventListener('click', click_radio_input(event)) }
+    for (let i = 1; i <= modifier_nbr; i++) { document.getElementById(`radio_input_${i}`).addEventListener('click', click_radio_input(i))
+}
 }
 
-function click_radio_input(radio_input) {
-    console.log('click', radio_input)
+function click_radio_input(radio_input_id) {
     for (let i = 2; i <= modifier_nbr; i++) {
-        document.getElementById(`input${radio_input.value}_${i}`).style.display = "none";
-        document.getElementById(`input${radio_input.value}_${i}`).value = ""
+        document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
+        document.getElementById(`input${radio_input_id}_${i}`).value = ""
     }
 }
 
@@ -36,7 +31,7 @@ function click_calculate() {
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
-        for (let k = 1; k <= modifierTyp_nbr; k++) {
+        for (let k = 1; k <= modifierSub_nbr; k++) {
             let input_value = document.getElementById(`input${i}_${k}`).value
             if (document.getElementById(`input${i}_${k}`).value != '') {
                 item_nbr++
@@ -84,12 +79,12 @@ function addInputRow() {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
         column_input.appendChild(input_input);
-        input_input.setAttribute('id', `input${i + 1}_${modifierTyp_nbr + 1}`);
+        input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('class', `input_modifier`);
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
-    modifierTyp_nbr++
+    modifierSub_nbr++
 }
 
 loadingIndex()
