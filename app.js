@@ -17,7 +17,7 @@ function document_addeventlistener() {
 }
 
 function click_radio_input(radio_input) {
-    
+    console.log('click',radio_input)
     for (let i=2;i<=modifier_nbr;i++){
         document.getElementById(`input${radio_input.value}_${i}`).style.display = "none";
         document.getElementById(`input${radio_input.value}_${i}`).value=""}
