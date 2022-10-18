@@ -87,24 +87,7 @@ function create_calculator_output() {
     
 // Send XML
 console.log('send XML')
-    XML_output = XML_Beginn + XML_temp + XML_End
-    document.getElementById('input_XML').value = XML_output
-    
-    /*
-    var xmlhttp = new XMLHttpRequest();
-    var xmlDoc;
-    xmlhttp.onreadystatechange = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        xmlDoc = xmlhttp.responseXML;
-        console.log(xmlDoc + 'testXML');
-        }
-    };
-    var xml = XML_output;
-    xmlhttp.open("POST","download.php");
-    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
-    xmlhttp.send(xml);
-*/
-
+    XML_output = XML_Beginn 
 
 // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -119,6 +102,8 @@ console.log('send XML')
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
+
+        XML_output = XML_output + createXML('ID_TERM_1234','MedSP',calculated_diag).toString
 
 
  // Array Calculation
@@ -138,6 +123,11 @@ console.log('send XML')
         }
 
     }
+
+// finalize XML
+
+XML_output = XML_output + XML_End
+document.getElementById('input_XML').value = XML_output
 }
 
 function addInputRow() {
@@ -1221,15 +1211,18 @@ var XML_End = `<ss:Row>
 </Worksheet>
 </Workbook>`
 
-var XML_temp = `            <ss:Row>
+var 
+function createXML(ID_Term,DiagnosisVendor,DiagnosisDescription){
+return XML_temp = `            
+<ss:Row>
 <ss:Cell>
-    <ss:Data ss:Type="String">ID_TERM_618373</ss:Data>
+    <ss:Data ss:Type="String">${ID-ID_Term}</ss:Data>
 </ss:Cell>
 <ss:Cell>
-    <ss:Data ss:Type="String">ID Berlin</ss:Data>
+    <ss:Data ss:Type="String">${DiagnosisVendor}</ss:Data>
 </ss:Cell>
 <ss:Cell>
-    <ss:Data ss:Type="String">Globale Herzinsuffizienz</ss:Data>
+    <ss:Data ss:Type="String">${DiagnosisDescription}</ss:Data>
 </ss:Cell>
 <ss:Cell>
     <ss:Data ss:Type="String">Updated by Chronicles import.</ss:Data>
@@ -1285,3 +1278,4 @@ var XML_temp = `            <ss:Row>
 <ss:Cell></ss:Cell>
 <ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
 </ss:Row>`
+}
