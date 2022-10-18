@@ -11,6 +11,7 @@
 <body>
 
   <div id="header">
+    DiagCalc by MedSP
   </div>
   <div id="headerbar"></div>
 
