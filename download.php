@@ -31,7 +31,7 @@ $content = "lorem ipsum";
 
 //save file
 $file = fopen($namefile, "w") or die("Unable to open file!");
-fwrite($file, $GET['input_XML']);
+fwrite($file, $_POST['input_XML']);
 fclose($file);
 
 //header download

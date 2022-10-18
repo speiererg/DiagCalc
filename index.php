@@ -90,7 +90,7 @@
         </tr>
       </table>
       <p>
-      <form name="form" action="download.php" method="get">
+      <form name="form" action="download.php" method="POST">
   <input type="text" name="input_XML" id="input_XML" value="">
   <input type="submit" name="button1"
                 class="button" value="Download as txt" />
