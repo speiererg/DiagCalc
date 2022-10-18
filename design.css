@@ -73,9 +73,10 @@ body {
 }
 
 #header {
-  color: #418b41;
+  color: var(--div-seperation);
   text-align: center;
   background-color: var(--div-color);
+  text-shadow: black;
   margin: 0px;
   padding: 0px;
 }
