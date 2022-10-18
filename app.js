@@ -81,8 +81,8 @@ function click_calculate() {
 function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
-    let array_iterate = []
-    let itteration_id = modifier_nbr - 1
+    var array_iterate = []
+    var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
     console.log(array_iterate)
     console.log(array_inputs_itemNbr)
