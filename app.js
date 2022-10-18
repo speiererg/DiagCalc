@@ -87,9 +87,9 @@ function create_calculator_output() {
     console.log(array_iterate)
     console.log(array_inputs_itemNbr)
     console.log(array_inputs_value)
-    //array_iterate[0] < array_inputs_itemNbr[0]
+    //
     let kg=0;
-    while (kg < 30) {
+    while (array_iterate[0] < array_inputs_itemNbr[0]) {
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
             calculated_diag.concat(array_inputs_value[i][array_iterate[i]])
@@ -97,6 +97,17 @@ function create_calculator_output() {
         console.log(calculated_diag)
         iterate_id(array_iterate, itteration_id)
 
+        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
+            array_iterate[itteration_id]++
+        } else {
+            for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
+                array_iterate[modifier_nbr-id_increment] = 0
+                if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
+                    array_iterate[itteration_id - id_increment]++
+                    test_id = 1
+                }
+            }
+        }
         /*let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
@@ -128,17 +139,7 @@ function iterate_id(array_iterate, itteration_id) {
     console.log(array_iterate)
     console.log(itteration_id)
     console.log(array_inputs_itemNbr[itteration_id] - 1)
-    if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
-        array_iterate[itteration_id]++
-    } else {
-        for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
-            array_iterate[modifier_nbr-id_increment] = 0
-            if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
-                array_iterate[itteration_id - id_increment]++
-                test_id = 1
-            }
-        }
-    }
+    
 }
 
 
