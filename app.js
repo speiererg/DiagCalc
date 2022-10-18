@@ -184,7 +184,7 @@ function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription) {
     return XML_temp = `            
     <ss:Row>
     <ss:Cell>
-        <ss:Data ss:Type="String">${ID - ID_Term}</ss:Data>
+        <ss:Data ss:Type="String">${ID_Term}</ss:Data>
     </ss:Cell>
     <ss:Cell>
         <ss:Data ss:Type="String">${DiagnosisVendor}</ss:Data>
