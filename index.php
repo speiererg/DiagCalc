@@ -82,6 +82,8 @@
           </td>
         </tr>
       </table>
+      <p>
+        <input type="text" id="input_XML"> 
     </div>
   </div>
 
