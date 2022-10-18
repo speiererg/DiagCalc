@@ -84,9 +84,6 @@ function create_calculator_output() {
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
-    console.log(array_iterate)
-    console.log(array_inputs_itemNbr)
-    console.log(array_inputs_value)
     
 // Send XML
 console.log('send XML')
@@ -115,7 +112,6 @@ console.log('send XML')
         var calculated_diag = ""
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
-            console.log(calculated_diag)
         }
         let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
