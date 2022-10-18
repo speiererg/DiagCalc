@@ -94,9 +94,8 @@ function create_calculator_output() {
     while (array_iterate[0] < array_item0) {
         var calculated_diag = "sdf"
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
-            calculated_diag.concat("test")
+            calculated_diag = calculated_diag + `${array_inputs_value[i][array_iterate[i]]}`
             console.log(calculated_diag)
-            console.log(`test${i0}`)
         }
         let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
