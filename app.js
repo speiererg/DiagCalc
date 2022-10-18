@@ -81,15 +81,37 @@ function click_calculate() {
 function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
-let array_iterate=[]
-for (let i=0;i<modifier_nbr;i++){ array_iterate.push('0')}
-console.log(array_iterate)
-console.log(array_inputs_itemNbr)
-console.log(array_inputs_value)
-while(array_iterate[0]<=array_inputs_itemNbr[0]){
+    let array_iterate = []
+    let itteration_id = modifier_nbr - 1
+    for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
+    console.log(array_iterate)
+    console.log(array_inputs_itemNbr)
+    console.log(array_inputs_value)
+    while (array_iterate[0] <= array_inputs_itemNbr[0]) {
+        let calculated_diag = ""
+        for (let i = 0; i < modifier_nbr; i++) {
+            calculated_diag.concat(array_inputs_value[i][array_iterate[i]])
+        }
+        console.log(calculated_diag)
+
+        /*let row_output_calculator = document.createElement('tr')
+        let row_output_calculator_Column = document.createElement('td')
+        row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
+        row_output_calculator.appendChild(row_output_calculator_Column)
+        document.getElementById('table_output_calculator').appendChild(row_output_calculator);
+*/
+        if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]){
+            array_iterate[itteration_id] = array_iterate[itteration_id]+1 
+        }else{
+            array_iterate[itteration_id] = 0
+            itteration_id++
+            array_iterate[itteration_id] = array_iterate[itteration_id]+1 
+
+        }
+    
 }
 
-        
+
     /*
     for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
         for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
@@ -110,7 +132,7 @@ while(array_iterate[0]<=array_inputs_itemNbr[0]){
 
 function addInputRow() {
     let row_input = document.createElement('tr')
-    row_input.setAttribute('id',`tr_input_${modifierSub_nbr+1}`)
+    row_input.setAttribute('id', `tr_input_${modifierSub_nbr + 1}`)
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
@@ -127,32 +149,32 @@ function addInputRow() {
 
 function addInputColumn() {
     console.log('add column')
-    let input_radio= document.createElement('input');
-    input_radio.setAttribute('type','radio')
-    input_radio.setAttribute('name','radio_input')
-    input_radio.setAttribute('class','radio_input')
-    input_radio.setAttribute('value',`${modifier_nbr+1}`)
-    input_radio.setAttribute('id',`radio_input_${modifier_nbr+1}`)
+    let input_radio = document.createElement('input');
+    input_radio.setAttribute('type', 'radio')
+    input_radio.setAttribute('name', 'radio_input')
+    input_radio.setAttribute('class', 'radio_input')
+    input_radio.setAttribute('value', `${modifier_nbr + 1}`)
+    input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
 
     let input_checkbox = document.createElement('input');
-    input_checkbox.setAttribute('type','checkbox')
-    input_checkbox.setAttribute('checked','true')
-    input_checkbox.setAttribute('id',`checkbox_input_${modifier_nbr+1}`)
+    input_checkbox.setAttribute('type', 'checkbox')
+    input_checkbox.setAttribute('checked', 'true')
+    input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-    
+
     console.log(modifierSub_nbr)
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
-        input_input.setAttribute('id', `input${modifier_nbr +1}_${i+1}`);
+        input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
         input_input.setAttribute('class', `input_modifier`);
         column_input.appendChild(input_input)
-        document.getElementById(`tr_input_${i+1}`).appendChild(column_input)
+        document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
     modifier_nbr++
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
