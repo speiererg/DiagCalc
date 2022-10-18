@@ -103,7 +103,7 @@ function create_calculator_output() {
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag).toString
+        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag)
 
 
         // Array Calculation
