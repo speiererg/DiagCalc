@@ -44,6 +44,6 @@ header("Content-Type: text/plain");
 
 echo $content;?>
 
-
+<script>console.log('test results')</script>
 </body>
 </html>
