@@ -124,11 +124,11 @@ for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
 function iterate_id(array_iterate, itteration_id) {
     console.log(array_iterate)
     console.log(itteration_id)
-    if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]-1) {
+    if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]) {
         array_iterate[itteration_id]++
     } else {
         array_iterate[itteration_id] = 0
-        if (array_iterate[itteration_id - 1] < array_inputs_itemNbr[itteration_id - 1]-1) {
+        if (array_iterate[itteration_id - 1] < array_inputs_itemNbr[itteration_id - 1]) {
             array_iterate[itteration_id - 1]++
         } else {
             itteration_id = itteration_id -1
