@@ -91,16 +91,16 @@ console.log('send XML')
     document.getElementById('input_XML').value = XML_output
     
     var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("POST","download.php");
     var xmlDoc;
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         xmlDoc = xmlhttp.responseXML;
-        console.log(xmlDoc);
+        console.log(xmlDoc + 'testXML');
         }
     };
-    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
     var xml = XML_output;
+    xmlhttp.open("POST","download.php");
+    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
     xmlhttp.send(xml);
 
 
