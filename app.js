@@ -135,7 +135,7 @@ function iterate_id(array_iterate, itteration_id) {
             array_iterate[itteration_id - 1]++
         } else {
             itteration_id = itteration_id -1
-            iterate_id()
+            iterate_id(array_iterate,itteration_id)
         }
     }
 }
