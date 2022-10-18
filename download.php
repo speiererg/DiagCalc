@@ -1,7 +1,7 @@
 <html>
     <body>
 
-    <head>
+<head>
   <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
   <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
@@ -27,12 +27,11 @@
 
 //config
 $namefile = "test.txt";
-$content = "lorem ipsum";
+$content = $_GET['input_XML'];
 
 //save file
 $file = fopen($namefile, "w") or die("Unable to open file!");
-fwrite($file, $_POST['input_XML']);
-echo $_POST['input_XML'];
+fwrite($file, $content);
 fclose($file);
 
 //header download
