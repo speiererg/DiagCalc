@@ -106,11 +106,10 @@ function create_calculator_output() {
                     array_iterate[itteration_id - id_increment]++
                     test_id = 1
                 }
+            console.log(test)
             }
         }
         console.log(array_iterate)
-        console.log(itteration_id)
-        console.log(array_inputs_itemNbr[itteration_id] - 1)
         /*let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
