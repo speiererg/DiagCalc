@@ -131,7 +131,9 @@ body {
 /* --------   Input Table Design ----------- */
 .input_modifier {
   border: solid 2px var(--div-seperation);
-  background-color: var(--div-color-hell)
+  background-color: var(--div-color-hell);
+  padding: 5px;
+  width:200px;
 }
 
 /* --------   Button Design ----------- */
