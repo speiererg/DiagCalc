@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #faf9fe;
-  --div-color: #f6ffee;
+  --div-color: #eef9ff;
   --div-color-hell: #cfe7f3;
   --div-color-dunkel: #6b9bda;
   --div-seperation: #0d3896;
@@ -89,7 +89,7 @@ body {
 
 #mainpage {
   width: 100%;
-  background-color: white;
+  background-color: var(--div-color);
   padding: 0px;
   margin: 0px;
 }
