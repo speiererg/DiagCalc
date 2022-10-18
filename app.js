@@ -87,9 +87,9 @@ function create_calculator_output() {
     console.log(array_iterate)
     console.log(array_inputs_itemNbr)
     console.log(array_inputs_value)
-   //array_iterate[0] <= array_inputs_itemNbr[0]
-   let kg = 0
-    while (kg<20) {
+    //array_iterate[0] <= array_inputs_itemNbr[0]
+    let kg = 0
+    while (kg < 20) {
         console.log(array_iterate)
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
@@ -103,16 +103,21 @@ function create_calculator_output() {
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 */
-        if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]){
-            array_iterate[itteration_id]++ 
-        }else{
-            array_iterate[itteration_id] = 0
-            itteration_id--
-            array_iterate[itteration_id]++
-
+        function iterate_id() {
+            if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]) {
+                array_iterate[itteration_id]++
+            } else {
+                array_iterate[itteration_id] = 0
+                if (array_iterate[itteration_id - 1] < array_inputs_itemNbr[itteration_id - 1]) {
+                    array_iterate[itteration_id - 1]++
+                } else {
+                    itteration_id--
+                    iterate_id()
+                }
+            }
         }
-    kg++
-}
+        kg++
+    }
 
 
     /*
