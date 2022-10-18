@@ -27,7 +27,7 @@
 
 //config
 $namefile = "test.txt";
-$content = $_GET['input_XML'];
+$content = $_POST['input_XML'];
 
 //save file
 $file = fopen($namefile, "w") or die("Unable to open file!");
