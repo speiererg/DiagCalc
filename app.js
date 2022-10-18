@@ -100,7 +100,7 @@ function create_calculator_output() {
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
             array_iterate[itteration_id]++
         } else {
-            if (array_iterate[0] < array_inputs_itemNbr[0]) {
+            if (array_iterate[0] < (array_inputs_itemNbr[0]-1)) {
                 for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
                     array_iterate[modifier_nbr - id_increment] = 0
                     if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
