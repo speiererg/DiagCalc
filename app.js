@@ -131,8 +131,8 @@ function iterate_id(array_iterate, itteration_id) {
     if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
         array_iterate[itteration_id]++
     } else {
-        array_iterate[itteration_id] = 0
         for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
+            array_iterate[modifier_nbr-id_increment] = 0
             if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
                 array_iterate[itteration_id - id_increment]++
                 test_id = 1
