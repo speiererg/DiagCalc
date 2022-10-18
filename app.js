@@ -95,8 +95,8 @@ function create_calculator_output() {
             calculated_diag.concat(array_inputs_value[i][array_iterate[i]])
         }
         console.log(calculated_diag)
-        iterate_id(array_iterate, itteration_id)
 
+        
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
             array_iterate[itteration_id]++
         } else {
