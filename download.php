@@ -1,8 +1,7 @@
-<html>
 <?PHP
 
 //config
-$namefile = "test.txt";
+$namefile = "test.xml";
 $content = $_POST['input_XML'];
 
 //save file
@@ -19,4 +18,3 @@ header('Pragma: public');
 header("Content-Type: text/plain");
 
 echo $content;?>
-</html>
