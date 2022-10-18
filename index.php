@@ -90,8 +90,10 @@
         </tr>
       </table>
       <p>
-      <form name="form" action="" method="get">
-  <input type="text" name="subject" id="input_XML" value="">
+      <form name="form" action="download.php" method="get">
+  <input type="text" name="input_XML" id="input_XML" value="">
+  <input type="submit" name="button1"
+                class="button" value="Download as txt" />
 </form>
     </div>
   </div>

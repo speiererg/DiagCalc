@@ -9,7 +9,7 @@ $content = "lorem ipsum";
 
 //save file
 $file = fopen($namefile, "w") or die("Unable to open file!");
-fwrite($file, $content);
+fwrite($file, $GET['input_XML']);
 fclose($file);
 
 //header download
