@@ -125,7 +125,7 @@ function iterate_id(array_iterate, itteration_id) {
     console.log(array_iterate)
     console.log(itteration_id)
     console.log(array_inputs_itemNbr[itteration_id]-1)
-    if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id])) {
+    if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id]-1)) {
         array_iterate[itteration_id]++
     } else {
         array_iterate[itteration_id] = 0
