@@ -106,7 +106,7 @@ function create_calculator_output() {
                     array_iterate[itteration_id - id_increment]++
                     test_id = 1
                 }
-            console.log(test)
+            console.log('test')
             }
         }
         console.log(array_iterate)
