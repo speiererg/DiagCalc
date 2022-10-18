@@ -87,8 +87,26 @@ function create_calculator_output() {
     console.log(array_iterate)
     console.log(array_inputs_itemNbr)
     console.log(array_inputs_value)
+    
+// Send XML
     XML_output = XML_Beginn + XML_temp + XML_End
     document.getElementById('input_XML').value = XML_output
+    
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.open("POST","download.php");
+    var xmlDoc;
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        xmlDoc = xmlhttp.responseXML;
+        console.log(xmlDoc);
+        }
+    };
+    xmlhttp.setRequestHeader('Content-Type', 'text/xml');
+    var xml = XML_output;
+    xmlhttp.send(xml);
+
+
+
 // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
