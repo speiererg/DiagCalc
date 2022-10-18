@@ -78,8 +78,8 @@ body {
   background-color: var(--div-color);
   text-shadow: black;
   margin: 5px;
-  padding: 5px;
-  font-size: larger;
+  padding: 0px;
+  font-size: large;
   font-weight: bolder;
 }
 
