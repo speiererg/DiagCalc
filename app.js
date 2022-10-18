@@ -102,7 +102,7 @@ function create_calculator_output() {
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-
+// Append to XML
         XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag)
 
 
