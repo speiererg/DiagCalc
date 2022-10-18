@@ -96,6 +96,7 @@ function create_calculator_output() {
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag.concat("test")
             console.log(calculated_diag)
+            console.log(`test${i0}`)
         }
         let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
