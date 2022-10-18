@@ -65,13 +65,13 @@
               </tr>
             </table>
 
-            <img src="img/plus.png" id="img_button_add_row" width="50" height="50">
+            <img src="img/plus.png" id="img_button_add_row" width="30" height="30">
             <p>
             <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
            </td>
           <td>
           <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
-          <img src="img/plus.png" id="img_button_add_column" width="50" height="50">
+          <img src="img/plus.png" id="img_button_add_column" width="30" height="30">
 
           </td>
         </tr>
