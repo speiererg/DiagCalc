@@ -89,7 +89,7 @@ function create_calculator_output() {
     console.log(array_inputs_value)
     //array_iterate[0] <= array_inputs_itemNbr[0]
     let kg = 0
-    while (kg < 20) {
+    while (kg < 30) {
         console.log(array_iterate)
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
