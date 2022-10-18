@@ -104,11 +104,11 @@ function create_calculator_output() {
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 */
         if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]){
-            array_iterate[itteration_id] = array_iterate[itteration_id]+1 
+            array_iterate[itteration_id]++ 
         }else{
             array_iterate[itteration_id] = 0
             itteration_id++
-            array_iterate[itteration_id] = array_iterate[itteration_id]+1 
+            array_iterate[itteration_id]++
 
         }
     kg++
