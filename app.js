@@ -103,9 +103,11 @@ function create_calculator_output() {
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
+       
+       
         // Append to XML
         console.log(calculated_diag)
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag)
+        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
 
 
         // Array Calculation
@@ -182,7 +184,7 @@ function addInputColumn() {
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
 
 }
-function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription) {
+function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
     return XML_temp = `            
     <ss:Row>
     <ss:Cell>
@@ -195,7 +197,7 @@ function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription) {
         <ss:Data ss:Type="String">${DiagnosisDescription}</ss:Data>
     </ss:Cell>
     <ss:Cell>
-        <ss:Data ss:Type="String">Updated by Chronicles import.</ss:Data>
+        <ss:Data ss:Type="String">${ContactComment}</ss:Data>
     </ss:Cell>
     <ss:Cell></ss:Cell>
     <ss:Cell></ss:Cell>
