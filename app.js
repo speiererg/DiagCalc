@@ -107,7 +107,7 @@ function create_calculator_output() {
             array_iterate[itteration_id]++ 
         }else{
             array_iterate[itteration_id] = 0
-            itteration_id++
+            itteration_id--
             array_iterate[itteration_id]++
 
         }
