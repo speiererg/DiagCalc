@@ -96,7 +96,7 @@ function create_calculator_output() {
         }
         console.log(calculated_diag)
 
-        
+
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
             array_iterate[itteration_id]++
         } else {
@@ -108,40 +108,17 @@ function create_calculator_output() {
                 }
             }
         }
+        console.log(array_iterate)
+        console.log(itteration_id)
+        console.log(array_inputs_itemNbr[itteration_id] - 1)
         /*let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
         */
-        kg++
-
     }
 }
-
-
-/*
-for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
-    for (let modifier2 = 0; modifier2 < array_inputs_itemNbr[1]; modifier2++) {
-        for (let modifier3 = 0; modifier3 < array_inputs_itemNbr[2]; modifier3++) {
-            console.log(modifier1, modifier2, modifier3)
-            let row_output_calculator = document.createElement('tr')
-            let row_output_calculator_Column = document.createElement('td')
-            let calculated_diag = `${array_inputs_value[0][modifier1]} ${array_inputs_value[1][modifier2]} ${array_inputs_value[2][modifier3]}`
-            row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
-            row_output_calculator.appendChild(row_output_calculator_Column)
-            document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-        }
-    }
-}
-*/
-function iterate_id(array_iterate, itteration_id) {
-    console.log(array_iterate)
-    console.log(itteration_id)
-    console.log(array_inputs_itemNbr[itteration_id] - 1)
-    
-}
-
 
 function addInputRow() {
     let row_input = document.createElement('tr')
