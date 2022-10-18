@@ -134,7 +134,7 @@ function iterate_id(array_iterate, itteration_id) {
         if (array_iterate[itteration_id - 1] < array_inputs_itemNbr[itteration_id - 1]) {
             array_iterate[itteration_id - 1]++
         } else {
-            itteration_id--
+            itteration_id = itteration_id -1
             iterate_id()
         }
     }
