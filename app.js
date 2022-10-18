@@ -88,7 +88,7 @@ function create_calculator_output() {
     console.log(array_inputs_itemNbr)
     console.log(array_inputs_value)
     //
-    let kg=0;
+    let kg = 0;
     while (array_iterate[0] < array_inputs_itemNbr[0]) {
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
@@ -100,13 +100,15 @@ function create_calculator_output() {
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
             array_iterate[itteration_id]++
         } else {
-            for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
-                array_iterate[modifier_nbr-id_increment] = 0
-                if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
-                    array_iterate[itteration_id - id_increment]++
-                    test_id = 1
+            if (array_iterate[0] < array_inputs_itemNbr[0]) {
+                for (let test_id = 0, id_increment = 1; test_id == 0; id_increment++) {
+                    array_iterate[modifier_nbr - id_increment] = 0
+                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
+                        array_iterate[itteration_id - id_increment]++
+                        test_id = 1
+                    }
+                    console.log('test')
                 }
-            console.log('test')
             }
         }
         console.log(array_iterate)
