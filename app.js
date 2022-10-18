@@ -95,8 +95,8 @@ function create_calculator_output() {
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
             calculated_diag.concat(`${array_inputs_value[i][array_iterate[i]]}`)
+            console.log(calculated_diag)
         }
-        console.log(calculated_diag)
         let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
