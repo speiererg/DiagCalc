@@ -93,7 +93,7 @@ function create_calculator_output() {
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
         let calculated_diag = ""
-        for (let i = 0; i < modifier_nbr; i++) {
+        for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag.concat("test")
             console.log(calculated_diag)
         }
