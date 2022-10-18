@@ -90,13 +90,12 @@ function create_calculator_output() {
     //array_iterate[0] <= array_inputs_itemNbr[0]
     let kg = 0
     while (kg < 30) {
-        console.log(array_iterate)
         let calculated_diag = ""
         for (let i = 0; i < modifier_nbr; i++) {
             calculated_diag.concat(array_inputs_value[i][array_iterate[i]])
         }
         console.log(calculated_diag)
-        iterate_id(array_iterate,itteration_id)
+        iterate_id(array_iterate, itteration_id)
 
         /*let row_output_calculator = document.createElement('tr')
         let row_output_calculator_Column = document.createElement('td')
@@ -125,7 +124,9 @@ for (let modifier1 = 0; modifier1 < array_inputs_itemNbr[0]; modifier1++) {
     }
 }
 */
-function iterate_id(array_iterate,itteration_id) {
+function iterate_id(array_iterate, itteration_id) {
+    console.log(array_iterate)
+    console.log(itteration_id)
     if (array_iterate[itteration_id] < array_inputs_itemNbr[itteration_id]) {
         array_iterate[itteration_id]++
     } else {
