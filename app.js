@@ -89,6 +89,7 @@ function create_calculator_output() {
     console.log(array_inputs_value)
     
 // Send XML
+console.log('send XML')
     XML_output = XML_Beginn + XML_temp + XML_End
     document.getElementById('input_XML').value = XML_output
     
