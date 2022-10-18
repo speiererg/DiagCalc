@@ -92,7 +92,7 @@ function create_calculator_output() {
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
-        var calculated_diag = ""
+        var calculated_diag = "sdf"
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag.concat("test")
             console.log(calculated_diag)
