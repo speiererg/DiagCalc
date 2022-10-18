@@ -119,7 +119,7 @@ body {
 /* --------   Content Table Design ----------- */
 
 .CSS_contentTable {
-  border: 1px solid black;
+  border: none;
 }
 
 .CSS_contentTable td {
