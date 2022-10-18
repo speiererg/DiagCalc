@@ -84,12 +84,12 @@ function create_calculator_output() {
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
-    
-// Send XML
-console.log('send XML')
-    XML_output = XML_Beginn 
 
-// Creation of Items
+    // Send XML
+    console.log('send XML')
+    XML_output = XML_Beginn
+
+    // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
@@ -103,19 +103,19 @@ console.log('send XML')
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 
-        XML_output = XML_output + createXML('ID_TERM_1234','MedSP',calculated_diag).toString
+        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag).toString
 
 
- // Array Calculation
+        // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
             array_iterate[itteration_id]++
         } else {
-            if (array_iterate[0] < (array_inputs_itemNbr[0]-1)) {
-                for (let test_id= 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
+            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
+                for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
                     array_iterate[modifier_nbr - id_increment] = 0
                     if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
                         array_iterate[itteration_id - id_increment]++
-                        test_id = modifier_nbr+1
+                        test_id = modifier_nbr + 1
                     }
                     test_id++
                 }
@@ -124,10 +124,10 @@ console.log('send XML')
 
     }
 
-// finalize XML
+    // finalize XML
 
-XML_output = XML_output + XML_End
-document.getElementById('input_XML').value = XML_output
+    XML_output = XML_output + XML_End
+    document.getElementById('input_XML').value = XML_output
 }
 
 function addInputRow() {
@@ -180,8 +180,80 @@ function addInputColumn() {
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
 
 }
+function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription) {
+    return XML_temp = `            
+    <ss:Row>
+    <ss:Cell>
+        <ss:Data ss:Type="String">${ID - ID_Term}</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">${DiagnosisVendor}</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">${DiagnosisDescription}</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">Updated by Chronicles import.</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">Herzinsuff</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">BEGRIFF</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">ICD-10-GM</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">Nein</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">ICD-10-GM</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">01.01.2018</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">Term : Code</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">I50.01</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">NYHA&#10;Akute Dekompensation</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">190035&#10;190040&#10;190046&#10;190057&#10;190090</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">Herzinsuffizienz NYHA I&#10;Herzinsuffizienz NYHA II&#10;Herzinsuffizienz NYHA III&#10;Herzinsuffizienz NYHA IV&#10;Dekompensierte Herzinsuffizienz</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+        <ss:Data ss:Type="String">NYHA I&#10;NYHA II&#10;NYHA III&#10;NYHA IV&#10;NYHA I&#1;Linkfsführende</ss:Data>
+    </ss:Cell>
+    <ss:Cell></ss:Cell>
+    <ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
+    </ss:Row>`
+}
+
 
 loadingIndex()
+
+
+
+
 
 var XML_Beginn = `<?xml version="1.0" encoding="UTF-8"?>
 <?mso-application progid="Excel.Sheet"?>
@@ -1211,71 +1283,4 @@ var XML_End = `<ss:Row>
 </Worksheet>
 </Workbook>`
 
-var 
-function createXML(ID_Term,DiagnosisVendor,DiagnosisDescription){
-return XML_temp = `            
-<ss:Row>
-<ss:Cell>
-    <ss:Data ss:Type="String">${ID-ID_Term}</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">${DiagnosisVendor}</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">${DiagnosisDescription}</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">Updated by Chronicles import.</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">Herzinsuff</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">BEGRIFF</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">ICD-10-GM</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">Nein</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">ICD-10-GM</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">01.01.2018</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">Term : Code</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">I50.01</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">NYHA&#10;Akute Dekompensation</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">190035&#10;190040&#10;190046&#10;190057&#10;190090</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">Herzinsuffizienz NYHA I&#10;Herzinsuffizienz NYHA II&#10;Herzinsuffizienz NYHA III&#10;Herzinsuffizienz NYHA IV&#10;Dekompensierte Herzinsuffizienz</ss:Data>
-</ss:Cell>
-<ss:Cell>
-    <ss:Data ss:Type="String">NYHA I&#10;NYHA II&#10;NYHA III&#10;NYHA IV&#10;NYHA I&#1;Linkfsführende</ss:Data>
-</ss:Cell>
-<ss:Cell></ss:Cell>
-<ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
-</ss:Row>`
-}
+
