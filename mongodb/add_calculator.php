@@ -34,7 +34,7 @@ $insertOneResult = $collection->insertOne([
 ]);
 
 
-printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
+// printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
 
 // header('Location: ../index.php');
 ?>
