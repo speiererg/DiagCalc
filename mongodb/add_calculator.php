@@ -1,7 +1,7 @@
 <?php
   require '../vendor/autoload.php';
 
-$inputs_output = '';
+$inputs_output = '[';
 
 echo  $_POST['modifier_nbr'];
 
@@ -11,7 +11,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $inputs_output = $inputs_output . "'input{$i}_{$k}' => '" . $_POST[$input_ID] . "'" . ', ';
    }
 }
-
+$inputs_output = $inputs_output. ']';
 echo $inputs_output;
 
   $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
@@ -26,8 +26,7 @@ $insertOneResult = $collection->insertOne([
       'mainName' => 'Herzinsuffizienz',
    'Version' => '1'],
    
-   'inputs' =>
-   [$inputs_output]
+   'inputs' => $inputs_output
    
 ]);
 
