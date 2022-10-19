@@ -142,6 +142,10 @@ body {
   padding:0px;
 }
 
+#tr_maindiagnose{
+  font-size: small;
+}
+
 .input_maindiagnose{
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
