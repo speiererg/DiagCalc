@@ -103,8 +103,8 @@ function create_calculator_output() {
         row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator.appendChild(row_output_calculator_Column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-       
-       
+
+
         // Append to XML
         console.log(calculated_diag)
         XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
@@ -162,7 +162,7 @@ function addInputColumn() {
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
-// Checkbox Not Required
+    // Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('checked', 'true')
@@ -170,14 +170,14 @@ function addInputColumn() {
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-//Checkbox Multiple
-let input_checkbox = document.createElement('input');
-input_checkbox.setAttribute('type', 'checkbox')
-input_checkbox.setAttribute('checked', 'false')
-input_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
-let column_input_checkbox = document.createElement('td')
-column_input_checkbox.appendChild(input_checkbox);
-document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_checkbox)
+    //Checkbox Multiple
+    let input_multiple_checkbox = document.createElement('input');
+    input_multiple_checkbox.setAttribute('type', 'checkbox')
+    input_multiple_checkbox.setAttribute('checked', 'false')
+    input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
+    let column_input_multiple_checkbox = document.createElement('td')
+    column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
+    document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
 
     console.log(modifierSub_nbr)
