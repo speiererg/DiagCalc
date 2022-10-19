@@ -25,7 +25,7 @@ $insertOneResult = $collection->insertOne([
       'mainName' => 'Herzinsuffizienz',
    'Version' => '1'],
    
-   'inputs' => array($inputs_output)
+   'inputs' => $inputs_output
    
 ]);
 
