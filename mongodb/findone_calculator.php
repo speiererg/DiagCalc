@@ -6,8 +6,8 @@ $db = $client->test;
 
 
 $collection = $client->DiagCalc_Calculators->Calculators;
-
-$item = $collection->findOne(array('id' => $_POST['id']));
+$id = $_POST['id']
+$item = $collection->findOne(array('id' => "{$id}"));
 
 $test = json_encode($item);
 echo $test;
