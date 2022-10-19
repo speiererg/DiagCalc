@@ -161,6 +161,8 @@ function addInputColumn() {
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
+    column_input_radio.appendChild(document.createTextNode("Main"))
+
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
     // Checkbox Not Required
     let input_checkbox = document.createElement('input');
@@ -170,6 +172,7 @@ function addInputColumn() {
     input_checkbox.setAttribute('class', `input_checkbox`)
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
+    column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
     
     //Checkbox Multiple
