@@ -78,7 +78,13 @@ function find_home_mongoDB(id, version) {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
+            for (let i=0; i < length.results_JSON ;i++){
+                let link = document.createElement('a')
+                let text_name = document.createTextNode(results_JSON[i]['name'])
+                link.appendChild(text_name)
+                document.getElementById('mainpage').appendChild(link)
+            }
+
         }
     };
     xmlhttp.open("POST", "mongodb/find_home.php", true);
