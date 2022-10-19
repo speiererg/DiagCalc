@@ -135,6 +135,12 @@ body {
   padding:0px;
 }
 
+#table_input tr{
+  text-align: center;
+  margin:0px;
+  padding:0px;
+}
+
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
@@ -167,7 +173,7 @@ body {
 }
 
 .input_checkbox{
-  border: solid 2px var(--div-seperation);
+    border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
   text-align:center;
   display:inline-block;
