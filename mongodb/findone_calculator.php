@@ -9,8 +9,8 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $item = $collection->findOne(array('id' => '2'));
 
-
-echo json_encode($item);
+$test = json_encode($item);
+echo $test;
 
 echo '<pre>';
 print_r($item);
