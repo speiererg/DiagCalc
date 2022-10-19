@@ -2,7 +2,7 @@ var modifier_nbr = 3
 document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
 var modifierSub_nbr = 4
 document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
-
+var confirmBeforeNavigate = 0
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
@@ -13,9 +13,58 @@ var Code_ModifierSeparator = "&#1;"
 
 // Loading 
 function loadingIndex() {
+    changePage('mainContent/home')
     document_addeventlistener()
 }
 
+
+
+function document_addeventlistener() {
+    document.getElementById('button_calculate').addEventListener('click', click_calculate)
+    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
+    document.getElementById('button_findOne_calculator').addEventListener('click', findOne_Calculator_mongoDB)
+
+    for (let i = 0; i <= modifier_nbr; i++) {
+        document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
+    }
+}
+
+
+function changePage(page) {
+    actualPage = page
+    if (confirmBeforeNavigate == 1) {
+        if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
+            changePageExecute(page)
+            confirmBeforeNavigate = 0
+        }
+    } else {
+        changePageExecute(page)
+    }
+}
+
+function changePageExecute(page) {
+    actualPage = page
+
+    var xhttp;
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("mainpage").innerHTML = ""
+            document.getElementById("mainpage").innerHTML = this.responseText
+            if (page == "home") {
+                // let script1 = document.createElement('script');
+                //script1.setAttribute('src', 'js/kurvenEdit.js');
+                // document.body.appendChild(script1);
+            }
+        }
+    }
+    xhttp.open("POST", `${page}.php`);
+    xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xhttp.send(``);
+
+}
+//Tools
 
 function modifier_nbr_change(change, number) {
     if (change == "++") {
@@ -34,27 +83,16 @@ function modifierSub_nbr_change(change, number) {
     }
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
+//MongoDB Tools
 
-function document_addeventlistener() {
-    document.getElementById('button_calculate').addEventListener('click', click_calculate)
-    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-    document.getElementById('button_findOne_calculator').addEventListener('click', findOne_Calculator_mongoDB)
-
-    for (let i = 0; i <= modifier_nbr; i++) {
-        document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
-    }
-}
-
-
-function findOne_Calculator_mongoDB(id,version){
+function findOne_Calculator_mongoDB(id, version) {
     var xmlhttp = new XMLHttpRequest();
     let params = 'id=3&test=55';
-    xmlhttp.onreadystatechange = function() {
+    xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
-           console.log(myObj)
-           console.log(myObj['inputs'])
+            console.log(myObj)
+            console.log(myObj['inputs'])
         }
     };
     xmlhttp.open("POST", "mongodb/findone_calculator.php", true);
