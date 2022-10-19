@@ -180,7 +180,7 @@ function addInputColumn() {
     input_multiple_checkbox.setAttribute('class', `input_checkbox`)
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
-    column_input_multiple_checkbox.textContent('Multiple')
+    column_input_multiple_checkbox.appendChild(document.createElement('span').innerHTML = "Multiple")
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
 
