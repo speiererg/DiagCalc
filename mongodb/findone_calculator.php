@@ -12,11 +12,6 @@ $item = $collection->findOne(array('id' => '2'));
 $test = json_encode($item);
 echo $test;
 
-echo '<pre>';
-print_r($item);
-echo '</pre>';
-
-
 // header('Location: ../index.php');
 ?>
 

@@ -116,6 +116,9 @@
                 <input type="submit" name="button2"  class="button_download" value="FindOne in MongoDB" />
               </form>  
             </td>
+            <td>
+                <input type="submit" id="button_findone_calculator" value="FindOne in MongoDB" />
+            </td>
 </tr>
 </table>
            </td>
@@ -155,6 +158,7 @@
 
 
   <script src="app.js"></script>
+  <script src="getmongodb.js"></script>
 
 
 </body>

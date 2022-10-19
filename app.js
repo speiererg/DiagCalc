@@ -1,7 +1,7 @@
 var modifier_nbr = 3
-document.getElementById('input_hidden_modifier_nbr').value=modifier_nbr
+document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
 var modifierSub_nbr = 4
-document.getElementById('input_hidden_modifierSub_nbr').value=modifier_nbr
+document.getElementById('input_hidden_modifierSub_nbr').value = modifier_nbr
 
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
@@ -10,35 +10,36 @@ var array_hiden_ID = "";
 
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
+
 // Loading 
 function loadingIndex() {
     document_addeventlistener()
 }
 
 
-function modifier_nbr_change(change,number){
-    if (change == "++"){
-        modifier_nbr = modifier_nbr+number
-    }else if (change == "--"){
-        modifier_nbr = modifier_nbr-number
+function modifier_nbr_change(change, number) {
+    if (change == "++") {
+        modifier_nbr = modifier_nbr + number
+    } else if (change == "--") {
+        modifier_nbr = modifier_nbr - number
     }
-    document.getElementById('input_hidden_modifier_nbr').value=modifier_nbr
+    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
 }
 
-function modifierSub_nbr_change(change,number){
-    if (change == "++"){
-        modifierSub_nbr = modifierSub_nbr+number
-    }else if (change == "--"){
-        modifierSub_nbr = modifierSub_nbr-number
+function modifierSub_nbr_change(change, number) {
+    if (change == "++") {
+        modifierSub_nbr = modifierSub_nbr + number
+    } else if (change == "--") {
+        modifierSub_nbr = modifierSub_nbr - number
     }
-    document.getElementById('input_hidden_modifierSub_nbr').value=modifierSub_nbr
+    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
 
 function document_addeventlistener() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-
+    document.getElementById('button_findOne_calculator').addEventListener('click', findOne_Calculator_mongoDB)
 
     for (let i = 0; i <= modifier_nbr; i++) {
         document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
@@ -174,7 +175,7 @@ function addInputRow() {
         row_input.appendChild(column_input)
     }
     document.getElementById('table_input').appendChild(row_input)
-    modifierSub_nbr_change('++',1)
+    modifierSub_nbr_change('++', 1)
 }
 
 function addInputColumn() {
@@ -196,7 +197,7 @@ function addInputColumn() {
     let column_input_title = document.createElement('td')
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
-    input_title_span.setAttribute('class','input_title')
+    input_title_span.setAttribute('class', 'input_title')
     column_input_title.appendChild(input_title_span)
     document.getElementById('tr_input_title').appendChild(column_input_title)
 
@@ -247,7 +248,7 @@ function addInputColumn() {
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
-    modifier_nbr_change('++',1)
+    modifier_nbr_change('++', 1)
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
 
 }
