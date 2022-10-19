@@ -11,7 +11,7 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$cursor = $collection->find('active' => 'yes');
+$cursor = $collection->find('active' : 'yes');
 
 //$response = $collection->find("{$item}" : "{$value}");
 
