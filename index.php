@@ -157,7 +157,7 @@ $insertOneResult = $collection->insertOne([
 ]);
 
 printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
-echo 'test';
+echo "test";
 ?>
 
 
