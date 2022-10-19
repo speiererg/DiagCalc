@@ -31,7 +31,7 @@ function modifierSub_nbr_change(change,number){
     }else if (change == "--"){
         modifierSub_nbr = modifierSub_nbr-number
     }
-    document.getElementById('input_hidden_modifierSub_nbr').value=modifier_nbr
+    document.getElementById('input_hidden_modifierSub_nbr').value=modifierSub_nbr
 }
 
 function document_addeventlistener() {
