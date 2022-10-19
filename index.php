@@ -139,6 +139,17 @@
   <div id="footer">
   </div>
 
+  // connect to mongodb
+  <?php
+
+$client = new MongoDB\Client(
+   'mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority'
+);
+$db = $client->test;
+?>
+
+
+
   <script src="app.js"></script>
 
 
