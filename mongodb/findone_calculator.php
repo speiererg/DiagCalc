@@ -9,8 +9,9 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $item = $collection->findOne(array('id' => '2'));
 
-echo $item ;
-
+echo '<pre>';
+print_r($item);
+echo '</pre>';
 
 // header('Location: ../index.php');
 ?>
