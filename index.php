@@ -117,7 +117,7 @@
               </form>  
             </td>
             <td>
-                <input type="submit" id="button_findone_calculator" value="FindOne in MongoDB" />
+                <input type="submit" id="button_findOne_calculator" value="FindOne in MongoDB" />
             </td>
 </tr>
 </table>
