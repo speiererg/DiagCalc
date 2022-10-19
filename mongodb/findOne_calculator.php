@@ -7,12 +7,9 @@ $db = $client->test;
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 $id = $_POST['id'];
-$item = $collection->findOne(array('id' => "{$id}"));
+$cursor = $collection->findOne(array('id' => "{$id}"));
 
-$test = json_encode($item);
-echo $test;
-
-// header('Location: ../index.php');
+echo json_encode($cursor);
 ?>
 
 
