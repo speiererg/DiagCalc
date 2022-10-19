@@ -129,7 +129,7 @@ body {
 }
 
 /* --------   Input Table Design ----------- */
-.table_input td{
+#table_input td{
   text-align: center;
 }
 
