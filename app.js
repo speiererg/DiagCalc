@@ -11,8 +11,9 @@ var Code_ModifierSeparator = "&#1;"
 
 // Loading 
 function loadingIndex() {
-    changePage('calculator')
+    changePage('home')
     addEventListener()
+    find_home_mongoDB()
 }
 
 function addEventListener(){
@@ -33,8 +34,6 @@ function changePage(page) {
 }
 
 function changePageExecute(page) {
-
-console.log(page)
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -54,7 +53,6 @@ console.log(page)
 
 }
 //Tools
-
 function modifier_nbr_change(change, number) {
     if (change == "++") {
         modifier_nbr = modifier_nbr + number
