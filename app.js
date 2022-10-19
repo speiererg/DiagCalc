@@ -77,11 +77,8 @@ function find_home_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
-            console.log( Object.keys(results_JSON).length
-            ) ;
 
-            for (let i=0; i < length.results_JSON ;i++){
+            for (let i=0; i < Object.keys(results_JSON).length ;i++){
                 console.log(results_JSON[i]['name'])
                 let link = document.createElement('a')
                 let text_name = document.createTextNode(results_JSON[i]['name'])
