@@ -22,8 +22,8 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $insertOneResult = $collection->insertOne([
    'parameters' => 
    ['id' => '1',
-      'mainName' => 'Herzinsuffizienz',
-   'Version' => '1'],
+      'mainName' => $POST['input_maindiagnose'],
+   'Version' => $POST['select_version']],
    
    'inputs' => $inputs_output
    

@@ -166,6 +166,8 @@ function addInputRow() {
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('class', `input_modifier`);
+        input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
+        input_input.setAttribute('form', `form_saveMongoDB`);
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
         column_input.appendChild(input_input)
 
@@ -234,6 +236,9 @@ function addInputColumn() {
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
         input_input.setAttribute('class', `input_modifier`);
+        input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
+        input_input.setAttribute('form', `form_saveMongoDB`);
+
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }

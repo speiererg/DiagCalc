@@ -30,8 +30,8 @@
       <table class="CSS_contentTable">
         <tr id="tr_maindiagnose">
           <td>
-           Main Diagnose: <input type="text" id="input_maindiagnose" class="input_maindiagnose" value="Herzinsuffizienz" form="form_saveMongoDB"> 
-           Version: <select id="select_version" class="input_select" form="form_saveMongoDB"><option value="0" selected>Ver. 1</option></select>
+           Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose" value="Herzinsuffizienz" form="form_saveMongoDB"> 
+           Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="0" selected>Ver. 1</option></select>
           </td>
         </tr>
         <tr>
