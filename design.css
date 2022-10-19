@@ -9,15 +9,6 @@
 
 }
 
-iframe{
-  height:0px;
-  display:none;
-}
-
-.colorTEST {
-  color: #b9b9b9;
-}
-
 /* --------   Navigationbar Design ----------- */
 
 #navigationbar li a.REARed {
@@ -66,7 +57,6 @@ iframe{
 /* --------   Page Structure ----------- */
 body {
   font-family: var(--fontfamily);
-  margin: 5px;
   padding: 0px;
   font-size: 0.7em;
   background-color: var(--div-color);
@@ -123,6 +113,7 @@ body {
 
 .CSS_contentTable {
   border: none;
+  margin:5px;
 }
 
 .CSS_contentTable td {
@@ -160,7 +151,7 @@ body {
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
-  width:150px;
+  width:180px;
   border-radius:3px;
   font-size: var(--font-size);
 
