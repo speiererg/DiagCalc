@@ -28,7 +28,7 @@
   <div id="maincontent">
     <div id="mainpage">
       <table class="CSS_contentTable">
-        <tr id="tr_maindiagnose" style="margin: 5px;">
+        <tr id="tr_maindiagnose">
           <td>
            Main Diagnose: <input type="text" id="input_maindiagnose" class="input_maindiagnose" value="Herzinsuffizienz"> 
            Version: <select id="select_version" class="input_select"><option value="0" selected>Ver. 1</option></select>
