@@ -14,10 +14,13 @@ $value = $_POST['value'];
 $params = array('active' => 'yes');
 
 $cursor = $collection->find($params);
+
+echo json_encode(iterator_to_array($cursor));
+/*
 foreach ($cursor as $doc) {
     json_encode(var_dump($doc));
 }
-/*
+
 $cursor = $collection->find(
     [
         'active' => 'yes',
