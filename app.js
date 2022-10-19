@@ -82,6 +82,7 @@ function find_home_mongoDB(id, version) {
                 console.log(results_JSON[i]['name'])
                 let link = document.createElement('a')
                 link.setAttribute('href', '')
+                link.setAttribute('id', `ahref_calculator_${results_JSON[i]['id']}`)
                 let text_name = document.createTextNode(results_JSON[i]['name'])
                 link.appendChild(text_name)
                 document.getElementById('mainpage').appendChild(link)
