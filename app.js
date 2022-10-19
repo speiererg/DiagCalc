@@ -1,7 +1,7 @@
 var modifier_nbr = 3
 document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
 var modifierSub_nbr = 4
-document.getElementById('input_hidden_modifierSub_nbr').value = modifier_nbr
+document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
