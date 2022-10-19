@@ -3,6 +3,8 @@
 
 $inputs_output = '';
 
+echo  $_POST['input_hidden_modifier_nbr'];
+
 for ($i = 1; $i <= $_POST['input_hidden_modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['input_hidden_modifierSub_nbr']; $k++) {
       $input_ID = "inputs{$i}_{$k}";
@@ -10,6 +12,7 @@ for ($i = 1; $i <= $_POST['input_hidden_modifier_nbr']; $i++) {
    }
 }
 
+echo $inputs_output;
 
 
 
@@ -33,5 +36,5 @@ $insertOneResult = $collection->insertOne([
 
 printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
 
-header('Location: ../index.php');
+// header('Location: ../index.php');
 ?>
