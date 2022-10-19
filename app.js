@@ -49,7 +49,8 @@ function document_addeventlistener() {
 
 function findOne_Calculator_mongoDB(id,version){
     var xmlhttp = new XMLHttpRequest();
-  
+    let params = 'id=2';
+
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
@@ -57,8 +58,8 @@ function findOne_Calculator_mongoDB(id,version){
            console.log(myObj['inputs'])
         }
     };
-    xmlhttp.open("GET", "mongodb/findone_calculator.php", true);
-    xmlhttp.send();
+    xmlhttp.open("POST", "mongodb/findone_calculator.php", true);
+    xmlhttp.send(params);
 }
 
 
