@@ -29,6 +29,10 @@
     <div id="mainpage">
       <table class="CSS_contentTable">
         <tr>
+          Main Diagnose<input type="text" id="input_maindiagnose" class="input_maindiagnose"> 
+          Version: <select id="select_version" class="input_select"><option value="0" selected>Ver. 1</option></select>
+</tr>
+        <tr>
           <td>
             <table id="table_input">
             <tr id="tr_input_title">

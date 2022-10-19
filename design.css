@@ -142,6 +142,15 @@ body {
   padding:0px;
 }
 
+.input_maindiagnose{
+  border: solid 2px var(--div-seperation);
+  background-color: var(--div-color-hell);
+  padding: 5px, 5px, 5px, 5px;
+  width:200px;
+  display:inline-block;
+  vertical-align:middle;
+  border-radius:4px;
+}
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
