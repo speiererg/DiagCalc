@@ -18,14 +18,13 @@ $db = $client->test;
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
-$insertOneResult = $collection->insertOne([
- 
-   'id' => '2',
-   'mainName' => $_POST['input_maindiagnose'],
-   'Version' => $_POST['select_version'],
-   'inputs' => $inputs_output
-   
-]);
+$item = $collection->findOne(array('_id' => $theObjId));
 
- header('Location: ../index.php');
+echo $item ;
+
+
+// header('Location: ../index.php');
 ?>
+
+
+
