@@ -11,7 +11,7 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$cursor = $collection->find(
+$cursor = $collection->findOne(
     [
         'active' => 'yes',
     ],
@@ -24,7 +24,6 @@ $cursor = $collection->find(
 
 $test = json_encode($cursor);
 echo $test;
-echo 'salut'
 
 // header('Location: ../index.php');
 ?>
