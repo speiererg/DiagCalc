@@ -132,6 +132,7 @@ body {
 /* --------   Input Table Design ----------- */
 #table_input{
   font-size: var(--font-size);
+  margin:5px;
 }
 
 #table_input td{
