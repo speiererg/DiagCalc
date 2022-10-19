@@ -16,9 +16,9 @@ function loadingIndex() {
     find_home_mongoDB()
 }
 
-function addEventListener(){
-    document.getElementById('navPageHome').addEventListener('click', function (){changePage('home')})
-    document.getElementById('navPageCalculator').addEventListener('click', function (){changePage('calculator')})
+function addEventListener() {
+    document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
+    document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
 }
 
 function changePage(page) {
@@ -77,8 +77,8 @@ function find_home_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
-           // let results_JSON = JSON.parse(this.responseText);
-            //console.log(results_JSON)
+            let results_JSON = JSON.parse(this.responseText);
+            console.log(results_JSON)
         }
     };
     xmlhttp.open("POST", "mongodb/find_home.php", true);
