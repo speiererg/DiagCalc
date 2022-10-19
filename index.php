@@ -96,6 +96,7 @@
                 <input type="submit" name="button1"  class="button_download" value="Download as XML" />
               </form>
              <p>
+            
               <form name="form" action="download/download_txt.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_TXT" value="" >
                 <input type="submit" name="button2"  class="button_download" value="Download as TXT" />
@@ -104,8 +105,10 @@
 </tr>
 </table>
            </td>
-          <td>
-           
+<!--  Right Component -->
+           <td>
+<p>
+  <p>
               <img src="img/add.png" id="img_button_add_column" width="30" height="30">
           <p>
               <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
