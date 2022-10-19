@@ -1,3 +1,4 @@
+<?php echo $_POST['id']?>
 <table class="CSS_contentTable">
         <tr id="tr_maindiagnose">
           <td>
