@@ -36,8 +36,6 @@
         </tr>
         <tr>
           <td>
-          <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
-
             <table id="table_input">
             <tr id="tr_input_title">
                 <td><span class="input_title">Modifier 1</span></td>
@@ -107,6 +105,7 @@
               </form>
               </td>
               <td>
+              <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
               <input type="hidden" name="modifier_nbr" id="input_hidden_modifier_nbr" value="" >
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />

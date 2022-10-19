@@ -7,8 +7,8 @@ echo  $_POST['modifier_nbr'];
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
-      $input_ID = "inputs{$i}_{$k}";
-      $inputs_output = $inputs_output . "'inputs{$i}_{$k}' => " . $_POST[$input_ID];
+      $input_ID = "input{$i}_{$k}";
+      $inputs_output = $inputs_output . "'input{$i}_{$k}' => " . $_POST[$input_ID];
       echo $_POST[$input_ID];
    }
 }
