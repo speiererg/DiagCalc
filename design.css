@@ -134,17 +134,23 @@ body {
   background-color: var(--div-color-hell);
   padding: 5px, 5px, 5px, 5px;
   width:200px;
+  display:inline-block;
+  vertical-align:middle;
 }
 
 .input_title{
   font-size:medium;
   font-weight: bold;
+  display:inline-block;
+  vertical-align:middle;
 }
 
 .input_select{
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
   text-align:center;
+  display:inline-block;
+  vertical-align:middle;
 }
 
 /* --------   Button Design ----------- */
