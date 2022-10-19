@@ -156,6 +156,8 @@ $insertOneResult = $collection->insertOne([
    'name' => 'Admin User',
 ]);
 
+printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
+
 ?>
 
 
