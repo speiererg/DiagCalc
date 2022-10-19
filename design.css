@@ -136,6 +136,10 @@ body {
   width:200px;
 }
 
+.input_title{
+  font-size:large
+}
+
 /* --------   Button Design ----------- */
 .btn-holder {
   display: flex;

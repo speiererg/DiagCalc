@@ -31,6 +31,16 @@
         <tr>
           <td>
             <table id="table_input">
+            <tr id="tr_input_title">
+                <td><span class="input_title">Modifier 1</span></td>
+                <td><span class="input_title">Modifier 2</span></td>
+                <td><span class="input_title">Modifier 3</span></td>
+              </tr>              
+              <tr id="tr_input_separator">
+                <td><select id="select_input_1"><?php include 'include/select_input.php'?></select></td>
+                <td><select id="select_input_2"><?php include 'include/select_input.php'?></select></td>
+                <td><select id="select_input_3"><?php include 'include/select_input.php'?></select></td>
+              </tr> 
              <tr id="tr_input_radio">
                 <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input"></td>
                 <td><input type="radio" id="radio_input_2" name="radio_input" value="2" class="radio_input"></td>
