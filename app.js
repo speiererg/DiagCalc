@@ -85,7 +85,7 @@ function find_home_mongoDB(id, version) {
                 let text_name = document.createTextNode(results_JSON[i]['name'])
                 link.appendChild(text_name)
                 document.getElementById('mainpage').appendChild(link)
-                document.getElementById(`ahref_calculator_${results_JSON[i]['id']}`).addEventListener('click', function(){changepage(`calculator`,`id= ${results_JSON[i]['id']}`)})
+                document.getElementById(`ahref_calculator_${results_JSON[i]['id']}`).addEventListener('click', function(){changePage(`calculator`,`id= ${results_JSON[i]['id']}`)})
             }
 
         }
