@@ -51,7 +51,7 @@
                 <td><input type="checkbox" id="checkbox_input_2" class="input_checkbox"checked>Not required</td>
                 <td><input type="checkbox" id="checkbox_input_3"class="input_checkbox"checked>Not required</td>
               </tr>  
-              <tr id="tr_input_multiple">
+              <tr id="tr_input_multiple_checkbox">
                 <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox">Multiple</td>
                 <td><input type="checkbox" id="checkbox_multiple_input_2"class="input_checkbox">Multiple</td>
                 <td><input type="checkbox" id="checkbox__multiple_input_3" class="input_checkbox">Multiple</td>
