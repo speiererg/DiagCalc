@@ -45,6 +45,10 @@ function changePageExecute(page,params) {
                 script1.setAttribute('src', 'calculator.js');
                 document.body.appendChild(script1);
             }
+            if (page == "home") {
+                find_home_mongoDB()
+
+            }
         }
     }
     xhttp.open("POST", `mainContent/${page}.php`);
