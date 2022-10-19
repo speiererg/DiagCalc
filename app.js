@@ -166,7 +166,9 @@ function addInputColumn() {
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
-    column_input_title.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+    let input_title_span = document.createElement('span').appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+    input_title_span.setAttribute('class','input_title')
+    column_input_title.appendChild(input_title_span)
     document.getElementById('tr_input_title').appendChild(column_input_title)
 
 
@@ -175,7 +177,9 @@ function addInputColumn() {
     let input_select = document.createElement('select');
     input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
     input_select.setAttribute('class', `input_select`)
-    input_select.innerHTML = "<?php include 'include/select_input.php' ?>"
+    let input_select_script = document.createElement('script')
+    input_select_script.innerHTML = "<?php include 'include/select_input.php' ?>"
+    input_select.appendChild(input_select_script)
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
 
@@ -193,7 +197,6 @@ function addInputColumn() {
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
-    input_multiple_checkbox.setAttribute('checked', 'false')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('class', `input_checkbox`)
     let column_input_multiple_checkbox = document.createElement('td')
