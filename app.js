@@ -87,6 +87,7 @@ function find_home_mongoDB(id, version) {
 }
 
 function findOne_Calculator_mongoDB(id, version) {
+    console.log('test')
     var xmlhttp = new XMLHttpRequest();
     let params = 'id=3&test=55';
     xmlhttp.onreadystatechange = function () {
