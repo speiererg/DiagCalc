@@ -17,7 +17,9 @@ function loadingIndex() {
 
 function addEventListener(){
     document.getElementById('navPageHome').addEventListener('click', function (){changePage('home')})
+    document.getElementById('navPageCalculator').addEventListener('click', function (){changePage('calculator')})
 }
+
 function changePage(page) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
