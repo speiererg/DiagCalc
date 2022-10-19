@@ -12,9 +12,9 @@ $item = $_POST['item'];
 $value = $_POST['value'];
 
 
-$item = $collection->find("{$item}" : "{$value}");
+$response = $collection->find(array("{$item}" => "{$value}"));
 
-$test = json_encode($item);
+$test = json_encode($response);
 echo $test;
 
 // header('Location: ../index.php');
