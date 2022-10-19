@@ -54,8 +54,8 @@ function findOne_Calculator_mongoDB(id,version){
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
            console.log(myObj)
-           console.log(myObj.input)
-           console.log(myObj.input.input1_1)
+           console.log(myObj.inputs)
+           console.log(myObj.inputs.input1_1)
         }
     };
     xmlhttp.open("GET", "mongodb/findone_calculator.php", true);
