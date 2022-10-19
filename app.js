@@ -167,16 +167,20 @@ function addInputColumn() {
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('checked', 'true')
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
+    input_checkbox.setAttribute('class', `input_checkbox`)
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
+    
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
     input_multiple_checkbox.setAttribute('checked', 'false')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
+    input_multiple_checkbox.setAttribute('class', `input_checkbox`)
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
+    column_input_multiple_checkbox.textContent('Multiple')
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
 
