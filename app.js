@@ -1,5 +1,8 @@
 var modifier_nbr = 3
+document.getElementById('input_hidden_modifier_nbr').value=modifier_nbr
 var modifierSub_nbr = 4
+document.getElementById('input_hidden_modifierSub_nbr').value=modifier_nbr
+
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
@@ -10,6 +13,25 @@ var Code_ModifierSeparator = "&#1;"
 // Loading 
 function loadingIndex() {
     document_addeventlistener()
+}
+
+
+function modifier_nbr_change(change,number){
+    if (change == "++"){
+        modifier_nbr = modifier_nbr+number
+    }else if (change == "--"){
+        modifier_nbr = modifier_nbr-number
+    }
+    document.getElementById('input_hidden_modifier_nbr').value=modifier_nbr
+}
+
+function modifierSub_nbr_change(change,number){
+    if (change == "++"){
+        modifierSub_nbr = modifierSub_nbr+number
+    }else if (change == "--"){
+        modifierSub_nbr = modifierSub_nbr-number
+    }
+    document.getElementById('input_hidden_modifierSub_nbr').value=modifier_nbr
 }
 
 function document_addeventlistener() {
@@ -215,7 +237,7 @@ function addInputColumn() {
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
-    modifier_nbr++
+    modifier_nbr_change('++',1)
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
 
 }
