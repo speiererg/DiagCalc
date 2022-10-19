@@ -11,9 +11,18 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$response = $collection->find("{$item}" : "{$value}");
+$cursor = $collection->find(
+    [
+        'active' => 'yes',
+    ],
+    [
+        'limit' => 5,
+    ]
+);
 
-$test = json_encode($response);
+//$response = $collection->find("{$item}" : "{$value}");
+
+$test = json_encode($cursor);
 echo $test;
 
 // header('Location: ../index.php');
