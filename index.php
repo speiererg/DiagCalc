@@ -64,25 +64,25 @@
               </tr>  
               <tr id="tr_input_1">
                 <td><input type="text" id="input1_1" name="input1_1" value="Linksführende dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input3_1" value="NYHA I " class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_1" name="input2_1" value="Herzinsuffizienz" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_1" name="input3_1" value="NYHA I " class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_2">
-                <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input2_2" value="" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input3_2" value="NYHA II" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input1_2" name="input1_2" value="Rechtsführende dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_2" name="input2_2" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_2" name="input3_2" value="NYHA II" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_3">
               
-                <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input2_3" value="" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input3_3" value="NYHA III" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input1_3" name="input1_3" value="Biventrikuläre dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_3" name="input2_3" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_3" name="input3_3" value="NYHA III" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_4">
              
-                <td><input type="text" id="input1_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input2_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
-                <td><input type="text" id="input3_4" value="NYHA IV" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input1_4" name="input1_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_4" name="input2_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_4" name="input3_4" value="NYHA IV" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
             </table>
 
@@ -105,7 +105,7 @@
               </form>
               </td>
               <td>
-              <form id="form_saveMongoDB" action="mongodb/test.php" method="POST">
+              <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
               <input type="hidden" name="modifier_nbr" id="input_hidden_modifier_nbr" value="" >
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
