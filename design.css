@@ -60,6 +60,7 @@ body {
   padding: 0px;
   font-size: 0.7em;
   background-color: var(--div-color);
+  margin: 0px;
 
 }
 
@@ -113,7 +114,7 @@ body {
 
 .CSS_contentTable {
   border: none;
-  margin:5px;
+  margin: 5px;
 }
 
 .CSS_contentTable td {
@@ -121,76 +122,75 @@ body {
 }
 
 /* --------   Input Table Design ----------- */
-#table_input{
+#table_input {
   font-size: var(--font-size);
 
 }
 
-#table_input td{
+#table_input td {
   text-align: center;
 }
 
-#table_input tr{
+#table_input tr {
   text-align: center;
 }
 
-#tr_maindiagnose{
-}
+#tr_maindiagnose {}
 
-.input_maindiagnose{
+.input_maindiagnose {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
   padding: 5px, 5px, 5px, 5px;
-  width:200px;
-  display:inline-block;
-  vertical-align:middle;
-  border-radius:3px;
+  width: 200px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3px;
   font-size: var(--font-size)
 }
 
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
-  width:180px;
-  border-radius:3px;
+  width: 180px;
+  border-radius: 3px;
   font-size: var(--font-size);
 
 }
 
-.input_title{
-  font-size:medium;
+.input_title {
+  font-size: medium;
   font-weight: bold;
-  display:inline-block;
-  vertical-align:middle;
+  display: inline-block;
+  vertical-align: middle;
   padding: 0px;
-  margin:0px;
+  margin: 0px;
 }
 
-.input_select{
+.input_select {
   border: solid 1px var(--div-seperation);
   background-color: var(--div-color-hell);
-  text-align:center;
-  display:inline-block;
-  vertical-align:middle;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
   font-size: var(--font-size);
-  border-radius:3px;
+  border-radius: 3px;
   padding: 0px;
-  margin:0px;
+  margin: 0px;
 }
 
-.input_checkbox{
-    border: solid 1px var(--div-seperation);
+.input_checkbox {
+  border: solid 1px var(--div-seperation);
   background-color: var(--div-color-hell);
-  text-align:center;
-  display:inline-block;
-  vertical-align:middle;
-  border-radius:1px;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 1px;
   padding: 0px;
-  margin:0px;
+  margin: 0px;
 }
 
 /* --------   Button Design ----------- */
-.button_download{
+.button_download {
   background-color: var(--div-color-hell);
   border-style: solid;
   border-width: 1px;
