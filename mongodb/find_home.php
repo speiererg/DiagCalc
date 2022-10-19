@@ -11,7 +11,6 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-
 $response = $collection->find("{$item}" : "{$value}");
 
 $test = json_encode($response);
