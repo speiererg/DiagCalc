@@ -78,6 +78,8 @@ function find_home_mongoDB(id, version) {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
+            console.log(results_JSON[0]['name'])
+
             for (let i=0; i < length.results_JSON ;i++){
                 console.log(results_JSON[i]['name'])
                 let link = document.createElement('a')
