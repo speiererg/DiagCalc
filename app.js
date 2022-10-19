@@ -80,7 +80,7 @@ function find_home_mongoDB(id, version) {
 
             for (let i=0; i < Object.keys(results_JSON).length ;i++){
                 console.log(results_JSON[i]['name'])
-                let link = document.createElement('a')
+                let link = document.createElement('div')
                 link.setAttribute('id', `ahref_calculator_${results_JSON[i]['id']}`)
                 let text_name = document.createTextNode(results_JSON[i]['name'])
                 link.appendChild(text_name)
