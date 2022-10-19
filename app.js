@@ -166,7 +166,8 @@ function addInputColumn() {
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
-    let input_title_span = document.createElement('span').appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+    let input_title_span = document.createElement('span')
+    input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
     input_title_span.setAttribute('class','input_title')
     column_input_title.appendChild(input_title_span)
     document.getElementById('tr_input_title').appendChild(column_input_title)
