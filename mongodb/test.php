@@ -13,7 +13,7 @@ $insertOneResult = $collection->insertOne([
    'Version' => '1'],
    
    'inputs' =>
-   ['inputsa1' => 'test',
+   ['inputsa1' => $_POST['input1_1'],
    'inputsa2' => 'test2']
    
 ]);

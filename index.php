@@ -30,8 +30,8 @@
       <table class="CSS_contentTable">
         <tr id="tr_maindiagnose">
           <td>
-           Main Diagnose: <input type="text" id="input_maindiagnose" class="input_maindiagnose" value="Herzinsuffizienz"> 
-           Version: <select id="select_version" class="input_select"><option value="0" selected>Ver. 1</option></select>
+           Main Diagnose: <input type="text" id="input_maindiagnose" class="input_maindiagnose" value="Herzinsuffizienz" form="form_saveMongoDB"> 
+           Version: <select id="select_version" class="input_select" form="form_saveMongoDB"><option value="0" selected>Ver. 1</option></select>
           </td>
         </tr>
         <tr>
@@ -43,46 +43,46 @@
                 <td><span class="input_title">Modifier 3</span></td>
               </tr>              
               <tr id="tr_input_separator">
-                <td><select id="select_input_1" class="input_select" disabled></select></td>
-                <td><select id="select_input_2" class="input_select"><?php include 'include/select_input.php' ?></select></td>
-                <td><select id="select_input_3" class="input_select"><?php include 'include/select_input.php' ?></select></td>
+                <td><select id="select_input_1" name="select_input_1" class="input_select" disabled form="form_saveMongoDB"></select></td>
+                <td><select id="select_input_2" class="input_select" form="form_saveMongoDB"><?php include 'include/select_input.php' ?></select></td>
+                <td><select id="select_input_3" class="input_select" form="form_saveMongoDB"><?php include 'include/select_input.php' ?></select></td>
               </tr> 
              <tr id="tr_input_radio">
-                <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input">Main</td>
-                <td><input type="radio" id="radio_input_2" name="radio_input" value="2" class="radio_input">Main</td>
-                <td><input type="radio" id="radio_input_3" name="radio_input" value="3" class="radio_input">Main</td>
+                <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input" form="form_saveMongoDB">Main</td>
+                <td><input type="radio" id="radio_input_2" name="radio_input" value="2" class="radio_input"form="form_saveMongoDB">Main</td>
+                <td><input type="radio" id="radio_input_3" name="radio_input" value="3" class="radio_input" form="form_saveMongoDB">Main</td>
               </tr>  
               <tr id="tr_input_checkbox">
-                <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox" checked>Not required</td>
-                <td><input type="checkbox" id="checkbox_input_2" class="input_checkbox"checked>Not required</td>
-                <td><input type="checkbox" id="checkbox_input_3"class="input_checkbox"checked>Not required</td>
+                <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox" checked form="form_saveMongoDB">Not required</td>
+                <td><input type="checkbox" id="checkbox_input_2" class="input_checkbox"checked form="form_saveMongoDB">Not required</td>
+                <td><input type="checkbox" id="checkbox_input_3"class="input_checkbox"checked form="form_saveMongoDB">Not required</td>
               </tr>  
               <tr id="tr_input_multiple_checkbox">
-                <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox">Multiple</td>
-                <td><input type="checkbox" id="checkbox_multiple_input_2"class="input_checkbox">Multiple</td>
-                <td><input type="checkbox" id="checkbox__multiple_input_3" class="input_checkbox">Multiple</td>
+                <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox" form="form_saveMongoDB">Multiple</td>
+                <td><input type="checkbox" id="checkbox_multiple_input_2"class="input_checkbox" form="form_saveMongoDB">Multiple</td>
+                <td><input type="checkbox" id="checkbox__multiple_input_3" class="input_checkbox" form="form_saveMongoDB">Multiple</td>
               </tr>  
               <tr id="tr_input_1">
-                <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
-                <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier"></td>
-                <td><input type="text" id="input3_1" value="NYHA I " class="input_modifier"></td>
+                <td><input type="text" id="input1_1" name="input1_1" value="Linksführende dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_1" value="Herzinsuffizienz" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_1" value="NYHA I " class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_2">
-                <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte" class="input_modifier"></td>
-                <td><input type="text" id="input2_2" value="" class="input_modifier"></td>
-                <td><input type="text" id="input3_2" value="NYHA II" class="input_modifier"></td>
+                <td><input type="text" id="input1_2" value="Rechtsführende dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_2" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_2" value="NYHA II" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_3">
               
-                <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte" class="input_modifier"></td>
-                <td><input type="text" id="input2_3" value="" class="input_modifier"></td>
-                <td><input type="text" id="input3_3" value="NYHA III" class="input_modifier"></td>
+                <td><input type="text" id="input1_3" value="Biventrikuläre dekompensierte" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_3" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_3" value="NYHA III" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
               <tr id="tr_input_4">
              
-                <td><input type="text" id="input1_4" value="" class="input_modifier"></td>
-                <td><input type="text" id="input2_4" value="" class="input_modifier"></td>
-                <td><input type="text" id="input3_4" value="NYHA IV" class="input_modifier"></td>
+                <td><input type="text" id="input1_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input2_4" value="" class="input_modifier" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input3_4" value="NYHA IV" class="input_modifier" form="form_saveMongoDB"></td>
               </tr>
             </table>
 
@@ -105,8 +105,8 @@
               </form>
               </td>
               <td>
-              <form name="form" action="mongodb/test.php" method="POST">
-                <input type="submit" name="button2"  class="button_download" value="Register in MongoDb" />
+              <form id="form_saveMongoDB" action="mongodb/test.php" method="POST">
+                <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
               </form>  
             </td>
 </tr>
