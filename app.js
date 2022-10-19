@@ -21,19 +21,19 @@ function addEventListener() {
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
 }
 
-function changePage(page) {
+function changePage(page,params) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
-            changePageExecute(page)
+            changePageExecute(page,params)
             confirmBeforeNavigate = 0
         }
     } else {
-        changePageExecute(page)
+        changePageExecute(page,params)
     }
 }
 
-function changePageExecute(page) {
+function changePageExecute(page,params) {
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -49,7 +49,7 @@ function changePageExecute(page) {
     }
     xhttp.open("POST", `mainContent/${page}.php`);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send(``);
+    xhttp.send(params);
 
 }
 //Tools
@@ -86,6 +86,7 @@ function find_home_mongoDB(id, version) {
                 let text_name = document.createTextNode(results_JSON[i]['name'])
                 link.appendChild(text_name)
                 document.getElementById('mainpage').appendChild(link)
+                document.getElementById(`ahref_calculator_${results_JSON[i]['id']}`).addEventListener('click', function(){changepage(`calculator`,`id= ${results_JSON[i]['id']}`)})
             }
 
         }
