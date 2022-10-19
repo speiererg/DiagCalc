@@ -185,6 +185,8 @@ function addInputColumn() {
     input_radio.setAttribute('class', 'radio_input')
     input_radio.setAttribute('value', `${modifier_nbr + 1}`)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
+    input_radio.setAttribute('form', `form_saveMongoDB`);
+
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     column_input_radio.appendChild(document.createTextNode("Main"))
@@ -204,6 +206,7 @@ function addInputColumn() {
     let input_select = document.createElement('select');
     input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
     input_select.setAttribute('class', `input_select`)
+    input_select.setAttribute('form', `form_saveMongoDB`);
     input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
@@ -214,6 +217,7 @@ function addInputColumn() {
     input_checkbox.setAttribute('checked', 'true')
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
     input_checkbox.setAttribute('class', `input_checkbox`)
+    input_checkbox.setAttribute('form', `form_saveMongoDB`);
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
@@ -224,6 +228,7 @@ function addInputColumn() {
     input_multiple_checkbox.setAttribute('type', 'checkbox')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('class', `input_checkbox`)
+    input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
