@@ -1,14 +1,15 @@
 <?php
   require '../vendor/autoload.php';
 
-$inputs_output = '';
+$inputs_output = array();
 
 echo  $_POST['modifier_nbr'];
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
       $input_ID = "input{$i}_{$k}";
-      $inputs_output = $inputs_output . "'input{$i}_{$k}' => '" . $_POST[$input_ID] . "'" . ', ';
+      $array_push = "'input{$i}_{$k}' => '" . $_POST[$input_ID];
+      $inputs_output = array($inputs_output, $arraypush) ;
    }
 }
 echo $inputs_output;
@@ -25,7 +26,7 @@ $insertOneResult = $collection->insertOne([
       'mainName' => 'Herzinsuffizienz',
    'Version' => '1'],
    
-   'inputs' => [eval($inputs_output)]
+   'inputs' => []
    
 ]);
 
