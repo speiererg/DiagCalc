@@ -73,6 +73,19 @@ function modifierSub_nbr_change(change, number) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
 //MongoDB Tools
+function find_home_mongoDB(id, version) {
+    var xmlhttp = new XMLHttpRequest();
+    let params = 'item=active&value=yes';
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let results_JSON = JSON.parse(this.responseText);
+            console.log(results_JSON)
+        }
+    };
+    xmlhttp.open("POST", "mongodb/find_home.php", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
+}
 
 function findOne_Calculator_mongoDB(id, version) {
     var xmlhttp = new XMLHttpRequest();
@@ -84,12 +97,15 @@ function findOne_Calculator_mongoDB(id, version) {
             console.log(myObj['inputs'])
         }
     };
-    xmlhttp.open("POST", "mongodb/findone_calculator.php", true);
+    xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
 
 
+
+
+//Function Calculator
 function click_radio_input(radio_input_id) {
     console.log(radio_input_id)
     if (array_hiden_ID != "") {
