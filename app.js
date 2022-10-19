@@ -5,6 +5,8 @@ var array_inputs_itemNbr = [];
 var array_calculator = [];
 var array_hiden_ID = "";
 
+var Code_Return = "&#10;"
+var Code_ModifierSeparator = "&#1;"
 // Loading 
 function loadingIndex() {
     document_addeventlistener()
