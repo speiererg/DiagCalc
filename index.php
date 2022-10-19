@@ -107,13 +107,10 @@
            </td>
 <!--  Right Component -->
            <td>
-</br></br></br></br></br></br></br>
-              <img src="img/add.png" id="img_button_add_column" width="30" height="30">
-          <p>
-              <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
+</br></br></br></br></br>
+<input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
            <p>
-
-        
+              <img src="img/add.png" id="img_button_add_column" width="30" height="30">
           </td>
         </tr>
         <tr>
