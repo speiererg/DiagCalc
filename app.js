@@ -178,8 +178,7 @@ function addInputColumn() {
     let input_select = document.createElement('select');
     input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
     input_select.setAttribute('class', `input_select`)
-    let input_select_script = document.createElement('script')
-    input_select_script.innerHTML = "<?php include 'include/select_input.php' ?>"
+    input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
     input_select.appendChild(input_select_script)
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
