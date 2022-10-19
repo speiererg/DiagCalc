@@ -76,8 +76,9 @@ function find_home_mongoDB(id, version) {
     let params = 'item=active&value=yes';
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
+            console.log(this.responseText)
+           // let results_JSON = JSON.parse(this.responseText);
+            //console.log(results_JSON)
         }
     };
     xmlhttp.open("POST", "mongodb/find_home.php", true);
