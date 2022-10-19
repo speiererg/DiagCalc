@@ -87,9 +87,13 @@
           <td>
           <img src="img/add.png" id="img_button_add_column" width="30" height="30">
           <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
-              <form name="form" action="download.php" method="POST">
+              <form name="form" action="download_XML.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_XML" value="" >
                 <input type="submit" name="button1"  class="button_download" value="Download as XML" />
+              </form>
+              <form name="form" action="download_txt.php" method="POST">
+                <input type="hidden" name="input_XML" id="input_TXT" value="" >
+                <input type="submit" name="button2"  class="button_download" value="Download as TXT" />
               </form>
           </td>
         </tr>
