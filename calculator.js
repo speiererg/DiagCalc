@@ -8,6 +8,7 @@ function loading_page_calculator() {
 
 
 function document_addeventlistener_calculator() {
+    console.log('guisdf')
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
