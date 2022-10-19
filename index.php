@@ -38,8 +38,8 @@
               </tr>              
               <tr id="tr_input_separator">
                 <td><select id="select_input_1" class="input_select" disabled></select></td>
-                <td><select id="select_input_2" class="input_select"><?php include 'include/select_input.php'?></select></td>
-                <td><select id="select_input_3" class="input_select"><?php include 'include/select_input.php'?></select></td>
+                <td><select id="select_input_2" class="input_select"><?php include 'include/select_input.php' ?></select></td>
+                <td><select id="select_input_3" class="input_select"><?php include 'include/select_input.php' ?></select></td>
               </tr> 
              <tr id="tr_input_radio">
                 <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input">Main</td>
@@ -85,21 +85,21 @@
             <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
            </td>
           <td>
-            <tr>
-          <img src="img/add.png" id="img_button_add_column" width="30" height="30">
-</tr><tr>
-          <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
-          </tr><tr>
+           
+              <img src="img/add.png" id="img_button_add_column" width="30" height="30">
+          <p>
+              <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
+           <p>
               <form name="form" action="download_XML.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_XML" value="" >
                 <input type="submit" name="button1"  class="button_download" value="Download as XML" />
               </form>
-              </tr><tr>
+             <p>
               <form name="form" action="download_txt.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_TXT" value="" >
                 <input type="submit" name="button2"  class="button_download" value="Download as TXT" />
               </form>
-</tr>
+        
           </td>
         </tr>
         <tr>
