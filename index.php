@@ -141,7 +141,8 @@
 
   <?php
 echo "test";
-$client = new MongoDBs\Client('mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
+echo extension_loaded("mongo") ? "loaded\n" : "not loaded\n";
+$client = new MongoDB\Client('mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 $db = $client->test;
 
 
