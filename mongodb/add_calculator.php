@@ -3,7 +3,7 @@
 
 $inputs_output = '';
 
-echo  $_POST['input_hidden_modifier_nbr'];
+print  $_POST['input_hidden_modifier_nbr'];
 
 for ($i = 1; $i <= $_POST['input_hidden_modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['input_hidden_modifierSub_nbr']; $k++) {
@@ -12,7 +12,7 @@ for ($i = 1; $i <= $_POST['input_hidden_modifier_nbr']; $i++) {
    }
 }
 
-echo $inputs_output;
+print $inputs_output;
 
 
 
