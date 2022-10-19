@@ -141,9 +141,7 @@
 
   <?php
 echo "test";
-$client = new MongoDB\Client(
-   'mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority'
-);
+$client = new MongoDB\Client('mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 $db = $client->test;
 
 
