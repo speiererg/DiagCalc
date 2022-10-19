@@ -150,6 +150,8 @@ body {
   font-weight: bold;
   display:inline-block;
   vertical-align:middle;
+  padding: 0px;
+  margin:0px;
 }
 
 .input_select{
@@ -158,7 +160,22 @@ body {
   text-align:center;
   display:inline-block;
   vertical-align:middle;
+  font-size:small;
   border-radius:4px;
+  padding: 0px;
+  margin:0px;
+}
+
+.input_checkbox{
+  border: solid 2px var(--div-seperation);
+  background-color: var(--div-color-hell);
+  text-align:center;
+  display:inline-block;
+  vertical-align:middle;
+  font-size:small;
+  border-radius:4px;
+  padding: 0px;
+  margin:0px;
 }
 
 /* --------   Button Design ----------- */

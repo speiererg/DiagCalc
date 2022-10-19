@@ -47,14 +47,14 @@
                 <td><input type="radio" id="radio_input_3" name="radio_input" value="3" class="radio_input">Main</td>
               </tr>  
               <tr id="tr_input_checkbox">
-                <td><input type="checkbox" id="checkbox_input_1" checked>Not required</td>
-                <td><input type="checkbox" id="checkbox_input_2"checked>Not required</td>
-                <td><input type="checkbox" id="checkbox_input_3"checked>Not required</td>
+                <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox" checked>Not required</td>
+                <td><input type="checkbox" id="checkbox_input_2" class="input_checkbox"checked>Not required</td>
+                <td><input type="checkbox" id="checkbox_input_3"class="input_checkbox"checked>Not required</td>
               </tr>  
               <tr id="tr_input_multiple">
-                <td><input type="checkbox" id="checkbox_multiple_input_1" checked>Multiple</td>
-                <td><input type="checkbox" id="checkbox_multiple_input_2"checked>Multiple</td>
-                <td><input type="checkbox" id="checkbox__multiple_input_3"checked>Multiple</td>
+                <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox">Multiple</td>
+                <td><input type="checkbox" id="checkbox_multiple_input_2"class="input_checkbox">Multiple</td>
+                <td><input type="checkbox" id="checkbox__multiple_input_3" class="input_checkbox">Multiple</td>
               </tr>  
               <tr id="tr_input_1">
                 <td><input type="text" id="input1_1" value="Linksführende dekompensierte" class="input_modifier"></td>
