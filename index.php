@@ -118,14 +118,6 @@
         </tr>
         <tr>
           <td>
-              <form name="form" action="download.php" method="POST">
-                <input type="hidden" name="input_XML" id="input_XML" value="" >
-                <input type="submit" name="button1"  class="button" value="Download as XML" />
-              </form>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div >
               <table id="table_output_calculator">
               </table>
