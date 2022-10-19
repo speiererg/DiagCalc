@@ -123,6 +123,7 @@ body {
 
 .CSS_contentTable {
   border: none;
+  margin:5px;
 }
 
 .CSS_contentTable td {
@@ -132,7 +133,7 @@ body {
 /* --------   Input Table Design ----------- */
 #table_input{
   font-size: var(--font-size);
-  margin:5px;
+
 }
 
 #table_input td{
