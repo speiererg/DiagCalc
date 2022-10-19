@@ -25,7 +25,7 @@ $cursor = $collection->find(
 //$test = json_encode($cursor);
 echo '<pre>';
 echo $cursor;
-echo '</pre>'
+echo '</pre>';
 
 // header('Location: ../index.php');
 ?>
