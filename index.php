@@ -140,7 +140,7 @@
   </div>
 
   <?php
-
+echo "test";
 $client = new MongoDB\Client(
    'mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority'
 );
@@ -156,7 +156,7 @@ $insertOneResult = $collection->insertOne([
 ]);
 
 printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
-echo "test";
+
 ?>
 
 
