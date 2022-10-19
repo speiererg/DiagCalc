@@ -139,7 +139,6 @@
   <div id="footer">
   </div>
 
-  // connect to mongodb
   <?php
 
 $client = new MongoDB\Client(
