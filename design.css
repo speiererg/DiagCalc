@@ -155,7 +155,7 @@ body {
   text-align:center;
   display:inline-block;
   vertical-align:middle;
-  padding:5px;
+  border-radius:5px;
 }
 
 /* --------   Button Design ----------- */
