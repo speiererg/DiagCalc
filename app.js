@@ -78,6 +78,7 @@ function find_home_mongoDB(id, version) {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
+            console.log( results_JSON.keys( data.id ).length ) ;
 
             for (let i=0; i < length.results_JSON ;i++){
                 console.log(results_JSON[i]['name'])
