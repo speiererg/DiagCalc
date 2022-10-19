@@ -11,7 +11,7 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$params = array('Type' => 'Fruit');
+$params = array('active' => 'yes');
 
 $cursor = $collection->find($params);
 foreach ($cursor as $doc) {
