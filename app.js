@@ -162,7 +162,7 @@ function addInputColumn() {
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
-
+// Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('checked', 'true')
@@ -170,6 +170,15 @@ function addInputColumn() {
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
+//Checkbox Multiple
+let input_checkbox = document.createElement('input');
+input_checkbox.setAttribute('type', 'checkbox')
+input_checkbox.setAttribute('checked', 'false')
+input_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
+let column_input_checkbox = document.createElement('td')
+column_input_checkbox.appendChild(input_checkbox);
+document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_checkbox)
+
 
     console.log(modifierSub_nbr)
     for (let i = 0; i < modifierSub_nbr; i++) {
@@ -184,6 +193,9 @@ function addInputColumn() {
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
 
 }
+
+
+
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
     return XML_temp = `            
     <ss:Row>
