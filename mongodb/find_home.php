@@ -15,7 +15,7 @@ $params = array('active' => 'yes');
 
 $cursor = $collection->find($params);
 foreach ($cursor as $doc) {
-    var_dump($doc);
+    json_encode(var_dump($doc));
 }
 /*
 $cursor = $collection->find(
