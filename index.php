@@ -141,8 +141,6 @@
 
   <?php
   require 'vendor/autoload.php';
-echo "test";
-echo extension_loaded("mongodb") ? "loaded\n" : "not loaded\n";
 $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 $db = $client->test;
 
@@ -150,10 +148,17 @@ $db = $client->test;
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
-   'username' => 'admin',
-   'email' => 'admin@example.com',
-   'name' => 'Admin User',
+   'parameters' => 
+   ['id' => '1',
+      'mainName' => 'Herzinsuffizienz',
+   'Version' => '1'],
+   
+   'inputs' =>
+   ['inputsa1' => 'test',
+   'inputsa2' => 'test2']
+   
 ]);
+
 
 printf("Inserted %d document(s)\n", $insertOneResult->getInsertedCount());
 
