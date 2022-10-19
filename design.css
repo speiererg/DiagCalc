@@ -175,25 +175,25 @@ body {
 }
 
 .input_select{
-  border: solid 2px var(--div-seperation);
+  border: solid 1px var(--div-seperation);
   background-color: var(--div-color-hell);
   text-align:center;
   display:inline-block;
   vertical-align:middle;
   font-size:small;
-  border-radius:4px;
+  border-radius:1px;
   padding: 0px;
   margin:0px;
 }
 
 .input_checkbox{
-    border: solid 2px var(--div-seperation);
+    border: solid 1px var(--div-seperation);
   background-color: var(--div-color-hell);
   text-align:center;
   display:inline-block;
   vertical-align:middle;
   font-size:small;
-  border-radius:4px;
+  border-radius:1px;
   padding: 0px;
   margin:0px;
 }
@@ -202,7 +202,7 @@ body {
 .button_download{
   background-color: var(--div-color-hell);
   border-style: solid;
-  border-width: 2px;
+  border-width: 1px;
   border-bottom-left-radius: 15px 255px;
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
