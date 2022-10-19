@@ -9,7 +9,7 @@ $collection = $client->DiagCalc_Calculators->Index;
 
 //POST
 $item = $_POST['item'];
-$value = $_POST['value']
+$value = $_POST['value'];
 
 
 $item = $collection->find(array("{$item}" => "{$value}"));
