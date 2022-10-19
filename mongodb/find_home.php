@@ -11,15 +11,30 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$cursor = $collection->find('active' : 'yes');
+$params = array('Type' => 'Fruit');
+
+$cursor = $collection->find($params);
+foreach ($cursor as $doc) {
+    var_dump($doc);
+}
+/*
+$cursor = $collection->find(
+    [
+        'active' => 'yes',
+    ],
+    [
+        'limit' => 5,
+    ]
+);
+*/
 
 //$response = $collection->find("{$item}" : "{$value}");
-
+/*
 $test = json_encode($cursor);
 echo "<pre>";
 print_r($cursor);
 echo "</pre>";
-
+*/
 
 // header('Location: ../index.php');
 ?>
