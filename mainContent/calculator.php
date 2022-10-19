@@ -118,4 +118,4 @@
       </table>
       <p>
 
-      <script src="app.js"></script>
+      <script src="calculator.js"></script>
