@@ -79,6 +79,7 @@ function find_home_mongoDB(id, version) {
             console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
             for (let i=0; i < length.results_JSON ;i++){
+                console.log(results_JSON[i]['name'])
                 let link = document.createElement('a')
                 let text_name = document.createTextNode(results_JSON[i]['name'])
                 link.appendChild(text_name)
