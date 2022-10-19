@@ -130,7 +130,7 @@ body {
 
 /* --------   Input Table Design ----------- */
 #table_input{
-  font-size: 0.7em;
+  font-size: 0.8em;
 }
 
 #table_input td{
@@ -162,6 +162,7 @@ body {
   background-color: var(--div-color-hell);
   width:200px;
   border-radius:3px;
+  font-size: 0.8em;
 
 }
 
@@ -180,7 +181,7 @@ body {
   text-align:center;
   display:inline-block;
   vertical-align:middle;
-  font-size: 0.7em;
+  font-size: 0.8em;
   border-radius:1px;
   padding: 0px;
   margin:0px;
