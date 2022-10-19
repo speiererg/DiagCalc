@@ -162,8 +162,23 @@ function addInputColumn() {
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     column_input_radio.appendChild(document.createTextNode("Main"))
-
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
+
+    // Create Modifier Title
+    let column_input_title = document.createElement('td')
+    column_input_title.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+    document.getElementById('tr_input_title').appendChild(column_input_title)
+
+
+    //Create Select
+    let column_input_select = document.createElement('td')
+    let input_select = document.createElement('select');
+    input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
+    input_select.setAttribute('class', `input_select`)
+    input_select.innerHTML = "<?php include 'include/select_input.php' ?>"
+    column_input_select.appendChild(input_select)
+    document.getElementById('tr_input_separator').appendChild(column_input_select)
+
     // Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
@@ -174,7 +189,7 @@ function addInputColumn() {
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-    
+
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
