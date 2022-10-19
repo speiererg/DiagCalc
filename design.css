@@ -67,7 +67,7 @@ body {
   font-family: var(--fontfamily);
   margin: 0px;
   padding: 0px;
-  font-size: 8px;
+  font-size: 0.7em;
   background-color: var(--div-color);
 
 }
@@ -129,6 +129,10 @@ body {
 }
 
 /* --------   Input Table Design ----------- */
+#table_input{
+  font-size: 0.7em;
+}
+
 #table_input td{
   text-align: center;
   margin:0px;
@@ -143,7 +147,6 @@ body {
 }
 
 #tr_maindiagnose{
-  font-size: smaller;
 }
 
 .input_maindiagnose{
@@ -180,7 +183,6 @@ body {
   text-align:center;
   display:inline-block;
   vertical-align:middle;
-  font-size:small;
   border-radius:1px;
   padding: 0px;
   margin:0px;
@@ -192,7 +194,6 @@ body {
   text-align:center;
   display:inline-block;
   vertical-align:middle;
-  font-size:small;
   border-radius:1px;
   padding: 0px;
   margin:0px;
