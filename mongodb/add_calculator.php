@@ -27,5 +27,5 @@ $insertOneResult = $collection->insertOne([
    
 ]);
 
- header('Location: ../index.php');
+ //header('Location: ../index.php');
 ?>
