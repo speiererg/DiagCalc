@@ -22,10 +22,10 @@ $cursor = $collection->find(
 
 //$response = $collection->find("{$item}" : "{$value}");
 
-//$test = json_encode($cursor);
-echo '<pre>';
-//echo $cursor;
-echo '<post>';
+$test = json_encode($cursor);
+//echo '<pre>';
+echo $test;
+//echo '<post>';
 
 // header('Location: ../index.php');
 ?>
