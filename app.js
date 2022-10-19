@@ -11,14 +11,13 @@ var Code_ModifierSeparator = "&#1;"
 
 // Loading 
 function loadingIndex() {
-    changePage('mainContent/calculator')
-    document_addeventlistener()
+    changePage('calculator')
+    addEventListener()
 }
 
-
-
-
-
+function addEventListener(){
+    document.getElementById('navPageHome').addEventListener('click', function (){changePage('home')})
+}
 function changePage(page) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
@@ -47,7 +46,7 @@ console.log(page)
             }
         }
     }
-    xhttp.open("POST", `${page}.php`);
+    xhttp.open("POST", `mainContent/${page}.php`);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send(``);
 
