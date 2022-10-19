@@ -194,6 +194,7 @@ body {
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
+  vertical-align: center;
 }
 
 .button_download:hover {
@@ -202,6 +203,7 @@ body {
 }
 
 .btn {
+  vertical-align: center;
   background-color: var(--div-color-hell);
   background-image: none;
   background-position: 0 90%;
