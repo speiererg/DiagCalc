@@ -16,30 +16,14 @@ $params = array('active' => 'yes');
 $cursor = $collection->find($params);
 
 echo json_encode(iterator_to_array($cursor));
-/*
-foreach ($cursor as $doc) {
-    json_encode(var_dump($doc));
-}
 
-$cursor = $collection->find(
-    [
-        'active' => 'yes',
-    ],
-    [
-        'limit' => 5,
-    ]
-);
-*/
-
-//$response = $collection->find("{$item}" : "{$value}");
 /*
-$test = json_encode($cursor);
 echo "<pre>";
 print_r($cursor);
 echo "</pre>";
 */
 
-// header('Location: ../index.php');
+header('Location: ../index.php');
 ?>
 
 
