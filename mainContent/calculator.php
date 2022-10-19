@@ -83,8 +83,8 @@
               </form>  
             </td>
             <td>
-              <form id="form_loadCalculator" action="mongodb/findone_calculator.php" method="POST">
-                <input type="submit" name="button2"  class="button_download" value="FindOne in MongoDB" />
+              <form id="form_loadCalculator" action="mongodb/find_home.php" method="POST">
+                <input type="submit" name="button2"  class="button_download" value="Test find MongoDB" />
               </form>  
             </td>
             <td>
