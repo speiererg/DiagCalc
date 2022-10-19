@@ -12,7 +12,7 @@ $item = $_POST['item'];
 $value = $_POST['value'];
 
 
-$response = $collection->find(array("{$item}" : "{$value}"));
+$response = $collection->find("{$item}" : "{$value}");
 
 $test = json_encode($response);
 echo $test;
