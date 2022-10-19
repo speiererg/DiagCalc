@@ -148,7 +148,7 @@ $client = new MongoDB\Client(
 $db = $client->test;
 
 
-$collection = $client->test->users;
+$collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
    'username' => 'admin',
