@@ -18,7 +18,7 @@ $db = $client->test;
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
-$item = $collection->findOne(array('_id' => $theObjId));
+$item = $collection->findOne(array('id' => 2));
 
 echo $item ;
 

@@ -111,6 +111,11 @@
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
               </form>  
             </td>
+            <td>
+              <form id="form_loadCalculator" action="mongodb/findone_calculator.php" method="POST">
+                <input type="submit" name="button2"  class="button_download" value="FindOne in MongoDB" />
+              </form>  
+            </td>
 </tr>
 </table>
            </td>
