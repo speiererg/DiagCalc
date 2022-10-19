@@ -129,6 +129,10 @@ body {
 }
 
 /* --------   Input Table Design ----------- */
+.table_input td{
+  text-align: center;
+}
+
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
