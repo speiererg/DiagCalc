@@ -158,8 +158,6 @@
 
 
   <script src="app.js"></script>
-  <script src="getmongodb.js"></script>
-
 
 </body>
 </html>
