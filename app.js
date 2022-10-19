@@ -40,10 +40,10 @@ function changePageExecute(page) {
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
-            if (page == "home") {
-                // let script1 = document.createElement('script');
-                //script1.setAttribute('src', 'js/kurvenEdit.js');
-                // document.body.appendChild(script1);
+            if (page == "calculator") {
+                let script1 = document.createElement('script');
+                script1.setAttribute('src', 'calculator.js');
+                document.body.appendChild(script1);
             }
         }
     }
