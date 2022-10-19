@@ -115,6 +115,7 @@ body {
 .CSS_contentTable {
   border: none;
   margin: 5px;
+  padding:5px;
 }
 
 .CSS_contentTable td {
