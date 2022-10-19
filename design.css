@@ -5,7 +5,7 @@
   --div-color-dunkel: #6b9bda;
   --div-seperation: #0d3896;
   --fontfamily: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --font-size: '1em'
+  --font-size: '0.9em'
 
 }
 
@@ -161,7 +161,7 @@ body {
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
-  width:200px;
+  width:150px;
   border-radius:3px;
   font-size: var(--font-size);
 
