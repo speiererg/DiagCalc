@@ -66,7 +66,7 @@ iframe{
 /* --------   Page Structure ----------- */
 body {
   font-family: var(--fontfamily);
-  margin: 0px;
+  margin: 5px;
   padding: 0px;
   font-size: 0.7em;
   background-color: var(--div-color);
