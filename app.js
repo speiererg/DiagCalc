@@ -44,8 +44,8 @@ function changePage(page) {
 }
 
 function changePageExecute(page) {
-    actualPage = page
 
+console.log(page)
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
