@@ -20,7 +20,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
  
-   'id' => '2',
+   'id' => '3',
    'mainName' => $_POST['input_maindiagnose'],
    'Version' => $_POST['select_version'],
    'inputs' => $inputs_output
