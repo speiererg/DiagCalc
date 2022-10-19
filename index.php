@@ -146,6 +146,16 @@ $client = new MongoDB\Client(
    'mongodb+srv://speiererg:<guichsp2004Pi>@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority'
 );
 $db = $client->test;
+
+
+$collection = $client->test->users;
+
+$insertOneResult = $collection->insertOne([
+   'username' => 'admin',
+   'email' => 'admin@example.com',
+   'name' => 'Admin User',
+]);
+
 ?>
 
 
