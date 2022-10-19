@@ -1,7 +1,5 @@
 var modifier_nbr = 3
-document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
 var modifierSub_nbr = 4
-document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 var confirmBeforeNavigate = 0
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
@@ -13,22 +11,12 @@ var Code_ModifierSeparator = "&#1;"
 
 // Loading 
 function loadingIndex() {
-    changePage('mainContent/home')
+    changePage('mainContent/calculator')
     document_addeventlistener()
 }
 
 
 
-function document_addeventlistener() {
-    document.getElementById('button_calculate').addEventListener('click', click_calculate)
-    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-    document.getElementById('button_findOne_calculator').addEventListener('click', findOne_Calculator_mongoDB)
-
-    for (let i = 0; i <= modifier_nbr; i++) {
-        document.getElementById(`radio_input_${i}`).addEventListener('click', function () { click_radio_input(i) })
-    }
-}
 
 
 function changePage(page) {
