@@ -37,9 +37,9 @@
                 <td><span class="input_title">Modifier 3</span></td>
               </tr>              
               <tr id="tr_input_separator">
-                <td><select id="select_input_1"><?php include 'include/select_input.php'?></select></td>
-                <td><select id="select_input_2"><?php include 'include/select_input.php'?></select></td>
-                <td><select id="select_input_3"><?php include 'include/select_input.php'?></select></td>
+                <td><select id="select_input_1" class="input_select" disabled></select></td>
+                <td><select id="select_input_2" class="input_select"><?php include 'include/select_input.php'?></select></td>
+                <td><select id="select_input_3" class="input_select"><?php include 'include/select_input.php'?></select></td>
               </tr> 
              <tr id="tr_input_radio">
                 <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input"></td>

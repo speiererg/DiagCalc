@@ -137,7 +137,14 @@ body {
 }
 
 .input_title{
-  font-size:large
+  font-size:medium;
+  font-weight: bold;
+}
+
+.input_select{
+  border: solid 2px var(--div-seperation);
+  background-color: var(--div-color-hell);
+  text-align:center;
 }
 
 /* --------   Button Design ----------- */
