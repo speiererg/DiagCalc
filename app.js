@@ -50,7 +50,7 @@ function document_addeventlistener() {
 function findOne_Calculator_mongoDB(id,version){
     var xmlhttp = new XMLHttpRequest();
     let params = 'id=3&test=55';
-
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
