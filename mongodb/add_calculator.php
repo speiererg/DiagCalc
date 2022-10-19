@@ -9,13 +9,10 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
       $input_ID = "input{$i}_{$k}";
       $inputs_output = $inputs_output . "'input{$i}_{$k}' => '" . $_POST[$input_ID] . "'" . ', ';
-      echo $_POST[$input_ID];
    }
 }
 
 echo $inputs_output;
-
-
 
   $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 $db = $client->test;
