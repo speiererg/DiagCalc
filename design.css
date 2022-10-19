@@ -157,7 +157,9 @@ body {
   display:inline-block;
   vertical-align:middle;
   border-radius:3px;
+  font-size: var(--font-size)
 }
+
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
@@ -183,7 +185,7 @@ body {
   display:inline-block;
   vertical-align:middle;
   font-size: var(--font-size);
-  border-radius:1px;
+  border-radius:3px;
   padding: 0px;
   margin:0px;
 }
