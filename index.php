@@ -85,9 +85,12 @@
             <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
            </td>
           <td>
-          <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
           <img src="img/add.png" id="img_button_add_column" width="30" height="30">
-
+          <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
+              <form name="form" action="download.php" method="POST">
+                <input type="hidden" name="input_XML" id="input_XML" value="" >
+                <input type="submit" name="button1"  class="button_download" value="Download as XML" />
+              </form>
           </td>
         </tr>
         <tr>

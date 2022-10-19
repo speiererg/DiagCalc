@@ -186,6 +186,11 @@ body {
 }
 
 /* --------   Button Design ----------- */
+.button_download{
+  background-color: var(--div-color-hell);
+  border: solid 2px var(--div-seperation);
+  border-radius: 2px;
+}
 
 .btn {
   background-color: var(--div-color-hell);
