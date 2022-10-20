@@ -126,7 +126,7 @@ function findOne_Calculator_mongoDB(id, version) {
 
 function create_input_calculator(results_findOne) {
     console.log(results_findOne)
-console.log(results_findOne['input'])
+console.log(results_findOne['inputs'])
 }
 
 
