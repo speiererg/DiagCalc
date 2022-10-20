@@ -28,4 +28,4 @@ function document_addeventlistener_calculator() {
 
 
 
-document.onload(loading_page_calculator())
+loading_page_calculator()
