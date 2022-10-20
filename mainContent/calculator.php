@@ -61,14 +61,6 @@ echo  "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_PO
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
               </form>  
             </td>
-            <td>
-              <form id="form_loadCalculator" action="mongodb/find_home.php" method="POST">
-                <input type="submit" name="button2"  class="button_download" value="Test find MongoDB" />
-              </form>  
-            </td>
-            <td>
-                <input type="submit" id="button_findOne_calculator" value="FindOne in MongoDB" />
-            </td>
 </tr>
 </table>
            </td>
