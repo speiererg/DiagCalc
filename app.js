@@ -92,7 +92,7 @@ function find_home_mongoDB(id, version) {
                 let link = document.createElement('div')
                 link.setAttribute('class','home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['id']}`)
-                let text_name = document.createTextNode(`${results_JSON[i]['name']} (Vers.${results_JSON[i['version']]})`)
+                let text_name = document.createTextNode(`${results_JSON[i]['name']} (Vers.${results_JSON[i['lastVersion']]})`)
                 link.appendChild(text_name)
                 document.getElementById('home_td1').appendChild(link)
                 document.getElementById(`home_link_id${results_JSON[i]['id']}`).addEventListener('click', function(){changePage(`calculator`,`id= ${results_JSON[i]['id']}`)})
