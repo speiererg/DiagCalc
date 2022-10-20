@@ -4,6 +4,7 @@ document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 
 function loading_page_calculator() {
     document_addeventlistener_calculator()
+    console.log('test')
     console.log(id_POST, version_POST)
     findOne_Calculator_mongoDB(id_POST, version_POST)
 }
