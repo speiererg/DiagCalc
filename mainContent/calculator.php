@@ -1,8 +1,9 @@
 
-<script>
-var id_POST='<?php echo $_POST['id'];?>';
-var version_POST='<?php echo $_POST['version'];?>';
-</script>
+<?php 
+$id = $_POST['id'];
+echo  "<input type='hidden' name='input_hidden_POST_id' id='input_hidden_POST_id' value='".$id."' >";
+?>
+
 
 <table class="CSS_contentTable">
         <tr id="tr_maindiagnose">
