@@ -19,21 +19,21 @@ function addEventListener() {
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
 }
 
-function changePage(page,params) {
+function changePage(page, params) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
-            changePageExecute(page,params)
+            changePageExecute(page, params)
             confirmBeforeNavigate = 0
         }
     } else {
-        changePageExecute(page,params)
+        changePageExecute(page, params)
     }
 }
 
-function changePageExecute(page,params) {
+function changePageExecute(page, params) {
     let targetpage
-    if (page == "index"){targetpage = 'home'}else{targetpage = page}
+    if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -48,14 +48,14 @@ function changePageExecute(page,params) {
                 document.body.appendChild(script2);
             }
             if (page == "index") {
-                document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
+                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 addEventListener()
                 find_home_mongoDB()
             }
             if (page == "home") {
                 find_home_mongoDB()
-                document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
-            }   
+                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
+            }
         }
     }
     xhttp.open("POST", `mainContent/${targetpage}.php`);
@@ -89,16 +89,16 @@ function find_home_mongoDB(id, version) {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
 
-            for (let i=0; i < Object.keys(results_JSON).length ;i++){
+            for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 console.log(results_JSON[i]['name'])
                 let link = document.createElement('li')
-                link.setAttribute('class','home_link')
+                link.setAttribute('class', 'home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['id']}`)
                 let text_name = document.createTextNode(`${results_JSON[i]['name']} (Vers.${results_JSON[i]['lastVersion']})`)
                 let params_link = `id=${results_JSON[i]['id']}&version=${results_JSON[i]['lastVersion']}`
                 link.appendChild(text_name)
                 document.getElementById('home_td1').appendChild(link)
-                document.getElementById(`home_link_id${results_JSON[i]['id']}`).addEventListener('click', function(){changePage(`calculator`, params_link)})
+                document.getElementById(`home_link_id${results_JSON[i]['id']}`).addEventListener('click', function () { changePage(`calculator`, params_link) })
             }
 
         }
@@ -110,16 +110,13 @@ function find_home_mongoDB(id, version) {
 
 
 function findOne_Calculator_mongoDB(id, version) {
-    console.log('test')
     var xmlhttp = new XMLHttpRequest();
     let params = `id=${id}&version=${version}`
-    console.log(params)
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
-            myObj = JSON.parse(this.responseText);
-            console.log(myObj)
-            console.log(myObj['inputs'])
+            let results_findOne = JSON.parse(this.responseText);
+            console.log(results_findOne)
+            create_input_calculator(results_findOne)
         }
     };
     xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
@@ -127,11 +124,13 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
+function create_input_calculator(results_findOne) {
+console.log(results_findOne['input'])
+}
 
 
 //Function Calculator
 function click_radio_input(radio_input_id) {
-    console.log(radio_input_id)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
@@ -156,7 +155,6 @@ function click_calculate() {
         let array_inputs_oneModifier = [];
         let item_nbr = 0
         let modifierSub_iterate = 1
-        console.log(`checkbox_input_${i}`)
         if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
             modifierSub_iterate = 0
         }
@@ -195,7 +193,6 @@ function create_calculator_output() {
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
 
     // Send XML
-    console.log('send XML')
     XML_output = XML_Beginn
 
     // Creation of Items
@@ -263,7 +260,6 @@ function addInputRow() {
 }
 
 function addInputColumn() {
-    console.log('add column')
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', 'radio_input')
@@ -319,8 +315,6 @@ function addInputColumn() {
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
-
-    console.log(modifierSub_nbr)
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
