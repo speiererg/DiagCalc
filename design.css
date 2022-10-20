@@ -252,5 +252,5 @@ body {
 
 .home_td{
   border-right: solid 2px var(--div-seperation);
-
+  width:300px;
 }
