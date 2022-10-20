@@ -252,11 +252,13 @@ body {
 .home_td {
   border-right: solid 2px var(--div-seperation);
   width: 250px;
+  vertical-align: top;
 }
 
 .home_link {
   color: var(--div-color-dunkel);
   text-decoration: underline;
+  font-size:large;
 }
 
 .home-link:hover {
