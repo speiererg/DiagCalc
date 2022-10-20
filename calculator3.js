@@ -26,4 +26,4 @@ function document_addeventlistener_calculator() {
 
 
 
-loading_page_calculator()
+document.onload(loading_page_calculator())
