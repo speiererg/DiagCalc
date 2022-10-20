@@ -47,6 +47,9 @@ function changePageExecute(page,params) {
                 script1.setAttribute('src', 'calculator.js');
                 document.body.appendChild(script1);
             }
+            if (page == "index") {
+                document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
+            }
             if (page == "home") {
                 find_home_mongoDB()
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
