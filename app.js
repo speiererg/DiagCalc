@@ -42,7 +42,7 @@ function changePageExecute(page,params) {
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
                 let script2 = document.createElement('script');
-                script2.setAttribute('src', 'calculator5.js');
+                script2.setAttribute('src', 'calculator6.js');
                 document.body.appendChild(script2);
             }
             if (page == "index") {
@@ -111,6 +111,7 @@ function findOne_Calculator_mongoDB(id, version) {
     console.log('test')
     var xmlhttp = new XMLHttpRequest();
     let params = `id=${id}&version=${version}`
+    console.log(params)
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             myObj = JSON.parse(this.responseText);
