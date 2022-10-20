@@ -12,8 +12,6 @@ var Code_ModifierSeparator = "&#1;"
 // Loading 
 function loadingIndex() {
     changePage('index')
-    addEventListener()
-    find_home_mongoDB()
 }
 
 function addEventListener() {
@@ -49,6 +47,8 @@ function changePageExecute(page,params) {
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
+                addEventListener()
+                find_home_mongoDB()
             }
             if (page == "home") {
                 find_home_mongoDB()
