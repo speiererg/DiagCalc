@@ -248,5 +248,9 @@ body {
 
 /* **************** Home Design ********************** */
 #home_table{
-  border: solid 2px var(--div-seperation);
+}
+
+.home_td{
+  border-right: solid 2px var(--div-seperation);
+
 }
