@@ -7,7 +7,7 @@ $db = $client->test;
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 $id = $_POST['id'];
-$version = $POST['version'];
+$version = $_POST['version'];
 $cursor = $collection->findOne(array('id' => "{$id}", 'version' => "{$version}" ));
 
 echo json_encode($cursor);
