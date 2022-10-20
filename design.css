@@ -259,9 +259,9 @@ body {
   color: var(--div-color-dunkel);
   text-decoration: underline;
   font-size: medium;
-  cursor: alias;
 }
 
 .home-link:hover {
-  color: var(--div-seperation)
+  color: var(--div-seperation);
+  cursor: pointer;
 }
