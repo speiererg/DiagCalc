@@ -22,8 +22,8 @@ echo  "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_PO
               </tr>              
               <tr id="tr_input_separator">
                 <td><select id="select_input_1" name="select_input_1" class="input_select" disabled form="form_saveMongoDB"></select></td>
-                <td><select id="select_input_2" class="input_select" form="form_saveMongoDB"><?php include 'include/select_input.php' ?></select></td>
-                <td><select id="select_input_3" class="input_select" form="form_saveMongoDB"><?php include 'include/select_input.php' ?></select></td>
+                <td><select id="select_input_2" class="input_select" form="form_saveMongoDB"><?php include '../include/select_input.php' ?></select></td>
+                <td><select id="select_input_3" class="input_select" form="form_saveMongoDB"><?php include '../include/select_input.php' ?></select></td>
               </tr> 
              <tr id="tr_input_radio">
                 <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input" form="form_saveMongoDB">Main</td>
