@@ -11,7 +11,7 @@ var Code_ModifierSeparator = "&#1;"
 
 // Loading 
 function loadingIndex() {
-    changePage('home')
+    changePage('index')
     addEventListener()
     find_home_mongoDB()
 }
@@ -34,6 +34,7 @@ function changePage(page,params) {
 }
 
 function changePageExecute(page,params) {
+    if (page == "index"){let targetpage = 'home'}else{let targetpage = page}
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
@@ -51,7 +52,7 @@ function changePageExecute(page,params) {
             }   
         }
     }
-    xhttp.open("POST", `mainContent/${page}.php`);
+    xhttp.open("POST", `mainContent/${targetpage}.php`);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhttp.send(params);
 
