@@ -106,21 +106,6 @@ function find_home_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
-function findOne_Calculator_mongoDB(id, version) {
-    console.log('test')
-    var xmlhttp = new XMLHttpRequest();
-    let params = 'id=3&test=55';
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            myObj = JSON.parse(this.responseText);
-            console.log(myObj)
-            console.log(myObj['inputs'])
-        }
-    };
-    xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
-    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(params);
-}
 
 
 

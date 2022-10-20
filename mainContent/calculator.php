@@ -1,4 +1,9 @@
-<?php echo $_POST['id']?>
+
+<script>
+let id_POST='<?php echo $_POST['id'];?>';
+let version_POST='<?php echo $_POST['version'];?>';
+</script>
+
 <table class="CSS_contentTable">
         <tr id="tr_maindiagnose">
           <td>
