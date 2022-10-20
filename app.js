@@ -47,8 +47,8 @@ function changePageExecute(page,params) {
             }
             if (page == "home") {
                 find_home_mongoDB()
-
-            }
+                document.getElementById('home_tr').setAttribute('height':window.innerHeight -200)
+            }   
         }
     }
     xhttp.open("POST", `mainContent/${page}.php`);
