@@ -114,6 +114,7 @@ function findOne_Calculator_mongoDB(id, version) {
     console.log(params)
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
             myObj = JSON.parse(this.responseText);
             console.log(myObj)
             console.log(myObj['inputs'])
