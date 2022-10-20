@@ -258,7 +258,7 @@ body {
 .home_link {
   color: var(--div-color-dunkel);
   text-decoration: underline;
-  font-size:large;
+  font-size: medium;
 }
 
 .home-link:hover {
