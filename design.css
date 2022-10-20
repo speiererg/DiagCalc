@@ -247,10 +247,18 @@ body {
 
 
 /* **************** Home Design ********************** */
-#home_table{
+#home_table {}
+
+.home_td {
+  border-right: solid 2px var(--div-seperation);
+  width: 250px;
 }
 
-.home_td{
-  border-right: solid 2px var(--div-seperation);
-  width:300px;
+.home_link {
+  color: var(--div-color-dunkel);
+  text-decoration: underline;
+}
+
+.home-link:hover {
+  color: var(--div-seperation)
 }
