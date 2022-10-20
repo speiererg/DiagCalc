@@ -43,9 +43,9 @@ function changePageExecute(page,params) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
-                let script1 = document.createElement('script');
-                script1.setAttribute('src', 'calculator.js');
-                document.body.appendChild(script1);
+                let script2 = document.createElement('script');
+                script2.setAttribute('src', 'calculator.js');
+                document.body.appendChild(script2);
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight -200)
