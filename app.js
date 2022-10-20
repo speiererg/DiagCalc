@@ -89,7 +89,7 @@ function find_home_mongoDB(id, version) {
 
             for (let i=0; i < Object.keys(results_JSON).length ;i++){
                 console.log(results_JSON[i]['name'])
-                let link = document.createElement('div')
+                let link = document.createElement('li')
                 link.setAttribute('class','home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['id']}`)
                 let text_name = document.createTextNode(`${results_JSON[i]['name']} (Vers.${results_JSON[i]['lastVersion']})`)
