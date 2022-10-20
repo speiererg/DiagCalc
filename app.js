@@ -1,5 +1,5 @@
-var modifier_nbr = 3
-var modifierSub_nbr = 4
+var modifier_nbr = 1
+var modifierSub_nbr = 1
 var confirmBeforeNavigate = 0
 var array_inputs_value = [];
 var array_inputs_itemNbr = [];
