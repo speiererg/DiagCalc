@@ -44,7 +44,7 @@ function changePageExecute(page,params) {
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
                 let script2 = document.createElement('script');
-                script2.setAttribute('src', 'calculator1.js');
+                script2.setAttribute('src', 'calculator.js');
                 document.body.appendChild(script2);
             }
             if (page == "index") {
