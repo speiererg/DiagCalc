@@ -1,7 +1,7 @@
 
 <script>
-let id_POST='<?php echo $_POST['id'];?>';
-let version_POST='<?php echo $_POST['version'];?>';
+var id_POST='<?php echo $_POST['id'];?>';
+var version_POST='<?php echo $_POST['version'];?>';
 </script>
 
 <table class="CSS_contentTable">
