@@ -41,8 +41,8 @@ function changePageExecute(page,params) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
-                var modifier_nbr = 1
-                var modifierSub_nbr = 1
+                modifier_nbr = 1
+                modifierSub_nbr = 1
                 let script2 = document.createElement('script');
                 script2.setAttribute('src', 'calculator7.js');
                 document.body.appendChild(script2);
