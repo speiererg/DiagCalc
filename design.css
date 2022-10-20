@@ -259,7 +259,7 @@ body {
   color: var(--div-color-dunkel);
   text-decoration: underline;
   font-size: medium;
-  cursor: pointer;
+  cursor: alias;
 }
 
 .home-link:hover {
