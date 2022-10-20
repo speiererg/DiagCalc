@@ -262,6 +262,7 @@ body {
 }
 
 .home_link:hover {
+  font-size: larger;
   color: var(--div-seperation);
   cursor: pointer;
 }
