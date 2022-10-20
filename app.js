@@ -34,7 +34,8 @@ function changePage(page,params) {
 }
 
 function changePageExecute(page,params) {
-    if (page == "index"){let targetpage = 'home'}else{let targetpage = page}
+    let targetpage
+    if (page == "index"){targetpage = 'home'}else{targetpage = page}
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
