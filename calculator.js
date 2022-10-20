@@ -9,7 +9,6 @@ function loading_page_calculator() {
     findOne_Calculator_mongoDB(id_POST, version_POST)
 }
 
-
 function document_addeventlistener_calculator() {
     console.log('guisdf')
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
