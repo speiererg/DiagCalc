@@ -22,7 +22,7 @@ $insertOneResult = $collection->insertOne([
  
    'id' => '3',
    'mainName' => $_POST['input_maindiagnose'],
-   'Version' => $_POST['select_version'],
+   'version' => $_POST['select_version'],
    'inputs' => $inputs_output
    
 ]);
