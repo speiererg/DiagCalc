@@ -16,7 +16,7 @@ function document_addeventlistener_calculator() {
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
 
-    document.getElementById(`radio_input_1`).addEventListener('click', function () { click_radio_input(1) })
+    document.getElementById(`radio_input_1`).addEventListener('click', function (event) { click_radio_input(event) })
 
 }
 
