@@ -132,6 +132,8 @@ console.log(results_findOne['inputs'])
 
 //Function Calculator
 function click_radio_input(radio_input_id) {
+    console.log(radio_input_id)
+    console.log(array_hiden_ID)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
@@ -139,6 +141,7 @@ function click_radio_input(radio_input_id) {
     }
     if (radio_input_id != "0") {
         for (let i = 2; i <= modifierSub_nbr; i++) {
+            console.log(`input${radio_input_id}_${i}`)
             document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
