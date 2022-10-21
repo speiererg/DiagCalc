@@ -19,7 +19,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $select_ID = "select_input_{$i}";
       $radio_ID = "radio_input_{$i}";
       $checkbox_ID = "checkbox_input_{$i}";
-      $checkbox_multiple_ID = "checkbox_multiple_{$i}";
+      $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
 
 echo $_POST[$select_ID];
 echo $_POST[$checkbox_ID];
@@ -69,5 +69,5 @@ $insertOneResult2 = $collection2->insertOne([
    
 ]);
 
- //header('Location: ../index.php?calculator='.$calculator_id);
+ header('Location: ../index.php?calculator='.$calculator_id);
 ?>
