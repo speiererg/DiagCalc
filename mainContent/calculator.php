@@ -62,7 +62,6 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <input type="hidden" name="modifier_nbr" id="input_hidden_modifier_nbr" value="" >
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
               <input type="hidden" name="XML_output" id="input_hidden_XML_output" value="" >
-
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
               </form>  
             </td>
