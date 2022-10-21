@@ -19,6 +19,8 @@ function addEventListener() {
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
 }
 
+
+//Change Page 
 function changePage(page, params) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
