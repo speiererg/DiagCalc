@@ -129,7 +129,7 @@ function importing_calculator(results_findOne) {
     let inputs = results_findOne['inputs']
     modifier_nbr = results_findOne['modifier_nbr']    
     console.log(modifier_nbr)
-    for (let i=0;i<modifier_nbr;i++){addInputColumn();console.log('inputColumn')}
+    for (let l=0;l<modifier_nbr;l++){addInputColumn();console.log('inputColumn')}
     modifierSub_nbr = results_findOne['modifierSub_nbr']
     console.log(modifierSub_nbr)
     for (let i=0;i<modifierSub_nbr;i++){addInputRow()}
