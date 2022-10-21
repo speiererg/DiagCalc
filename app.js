@@ -121,16 +121,16 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
-    console.log(params)
 }
 
 function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
+    document.getElementById('input_calculator_id').setAttribute('readonly',true)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['calculator_id']
-    versionOption.appendChild.createTextNode = `Version ${results_findOne['version']}`
+    versionOption.appendChild.createTextNode(`Version ${results_findOne['version']}`)
     document.getElementById('select_version').innerHTML = ""
     document.getElementById('select_version').appendChild(versionOption)
 
