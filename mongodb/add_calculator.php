@@ -22,7 +22,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $checkbox_multiple_ID = "checkbox_multiple_{$i}";
 
       $parameters_output = array_merge($parameters_output, array(
-         $select_ID => $_POST["$select_ID"],
+         $select_ID => $_POST["select_input_2"],
          $radio_ID => $_POST["$radio_ID"],
          $checkbox_ID => $_POST["$checkbox_ID"],
          $checkbox_multiple_ID => $_POST["$checkbox_multiple_ID"]));
