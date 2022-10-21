@@ -138,14 +138,16 @@ function importing_calculator(results_findOne) {
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
     for (let l = 0; l < modifier_nbr_target; l++) {
         addInputColumn()
+    }
+    for (let l = 0; l < modifier_nbr_target; l++) {
         if (results_findOne['parameters'][`radio_input_${l}`] == true) { document.getElementById(`radio_input_${l}`).checked = true }
         if (results_findOne['parameters'][`checkbox_input_${l}`] == true) {
             document.getElementById(`checkbox_input_${l}`).checked = true
         } else {
             document.getElementById(`checkbox_input_${l}`).checked = false
         }
-
     }
+
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
