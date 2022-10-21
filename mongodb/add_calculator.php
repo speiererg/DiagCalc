@@ -41,5 +41,18 @@ $insertOneResult = $collection->insertOne([
    
 ]);
 
+$collection2 = $client->DiagCalc_Calculators->Index;
+
+$insertOneResult2 = $collection2->insertOne([
+ 
+   'calculator_id' => $_POST['calculator_id'],
+   'mainName' => $_POST['input_maindiagnose'],
+   'lastVersion' => $_POST['select_version'],
+   'EDG_id' => $_POST['EDG_id'],
+   'last_modification_Time' => $time,
+   'last_modification_timestamp' => time(),
+   
+]);
+
  header('Location: ../index.php?calculator='.$calculator_id);
 ?>

@@ -114,8 +114,7 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_findOne = JSON.parse(this.responseText);
-            console.log(results_findOne)
-            create_input_calculator(results_findOne)
+            importing_calculator(results_findOne)
         }
     };
     xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
@@ -123,9 +122,16 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
-function create_input_calculator(results_findOne) {
+function importing_calculator(results_findOne) {
     console.log(results_findOne)
-    console.log(results_findOne['inputs'])
+    let inputs = results_findOne['inputs']
+    modifier_nbr = results_findOne['modifier_nbr']    
+    modifierSub_nbr = results_findOne['modifierSub_nbr']
+    console.log(modifier_nbr)
+    console.log(modifierSub_nbr)
+    for (let i=0;i<modifier_nbr;i++){addInputColumn()}
+    for (let i=0;i<modifierSub_nbr;i++){addInputRow()}
+
 }
 
 
