@@ -128,7 +128,7 @@ function importing_calculator(results_findOne) {
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['calculator_id']
-    versionOption.appendChild.createTextNode(`Version ${results_findOne['version']}`)
+    versionOption.appendChild(document.createTextNode(`Version ${results_findOne['version']}`))
     document.getElementById('select_version').innerHTML = ""
     document.getElementById('select_version').appendChild(versionOption)
 
