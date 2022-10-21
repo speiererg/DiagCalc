@@ -295,9 +295,11 @@ function addInputRow() {
 }
 
 function addInputColumn() {
+
+    // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
-    input_radio.setAttribute('name', 'radio_input')
+    input_radio.setAttribute('name', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('class', 'radio_input')
     input_radio.setAttribute('value', `${modifier_nbr + 1}`)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
