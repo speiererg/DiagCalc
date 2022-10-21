@@ -139,6 +139,7 @@ body {
 
 input:read-only {
   border: grey;
+  background-color:yellow;
 }
 
 .input_maindiagnose {
