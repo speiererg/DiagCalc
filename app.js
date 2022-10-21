@@ -301,7 +301,7 @@ function addInputColumn() {
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('class', 'radio_input')
-    input_radio.setAttribute('value', `${modifier_nbr + 1}`)
+    input_radio.setAttribute('value', true)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
 
@@ -333,6 +333,7 @@ function addInputColumn() {
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('checked', 'true')
+    input_checkbox.setAttribute('value', true)
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
     input_checkbox.setAttribute('class', `input_checkbox`)
     input_checkbox.setAttribute('form', `form_saveMongoDB`);
@@ -346,6 +347,7 @@ function addInputColumn() {
     input_multiple_checkbox.setAttribute('type', 'checkbox')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('class', `input_checkbox`)
+    input_multiple_checkbox.setAttribute('value', true)
     input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);

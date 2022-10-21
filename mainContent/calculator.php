@@ -25,13 +25,13 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <td><select id="select_input_1" name="select_input_1" class="input_select" disabled form="form_saveMongoDB"></select></td>
               </tr> 
              <tr id="tr_input_radio">
-             <td><input type="radio" id="radio_input_1" name="radio_input_1" value="1" class="radio_input" form="form_saveMongoDB">Main</td>
+             <td><input type="radio" id="radio_input_1" name="radio_input_1" value="true" class="radio_input" form="form_saveMongoDB">Main</td>
               </tr>  
               <tr id="tr_input_checkbox">
-              <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox" checked form="form_saveMongoDB">Not required</td>
+              <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox" checked form="form_saveMongoDB" value="true">Not required</td>
               </tr>  
               <tr id="tr_input_multiple_checkbox">
-              <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox" form="form_saveMongoDB">Multiple</td>
+              <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox" form="form_saveMongoDB" value="true">Multiple</td>
               </tr>  
               <tr id="tr_input_1">
                 <td><input type="text" id="input1_1" name="input1_1" value="" class="input_modifier" form="form_saveMongoDB"></td>
