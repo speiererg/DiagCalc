@@ -44,7 +44,7 @@ function changePageExecute(page, params) {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 let script2 = document.createElement('script');
-                script2.setAttribute('src', 'calculator7.js');
+                script2.setAttribute('src', 'calculator10.js');
                 document.body.appendChild(script2);
             }
             if (page == "index") {
