@@ -7,6 +7,8 @@ function loading_page_calculator() {
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
     findOne_Calculator_mongoDB(id_POST, version_POST)
+    document.getElementById(`radio_input_1`).dataset.id = 1
+
 }
 
 function document_addeventlistener_calculator() {
