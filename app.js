@@ -132,7 +132,7 @@ console.log(results_findOne['inputs'])
 
 //Function Calculator
 function click_radio_input(radio_input_id) {
-    console.log(event)
+    console.log(event.srcElement)
     console.log(radio_input_id)
     console.log(array_hiden_ID)
     if (array_hiden_ID != "") {
@@ -327,11 +327,13 @@ function addInputColumn() {
         input_input.setAttribute('class', `input_modifier`);
         input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
+        input_input.dataset.id = modifier_nbr + 1
 
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
     modifier_nbr_change('++', 1)
+    
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function (event) { click_radio_input(event) })
 
 }
