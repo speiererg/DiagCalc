@@ -133,7 +133,7 @@ function create_input_calculator(results_findOne) {
 //Function Calculator
 function click_radio_input(event) {
     console.log(event.srcElement)
-    console.log(event.dataset)
+    console.log(event.srcElement.dataset.id)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
