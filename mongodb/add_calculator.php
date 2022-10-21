@@ -37,7 +37,7 @@ $insertOneResult = $collection->insertOne([
    'created_Time' => $time,
    'created_timestamp' => time(),
    'inputs' => $inputs_output,
-   'XML_output' => $_POST['XML_Output'],
+   'XML_output' => $_POST['XML_output'],
    
 ]);
 
