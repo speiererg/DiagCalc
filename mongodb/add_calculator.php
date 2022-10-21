@@ -12,6 +12,14 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    }
 }
 
+
+
+
+date_default_timezone_set("Europe/Paris");
+$time = date("d.m.Y h:i:sa");
+
+
+
   $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 $db = $client->test;
 
@@ -26,6 +34,8 @@ $insertOneResult = $collection->insertOne([
    'modifier_nbr' => $_POST['modifier_nbr'],
    'modifierSub_nbr' => $_POST['modifierSub_nbr'],
    'EDG_id' => $_POST['EDG_id'],
+   'created_Time' => $time,
+   'created_timestamp' => time(),
    'inputs' => $inputs_output
    
 ]);
