@@ -325,6 +325,7 @@ function addInputColumn() {
     input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
     input_select.setAttribute('class', `input_select`)
     input_select.setAttribute('form', `form_saveMongoDB`);
+    input_select.setAttribute('name', `select_input_${modifier_nbr + 1}`)
     input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
@@ -337,6 +338,7 @@ function addInputColumn() {
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
     input_checkbox.setAttribute('class', `input_checkbox`)
     input_checkbox.setAttribute('form', `form_saveMongoDB`);
+    input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr + 1}`)
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
@@ -348,6 +350,7 @@ function addInputColumn() {
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('class', `input_checkbox`)
     input_multiple_checkbox.setAttribute('value', true)
+    input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
