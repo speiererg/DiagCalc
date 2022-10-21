@@ -148,7 +148,7 @@ body {
   font-size: var(--font-size)
 }
 
-.input_maindiagnose {
+.input_calculator_id {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
   padding: 5px, 5px, 5px, 5px;
