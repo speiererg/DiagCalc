@@ -51,6 +51,7 @@ $insertOneResult2 = $collection2->insertOne([
    'EDG_id' => $_POST['EDG_id'],
    'last_modification_Time' => $time,
    'last_modification_timestamp' => time(),
+   'active' => 'yes'
    
 ]);
 
