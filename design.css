@@ -137,6 +137,10 @@ body {
 
 #tr_maindiagnose {}
 
+#table_input input:readonly {
+  border: grey;
+}
+
 .input_maindiagnose {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
