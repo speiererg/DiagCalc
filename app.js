@@ -114,6 +114,7 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_findOne = JSON.parse(this.responseText);
+            console.log(reults_findOne)
             importing_calculator(results_findOne)
         }
     };
