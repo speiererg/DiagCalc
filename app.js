@@ -126,7 +126,7 @@ function findOne_Calculator_mongoDB(id, version) {
 
 function importing_calculator(results_findOne) {
     console.log(results_findOne)
-    let inputs = JSON_parse(results_findOne['inputs'])
+    let inputs = JSON.parse(results_findOne['inputs'])
     modifier_nbr_target = results_findOne['modifier_nbr'] -1   
     for (let l=0;l<modifier_nbr_target;l++){addInputColumn();console.log('inputColumn')}
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
