@@ -17,7 +17,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
 
 date_default_timezone_set("Europe/Paris");
 $time = date("d.m.Y h:i:sa");
-
+$calculator_id = $_POST['calculator_id'];
 
 
   $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
@@ -41,5 +41,5 @@ $insertOneResult = $collection->insertOne([
    
 ]);
 
- //header('Location: ../index.php');
+ header('Location: ../index.php?calculator='.$calculator_id);
 ?>
