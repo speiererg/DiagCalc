@@ -14,7 +14,18 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    }
 }
 
+for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
+      $select_ID = "select_input_{$i}";
+      $radio_ID = "radio_input_{$i}";
+      $checkbox_ID = "checkbox_input_{$i}";
+      $checkbox_multiple_ID = "checkbox_multiple_{$i}";
 
+      $parameters_output = array_merge($parameters_output, array(
+         $select_ID => $_POST[$select_ID],
+         $radio_ID => $_POST[$radio_ID],
+         $checkbox_ID => $_POST[$checkbox_ID],
+         $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]));
+}
 
 
 date_default_timezone_set("Europe/Paris");
@@ -35,6 +46,7 @@ $insertOneResult = $collection->insertOne([
    'created_Time' => $time,
    'created_timestamp' => time(),
    'inputs' => $inputs_output,
+   'parameters' => $parameters_output,
    'XML_output' => $_POST['XML_output'],
    
 ]);
