@@ -121,6 +121,7 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
+    console.log(params)
 }
 
 function importing_calculator(results_findOne) {
