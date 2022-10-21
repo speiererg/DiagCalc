@@ -132,6 +132,7 @@ console.log(results_findOne['inputs'])
 
 //Function Calculator
 function click_radio_input(radio_input_id) {
+    console.log(event)
     console.log(radio_input_id)
     console.log(array_hiden_ID)
     if (array_hiden_ID != "") {
@@ -331,7 +332,7 @@ function addInputColumn() {
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
     modifier_nbr_change('++', 1)
-    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function () { click_radio_input(modifier_nbr) })
+    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function (event) { click_radio_input(event) })
 
 }
 
