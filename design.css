@@ -148,6 +148,17 @@ body {
   font-size: var(--font-size)
 }
 
+.input_maindiagnose {
+  border: solid 2px var(--div-seperation);
+  background-color: var(--div-color-hell);
+  padding: 5px, 5px, 5px, 5px;
+  width: 40px;
+  display: inline-block;
+  vertical-align: middle;
+  border-radius: 3px;
+  font-size: var(--font-size)
+}
+
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
