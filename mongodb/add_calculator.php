@@ -5,14 +5,15 @@
 
 $inputs_output = array();
 
-echo  $_POST['modifierSub_nbr'];
-
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
       $input_ID = "input{$i}_{$k}";
       $inputs_output = array_merge($inputs_output, array("input{$i}_{$k}" => $_POST[$input_ID]));
    }
 }
+
+
+$parameters_output = array();
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $select_ID = "select_input_{$i}";
