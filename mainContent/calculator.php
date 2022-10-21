@@ -9,7 +9,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
         <tr id="tr_maindiagnose">
           <td>
            Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose" value="" form="form_saveMongoDB"> 
-           Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"></select>
+           Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="1" selected>Version 1</option></select>
            Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_maindiagnose" value="" form="form_saveMongoDB"> 
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="" form="form_saveMongoDB" readonly> 
         
