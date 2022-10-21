@@ -137,7 +137,7 @@ body {
 
 #tr_maindiagnose {}
 
-#table_input input:readonly {
+input:readonly {
   border: grey;
 }
 
