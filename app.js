@@ -43,9 +43,7 @@ function changePageExecute(page, params) {
             if (page == "calculator") {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
-                let script2 = document.createElement('script');
-                script2.setAttribute('src', 'calculator11.js');
-                document.body.appendChild(script2);
+                loading_page_calculator()
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
@@ -126,7 +124,7 @@ function findOne_Calculator_mongoDB(id, version) {
 function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
-    document.getElementById('input_calculator_id').setAttribute('readonly',true)
+    document.getElementById('input_calculator_id').setAttribute('readonly', true)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['calculator_id']
@@ -147,6 +145,21 @@ function importing_calculator(results_findOne) {
 }
 
 //Function Calculator
+
+
+function loading_page_calculator() {
+    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
+    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
+    document.getElementById('button_calculate').addEventListener('click', click_calculate)
+    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
+    document.getElementById(`radio_input_1`).addEventListener('click', function (event) { click_radio_input(event) })
+    id_POST = document.getElementById('input_hidden_POST_id').value
+    version_POST = document.getElementById('input_hidden_POST_version').value
+    findOne_Calculator_mongoDB(id_POST, version_POST)
+    document.getElementById(`radio_input_1`).dataset.id = 1
+
+}
 function click_radio_input(event) {
     radio_input_id = event.srcElement.dataset.id
     console.log(radio_input_id)
