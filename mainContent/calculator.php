@@ -10,6 +10,9 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
           <td>
            Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose" value="" form="form_saveMongoDB"> 
            Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"></select>
+           Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_maindiagnose" value="" form="form_saveMongoDB"> 
+           EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="8xxxxvviiiiii" form="form_saveMongoDB" readonly> 
+        
           </td>
         </tr>
         <tr>
@@ -58,6 +61,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
               <input type="hidden" name="modifier_nbr" id="input_hidden_modifier_nbr" value="" >
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
+              <input type="hidden" name="XML_output" id="input_hidden_XML_output" value="" >
+
                 <input type="submit" name="button2"  class="button_download" value="Save in MongoDB" />
               </form>  
             </td>

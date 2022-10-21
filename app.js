@@ -215,7 +215,7 @@ function create_calculator_output() {
         // Append to XML
         console.log(calculated_diag)
         XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
-
+        document.getElementById('input_hidden_XML_output').value = XML_output
 
         // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {

@@ -20,9 +20,12 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
  
-   'id' => '3',
+   'calculator_id' => $_POST['calculator_id'],
    'mainName' => $_POST['input_maindiagnose'],
    'version' => $_POST['select_version'],
+   'modifier_nbr' => $_POST['modifier_nbr'],
+   'modifierSub_nbr' => $_POST['modifierSub_nbr'],
+   'EDG_id' => $_POST['EDG_id'],
    'inputs' => $inputs_output
    
 ]);
