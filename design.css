@@ -137,11 +137,6 @@ body {
 
 #tr_maindiagnose {}
 
-input:read-only {
-  border: grey;
-  background-color:yellow;
-}
-
 .input_maindiagnose {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
@@ -162,6 +157,10 @@ input:read-only {
   vertical-align: middle;
   border-radius: 3px;
   font-size: var(--font-size)
+}
+
+.input_calculator_id:read-only {
+  border: grey;
 }
 
 .input_modifier {
