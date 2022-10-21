@@ -137,7 +137,6 @@ function importing_calculator(results_findOne) {
 
 }
 
-
 //Function Calculator
 function click_radio_input(event) {
     radio_input_id = event.srcElement.dataset.id
