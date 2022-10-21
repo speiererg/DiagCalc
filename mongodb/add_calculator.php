@@ -36,7 +36,8 @@ $insertOneResult = $collection->insertOne([
    'EDG_id' => $_POST['EDG_id'],
    'created_Time' => $time,
    'created_timestamp' => time(),
-   'inputs' => $inputs_output
+   'inputs' => $inputs_output,
+   'XML_output' => $_POST['XML_Output'],
    
 ]);
 
