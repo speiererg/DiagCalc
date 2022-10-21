@@ -132,7 +132,7 @@ function importing_calculator(results_findOne) {
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i=0;i<modifierSub_nbr_target;i++){addInputRow()}
     console.log(inputs)
-    console.log(inputs[0][0])
+    console.log(inputs[0])
     for( i=0;i<inputs.length();i++){document.getElementById(inputs[i][0]).value = inputs[i][1]}
 
 }
