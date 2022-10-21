@@ -90,7 +90,6 @@ function find_home_mongoDB(id, version) {
             let results_JSON = JSON.parse(this.responseText);
 
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
-                console.log(results_JSON[i]['name'])
                 let link = document.createElement('li')
                 link.setAttribute('class', 'home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['id']}`)
@@ -132,8 +131,7 @@ function create_input_calculator(results_findOne) {
 
 //Function Calculator
 function click_radio_input(event) {
-    console.log(event.srcElement)
-    console.log(event.srcElement.dataset.id)
+    radio_input_id = event.srcElement.dataset.id
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
