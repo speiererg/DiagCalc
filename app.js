@@ -126,15 +126,14 @@ function findOne_Calculator_mongoDB(id, version) {
 
 function create_input_calculator(results_findOne) {
     console.log(results_findOne)
-console.log(results_findOne['inputs'])
+    console.log(results_findOne['inputs'])
 }
 
 
 //Function Calculator
-function click_radio_input(radio_input_id) {
+function click_radio_input(event) {
     console.log(event.srcElement)
-    console.log(radio_input_id)
-    console.log(array_hiden_ID)
+    console.log(event.dataset)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
