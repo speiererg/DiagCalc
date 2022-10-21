@@ -125,15 +125,21 @@ function findOne_Calculator_mongoDB(id, version) {
 }
 
 function importing_calculator(results_findOne) {
-    console.log(results_findOne)
+    document.getElementById('input_maindiagnose').value = results_findOne['mainName']
+    document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
+    let versionOption = document.createElement('option')
+    versionOption.setAttribute('selected', 'true')
+    versionOption.value = results_findOne['calculator_id']
+    versionOption.appendChild.createTextNode = `Version ${results_findOne['version']}`
     let inputs = results_findOne['inputs']
-    modifier_nbr_target = results_findOne['modifier_nbr'] -1   
-    for (let l=0;l<modifier_nbr_target;l++){addInputColumn();console.log('inputColumn')}
+    modifier_nbr_target = results_findOne['modifier_nbr'] - 1
+    for (let l = 0; l < modifier_nbr_target; l++) { addInputColumn(); console.log('inputColumn') }
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
-    for (let i=0;i<modifierSub_nbr_target;i++){addInputRow()}
+    for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
-    console.log(inputs)
-    for( i=0;i<inputs.length;i++){document.getElementById(inputs[i][0]).value = inputs[i][1]}
+    for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
+
+
 
 }
 
