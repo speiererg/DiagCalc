@@ -131,7 +131,8 @@ function importing_calculator(results_findOne) {
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['calculator_id']
     versionOption.appendChild.createTextNode = `Version ${results_findOne['version']}`
-    document.getElementById('select_version').appendChild(versionOption)
+    //document.getElementById('select_version').appendChild(versionOption)
+
     let inputs = results_findOne['inputs']
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
     for (let l = 0; l < modifier_nbr_target; l++) { addInputColumn(); console.log('inputColumn') }
