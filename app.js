@@ -112,6 +112,7 @@ function find_home_mongoDB(id, version) {
 
 
 function findOne_Calculator_mongoDB(id, version) {
+    console.lot('find One')
     var xmlhttp = new XMLHttpRequest();
     let params = `id=${id}&version=${version}`
     xmlhttp.onreadystatechange = function () {
@@ -128,6 +129,23 @@ function findOne_Calculator_mongoDB(id, version) {
 
 
 //************************ Loading Page Calculator *****************************
+
+
+function loading_page_calculator() {
+    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
+    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
+    document.getElementById('button_calculate').addEventListener('click', click_calculate)
+    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
+    document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
+
+    id_POST = document.getElementById('input_hidden_POST_id').value
+    version_POST = document.getElementById('input_hidden_POST_version').value
+    findOne_Calculator_mongoDB(id_POST, version_POST)
+    document.getElementById(`radio_input_1`).dataset.id = 1
+
+}
 
 function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
@@ -285,22 +303,6 @@ function addInputColumn(params) {
 
 //  *****************************  Function Calculator  *****************************
 
-
-function loading_page_calculator() {
-    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
-    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
-    document.getElementById('button_calculate').addEventListener('click', click_calculate)
-    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-    document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
-    document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
-
-    id_POST = document.getElementById('input_hidden_POST_id').value
-    version_POST = document.getElementById('input_hidden_POST_version').value
-    findOne_Calculator_mongoDB(id_POST, version_POST)
-    document.getElementById(`radio_input_1`).dataset.id = 1
-
-}
 function click_radio_input(event) {
     console.log(event)
     console.log(event.srcElement.dataset)
