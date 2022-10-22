@@ -12,7 +12,12 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
            Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="1" selected>Version 1</option></select>
            Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB"> 
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="" form="form_saveMongoDB" readonly> 
-        
+           <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
+           <img src="img/delete.png" width="30" height="30">
+<input id="unpressed" type="submit" value=" " style="background:url(img/delete.png) no-repeat;border:none;" width="30" height="30">
+              </form>  
+
+
           </td>
         </tr>
         <tr>
