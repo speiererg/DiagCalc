@@ -11,8 +11,8 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $cursor = $collection->find(
     array(),
     array(
-        'sort' => array('id' => -1),
-        'limit' => 1
+        'sort' => array('calculator_id' => -1),
+        'limit' => 1a
         )
 );
 /*
