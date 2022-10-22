@@ -126,7 +126,7 @@ function findOne_Calculator_mongoDB(id, version) {
 function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
-    document.getElementById('input_calculator_id').setAttribute('readonly', true)
+    //document.getElementById('input_calculator_id').setAttribute('readonly', true)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['calculator_id']
@@ -402,7 +402,6 @@ function addInputColumn(params) {
     } else {
         document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
     }
-    //if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).click()}
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
