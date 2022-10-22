@@ -139,16 +139,14 @@ function importing_calculator(results_findOne) {
     for (let l = 0; l < modifier_nbr_target; l++) {
         addInputColumn(results_findOne['parameters'])
     }
-    /*
-    for (let l = 0; l < modifier_nbr_target; l++) {
-        if ([`radio_input_${l}`] == true) { document.getElementById(`radio_input_${l}`).checked = true }
-        if (results_findOne['parameters'][`checkbox_input_${l}`] == true) {
-            document.getElementById(`checkbox_input_${l}`).checked = true
+    
+        if (results_findOne['parameters'][`radio_input_1`] == "true") { document.getElementById(`radio_input_1`).checked = true }
+        if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
+            document.getElementById(`checkbox_input_1`).checked = true
         } else {
-            document.getElementById(`checkbox_input_${l}`).checked = false
+            document.getElementById(`checkbox_input_1`).checked = false
         }
-    }
-*/
+
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
@@ -306,8 +304,8 @@ function addInputRow() {
     modifierSub_nbr_change('++', 1)
 }
 
-function addInputColumn() {
-
+function addInputColumn(params) {
+console.log(params)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
@@ -368,6 +366,15 @@ function addInputColumn() {
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
+
+    //Import Params
+    /*if ([`radio_input_${l}`] == true) { document.getElementById(`radio_input_${l}`).checked = true }
+    if (results_findOne['parameters'][`checkbox_input_${l}`] == true) {
+        document.getElementById(`checkbox_input_${l}`).checked = true
+    } else {
+        document.getElementById(`checkbox_input_${l}`).checked = false
+    }*/
+
 
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
