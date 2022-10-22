@@ -9,7 +9,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $version = $_POST['version'];
 
 $cursor = $collection->find(
-    array('calculator_id'=>'1')
+    array('calculator_id'=>'2')
 );
 /*
 $cursor->sort(
@@ -23,7 +23,7 @@ $cursor->sort(
 //$cursor = $collection->find($params);
  
 
-echo json_encode(iterator_to_array($cursor));
+echo json_encode($cursor);
 ?>
 
 
