@@ -8,7 +8,7 @@ $id = $_POST['calculator_id'];
 echo $id;
 $cursor = $collection->updateOne(
   [ 'calculator_id' => $id ],
-  [ 'active' => 'no']
+  [ '$set' => ['active' => 'no']]
 );
 
 
