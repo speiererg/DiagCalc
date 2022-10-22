@@ -199,6 +199,7 @@ function click_radio_input(event) {
 }
 
 function click_calculate() {
+    document.getElementById(`radio_input_2`).checked = true
     array_inputs_value = [];
     array_inputs_itemNbr = [];
     array_calculator = [];
