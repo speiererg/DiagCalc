@@ -22,7 +22,7 @@ $cursor->sort(
 //$params = array('active' => 'yes');
 //$cursor = $collection->find($params);
  
-print_r($cursor)
+print_r($cursor);
 echo json_encode($cursor);
 ?>
 
