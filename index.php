@@ -24,6 +24,8 @@ session_start();
     <ul>
       <li><a id="navPageHome">Main</a></li>
       <li><a id="navPageCalculator">Calculator</a></li>
+      <li><a id="navPageTest">TestMongoDB</a></li>
+
     </ul>
   </div>
 
