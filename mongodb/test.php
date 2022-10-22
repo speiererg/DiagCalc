@@ -12,11 +12,11 @@ $cursor = $collection->find(
     [],
     ['projection'=>['id' => 1]]
 );
-
+/*
 $cursor->sort(
     ['id' => -1],
 ['limit' => 1]);
-
+*/a
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
 
