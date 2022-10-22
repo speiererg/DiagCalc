@@ -388,7 +388,7 @@ function addInputColumn(params) {
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
 
-    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('change', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_${modifier_nbr+1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
     //Import Params
     if (params[`checkbox_input_1`] == "true") {
