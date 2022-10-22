@@ -16,7 +16,7 @@ $cursor = $collection->find(
 $cursor->sort(
     ['id' => -1],
 ['limit' => 1]);
-*/a
+*/
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
 
