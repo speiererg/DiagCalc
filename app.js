@@ -140,7 +140,6 @@ function importing_calculator(results_findOne) {
         addInputColumn(results_findOne['parameters'])
     }
 
-    if (results_findOne['parameters'][`radio_input_1`] == "true") { document.getElementById(`radio_input_1`).checked = true }
     if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
         document.getElementById(`checkbox_input_1`).checked = true
     } else {
@@ -199,7 +198,6 @@ function click_radio_input(event) {
 }
 
 function click_calculate() {
-    document.getElementById(`radio_input_3`).click()
     array_inputs_value = [];
     array_inputs_itemNbr = [];
     array_calculator = [];
@@ -392,7 +390,7 @@ function addInputColumn(params) {
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
     //Import Params
-    if (params[`checkbox_input_1`] == "true") {
+    if (params[`checkbox_input_${modifier_nbr + 1}`] == "true") {
         document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
     } else {
         document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
