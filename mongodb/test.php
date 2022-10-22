@@ -16,18 +16,17 @@ $cursor = $collection->find(
         'limit' => 1
         )
 );
-/*
-$cursor->sort(
-    ['id' => -1],
-['limit' => 1]);
-*/
+
+echo $cursor['calculator_id']
+
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
 
 //$params = array('active' => 'yes');
 //$cursor = $collection->find($params);
  
-echo json_encode(iterator_to_array($cursor));
+
+//echo json_encode(iterator_to_array($cursor));
 ?>
 
 

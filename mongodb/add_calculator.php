@@ -37,6 +37,9 @@ $time = date("d.m.Y h:i:sa");
 $calculator_id = $_POST['calculator_id'];
 
 
+
+
+
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
