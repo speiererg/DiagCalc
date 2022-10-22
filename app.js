@@ -199,10 +199,7 @@ function click_radio_input(event) {
 }
 
 function click_calculate() {
-    document.getElementById(`radio_input_3`).checked
-    $("#radio_input_3").prop("checked", true);
-
-
+    document.getElementById(`radio_input_3`).click()
     array_inputs_value = [];
     array_inputs_itemNbr = [];
     array_calculator = [];
