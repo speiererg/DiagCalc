@@ -112,7 +112,7 @@ function find_home_mongoDB(id, version) {
 
 
 function findOne_Calculator_mongoDB(id, version) {
-    console.lot('find One')
+    console.log('find One')
     var xmlhttp = new XMLHttpRequest();
     let params = `id=${id}&version=${version}`
     xmlhttp.onreadystatechange = function () {
