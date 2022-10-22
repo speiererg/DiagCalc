@@ -323,6 +323,8 @@ function addInputColumn(params) {
     column_input_radio.appendChild(input_radio);
     column_input_radio.appendChild(document.createTextNode("Main"))
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
+    document.getElementById(`radio_input_${modifier_nbr+1}`).dataset.id = modifier_nbr+1
+
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
@@ -404,7 +406,6 @@ function addInputColumn(params) {
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
-    document.getElementById(`radio_input_${modifier_nbr}`).dataset.id = modifier_nbr
 }
 
 
