@@ -13,8 +13,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
            Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB"> 
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="" form="form_saveMongoDB" readonly> 
            <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
-           <img src="img/delete.png" width="30" height="30">
-<input id="unpressed" type="submit" value=" " style="background:url(img/delete.png) no-repeat;border:none;" width="30" height="30">
+            <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="" >
+              <input id="submit_form_deactivate_calculator" type="submit" value=" " style="background:url(img/delete.png) no-repeat;border:none;">
               </form>  
 
 
