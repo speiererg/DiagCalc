@@ -17,7 +17,7 @@ $cursor = $collection->find(
         )
 );
 
-echo $cursor['calculator_id'];
+echo $cursor->toarray()[0];
 
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
