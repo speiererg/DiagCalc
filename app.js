@@ -9,7 +9,7 @@ var array_hiden_ID = "";
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
-// Loading 
+// ***************************** Loading HOME  *****************************
 function loadingIndex() {
     changePage('index')
 }
@@ -20,7 +20,7 @@ function addEventListener() {
 }
 
 
-//Change Page 
+//  *****************************   Change Page  *****************************
 function changePage(page, params) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
@@ -63,7 +63,7 @@ function changePageExecute(page, params) {
     xhttp.send(params);
 
 }
-//Tools
+// *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
     if (change == "++") {
         modifier_nbr = modifier_nbr + number
@@ -81,7 +81,10 @@ function modifierSub_nbr_change(change, number) {
     }
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
-//MongoDB Tools
+
+
+// *****************************   MongoDB Tools   *****************************
+
 function find_home_mongoDB(id, version) {
     var xmlhttp = new XMLHttpRequest();
     let params = 'item=active&value=yes';
@@ -123,13 +126,16 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
+
+//************************ Loading Page Calculator *****************************
+
 function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     //document.getElementById('input_calculator_id').setAttribute('readonly', true)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
-    versionOption.value = results_findOne['calculator_id']
+    versionOption.value = results_findOne['version']
     versionOption.appendChild(document.createTextNode(`Version ${results_findOne['version']}`))
     document.getElementById('select_version').innerHTML = ""
     document.getElementById('select_version').appendChild(versionOption)
@@ -156,141 +162,10 @@ function importing_calculator(results_findOne) {
     inputs = Object.entries(inputs)
     for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
     console.log(results_findOne['parameters']['radio_input'])
-    if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click()}
+    if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
 }
 
-//Function Calculator
-
-
-function loading_page_calculator() {
-    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
-    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
-    document.getElementById('button_calculate').addEventListener('click', click_calculate)
-    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-    document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
-    document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
-
-    id_POST = document.getElementById('input_hidden_POST_id').value
-    version_POST = document.getElementById('input_hidden_POST_version').value
-    findOne_Calculator_mongoDB(id_POST, version_POST)
-    document.getElementById(`radio_input_1`).dataset.id = 1
-
-}
-function click_radio_input(event) {
-    console.log(event)
-    console.log(event.srcElement.dataset)
-    radio_input_id = event.srcElement.dataset.id
-    if (array_hiden_ID != "") {
-        document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
-        document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
-        for (let i = 2; i <= modifierSub_nbr; i++) { document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" }
-    }
-    if (radio_input_id != "0") {
-        for (let i = 2; i <= modifierSub_nbr; i++) {
-            console.log(`input${radio_input_id}_${i}`)
-            document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
-            document.getElementById(`input${radio_input_id}_${i}`).value = ""
-            document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
-            document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
-            array_hiden_ID = radio_input_id
-        }
-    }
-}
-
-function click_calculate() {
-    array_inputs_value = [];
-    array_inputs_itemNbr = [];
-    array_calculator = [];
-    for (let i = 1; i <= modifier_nbr; i++) {
-        let array_inputs_oneModifier = [];
-        let item_nbr = 0
-        let modifierSub_iterate = 1
-        if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
-            modifierSub_iterate = 0
-        }
-        for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
-            if (k == 0) {
-                item_nbr++
-                array_inputs_oneModifier.push('')
-            } else {
-                let input_value = document.getElementById(`input${i}_${k}`).value
-                if (input_value != '') {
-                    item_nbr++
-                    array_inputs_oneModifier.push(input_value)
-
-                }
-
-            }
-        }
-        array_inputs_itemNbr.push(item_nbr)
-        array_inputs_value.push(array_inputs_oneModifier);
-    }
-
-    // Creation du array_Calculator
-    array_calculator.unshift(1)
-    for (let i = modifier_nbr; i > 1; i--) {
-        array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
-    }
-    create_calculator_output();
-}
-
-
-function create_calculator_output() {
-    document.getElementById('table_output_calculator').innerHTML = "";
-
-    var array_iterate = []
-    var itteration_id = modifier_nbr - 1
-    for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
-
-    // Send XML
-    XML_output = XML_Beginn
-
-    // Creation of Items
-    let array_item0 = array_inputs_itemNbr[0]
-    array_inputs_itemNbr[0]++
-    while (array_iterate[0] < array_item0) {
-        var calculated_diag = ""
-        for (let i0 = 0; i0 < modifier_nbr; i0++) {
-            calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
-        }
-        calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
-        let row_output_calculator = document.createElement('tr')
-        let row_output_calculator_Column = document.createElement('td')
-        row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
-        row_output_calculator.appendChild(row_output_calculator_Column)
-        document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-
-
-        // Append to XML
-        console.log(calculated_diag)
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
-        document.getElementById('input_hidden_XML_output').value = XML_output
-
-        // Array Calculation
-        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
-            array_iterate[itteration_id]++
-        } else {
-            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
-                for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
-                    array_iterate[modifier_nbr - id_increment] = 0
-                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
-                        array_iterate[itteration_id - id_increment]++
-                        test_id = modifier_nbr + 1
-                    }
-                    test_id++
-                }
-            }
-        }
-
-    }
-
-    // finalize XML
-
-    XML_output = XML_output + XML_End
-    document.getElementById('input_XML').value = XML_output
-}
 
 function addInputRow() {
     let row_input = document.createElement('tr')
@@ -325,7 +200,7 @@ function addInputColumn(params) {
     column_input_radio.appendChild(input_radio);
     column_input_radio.appendChild(document.createTextNode("Main"))
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
-    document.getElementById(`radio_input_${modifier_nbr+1}`).dataset.id = modifier_nbr+1
+    document.getElementById(`radio_input_${modifier_nbr + 1}`).dataset.id = modifier_nbr + 1
 
 
     // Create Modifier Title
@@ -406,6 +281,137 @@ function addInputColumn(params) {
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
 }
+
+//  *****************************  Function Calculator  *****************************
+
+
+function loading_page_calculator() {
+    document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
+    document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
+    document.getElementById('button_calculate').addEventListener('click', click_calculate)
+    document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
+    document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
+    document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
+
+    id_POST = document.getElementById('input_hidden_POST_id').value
+    version_POST = document.getElementById('input_hidden_POST_version').value
+    findOne_Calculator_mongoDB(id_POST, version_POST)
+    document.getElementById(`radio_input_1`).dataset.id = 1
+
+}
+function click_radio_input(event) {
+    console.log(event)
+    console.log(event.srcElement.dataset)
+    radio_input_id = event.srcElement.dataset.id
+    if (array_hiden_ID != "") {
+        document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
+        document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
+        for (let i = 2; i <= modifierSub_nbr; i++) { document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" }
+    }
+    if (radio_input_id != "0") {
+        for (let i = 2; i <= modifierSub_nbr; i++) {
+            console.log(`input${radio_input_id}_${i}`)
+            document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`input${radio_input_id}_${i}`).value = ""
+            document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
+            document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
+            array_hiden_ID = radio_input_id
+        }
+    }
+}
+
+function click_calculate() {
+    array_inputs_value = [];
+    array_inputs_itemNbr = [];
+    array_calculator = [];
+    for (let i = 1; i <= modifier_nbr; i++) {
+        let array_inputs_oneModifier = [];
+        let item_nbr = 0
+        let modifierSub_iterate = 1
+        if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
+            modifierSub_iterate = 0
+        }
+        for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
+            if (k == 0) {
+                item_nbr++
+                array_inputs_oneModifier.push('')
+            } else {
+                let input_value = document.getElementById(`input${i}_${k}`).value
+                if (input_value != '') {
+                    item_nbr++
+                    array_inputs_oneModifier.push(input_value)
+                }
+            }
+        }
+        array_inputs_itemNbr.push(item_nbr)
+        array_inputs_value.push(array_inputs_oneModifier);
+    }
+
+    // Creation du array_Calculator
+    array_calculator.unshift(1)
+    for (let i = modifier_nbr; i > 1; i--) {
+        array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
+    }
+    create_calculator_output();
+}
+
+
+function create_calculator_output() {
+    document.getElementById('table_output_calculator').innerHTML = "";
+
+    var array_iterate = []
+    var itteration_id = modifier_nbr - 1
+    for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
+
+    // Send XML
+    XML_output = XML_Beginn
+
+    // Creation of Items
+    let array_item0 = array_inputs_itemNbr[0]
+    array_inputs_itemNbr[0]++
+    while (array_iterate[0] < array_item0) {
+        var calculated_diag = ""
+        for (let i0 = 0; i0 < modifier_nbr; i0++) {
+            calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
+        }
+        calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
+        let row_output_calculator = document.createElement('tr')
+        let row_output_calculator_Column = document.createElement('td')
+        row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
+        row_output_calculator.appendChild(row_output_calculator_Column)
+        document.getElementById('table_output_calculator').appendChild(row_output_calculator);
+
+
+        // Append to XML
+        console.log(calculated_diag)
+        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
+        document.getElementById('input_hidden_XML_output').value = XML_output
+
+        // Array Calculation
+        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
+            array_iterate[itteration_id]++
+        } else {
+            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
+                for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
+                    array_iterate[modifier_nbr - id_increment] = 0
+                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
+                        array_iterate[itteration_id - id_increment]++
+                        test_id = modifier_nbr + 1
+                    }
+                    test_id++
+                }
+            }
+        }
+
+    }
+
+    // finalize XML
+
+    XML_output = XML_output + XML_End
+    document.getElementById('input_XML').value = XML_output
+}
+
 
 
 
