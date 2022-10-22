@@ -4,12 +4,12 @@
 
 $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 
-$collection = $client->DiagCalc_Calculators->Calculators;
+$collection = $client->DiagCalc_Calculators->Index;
 // $id = $_POST['id'];
 // $version = $_POST['version'];
 
 $cursor = $collection->find(
-    array('calculator_id' => "2")
+    array('active' => "yes")
 );
 /*
 $cursor->sort(
