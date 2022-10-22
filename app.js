@@ -178,10 +178,8 @@ function loading_page_calculator() {
 
 }
 function click_radio_input(event) {
-    console.log('test radio')
-    radio_input_id = event.srcElement.dataset.id
     console.log(event)
-    console.log(radio_input_id)
+    radio_input_id = event.srcElement.dataset.id
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
@@ -312,7 +310,6 @@ function addInputRow() {
 }
 
 function addInputColumn(params) {
-    console.log(params)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
