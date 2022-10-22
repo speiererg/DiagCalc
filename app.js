@@ -156,10 +156,8 @@ function importing_calculator(results_findOne) {
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
     for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
-    if (results_findOne[`radio_input`]) { document.getElementById(`radio_input_${results_findOne[`radio_input`]}`).click()}
-
-
-
+    console.log(results_findOne['radio_input'])
+    if (results_findOne[`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne[`radio_input`]}`).click()}
 
 }
 
