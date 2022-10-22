@@ -24,7 +24,8 @@ $cursor = $collection->find(
 //$params = array('active' => 'yes');
 //$cursor = $collection->find($params);
  
-echo iterator_to_array($cursor);
+echo print_r($cursor);
+//echo iterator_to_array($cursor);
 
 //echo json_encode(iterator_to_array($cursor));
 ?>
