@@ -401,7 +401,9 @@ function addInputColumn(params) {
     } else {
         document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
     }
-    if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
+    if (params[`radio_input`] == modifier_nbr + 1) { 
+        document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true 
+        click_radio_input(document.getElementById(`radio_input_${modifier_nbr + 1}`))}
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
