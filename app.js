@@ -170,7 +170,7 @@ function loading_page_calculator() {
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', addInputColumn)
-    document.getElementById(`radio_input_1`).addEventListener('click', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
     findOne_Calculator_mongoDB(id_POST, version_POST)
@@ -399,7 +399,7 @@ console.log(params)
     }
     modifier_nbr_change('++', 1)
     document.getElementById(`radio_input_${modifier_nbr}`).dataset.id = modifier_nbr
-    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('click', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('change', function (event) { click_radio_input(event) })
 
 }
 
