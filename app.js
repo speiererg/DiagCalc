@@ -156,6 +156,8 @@ function importing_calculator(results_findOne) {
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
     for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
+    if (params[`radio_input`]) { document.getElementById(`radio_input_${params[`radio_input`]}`).click()}
+
 
 
 
@@ -402,7 +404,7 @@ function addInputColumn(params) {
     } else {
         document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
     }
-    if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).click()}
+    //if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).click()}
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
