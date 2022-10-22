@@ -8,7 +8,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $id = $_POST['id'];
 // $version = $_POST['version'];
 
-$cursor = $collection->findOne(
+$cursor = $collection->find(
     array('calculator_id' => "2")
 );
 /*
@@ -22,7 +22,7 @@ $cursor->sort(
 //$params = array('active' => 'yes');
 //$cursor = $collection->find($params);
  
-
+print_r($cursor)
 echo json_encode($cursor);
 ?>
 
