@@ -8,7 +8,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $id = $_POST['id'];
 // $version = $_POST['version'];
 
-$cursor = $collection->find(
+$cursor = $collection->findOne(
     array('calculator_id' => "2")
 );
 /*
