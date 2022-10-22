@@ -179,6 +179,7 @@ function loading_page_calculator() {
 }
 function click_radio_input(event) {
     radio_input_id = event.srcElement.dataset.id
+    console.log(event)
     console.log(radio_input_id)
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
