@@ -373,7 +373,7 @@ console.log(params)
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
     //Import Params
-    if (params[`radio_input_${modifier_nbr + 1}`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
+    if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
     if (params[`checkbox_input_1`] == "true") {
         document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
     } else {
