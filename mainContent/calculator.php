@@ -71,7 +71,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 <!--  Right Component -->
            <td>
 </br></br>
-<input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input">None is main</br>
+<input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input"  form="form_saveMongoDB">None is main</br>
 </br></br>
               <img src="img/add.png" id="img_button_add_column" width="30" height="30">
           </td>
