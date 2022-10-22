@@ -12,7 +12,7 @@ $cursor = $collection->find(
     array(),
     array(
         'sort' => array('calculator_id' => -1),
-        'limit' => 1a
+        'limit' => 1
         )
 );
 /*
