@@ -17,7 +17,7 @@ $cursor = $collection->find(
         )
 );
 
-echo $cursor['calculator_id']
+echo $cursor['calculator_id'];
 
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
