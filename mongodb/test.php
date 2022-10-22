@@ -9,7 +9,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $version = $_POST['version'];
 
 $cursor = $collection->find(
-    array('calculator_id' => 2)
+    array('calculator_id' => "2")
 );
 /*
 $cursor->sort(
