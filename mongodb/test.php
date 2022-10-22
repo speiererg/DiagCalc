@@ -9,7 +9,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $version = $_POST['version'];
 
 $cursor = $collection->find(
-    ['id'=>'1'],
+    ['calculator_id'=>'1'],
     ['projection'=>['id' => 1]]
 );
 /*
