@@ -139,18 +139,18 @@ function importing_calculator(results_findOne) {
     for (let l = 0; l < modifier_nbr_target; l++) {
         addInputColumn(results_findOne['parameters'])
     }
-    
-        if (results_findOne['parameters'][`radio_input_1`] == "true") { document.getElementById(`radio_input_1`).checked = true }
-        if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
-            document.getElementById(`checkbox_input_1`).checked = true
-        } else {
-            document.getElementById(`checkbox_input_1`).checked = false
-        }
-        if (results_findOne['parameters'][`checkbox_multiple_input_1`] == "true") {
-            document.getElementById(`checkbox_multiple_input_1`).checked = true
-        } else {
-            document.getElementById(`checkbox_multiple_input_1`).checked = false
-        }
+
+    if (results_findOne['parameters'][`radio_input_1`] == "true") { document.getElementById(`radio_input_1`).checked = true }
+    if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
+        document.getElementById(`checkbox_input_1`).checked = true
+    } else {
+        document.getElementById(`checkbox_input_1`).checked = false
+    }
+    if (results_findOne['parameters'][`checkbox_multiple_input_1`] == "true") {
+        document.getElementById(`checkbox_multiple_input_1`).checked = true
+    } else {
+        document.getElementById(`checkbox_multiple_input_1`).checked = false
+    }
 
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
@@ -312,13 +312,13 @@ function addInputRow() {
 }
 
 function addInputColumn(params) {
-console.log(params)
+    console.log(params)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input`)
     input_radio.setAttribute('class', 'radio_input')
-    input_radio.setAttribute('value', modifier_nbr+1)
+    input_radio.setAttribute('value', modifier_nbr + 1)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
 
@@ -374,18 +374,6 @@ console.log(params)
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
-    //Import Params
-    if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
-    if (params[`checkbox_input_1`] == "true") {
-        document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
-    } else {
-        document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
-    }
-    if (params[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
-        document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
-    } else {
-        document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
-    }
 
 
     for (let i = 0; i < modifierSub_nbr; i++) {
@@ -399,10 +387,25 @@ console.log(params)
         column_input.appendChild(input_input)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
     }
-    modifier_nbr_change('++', 1)
-    document.getElementById(`radio_input_${modifier_nbr}`).dataset.id = modifier_nbr
+
     document.getElementById(`radio_input_${modifier_nbr}`).addEventListener('change', function (event) { click_radio_input(event) })
 
+    //Import Params
+    if (params[`checkbox_input_1`] == "true") {
+        document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
+    } else {
+        document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
+    }
+    if (params[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
+        document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
+    } else {
+        document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
+    }
+    if (params[`radio_input`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
+
+    // Modifier_nbr Increment
+    modifier_nbr_change('++', 1)
+    document.getElementById(`radio_input_${modifier_nbr}`).dataset.id = modifier_nbr
 }
 
 
