@@ -23,6 +23,7 @@ $cursor->sort(
 //$cursor = $collection->find($params);
  
 echo json_encode($cursor);
+echo 'test';
 ?>
 
 
