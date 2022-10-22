@@ -17,7 +17,7 @@ $parameters_output = array();
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $select_ID = "select_input_{$i}";
-      $radio_ID = "radio_input_{$i}";
+      $radio_ID = "radio_input";
       $checkbox_ID = "checkbox_input_{$i}";
       $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
 

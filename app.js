@@ -316,7 +316,7 @@ console.log(params)
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input`)
     input_radio.setAttribute('class', 'radio_input')
-    input_radio.setAttribute('value', true)
+    input_radio.setAttribute('value', modifier_nbr+1)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
 
@@ -373,7 +373,7 @@ console.log(params)
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
     //Import Params
-    if (params[`radio_input_${modifier_nbr + 1}`] == "true") { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
+    if (params[`radio_input_${modifier_nbr + 1}`] == modifier_nbr + 1) { document.getElementById(`radio_input_${modifier_nbr + 1}`).checked = true }
     if (params[`checkbox_input_1`] == "true") {
         document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
     } else {
