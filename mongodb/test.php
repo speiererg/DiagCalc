@@ -17,7 +17,6 @@ $cursor = $collection->find(
         )
 );
 
-echo $cursor->{'calculator_id'};
 
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));
 
@@ -25,6 +24,7 @@ echo $cursor->{'calculator_id'};
 //$params = array('active' => 'yes');
 //$cursor = $collection->find($params);
  
+echo iterator_to_array($cursor);
 
 //echo json_encode(iterator_to_array($cursor));
 ?>
