@@ -14,7 +14,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="" form="form_saveMongoDB" readonly> 
            <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
             <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="" >
-              <input id="submit_form_deactivate_calculator" type="submit" value=" " style="background:url(img/delete.png) no-repeat;border:none;">
+            <input type="submit" name="button2"  class="button_download" value="Soft Delete" />
               </form>  
 
 
