@@ -16,7 +16,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
             <input type="submit" name="button2"  class="button_download" value="Soft Delete" />
               </form>
 </td><td>
-            <input type="button"  id="button_edit_calculator"  class="button_download">Edit</span>
+            <input type="button"  id="button_edit_calculator"  class="button_download" value="Edit">
 </td></tr></table>   
 </td>
 </tr>
