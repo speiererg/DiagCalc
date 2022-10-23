@@ -75,12 +75,13 @@ $insertOneResult2 = $collection2->insertOne([
 
    $insertOneResult2 = $collection2->updateOne([
       array('calculator_id' => intval($lastId)),
-      array(
+      array('$set'=> array(
          'lastVersion' => intval($_POST['select_version']),
          'EDG_id' => $_POST['EDG_id'],
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
           )
+      )
       
    ]);
 };
