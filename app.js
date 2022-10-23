@@ -87,7 +87,7 @@ function modifierSub_nbr_change(change, number) {
 
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.setAttribute(`disabled`, toDo)})
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo})
 }
 
 // *****************************   MongoDB Tools   *****************************
