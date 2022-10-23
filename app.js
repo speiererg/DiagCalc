@@ -18,7 +18,7 @@ function addEventListener() {
     document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
-    document.getElementById('navPageTest').addEventListener('click', function () { deleteAllMongoDB() })
+    document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
 
 }
 
