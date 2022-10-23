@@ -27,7 +27,7 @@ $cursor = $collection->find(
 //echo print_r($cursor);
 //echo iterator_to_array($cursor);
 $test = iterator_to_array($cursor);
- var_dump($test[0]) 
+ var_dump($test[0]['calculator_id']) 
 //echo json_encode(iterator_to_array($cursor));
 ?>
 
