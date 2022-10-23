@@ -180,7 +180,7 @@ function loading_page_calculator(paramsJS) {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    if(paramsJS=="newCalculator"){findOne_Calculator_mongoDB(id_POST, version_POST)}
+    if(paramsJS!="newCalculator"){findOne_Calculator_mongoDB(id_POST, version_POST)}
     document.getElementById(`radio_input_1`).dataset.id = 1
 
 }
