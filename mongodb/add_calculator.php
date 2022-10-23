@@ -62,9 +62,9 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
  
-   'calculator_id' => $lastId,
+   'calculator_id' => intval($lastId),
    'mainName' => $_POST['input_maindiagnose'],
-   'version' => $_POST['select_version'],
+   'version' => intval($_POST['select_version']),
    'modifier_nbr' => $_POST['modifier_nbr'],
    'modifierSub_nbr' => $_POST['modifierSub_nbr'],
    'EDG_id' => $_POST['EDG_id'],
