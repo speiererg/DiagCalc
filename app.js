@@ -88,7 +88,7 @@ function modifierSub_nbr_change(change, number) {
 
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo; element.setAttribute('style','background-color:grey;')})
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo)
     button_save_calculator.disabled = toDo
 }
 
@@ -242,7 +242,7 @@ function addInputRow() {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
-        input_input.setAttribute('class', `input_modifier`);
+        input_input.setAttribute('class', `input_modifier input_read`);
         input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
@@ -259,7 +259,7 @@ function addInputColumn(params) {
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input`)
-    input_radio.setAttribute('class', 'radio_input')
+    input_radio.setAttribute('class', 'radio_input input_read')
     input_radio.setAttribute('value', modifier_nbr + 1)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
@@ -275,7 +275,7 @@ function addInputColumn(params) {
     let column_input_title = document.createElement('td')
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
-    input_title_span.setAttribute('class', 'input_title')
+    input_title_span.setAttribute('class', 'input_title input_read')
     column_input_title.appendChild(input_title_span)
     document.getElementById('tr_input_title').appendChild(column_input_title)
 
@@ -284,7 +284,7 @@ function addInputColumn(params) {
     let column_input_select = document.createElement('td')
     let input_select = document.createElement('select');
     input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
-    input_select.setAttribute('class', `input_select`)
+    input_select.setAttribute('class', `input_select input_read`)
     input_select.setAttribute('form', `form_saveMongoDB`);
     input_select.setAttribute('name', `select_input_${modifier_nbr + 1}`)
     input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
@@ -297,7 +297,7 @@ function addInputColumn(params) {
     input_checkbox.setAttribute('checked', 'true')
     input_checkbox.setAttribute('value', true)
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
-    input_checkbox.setAttribute('class', `input_checkbox`)
+    input_checkbox.setAttribute('class', `input_checkbox input_read`)
     input_checkbox.setAttribute('form', `form_saveMongoDB`);
     input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr + 1}`)
     let column_input_checkbox = document.createElement('td')
@@ -309,7 +309,7 @@ function addInputColumn(params) {
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
-    input_multiple_checkbox.setAttribute('class', `input_checkbox`)
+    input_multiple_checkbox.setAttribute('class', `input_checkbox input_read`)
     input_multiple_checkbox.setAttribute('value', true)
     input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr + 1}`)
     input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
@@ -324,7 +324,7 @@ function addInputColumn(params) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
-        input_input.setAttribute('class', `input_modifier`);
+        input_input.setAttribute('class', `input_modifier input_read`);
         input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
 
