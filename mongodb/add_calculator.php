@@ -51,7 +51,7 @@ $cursor_lastId = $collection_lastId->findOne(
 );
 
 if ($_POST['calculator_id'] == null){
-   $lastId = $cursor_lastId->calculator_id;
+   $lastId = $cursor_lastId->calculator_id +1 ;
 }else{
    $lastId = $_POST['calculator_id'];
 };
