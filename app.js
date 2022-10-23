@@ -222,6 +222,12 @@ function importing_calculator(results_findOne) {
 function edit_calculator() {
     console.log('test')
     disable_input(false)
+    let versionOption = document.createElement('option')
+    versionOption.setAttribute('selected', 'true')
+    let neueVersion = document.getElementById('select_version').value + 1
+    versionOption.value = neueVersion
+    versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
+    document.getElementById('select_version').appendChild(versionOption)
 }
 
 
