@@ -87,7 +87,7 @@ function modifierSub_nbr_change(change, number) {
 
 function disblable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.setAttribute(`disabled`, toDo); console.log(element) })
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.setAttribute(`disabled`, toDo)})
 }
 
 // *****************************   MongoDB Tools   *****************************
@@ -119,7 +119,6 @@ function find_home_mongoDB(id, version) {
 
 
 function findOne_Calculator_mongoDB(id, version) {
-    console.log('find One')
     var xmlhttp = new XMLHttpRequest();
     let params = `id=${id}&version=${version}`
     xmlhttp.onreadystatechange = function () {
@@ -155,8 +154,6 @@ function deleteAllMongoDB() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
-            let results_findOne = JSON.parse(this.responseText);
-            console.log(results_findOne)
         }
     };
     xmlhttp.open("POST", "mongodb/delete_all.php", true);
@@ -216,13 +213,13 @@ function importing_calculator(results_findOne) {
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
     inputs = Object.entries(inputs)
     for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
-    console.log(results_findOne['parameters']['radio_input'])
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
     disblable_input(true)
 }
 
 function edit_calculator() {
+    console.log('test')
     disable_input(false)
 }
 
@@ -345,8 +342,6 @@ function addInputColumn(params) {
 //  *****************************  Function Calculator  *****************************
 
 function click_radio_input(event) {
-    console.log(event)
-    console.log(event.srcElement.dataset)
     radio_input_id = event.srcElement.dataset.id
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
@@ -355,7 +350,6 @@ function click_radio_input(event) {
     }
     if (radio_input_id != "0") {
         for (let i = 2; i <= modifierSub_nbr; i++) {
-            console.log(`input${radio_input_id}_${i}`)
             document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
