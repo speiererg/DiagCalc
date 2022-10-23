@@ -148,6 +148,10 @@ body {
   font-size: var(--font-size)
 }
 
+.input_maindiagnose:read-only {
+  border: grey;
+}
+
 .input_calculator_id {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
@@ -163,13 +167,19 @@ body {
   border: grey;
 }
 
+.input_modifier:read-only {
+  border: grey;
+}
+
 .input_modifier {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
   width: 180px;
   border-radius: 3px;
   font-size: var(--font-size);
-
+}
+.input_modifier:read-only {
+  border: grey;
 }
 
 .input_title {
