@@ -49,7 +49,7 @@ function changePageExecute(page, paramsPHP,paramsJS) {
             if (page == "calculator") {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
-                loading_page_calculator()
+                loading_page_calculator(paramsJS)
                 if (paramsJS=="newCalculator"){
                     document.getElementById('input_hidden_new_calculator').value=1
                 }else{document.getElementById('input_hidden_new_calculator').value=0}
@@ -169,7 +169,7 @@ function deleteAllMongoDB() {
 //************************ Loading Page Calculator *****************************
 
 
-function loading_page_calculator() {
+function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
@@ -180,7 +180,7 @@ function loading_page_calculator() {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    findOne_Calculator_mongoDB(id_POST, version_POST)
+    if(paramsJS=="newCalculator"){findOne_Calculator_mongoDB(id_POST, version_POST)}
     document.getElementById(`radio_input_1`).dataset.id = 1
 
 }
