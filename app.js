@@ -66,7 +66,7 @@ function changePageExecute(page, paramsPHP,paramsJS) {
     }
     xhttp.open("POST", `mainContent/${targetpage}.php`);
     xhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhttp.send(params);
+    xhttp.send(paramsPHP);
 
 }
 // *****************************   Tools   *****************************
