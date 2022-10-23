@@ -26,10 +26,11 @@ $cursor = $collection->findOne(
  
 //echo print_r($cursor);
 //echo iterator_to_array($cursor);
+print_r($cursor);
+
 $test = $cursor->calculator_id;
 for ($i = 1; $i <= $test; $i++) {
 
-    echo $cursor;
 echo $cursor->calculator_id;}
 //echo json_encode(iterator_to_array($cursor));
 ?>
