@@ -6,18 +6,23 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 
 
 <table class="CSS_contentTable">
+  <tr>
+    <td>
+    <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
+            <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="" >
+            <input type="submit" name="button2"  class="button_download" value="Soft Delete" />
+              </form> 
+              <form id="form_deactivage_calculator" action="" method="POST">
+            <input type="submit" name=""  class="button_download" value="Edit" />
+              </form>   
+</td>
+</tr>
         <tr id="tr_maindiagnose">
           <td>
            Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose" value="" form="form_saveMongoDB"> 
            Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="1" selected>Version 1</option></select>
            Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB"> 
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value="" form="form_saveMongoDB" readonly> 
-           <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
-            <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="" >
-            <input type="submit" name="button2"  class="button_download" value="Soft Delete" />
-              </form>  
-
-
           </td>
         </tr>
         <tr>
