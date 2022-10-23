@@ -83,6 +83,7 @@ echo $lastId;
    );
 };
 
+echo 'lastId :'.$lastId
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
@@ -103,5 +104,5 @@ $insertOneResult = $collection->insertOne([
 
 
 
- header('Location: ../index.php?calculator='.$calculator_id);
+ //header('Location: ../index.php?calculator='.$calculator_id);
 ?>
