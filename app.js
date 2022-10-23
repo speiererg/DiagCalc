@@ -111,7 +111,7 @@ function find_home_mongoDB(id, version) {
                 let params_link = `calculator_id=${results_JSON[i]['calculator_id']}&version=${results_JSON[i]['lastVersion']}`
                 link.appendChild(text_name)
                 document.getElementById('home_td1').appendChild(link)
-                document.getElementById(`home_link_id${results_JSON[i]['calculator_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link) })
+                document.getElementById(`home_link_id${results_JSON[i]['calculator_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link,'') })
             }
 
         }
@@ -189,6 +189,10 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
+    let params_link = 
+    document.getElementById('select_input').addEventListener('change',(event)=>{changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${event.value}`,'')})
+
+
     for (let i=1;i<=results_findOne['version'];i++){
         let versionOption = document.createElement('option')
         if(i==results_findOne['version']){versionOption.setAttribute('selected', 'true')}  
