@@ -4,7 +4,7 @@ echo "<input type='hidden' name='input_hidden_POST_id' id='input_hidden_POST_id'
 echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POST_version' value='" . $_POST['version'] . "' >";
 ?>
 
-
+<!DOCTYPE html>
 <table class="CSS_contentTable">
   <tr>
     <td>
