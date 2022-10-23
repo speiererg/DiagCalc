@@ -182,6 +182,7 @@ function loading_page_calculator() {
 }
 
 function importing_calculator(results_findOne) {
+    console.log('importing')
     document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
