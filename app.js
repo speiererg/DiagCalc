@@ -221,6 +221,7 @@ function importing_calculator(results_findOne) {
 
 function edit_calculator() {
     console.log('test')
+    console.log(document.getElementById('select_version').value)
     disable_input(false)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
