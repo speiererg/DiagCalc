@@ -225,7 +225,7 @@ function edit_calculator() {
     disable_input(false)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
-    let neueVersion = document.getElementById('select_version').value + 1
+    let neueVersion = parseInt(document.getElementById('select_version').value) + 1
     versionOption.value = neueVersion
     versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
     document.getElementById('select_version').appendChild(versionOption)
