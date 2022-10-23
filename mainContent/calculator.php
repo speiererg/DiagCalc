@@ -18,10 +18,10 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 </tr>
         <tr id="tr_maindiagnose">
           <td>
-           Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose, input_readonly" value="" form="form_saveMongoDB"> 
+           Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose input_readonly" value="" form="form_saveMongoDB"> 
            Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="1" selected>Version 1</option></select>
            Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB" readonly> 
-           EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose, input_readonly" value="" form="form_saveMongoDB" readonly> 
+           EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose input_readonly" value="" form="form_saveMongoDB" readonly> 
           </td>
         </tr>
         <tr>
@@ -31,19 +31,19 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
             <td><span class="input_title">Modifier 1</span></td>
               </tr>              
               <tr id="tr_input_separator">
-              <td><select id="select_input_1" name="select_input_1" class="input_select, input_readonly" disabled form="form_saveMongoDB"></select></td>
+              <td><select id="select_input_1" name="select_input_1" class="input_select input_readonly" disabled form="form_saveMongoDB"></select></td>
               </tr> 
              <tr id="tr_input_radio">
-             <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input, input_readonly" form="form_saveMongoDB">Main</td>
+             <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input input_readonly" form="form_saveMongoDB">Main</td>
               </tr>  
               <tr id="tr_input_checkbox">
-              <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox, input_readonly" checked form="form_saveMongoDB" value="true">Not required</td>
+              <td><input type="checkbox" id="checkbox_input_1" class="input_checkbox input_readonly" checked form="form_saveMongoDB" value="true">Not required</td>
               </tr>  
               <tr id="tr_input_multiple_checkbox">
-              <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox, input_readonly" form="form_saveMongoDB" value="true">Multiple</td>
+              <td><input type="checkbox" id="checkbox_multiple_input_1" class="input_checkbox input_readonly" form="form_saveMongoDB" value="true">Multiple</td>
               </tr>  
               <tr id="tr_input_1">
-                <td><input type="text" id="input1_1" name="input1_1" value="" class="input_modifier, input_readonly" form="form_saveMongoDB"></td>
+                <td><input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB"></td>
               </tr>
     
             </table>
