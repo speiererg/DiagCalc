@@ -85,6 +85,10 @@ function modifierSub_nbr_change(change, number) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
 
+function disblable_input(toDo) {
+    DOM_readonly = document.getElementsByClassName('input_readonly')
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.setAttribute(`disabled`, toDo); console.log(element) })
+}
 
 // *****************************   MongoDB Tools   *****************************
 
@@ -130,7 +134,7 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
-function testMongoDB(){
+function testMongoDB() {
     var xmlhttp = new XMLHttpRequest();
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
@@ -142,10 +146,10 @@ function testMongoDB(){
     };
     xmlhttp.open("POST", "mongodb/test.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(params);   
+    xmlhttp.send(params);
 }
 
-function deleteAllMongoDB(){
+function deleteAllMongoDB() {
     var xmlhttp = new XMLHttpRequest();
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
@@ -157,7 +161,7 @@ function deleteAllMongoDB(){
     };
     xmlhttp.open("POST", "mongodb/delete_all.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(params);   
+    xmlhttp.send(params);
 }
 
 //************************ Loading Page Calculator *****************************
@@ -180,10 +184,10 @@ function loading_page_calculator() {
 }
 
 function importing_calculator(results_findOne) {
+    document.getElementById('document_button_edit').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
-    //document.getElementById('input_calculator_id').setAttribute('readonly', true)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     versionOption.value = results_findOne['version']
@@ -215,10 +219,11 @@ function importing_calculator(results_findOne) {
     console.log(results_findOne['parameters']['radio_input'])
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
-    DOM_readonly = document.getElementsByClassName('input_readonly')
-console.log(DOM_readonly)
-Array.prototype.forEach.call(DOM_readonly,(element)=>{element.setAttribute('disabled',true); console.log(element)})
+    disblable_input(true)
+}
 
+function edit_calculator() {
+    disable_input(false)
 }
 
 
