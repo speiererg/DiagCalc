@@ -216,8 +216,8 @@ function importing_calculator(results_findOne) {
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
     DOM_readonly = document.getElementsByClassName('input_readonly')
-
-    DOM_readonly.forEach((element)=>{element.setAttribute('readonly',true); console.log(element)})
+console.log(DOM_readonly)
+    DOM_readonly.forEaach((element)=>{element.setAttribute('readonly',true); console.log(element)})
 
 }
 
