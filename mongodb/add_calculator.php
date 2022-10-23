@@ -83,7 +83,7 @@ echo $lastId;
    );
 };
 
-echo 'lastId :'.$lastId
+echo 'lastId :'.$lastId;
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
