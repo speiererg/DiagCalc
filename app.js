@@ -46,6 +46,7 @@ function changePageExecute(page, params) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
+                console.log('changepage exec')
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 loading_page_calculator()
