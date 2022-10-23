@@ -68,6 +68,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               </td>
               <td>
               <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
+              <input type="hidden" name="new_calculator" id="input_hidden_new_calculator" value="1" >
               <input type="hidden" name="modifier_nbr" id="input_hidden_modifier_nbr" value="" >
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
               <input type="hidden" name="XML_output" id="input_hidden_XML_output" value="" >

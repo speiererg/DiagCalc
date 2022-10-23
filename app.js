@@ -16,7 +16,7 @@ function loadingIndex() {
 
 function addEventListener() {
     document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
-    document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
+    document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator','','newCalculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
     document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
 
@@ -24,7 +24,7 @@ function addEventListener() {
 
 
 //  *****************************   Change Page  *****************************
-function changePage(page, params) {
+function changePage(page, paramsPHP,paramsJS) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
@@ -32,11 +32,11 @@ function changePage(page, params) {
             confirmBeforeNavigate = 0
         }
     } else {
-        changePageExecute(page, params)
+        changePageExecute(page, paramsPHP,paramsJS)
     }
 }
 
-function changePageExecute(page, params) {
+function changePageExecute(page, paramsPHP,paramsJS) {
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
@@ -50,6 +50,9 @@ function changePageExecute(page, params) {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 loading_page_calculator()
+                if (paramsJS=="newCalculator"){
+                    document.getElementById('input_hidden_new_calculator').value=1
+                }else{document.getElementById('input_hidden_new_calculator').value=0}
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)

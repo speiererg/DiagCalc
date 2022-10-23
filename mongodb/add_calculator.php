@@ -53,8 +53,36 @@ $cursor_lastId = $collection_lastId->findOne(
 if ($_POST['calculator_id'] == null){
    $lastId = $cursor_lastId->calculator_id;
    $lastId = $lastId + 1;
+
+   $collection2 = $client->DiagCalc_Calculators->Index;
+
+$insertOneResult2 = $collection2->insertOne([
+ 
+   'calculator_id' => intval($lastId),
+   'mainName' => $_POST['input_maindiagnose'],
+   'lastVersion' => intval($_POST['select_version']),
+   'EDG_id' => $_POST['EDG_id'],
+   'last_modification_Time' => $time,
+   'last_modification_timestamp' => time(),
+   'active' => 'yes'
+   
+]);
+
 }else{
    $lastId = $_POST['calculator_id'];
+
+   $collection2 = $client->DiagCalc_Calculators->Index;
+
+   $insertOneResult2 = $collection2->updateOne([
+      array('calculator_id' => intval($lastId)),
+      array(
+         'lastVersion' => intval($_POST['select_version']),
+         'EDG_id' => $_POST['EDG_id'],
+         'last_modification_Time' => $time,
+         'last_modification_timestamp' => time(),
+          )
+      
+   ]);
 };
 
 $collection = $client->DiagCalc_Calculators->Calculators;
@@ -75,19 +103,7 @@ $insertOneResult = $collection->insertOne([
    
 ]);
 
-$collection2 = $client->DiagCalc_Calculators->Index;
 
-$insertOneResult2 = $collection2->insertOne([
- 
-   'calculator_id' => intval($lastId),
-   'mainName' => $_POST['input_maindiagnose'],
-   'lastVersion' => intval($_POST['select_version']),
-   'EDG_id' => $_POST['EDG_id'],
-   'last_modification_Time' => $time,
-   'last_modification_timestamp' => time(),
-   'active' => 'yes'
-   
-]);
 
  header('Location: ../index.php?calculator='.$calculator_id);
 ?>
