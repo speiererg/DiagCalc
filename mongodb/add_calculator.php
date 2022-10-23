@@ -57,9 +57,6 @@ if ($_POST['calculator_id'] == null){
    $lastId = $_POST['calculator_id'];
 };
 
-echo $_POST['calculator_id'];
-echo $lastId;
-
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
