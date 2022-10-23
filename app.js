@@ -46,7 +46,6 @@ function changePageExecute(page, paramsPHP,paramsJS) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
-                console.log('changepage exec')
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 loading_page_calculator()
@@ -180,14 +179,12 @@ function loading_page_calculator() {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    console.log('loading page calc')
     findOne_Calculator_mongoDB(id_POST, version_POST)
     document.getElementById(`radio_input_1`).dataset.id = 1
 
 }
 
 function importing_calculator(results_findOne) {
-    console.log('importing')
     document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
@@ -226,8 +223,7 @@ function importing_calculator(results_findOne) {
 }
 
 function edit_calculator() {
-    console.log('test')
-    console.log(document.getElementById('select_version').value)
+    document.getElementById('button_edit_calculator').style.visibility = "hidden";
     disable_input(false)
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
