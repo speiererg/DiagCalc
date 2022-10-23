@@ -7,13 +7,11 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 
 <table class="CSS_contentTable">
   <tr>
-    <td width="100px">
+    <td>
     <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
             <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="" >
             <input type="submit" name="button2"  class="button_download" value="Soft Delete" />
               </form>
-</td>
-              <td> 
             <input type="button" name=""  class="button_download" value="Edit" />
             
 </td>
