@@ -18,6 +18,7 @@ function addEventListener() {
     document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
+    document.getElementById('navPageTest').addEventListener('click', function () { deleteAllMongoDB() })
 
 }
 
@@ -140,6 +141,21 @@ function testMongoDB(){
         }
     };
     xmlhttp.open("POST", "mongodb/test.php", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);   
+}
+
+function deleteAllMongoDB(){
+    var xmlhttp = new XMLHttpRequest();
+    let params = `id=1&version=1`
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+            let results_findOne = JSON.parse(this.responseText);
+            console.log(results_findOne)
+        }
+    };
+    xmlhttp.open("POST", "mongodb/delete_all.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);   
 }
