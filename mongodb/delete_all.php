@@ -10,6 +10,7 @@ $deleteResult = $collection->deleteMany(array());
 $collection2 = $client->DiagCalc_Calculators->Index;
 $deleteResult = $collection2->deleteMany(array());
 
+echo 'delete all'
 ?>
 
 
