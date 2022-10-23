@@ -50,7 +50,7 @@ $cursor_lastId = $collection_lastId->findOne(
         )
 );
 
-if ($_POST['calculator_id']== ''){
+if ($_POST['calculator_id'] == null){
    $lastId = $cursor_lastId->calculator_id;
 }else{
    $lastId = $_POST['calculator_id'];
