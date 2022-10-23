@@ -8,7 +8,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $id = $_POST['id'];
 // $version = $_POST['version'];
 
-$cursor = $collection->find(
+$cursor = $collection->findOne(
     array(),
     array(
         'projection' => array('calculator_id' => 1),
@@ -29,6 +29,7 @@ $cursor = $collection->find(
 $test = $cursor->calculator_id;
 for ($i = 1; $i <= $test; $i++) {
 
+    echo $cursor;
 echo $cursor->calculator_id;}
 //echo json_encode(iterator_to_array($cursor));
 ?>
