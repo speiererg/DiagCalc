@@ -12,7 +12,7 @@ $cursor = $collection->findOne(
     array(),
     array(
         'projection' => array('calculator_id' => 1),
-        'sort' => array('calculator_id' => 1),
+        'sort' => array('calculator_id' => -1),
         'limit' => 1
         )
 );
