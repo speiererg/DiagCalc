@@ -217,7 +217,7 @@ function importing_calculator(results_findOne) {
 
     DOM_readonly = document.getElementsByClassName('input_readonly')
 
-    DOM_readonly.foreach((element)=>{element.setAttribute('readonly',true)})
+    DOM_readonly.foreach((element)=>{element.setAttribute('readonly',true); console.log(element)})
 
 }
 
