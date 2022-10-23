@@ -16,6 +16,7 @@ $cursor = $collection->findOne(
         'limit' => 1
         )
 );
+$test = $cursor->calculator_id;
 
 
 //$cursor = $collection->findOne(array('calculator_id' => "{$id}", 'version' => "{$version}"));

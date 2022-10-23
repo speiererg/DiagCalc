@@ -37,6 +37,24 @@ $time = date("d.m.Y h:i:sa");
 $calculator_id = $_POST['calculator_id'];
 
 
+$collection_lastId = $client->DiagCalc_Calculators->Calculators;
+// $id = $_POST['id'];
+// $version = $_POST['version'];
+
+$cursor_lastId = $collection_lastId->findOne(
+    array(),
+    array(
+        'projection' => array('calculator_id' => 1),
+        'sort' => array('calculator_id' => 1),
+        'limit' => 1
+        )
+);
+
+if ($_POST['calculator_id']== ''){
+   $lastId = $cursor_lastId->calculator_id;
+}else{
+   $lastId = $_POST['calculator_id']
+}
 
 
 
@@ -44,7 +62,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $insertOneResult = $collection->insertOne([
  
-   'calculator_id' => $_POST['calculator_id'],
+   'calculator_id' => $lastId,
    'mainName' => $_POST['input_maindiagnose'],
    'version' => $_POST['select_version'],
    'modifier_nbr' => $_POST['modifier_nbr'],
@@ -62,7 +80,7 @@ $collection2 = $client->DiagCalc_Calculators->Index;
 
 $insertOneResult2 = $collection2->insertOne([
  
-   'calculator_id' => $_POST['calculator_id'],
+   'calculator_id' => $lastId,
    'mainName' => $_POST['input_maindiagnose'],
    'lastVersion' => $_POST['select_version'],
    'EDG_id' => $_POST['EDG_id'],
