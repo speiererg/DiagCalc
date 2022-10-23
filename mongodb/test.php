@@ -8,11 +8,11 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 // $id = $_POST['id'];
 // $version = $_POST['version'];
 
-$cursor = $collection->find(
+$cursor = $collection->findOne(
     array(),
     array(
         'projection' => array('calculator_id' => 1),
-        'sort' => array('calculator_id' => -1),
+        'sort' => array('calculator_id' => 1),
         'limit' => 1
         )
 );
