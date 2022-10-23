@@ -105,5 +105,5 @@ $insertOneResult = $collection->insertOne([
 
 
 
- //header('Location: ../index.php?calculator='.$calculator_id);
+ header('Location: ../index.php?calculator='.$calculator_id);
 ?>
