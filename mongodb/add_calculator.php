@@ -51,12 +51,13 @@ $cursor_lastId = $collection_lastId->findOne(
 );
 
 if ($_POST['calculator_id'] == null){
-   $lastId = $cursor_lastId->calculator_id +1 ;
+   $lastId = $cursor_lastId->calculator_id;
+   $lastId = $lastId + 1
 }else{
    $lastId = $_POST['calculator_id'];
 };
 
-
+echo $lastId;
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
