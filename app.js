@@ -217,7 +217,7 @@ function importing_calculator(results_findOne) {
 
     DOM_readonly = document.getElementsByClassName('input_readonly')
 console.log(DOM_readonly)
-Array.prototype.forEach.call(DOM_readonly,(element)=>{element.setAttribute('readonly',true); console.log(element)})
+Array.prototype.forEach.call(DOM_readonly,(element)=>{element.setAttribute('disabled',true); console.log(element)})
 
 }
 
