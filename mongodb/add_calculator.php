@@ -65,8 +65,8 @@ $insertOneResult = $collection->insertOne([
    'calculator_id' => intval($lastId),
    'mainName' => $_POST['input_maindiagnose'],
    'version' => intval($_POST['select_version']),
-   'modifier_nbr' => $_POST['modifier_nbr'],
-   'modifierSub_nbr' => $_POST['modifierSub_nbr'],
+   'modifier_nbr' => intval($_POST['modifier_nbr']),
+   'modifierSub_nbr' => intval($_POST['modifierSub_nbr']),
    'EDG_id' => $_POST['EDG_id'],
    'created_Time' => $time,
    'created_timestamp' => time(),
@@ -80,9 +80,9 @@ $collection2 = $client->DiagCalc_Calculators->Index;
 
 $insertOneResult2 = $collection2->insertOne([
  
-   'calculator_id' => $lastId,
+   'calculator_id' => intval($lastId),
    'mainName' => $_POST['input_maindiagnose'],
-   'lastVersion' => $_POST['select_version'],
+   'lastVersion' => intval($_POST['select_version']),
    'EDG_id' => $_POST['EDG_id'],
    'last_modification_Time' => $time,
    'last_modification_timestamp' => time(),
