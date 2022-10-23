@@ -190,7 +190,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
-    document.getElementById('select_version').addEventListener('change',(event)=>{console.log(event);changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${event.value}`,'')})
+    document.getElementById('select_version').addEventListener('change',(event)=>{console.log(event.srcElement.value);changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${event.value}`,'')})
 
 
     for (let i=1;i<=results_findOne['version'];i++){
