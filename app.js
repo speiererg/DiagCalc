@@ -189,12 +189,15 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
-    let versionOption = document.createElement('option')
-    versionOption.setAttribute('selected', 'true')
-    versionOption.value = results_findOne['version']
-    versionOption.appendChild(document.createTextNode(`Version ${results_findOne['version']}`))
-    document.getElementById('select_version').innerHTML = ""
-    document.getElementById('select_version').appendChild(versionOption)
+    for (let i=1;i<=results_findOne['version'];i++){
+        let versionOption = document.createElement('option')
+        if(i==results_findOne['version']){versionOption.setAttribute('selected', 'true')}  
+        versionOption.value = results_findOne['version']
+        versionOption.appendChild(document.createTextNode(`Version ${results_findOne['version']}`))
+        document.getElementById('select_version').innerHTML = ""
+        document.getElementById('select_version').appendChild(versionOption)
+    }
+
 
     let inputs = results_findOne['inputs']
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
