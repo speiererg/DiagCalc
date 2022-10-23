@@ -79,7 +79,7 @@ $insertOneResult2 = $collection2->insertOne([
          'lastVersion' => intval($_POST['select_version']),
          'EDG_id' => $_POST['EDG_id'],
          'last_modification_Time' => $time,
-         'last_modification_timestamp' => time(),
+         'last_modification_timestamp' => time()
           )
       )
       
