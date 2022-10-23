@@ -85,7 +85,7 @@ function modifierSub_nbr_change(change, number) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
 
-function disblable_input(toDo) {
+function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.setAttribute(`disabled`, toDo)})
 }
@@ -215,7 +215,7 @@ function importing_calculator(results_findOne) {
     for (i = 0; i < inputs.length; i++) { document.getElementById(inputs[i][0]).value = inputs[i][1] }
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
-    disblable_input(true)
+    disable_input(true)
 }
 
 function edit_calculator() {
