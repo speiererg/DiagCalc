@@ -70,7 +70,7 @@ $insertOneResult2 = $collection2->insertOne([
 
 }else{
    $lastId = $_POST['calculator_id'];
-
+echo $lastId;
    $collection2 = $client->DiagCalc_Calculators->Index;
 
    $insertOneResult2 = $collection2->updateOne([
