@@ -4,15 +4,13 @@ $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lha
 
 $collection = $client->DiagCalc_Calculators->Index;
 
-//POST
-$item = $_POST['item'];
-$value = $_POST['value'];
 
 $cursor = $collection->find(
     array('active' => 'yes'),
     array('$sort' => 
-        array("firstName" => 1 ))
+        array("mainName" => 1 ))
 );
+
 echo json_encode(iterator_to_array($cursor));
 
 /*
