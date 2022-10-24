@@ -339,7 +339,7 @@ function addInputColumn(params) {
         input_input.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_input)
 
-        let br_tag = document.createElement('<br />');
+        let br_tag = document.createElement('br');
         column_input.appendChild(br_tag)
 
 
