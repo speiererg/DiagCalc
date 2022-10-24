@@ -203,7 +203,7 @@ function importing_calculator(results_findOne) {
     }
 
     //desactivate edit if not last version
-    if (results_findOne['version']!=results_findOne['lastVersion']){document.getElementById('button_edit_calculator').disable = true}
+    if (results_findOne['version']!=results_findOne['lastVersion']){document.getElementById('button_edit_calculator').disabled = true}
 
 
     let inputs = results_findOne['inputs']
