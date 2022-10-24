@@ -8,8 +8,6 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$params = ;
-
 $cursor = $collection->find(
     array('active' => 'yes'),
     array('$sort' => 
