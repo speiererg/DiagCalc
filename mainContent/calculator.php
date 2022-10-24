@@ -49,8 +49,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               </tr>  
               <tr id="tr_input_1">
                 <td>
-                  <input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB">
-                  <input type="text" id="inputSNOMED1_1" name="inputSNOMED1_1" value="" class="input_SNOMED input_readonly" form="form_saveMongoDB">
+                  <input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB"></br>
+                  <input type="text" id="inputSNOMED1_1" name="inputSNOMED1_1" value="" class="input_SNOMED input_readonly" form="form_saveMongoDB"></br>
                   <input type="text" id="inputICD1_1" name="inputICD1_1" value="" class="input_ICD input_readonly" form="form_saveMongoDB">
                 </td>
               </tr>
