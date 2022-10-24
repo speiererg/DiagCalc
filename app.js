@@ -93,6 +93,16 @@ function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
     button_save_calculator.disabled = toDo
+    if(toDo == true){ 
+        document.getElementById('img_button_add_row').style.display = "none";
+        document.getElementById('img_button_add_column').style.display = "none";
+    }else if (toDo == false){
+        if(toDo == true){ 
+            document.getElementById('img_button_add_row').style.display = "block";
+            document.getElementById('img_button_add_column').style.display = "block";
+        }
+    }
+   
 }
 
 // *****************************   MongoDB Tools   *****************************

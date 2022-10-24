@@ -57,7 +57,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
     
             </table>
 
-            <img src="img/add.png" id="img_button_add_row" width="30" height="30">
+            <img src="img/add.png" id="img_button_add_row" width="25" height="25">
             <p>
               <table>
                 <tr>
@@ -89,16 +89,10 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
            </td>
 <!--  Right Component -->
            <td>
-</br></br>
+</br></br></br>
 <input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input"  form="form_saveMongoDB">None is main</br>
 </br></br>
-              <img src="img/add.png" id="img_button_add_column" width="30" height="30">
-          </td>
-        </tr>
-        <tr>
-          <td>
-          
-
+              <img src="img/add.png" id="img_button_add_column" width="25" height="25">
           </td>
         </tr>
         <tr>
