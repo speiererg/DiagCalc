@@ -16,7 +16,7 @@ function loadingIndex() {
 
 function addEventListener() {
     document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
-    document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator','','newCalculator') })
+    document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator', '', 'newCalculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
     document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
 
@@ -24,7 +24,7 @@ function addEventListener() {
 
 
 //  *****************************   Change Page  *****************************
-function changePage(page, paramsPHP,paramsJS) {
+function changePage(page, paramsPHP, paramsJS) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
@@ -32,11 +32,11 @@ function changePage(page, paramsPHP,paramsJS) {
             confirmBeforeNavigate = 0
         }
     } else {
-        changePageExecute(page, paramsPHP,paramsJS)
+        changePageExecute(page, paramsPHP, paramsJS)
     }
 }
 
-function changePageExecute(page, paramsPHP,paramsJS) {
+function changePageExecute(page, paramsPHP, paramsJS) {
     console.log(paramsPHP)
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
@@ -50,9 +50,9 @@ function changePageExecute(page, paramsPHP,paramsJS) {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 loading_page_calculator(paramsJS)
-                if (paramsJS=="newCalculator"){
-                    document.getElementById('input_hidden_new_calculator').value=1
-                }else{document.getElementById('input_hidden_new_calculator').value=0}
+                if (paramsJS == "newCalculator") {
+                    document.getElementById('input_hidden_new_calculator').value = 1
+                } else { document.getElementById('input_hidden_new_calculator').value = 0 }
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
@@ -91,7 +91,7 @@ function modifierSub_nbr_change(change, number) {
 
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo})
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
     button_save_calculator.disabled = toDo
 }
 
@@ -112,7 +112,7 @@ function find_home_mongoDB(id, version) {
                 let params_link = `calculator_id=${results_JSON[i]['calculator_id']}&version=${results_JSON[i]['lastVersion']}`
                 link.appendChild(text_name)
                 document.getElementById('home_td1').appendChild(link)
-                document.getElementById(`home_link_id${results_JSON[i]['calculator_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link,'') })
+                document.getElementById(`home_link_id${results_JSON[i]['calculator_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
 
         }
@@ -180,7 +180,7 @@ function loading_page_calculator(paramsJS) {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    if(paramsJS!="newCalculator"){findOne_Calculator_mongoDB(id_POST, version_POST)}
+    if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
 
 }
@@ -190,13 +190,13 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
-    document.getElementById('select_version').addEventListener('change',(event)=>{changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`,'')})
-    document.getElementById('select_version').innerHTML=""
+    document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
+    document.getElementById('select_version').innerHTML = ""
 
     // Create version
-    for (let i=1;i<=results_findOne['lastVersion'];i++){
+    for (let i = 1; i <= results_findOne['lastVersion']; i++) {
         let versionOption = document.createElement('option')
-        if(i==results_findOne['version']){versionOption.setAttribute('selected', 'true')}  
+        if (i == results_findOne['version']) { versionOption.setAttribute('selected', 'true') }
         versionOption.value = i
         versionOption.appendChild(document.createTextNode(`Version ${i}`))
         document.getElementById('select_version').appendChild(versionOption)
@@ -204,7 +204,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_last_version').value = results_findOne['lastVersion']
 
     //desactivate edit if not last version
-    if (results_findOne['version']!=results_findOne['lastVersion']){document.getElementById('button_edit_calculator').disabled = true}
+    if (results_findOne['version'] != results_findOne['lastVersion']) { document.getElementById('button_edit_calculator').disabled = true }
 
 
     let inputs = results_findOne['inputs']
@@ -329,7 +329,7 @@ function addInputColumn(params) {
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
 
-
+    // Create Input
     for (let i = 0; i < modifierSub_nbr; i++) {
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
@@ -337,9 +337,30 @@ function addInputColumn(params) {
         input_input.setAttribute('class', `input_modifier input_readonly`);
         input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
-
         column_input.appendChild(input_input)
+
+        let br_tag = document.createElement('<br />');
+        column_input.appendChild(br_tag)
+
+
+        let input_SNOMED = document.createElement('input')
+        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('form', `form_saveMongoDB`);
+        column_input.appendChild(input_SNOMED)
+        column_input.appendChild(br_tag)
+
+        
+        let input_ICD = document.createElement('input')
+        input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('class', `input_ICD input_readonly`);
+        input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('form', `form_saveMongoDB`);
+        column_input.appendChild(input_ICD)
+
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
+
     }
 
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })

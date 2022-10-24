@@ -48,7 +48,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <td><input type="checkbox" name="checkbox_multiple_input_1" id="checkbox_multiple_input_1" class="input_checkbox input_readonly" form="form_saveMongoDB" value="true">Multiple</td>
               </tr>  
               <tr id="tr_input_1" >
-                <td class="input_td">
+                <td>
                   <input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB"></br>
                   <input type="text" id="inputSNOMED1_1" name="inputSNOMED1_1" value="" class="input_SNOMED input_readonly" form="form_saveMongoDB"></br>
                   <input type="text" id="inputICD1_1" name="inputICD1_1" value="" class="input_ICD input_readonly" form="form_saveMongoDB">
