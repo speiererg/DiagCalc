@@ -250,13 +250,35 @@ function addInputRow() {
     row_input.setAttribute('id', `tr_input_${modifierSub_nbr + 1}`)
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
+
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('class', `input_modifier input_readonly`);
         input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
-        if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
         column_input.appendChild(input_input)
+
+        let br_tag = document.createElement('br');
+        column_input.appendChild(br_tag)
+
+
+        let input_SNOMED = document.createElement('input')
+        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('form', `form_saveMongoDB`);
+        column_input.appendChild(input_SNOMED)
+        column_input.appendChild(br_tag)
+
+
+        let input_ICD = document.createElement('input')
+        input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('class', `input_ICD input_readonly`);
+        input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('form', `form_saveMongoDB`);
+        column_input.appendChild(input_ICD)
+
+        if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
 
         row_input.appendChild(column_input)
     }
@@ -351,7 +373,7 @@ function addInputColumn(params) {
         column_input.appendChild(input_SNOMED)
         column_input.appendChild(br_tag)
 
-        
+
         let input_ICD = document.createElement('input')
         input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
         input_ICD.setAttribute('class', `input_ICD input_readonly`);
