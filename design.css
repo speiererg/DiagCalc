@@ -131,6 +131,10 @@ body {
   text-align: center;
 }
 
+#table_input td .input_tr {
+  text-align: center;
+}
+
 #table_input tr {
   text-align: center;
 }
@@ -152,7 +156,7 @@ body {
 .input_calculator_id {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
-  width: 100%;
+  width:fit-content;
   border-radius: 3px;
   font-size: var(--font-size)
 }
@@ -216,9 +220,9 @@ body {
   width: 150px;
   border-radius: 3px;
   font-size: var(--font-size);
-  text-align: right;
 }
-.input_SNOMED:read-only {
+
+  .input_SNOMED:read-only {
   border: grey;
 }
 
