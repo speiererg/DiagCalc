@@ -28,7 +28,7 @@ function changePage(page, paramsPHP, paramsJS) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
-            changePageExecute(page, params)
+            changePageExecute(page, paramsPHP,paramsJS)
             confirmBeforeNavigate = 0
         }
     } else {
