@@ -83,7 +83,7 @@ echo $lastId;
       
    );
 
-   $collection3 = $client->DiagCalc_Calculators->Index;
+   $collection3 = $client->DiagCalc_Calculators->Calculator;
 
    $insertOneResult3 = $collection3->updateMany(
       array('calculator_id' => intval($lastId)),
