@@ -7,8 +7,8 @@ $collection = $client->DiagCalc_Calculators->Index;
 
 $cursor = $collection->find(
     array('active' => 'yes'),
-    array('$sort' => 
-        array('mainName' => 1 )
+    array(
+        'sort' => array('mainName' => 1 ),
         )
 );
 
