@@ -52,6 +52,8 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 loading_page_calculator(paramsJS)
                 if (paramsJS == "newCalculator") {
                     document.getElementById('input_hidden_new_calculator').value = 1
+                    document.getElementById('button_edit_calculator').disabled = true
+
                 } else { document.getElementById('input_hidden_new_calculator').value = 0 }
             }
             if (page == "index") {
