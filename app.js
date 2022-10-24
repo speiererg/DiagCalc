@@ -201,6 +201,7 @@ function importing_calculator(results_findOne) {
         versionOption.appendChild(document.createTextNode(`Version ${i}`))
         document.getElementById('select_version').appendChild(versionOption)
     }
+    document.getElementById('input_last_version').value = results_findOne['lastVersion']
 
     //desactivate edit if not last version
     if (results_findOne['version']!=results_findOne['lastVersion']){document.getElementById('button_edit_calculator').disabled = true}

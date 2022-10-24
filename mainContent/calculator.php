@@ -24,7 +24,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
           <td>
            Main Diagnose: <input type="text" id="input_maindiagnose" name="input_maindiagnose" class="input_maindiagnose input_readonly" value="" form="form_saveMongoDB"> 
            Version: <select id="select_version" name="select_version" class="input_select" form="form_saveMongoDB"><option value="1" selected>Version 1</option></select>
-           Calculator_id: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB" readonly> 
+           Last Version: <input type="number" id="input_last_version" name="lastVersion" class="input_calculator_id" value="" form="form_saveMongoDB" readonly> 
+           MedSP Calculator ID: <input type="number" id="input_calculator_id" name="calculator_id" class="input_calculator_id" value="" form="form_saveMongoDB" readonly> 
            EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose input_readonly" value="" form="form_saveMongoDB" readonly> 
           </td>
         </tr>
@@ -47,7 +48,11 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <td><input type="checkbox" name="checkbox_multiple_input_1" id="checkbox_multiple_input_1" class="input_checkbox input_readonly" form="form_saveMongoDB" value="true">Multiple</td>
               </tr>  
               <tr id="tr_input_1">
-                <td><input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB"></td>
+                <td>
+                  <input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly" form="form_saveMongoDB">
+                  <input type="text" id="inputSNOMED1_1" name="inputSNOMED1_1" value="" class="input_SNOMED input_readonly" form="form_saveMongoDB">
+                  <input type="text" id="inputICD1_1" name="inputICD1_1" value="" class="input_ICD input_readonly" form="form_saveMongoDB">
+                </td>
               </tr>
     
             </table>
