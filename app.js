@@ -53,6 +53,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 if (paramsJS == "newCalculator") {
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_edit_calculator').disabled = true
+                    confirmBeforeNavigate = 1
 
                 } else { document.getElementById('input_hidden_new_calculator').value = 0 }
             }
@@ -246,6 +247,7 @@ function importing_calculator(results_findOne) {
 }
 
 function edit_calculator() {
+    confirmBeforeNavigate = 1
     document.getElementById('button_edit_calculator').style.visibility = "hidden";
     disable_input(false)
     let versionOption = document.createElement('option')
