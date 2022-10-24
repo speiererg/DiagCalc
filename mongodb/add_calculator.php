@@ -82,6 +82,17 @@ echo $lastId;
       )
       
    );
+
+   $collection3 = $client->DiagCalc_Calculators->Index;
+
+   $insertOneResult3 = $collection3->updateMany(
+      array('calculator_id' => intval($lastId)),
+      array('$set'=> array(
+         'lastVersion' => intval($_POST['select_version'])
+          )
+      )
+      
+   );
 };
 
 echo 'lastId :'.$lastId;
@@ -92,6 +103,7 @@ $insertOneResult = $collection->insertOne([
    'calculator_id' => intval($lastId),
    'mainName' => $_POST['input_maindiagnose'],
    'version' => intval($_POST['select_version']),
+   'lastVersion' => intval($_POST['select_version']),
    'modifier_nbr' => intval($_POST['modifier_nbr']),
    'modifierSub_nbr' => intval($_POST['modifierSub_nbr']),
    'EDG_id' => $_POST['EDG_id'],
