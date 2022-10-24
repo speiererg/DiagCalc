@@ -8,10 +8,14 @@ $collection = $client->DiagCalc_Calculators->Index;
 $item = $_POST['item'];
 $value = $_POST['value'];
 
-$params = array('active' => 'yes');
+$params = ;
 
-$cursor = $collection->find($params);
-
+$cursor = $collection->find(
+    array('active' => 'yes'),
+    array('$sort' => 
+        array("firstName" => 1 )
+    );
+)
 echo json_encode(iterator_to_array($cursor));
 
 /*
