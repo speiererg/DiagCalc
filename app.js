@@ -193,6 +193,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('select_version').addEventListener('change',(event)=>{changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`,'')})
     document.getElementById('select_version').innerHTML=""
 
+    // Create version
     for (let i=1;i<=results_findOne['lastVersion'];i++){
         let versionOption = document.createElement('option')
         if(i==results_findOne['version']){versionOption.setAttribute('selected', 'true')}  
@@ -200,6 +201,9 @@ function importing_calculator(results_findOne) {
         versionOption.appendChild(document.createTextNode(`Version ${i}`))
         document.getElementById('select_version').appendChild(versionOption)
     }
+
+    //desactivate edit if not last version
+    if (results_findOne['version']!=results_findOne['lastVersion']){document.getElementById('button_edit_calculator').disable = true}
 
 
     let inputs = results_findOne['inputs']
