@@ -78,6 +78,7 @@ echo $lastId;
    $insertOneResult2 = $collection2->updateOne(
       array('calculator_id' => intval($lastId)),
       array('$set'=> array(
+         'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version']),
          'EDG_id' => $_POST['EDG_id'],
          'last_modification_Time' => $time,
@@ -92,6 +93,7 @@ echo $lastId;
    $insertOneResult3 = $collection3->updateMany(
       array('calculator_id' => intval($lastId)),
       array('$set'=> array(
+         'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version'])
           )
       )
