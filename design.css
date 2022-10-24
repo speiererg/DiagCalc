@@ -131,7 +131,7 @@ body {
   text-align: center;
 }
 
-#table_input td .input_tr {
+#table_input td .input_td {
   text-align: center;
 }
 
@@ -220,6 +220,8 @@ body {
   width: 150px;
   border-radius: 3px;
   font-size: var(--font-size);
+  text-align: right;
+
 }
 
   .input_SNOMED:read-only {
