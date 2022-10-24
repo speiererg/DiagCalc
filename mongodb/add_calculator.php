@@ -3,6 +3,10 @@
   $client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 
 
+
+
+$mainName = ucfirst($_POST['input_maindiagnose']);
+
 $inputs_output = array();
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
@@ -57,7 +61,7 @@ if ($_POST['calculator_id'] == null){
 $insertOneResult2 = $collection2->insertOne([
  
    'calculator_id' => intval($lastId),
-   'mainName' => $_POST['input_maindiagnose'],
+   'mainName' => $mainName,
    'lastVersion' => intval($_POST['select_version']),
    'EDG_id' => $_POST['EDG_id'],
    'last_modification_Time' => $time,
@@ -101,7 +105,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $insertOneResult = $collection->insertOne([
  
    'calculator_id' => intval($lastId),
-   'mainName' => $_POST['input_maindiagnose'],
+   'mainName' => $mainName,
    'version' => intval($_POST['select_version']),
    'lastVersion' => intval($_POST['select_version']),
    'modifier_nbr' => intval($_POST['modifier_nbr']),
