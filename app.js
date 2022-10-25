@@ -441,19 +441,19 @@ function click_radio_input(event) {
         document.getElementById(`checkbox_multiple_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
         for (let i = 2; i <= modifierSub_nbr; i++) {
-             document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" 
-             document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).style.display = "block" 
-             document.getElementById(`inputICD${array_hiden_ID}_${i}`).style.display = "block"             
+             document.getElementById(`input${array_hiden_ID}_${i}`).disabled = false;
+             document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).disabled = false;
+             document.getElementById(`inputICD${array_hiden_ID}_${i}`).disabled = false;          
             }
     }
     if (radio_input_id != "0") {
         console.log(modifierSub_nbr)
         for (let i = 2; i <= modifierSub_nbr; i++) {
-            document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`input${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
-            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
-            document.getElementById(`inputICD${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputICD${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
             document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
