@@ -10,9 +10,9 @@ session_start();
   <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="jQuery/jquery-ui.css">
-
-  <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
   <link rel="icon" type="image/png" href="images/choice.png" />
+  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
+  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 </head>
 
 <body>
@@ -47,8 +47,6 @@ session_start();
 
 
   <script src="app.js"></script>
-  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
-  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 
 </body>
 </html>
