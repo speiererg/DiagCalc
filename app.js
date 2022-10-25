@@ -466,6 +466,20 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
+        document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
+            source: availableTags,
+            change: function (event, ui) {
+                console.log(availableTags)
+                console.log(event);
+                console.log(ui);
+                if (!ui.item) {document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`).value=""   
+                }
+
+            }
+            
+        });
+        
+        /*
         $( function() {
             $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
                 source: availableTags,
@@ -486,7 +500,7 @@ function addInputColumn(params_addColumn) {
             });
           } );
 
-     
+     */
 
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
 
