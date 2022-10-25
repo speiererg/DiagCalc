@@ -78,8 +78,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     document.getElementById('button_edit_calculator').disabled = true
                     confirmBeforeNavigate = 1
                     $(function () {
-                        let id_variable = `inputICD1_1}`
-                        $("#" + id_variable).autocomplete({
+                        $( "#inputICD1_1" ).autocomplete({
                             source: availableTagsICD,
                             change: function (event, ui) {if (!ui.item) {$(`#inputICD1_1`).val("");}}
                         });
