@@ -237,10 +237,10 @@ body {
 .input_ICD:read-only {
   border: grey;
 }
-.input_ICD:hover {
+.input_ICD:focus {
   width: 150px;
 }
-.input_ICD:not(:hover) {
+.input_ICD:not(:focus) {
   width: 45px;
 }
 /* --------   Button Design ----------- */
