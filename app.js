@@ -438,12 +438,20 @@ function click_radio_input(event) {
     if (array_hiden_ID != "") {
         document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
-        for (let i = 2; i <= modifierSub_nbr; i++) { document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" }
+        for (let i = 2; i <= modifierSub_nbr; i++) {
+             document.getElementById(`input${array_hiden_ID}_${i}`).style.display = "block" 
+             document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).style.display = "block" 
+             document.getElementById(`inputICD${array_hiden_ID}_${i}`).style.display = "block"             
+            }
     }
     if (radio_input_id != "0") {
         for (let i = 2; i <= modifierSub_nbr; i++) {
             document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
+            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
+            document.getElementById(`inpuICDt${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
             document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
             array_hiden_ID = radio_input_id
