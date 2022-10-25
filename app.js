@@ -87,7 +87,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     "Scala",
                     "Scheme"
                   ];
-                  $( "#tags" ).autocompletes({
+                  $( "#tags" ).autocomplete({
                     source: availableTags
                   });
                 } );
