@@ -1,7 +1,7 @@
 <?PHP
 
 //config
-$namefile = "test.xml";
+$namefile = "EPIC_import_CSV.xml";
 $content = $_POST['input_XML'];
 
 //save file
