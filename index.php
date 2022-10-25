@@ -10,7 +10,7 @@ session_start();
   <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="jQuery/jquery-ui.css">
-  <link rel="icon" type="img/png" href="images/logo.png" />
+  <link rel="icon" type="image/png" href="img/logo.png" />
   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 </head>
