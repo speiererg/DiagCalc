@@ -65,6 +65,36 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             if (page == "home") {
                 find_home_mongoDB()
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
+                console.log('test')
+                $( function() {
+                  var availableTags = [
+                    "ActionScript",
+                    "AppleScript",
+                    "Asp",
+                    "BASIC",
+                    "C",
+                    "C++",
+                    "Clojure",
+                    "COBOL",
+                    "ColdFusion",
+                    "Erlang",
+                    "Fortran",
+                    "Groovy",
+                    "Haskell",
+                    "Java",
+                    "JavaScript",
+                    "Lisp",
+                    "Perl",
+                    "PHP",
+                    "Python",
+                    "Ruby",
+                    "Scala",
+                    "Scheme"
+                  ];
+                  $( "#tags" ).autocompletes({
+                    source: availableTags
+                  });
+                } );
             }
         }
     }
