@@ -364,7 +364,6 @@ function addInputColumn(params) {
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-    document.getElementById
 
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
