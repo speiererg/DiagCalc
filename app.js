@@ -466,23 +466,27 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
-        $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
-            source: availableTags,
-            change: function (event, ui) {
-                console.log(availableTags)
-                console.log(event);
-                console.log(ui);
-                if (!ui.item) {
-                    //http://api.jqueryui.com/autocomplete/#event-change -
-                    // The item selected from the menu, if any. Otherwise the property is null
-                    //so clear the item for force selection
-                    $(`#inputICD${modifier_nbr + 1}_${i + 1}`).val("");
-            
+        $( function() {
+            $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
+                source: availableTags,
+                change: function (event, ui) {
+                    console.log(availableTags)
+                    console.log(event);
+                    console.log(ui);
+                    if (!ui.item) {
+                        //http://api.jqueryui.com/autocomplete/#event-change -
+                        // The item selected from the menu, if any. Otherwise the property is null
+                        //so clear the item for force selection
+                        $(`#inputICD${modifier_nbr + 1}_${i + 1}`).val("");
+                
+                    }
+    
                 }
+                
+            });
+          } );
 
-            }
-            
-        });
+     
 
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
 
