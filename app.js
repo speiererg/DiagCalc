@@ -94,7 +94,7 @@ function modifierSub_nbr_change(change, number) {
 
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })
     button_save_calculator.disabled = toDo
     if (toDo == true) {
         document.getElementById('img_button_add_row').style.display = "none";
