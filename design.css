@@ -237,6 +237,12 @@ body {
 .input_ICD:read-only {
   border: grey;
 }
+.input_ICD:hover {
+  width: 200px;
+}
+.input_ICD:not(:hover) {
+  width: 45px;
+}
 /* --------   Button Design ----------- */
 .button_download {
   background-color: var(--div-color-hell);
