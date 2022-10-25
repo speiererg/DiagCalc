@@ -471,7 +471,7 @@ function addInputColumn(params_addColumn) {
         $( function() {
             console.log('test fuction qu')
             let id_variable= `inputICD${modifier_nbr + 1}_${i + 1}`
-            $( "#"+ id_variable ).autocomplete({
+            $( "#" + id_variable ).autocomplete({
                 source: availableTags,
                 change: function (event, ui) {
                     console.log(availableTags)
