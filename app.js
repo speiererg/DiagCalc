@@ -237,7 +237,7 @@ function loading_page_calculator(paramsJS) {
                     //http://api.jqueryui.com/autocomplete/#event-change -
                     // The item selected from the menu, if any. Otherwise the property is null
                     //so clear the item for force selection
-                    $(".input_ICD").val("");
+                    event.value=""
                 }
 
             }
