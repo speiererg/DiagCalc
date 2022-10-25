@@ -73,6 +73,7 @@ body {
   padding: 0px;
   font-size: xx-large;
   font-weight: bolder;
+  display: inline-block;
   vertical-align:middle;
 }
 
