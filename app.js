@@ -62,35 +62,6 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 addEventListener()
                 find_home_mongoDB()
                 console.log('test')
-                $( function() {
-                  var availableTags = [
-                    "ActionScript",
-                    "AppleScript",
-                    "Asp",
-                    "BASIC",
-                    "C",
-                    "C++",
-                    "Clojure",
-                    "COBOL",
-                    "ColdFusion",
-                    "Erlang",
-                    "Fortran",
-                    "Groovy",
-                    "Haskell",
-                    "Java",
-                    "JavaScript",
-                    "Lisp",
-                    "Perl",
-                    "PHP",
-                    "Python",
-                    "Ruby",
-                    "Scala",
-                    "Scheme"
-                  ];
-                  $( "#tags" ).autocomplete({
-                    source: availableTags
-                  });
-                } );
             }
             if (page == "home") {
                 console.log('test1')
@@ -227,6 +198,36 @@ function loading_page_calculator(paramsJS) {
     version_POST = document.getElementById('input_hidden_POST_version').value
     if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
+
+    $( function() {
+        var availableTags = [
+          "ActionScript",
+          "AppleScript",
+          "Asp",
+          "BASIC",
+          "C",
+          "C++",
+          "Clojure",
+          "COBOL",
+          "ColdFusion",
+          "Erlang",
+          "Fortran",
+          "Groovy",
+          "Haskell",
+          "Java",
+          "JavaScript",
+          "Lisp",
+          "Perl",
+          "PHP",
+          "Python",
+          "Ruby",
+          "Scala",
+          "Scheme"
+        ];
+        $( ".input_ICD" ).autocomplete({
+          source: availableTags
+        });
+      } );
 
 }
 
