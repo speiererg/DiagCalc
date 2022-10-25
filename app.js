@@ -469,7 +469,7 @@ function addInputColumn(params_addColumn) {
        
 
         $( function() {
-            $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
+            $( `"#inputICD${modifier_nbr + 1}_${i + 1}"`).autocomplete({
                 source: availableTags,
                 change: function (event, ui) {
                     console.log(availableTags)
