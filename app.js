@@ -453,7 +453,7 @@ function click_radio_input(event) {
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
-            document.getElementById(`inputICDt${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputICD${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
             document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
