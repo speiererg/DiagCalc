@@ -217,6 +217,7 @@ function testMongoDB() {
         // The xml tag name.
         let XML_list = xml.getElementsByTagName('diag');
         console.log(XML_list)
+        console.log(XML_list[10])
     }
 
 
