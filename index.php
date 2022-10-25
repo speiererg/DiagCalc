@@ -9,6 +9,8 @@ session_start();
 <head>
   <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
+  <link rel="stylesheet" href="jQuery/jquery-ui.css">
+
   <!-- <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>-->
   <link rel="icon" type="image/png" href="images/choice.png" />
 </head>
