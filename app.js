@@ -10,12 +10,27 @@ var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
 var availableTagsICD = [
+    "A00  Cholera",
+    "A01  Typhoid and paratyphoid fevers",
+    "A02  Other salmonella infections",
+    "A03  Shigellosis",
+    "A04  Other bacterial intestinal infections",
+    "A05  Other bacterial foodborne intoxications, not elsewhere classified",
+    "A06  Amebiasis",
+    "A07  Other protozoal intestinal diseases",
+    "A08  Viral and other specified intestinal infections",
     "I01.0 Acute rheumatic pericarditis",
     "I01.1 Acute rheumatic endocarditis",
     "I01.2 Acute rheumatic myocarditis",
     "I01.8 Other acute rheumatic heart disease",
-    "I01.9 Acute rheumatic heart disease, unspecified"
-  ];
+    "I01.9 Acute rheumatic heart disease, unspecified",
+    "I10  Essential (primary) hypertension",
+    "I11  Hypertensive heart disease",
+    "I12  Hypertensive chronic kidney disease",
+    "I13  Hypertensive heart and chronic kidney disease",
+    "I15  Secondary hypertension",
+    "I16  Hypertensive crisis",
+];
 
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
@@ -36,7 +51,7 @@ function changePage(page, paramsPHP, paramsJS) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
-            changePageExecute(page, paramsPHP,paramsJS)
+            changePageExecute(page, paramsPHP, paramsJS)
             confirmBeforeNavigate = 0
         }
     } else {
@@ -198,7 +213,7 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', ()=>{addInputColumn()})
+    document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn() })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
 
@@ -206,35 +221,35 @@ function loading_page_calculator(paramsJS) {
     version_POST = document.getElementById('input_hidden_POST_version').value
     if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
-/*
-    $( function() {
-        var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
-          ];
-      
-      } );
-*/
+    /*
+        $( function() {
+            var availableTags = [
+                "ActionScript",
+                "AppleScript",
+                "Asp",
+                "BASIC",
+                "C",
+                "C++",
+                "Clojure",
+                "COBOL",
+                "ColdFusion",
+                "Erlang",
+                "Fortran",
+                "Groovy",
+                "Haskell",
+                "Java",
+                "JavaScript",
+                "Lisp",
+                "Perl",
+                "PHP",
+                "Python",
+                "Ruby",
+                "Scala",
+                "Scheme"
+              ];
+          
+          } );
+    */
 }
 
 function importing_calculator(results_findOne) {
@@ -277,7 +292,7 @@ function importing_calculator(results_findOne) {
 
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
-    
+
     //Update inputs
     let inputs_Submodifier = Object.entries(results_findOne['inputs'])
     let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
@@ -285,13 +300,13 @@ function importing_calculator(results_findOne) {
 
 
     for (i = 0; i < inputs_Submodifier.length; i++) {
-        document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1] 
-        document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1] 
-        document.getElementById(inputs_ICD[i][0]).value = inputs_ICD[i][1] 
+        document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1]
+        document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1]
+        document.getElementById(inputs_ICD[i][0]).value = inputs_ICD[i][1]
     }
-    
-    
-    
+
+
+
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
     disable_input(true)
@@ -346,21 +361,21 @@ function addInputRow() {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
-        $( function() {
-            let id_variable= `inputICD${i + 1}_${modifierSub_nbr_new}`
-            $( "#" + id_variable ).autocomplete({
+        $(function () {
+            let id_variable = `inputICD${i + 1}_${modifierSub_nbr_new}`
+            $("#" + id_variable).autocomplete({
                 source: availableTagsICD,
                 change: function (event, ui) {
                     if (!ui.item) {
 
                         $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");
-                
+
                     }
-    
+
                 }
-                
+
             });
-          } );
+        });
 
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
 
@@ -437,7 +452,7 @@ function addInputColumn(params_addColumn) {
     let modifier_nbr_new = modifier_nbr + 1
     // Create Input
     for (let i = 0; i < modifierSub_nbr; i++) {
-  
+
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
         input_input.setAttribute('id', `input${modifier_nbr_new}_${i + 1}`);
@@ -467,23 +482,23 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
-       
 
-        $( function() {
-            let id_variable= `inputICD${modifier_nbr_new}_${i + 1}`
-            $( "#" + id_variable ).autocomplete({
+
+        $(function () {
+            let id_variable = `inputICD${modifier_nbr_new}_${i + 1}`
+            $("#" + id_variable).autocomplete({
                 source: availableTagsICD,
                 change: function (event, ui) {
                     if (!ui.item) {
 
                         $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");
-                
+
                     }
-    
+
                 }
-                
+
             });
-          } );
+        });
 
 
     }
@@ -491,7 +506,7 @@ function addInputColumn(params_addColumn) {
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
     //Import Params
-    if (params_addColumn != null){
+    if (params_addColumn != null) {
         if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
         } else {
@@ -503,7 +518,7 @@ function addInputColumn(params_addColumn) {
             document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
         }
     }
-  
+
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
@@ -518,10 +533,10 @@ function click_radio_input(event) {
         document.getElementById(`checkbox_multiple_input_${array_hiden_ID}`).disabled = false
         document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
         for (let i = 2; i <= modifierSub_nbr; i++) {
-             document.getElementById(`input${array_hiden_ID}_${i}`).disabled = false;
-             document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).disabled = false;
-             document.getElementById(`inputICD${array_hiden_ID}_${i}`).disabled = false;          
-            }
+            document.getElementById(`input${array_hiden_ID}_${i}`).disabled = false;
+            document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).disabled = false;
+            document.getElementById(`inputICD${array_hiden_ID}_${i}`).disabled = false;
+        }
     }
     if (radio_input_id != "0") {
         console.log(modifierSub_nbr)
@@ -529,7 +544,7 @@ function click_radio_input(event) {
             document.getElementById(`input${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).disabled = true;
-            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
+            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""
             document.getElementById(`inputICD${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
