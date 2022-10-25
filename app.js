@@ -664,7 +664,6 @@ function create_calculator_output() {
 }
 
 
-
 function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
     return TXT_temp = `
     1,${ID_Term} \n
