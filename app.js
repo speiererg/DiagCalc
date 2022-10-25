@@ -81,15 +81,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                         let id_variable = `inputICD1_1}`
                         $("#" + id_variable).autocomplete({
                             source: availableTagsICD,
-                            change: function (event, ui) {
-                                if (!ui.item) {
-            
-                                    $(`#inputICD1_1`).val("");
-            
-                                }
-            
-                            }
-            
+                            change: function (event, ui) {if (!ui.item) {$(`#inputICD1_1`).val("");}}
                         });
                     });
 
