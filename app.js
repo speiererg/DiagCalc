@@ -470,7 +470,7 @@ function addInputColumn(params_addColumn) {
 
         $( function() {
             console.log('test fuction qu')
-            $( `"#inputICD1_1"` ).autocomplete({
+            $( `#inputICD1_1` ).autocomplete({
                 source: availableTags,
                 change: function (event, ui) {
                     console.log(availableTags)
