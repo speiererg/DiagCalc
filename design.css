@@ -238,7 +238,7 @@ body {
   border: grey;
 }
 .input_ICD:hover {
-  width: 200px;
+  width: 150px;
 }
 .input_ICD:not(:hover) {
   width: 45px;
