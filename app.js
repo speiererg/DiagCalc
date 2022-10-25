@@ -184,7 +184,7 @@ function findOne_Calculator_mongoDB(id, version) {
 }
 
 function testMongoDB() {
-    var xmlhttp = new XMLHttpRequest();
+    /*var xmlhttp = new XMLHttpRequest();
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -196,6 +196,30 @@ function testMongoDB() {
     xmlhttp.open("POST", "mongodb/test.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
+*/
+    const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+    function reportStatus() {
+        if (oXHR.readyState == 4)       //  request completed.
+            showTheList(this.responseXML);      // Now show the data.
+    }
+
+    oXHR.onreadystatechange = reportStatus;
+    oXHR.open("GET", "XML/ICD.xml", true);
+    // true = asynchronous request (desirable), false = synchronous request.
+    oXHR.send();
+
+    function showTheList(xml) {
+        // The parent DIV element.
+
+        // The xml tag name.
+        let XML_list = xml.getElementsByTagName('Diag');
+        console.log(XML_list)
+    }
+
+
+
+
 }
 
 function deleteAllMongoDB() {
