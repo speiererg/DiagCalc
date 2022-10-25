@@ -78,9 +78,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     document.getElementById('button_edit_calculator').disabled = true
                     confirmBeforeNavigate = 1
                     $(function () {
-                        $( "#inputICD1_1" ).autocomplete({
+                        $("#inputICD1_1").autocomplete({
                             source: availableTagsICD,
-                            change: function (event, ui) {if (!ui.item) {$(`#inputICD1_1`).val("");}}
+                            change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
 
@@ -606,8 +606,9 @@ function create_calculator_output() {
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
 
-    // Send XML
-    XML_output = XML_Beginn
+    // create XML/TXT
+    var XML_output = XML_beginn
+    var TXT_output = TXT_beginn
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -628,7 +629,9 @@ function create_calculator_output() {
         // Append to XML
         console.log(calculated_diag)
         XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
-        document.getElementById('input_hidden_XML_output').value = XML_output
+
+        //Append to Txt
+        TXT_output = TXT_output + createFlatFile('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
 
         // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
@@ -648,14 +651,28 @@ function create_calculator_output() {
 
     }
 
-    // finalize XML
+    // update hidden input for Database save
+    document.getElementById('input_hidden_XML_output').value = XML_output
+    document.getElementById('input_hidden_TXT_output').value = XML_output
 
+    // finalize XML
     XML_output = XML_output + XML_End
     document.getElementById('input_XML').value = XML_output
+
+    // finalize TXT
+    document.getElementById('input_TXT').value = TXT_output
 }
 
 
 
+function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
+    return TXT_temp = `
+    1,${ID_Term} \n
+    2,${DiagnosisVendor} \n
+    3,${DiagnosisDescription} \n
+    35,${ID_Term} \n
+    `
+}
 
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
     return XML_temp = `            
@@ -731,8 +748,9 @@ loadingIndex()
 
 
 
+var TXT_beginn = "##INI=EDG \n"
 
-var XML_Beginn = `<?xml version="1.0" encoding="UTF-8"?>
+var XML_beginn = `<?xml version="1.0" encoding="UTF-8"?>
 <?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:z="#RowsetSchema" xmlns:udc="http://schemas.microsoft.com/data/udc" xmlns:udcs="http://schemas.microsoft.com/data/udc/soap" xmlns:udcxf="http://schemas.microsoft.com/data/udc/xmfile" xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
     <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
