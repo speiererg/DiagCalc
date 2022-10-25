@@ -228,7 +228,7 @@ body {
 .input_ICD {
   border: solid #4c9f63;
   background-color: #dafce3;
-  width: 70px;
+  width: 45px;
   border-radius: 3px;
   font-size: var(--font-size);
   text-align: right;
