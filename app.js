@@ -434,14 +434,15 @@ function addInputColumn(params_addColumn) {
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
-
+    let modifier_nbr_new = modifier_nbr + 1
     // Create Input
     for (let i = 0; i < modifierSub_nbr; i++) {
+  
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
-        input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
+        input_input.setAttribute('id', `input${modifier_nbr_new}_${i + 1}`);
         input_input.setAttribute('class', `input_modifier input_readonly`);
-        input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
+        input_input.setAttribute('name', `input${modifier_nbr_new}_${i + 1}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_input)
 
@@ -450,9 +451,9 @@ function addInputColumn(params_addColumn) {
 
 
         let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr_new}_${i + 1}`);
         input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr_new}_${i + 1}`);
         input_SNOMED.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_SNOMED)
 
@@ -460,9 +461,9 @@ function addInputColumn(params_addColumn) {
         column_input.appendChild(br_tag2)
 
         let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('id', `inputICD${modifier_nbr_new}_${i + 1}`);
         input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('name', `inputICD${modifier_nbr_new}_${i + 1}`);
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
@@ -470,7 +471,7 @@ function addInputColumn(params_addColumn) {
 
         $( function() {
             console.log('test fuction qu')
-            let id_variable= `inputICD${modifier_nbr}_${i + 1}`
+            let id_variable= `inputICD${modifier_nbr_new}_${i + 1}`
             console.log( "#" + id_variable)
             $( "#" + id_variable ).autocomplete({
                 source: availableTags,
@@ -482,7 +483,7 @@ function addInputColumn(params_addColumn) {
                         //http://api.jqueryui.com/autocomplete/#event-change -
                         // The item selected from the menu, if any. Otherwise the property is null
                         //so clear the item for force selection
-                        $(`#inputICD${modifier_nbr}_${i + 1}`).val("");
+                        $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");
                 
                     }
     
