@@ -9,6 +9,7 @@ var array_hiden_ID = "";
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
+var array_ICD10 = []
 var availableTagsICD = [
     "A00  Cholera",
     "A01  Typhoid and paratyphoid fevers",
@@ -55,7 +56,6 @@ function loadingIndex() {
 
         // The xml tag name.
         let XML_list = xml.getElementsByTagName('diag');
-        const array_ICD10 = []
         console.log(XML_list[10].getElementsByTagName('name'))
         console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
         console.log(Object.values(XML_list[10].getElementsByTagName('name')))
