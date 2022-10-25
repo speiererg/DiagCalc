@@ -10,7 +10,7 @@ session_start();
   <title>Diagnostic Calculator</title>
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="jQuery/jquery-ui.css">
-  <link rel="icon" type="image/png" href="images/choice.png" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 </head>
@@ -18,7 +18,7 @@ session_start();
 <body>
 
   <div id="header">
-    DiagCalc by MedSP
+    DiagCalc by MedSP <img src="img/logo.png" width="30px"/>
   </div>
   <div id="headerbar"></div>
 
