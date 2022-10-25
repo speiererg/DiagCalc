@@ -232,7 +232,7 @@ body {
   border-radius: 3px;
   font-size: var(--font-size);
   text-align: right;
-
+  padding-left: 2px;
 }
 .input_ICD:read-only {
   border: grey;
