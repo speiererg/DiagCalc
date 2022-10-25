@@ -466,6 +466,7 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
+        console.log(document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`))
         document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
             source: availableTags,
             change: function (event, ui) {
