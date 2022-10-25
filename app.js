@@ -470,20 +470,8 @@ function addInputColumn(params_addColumn) {
 
 
         console.log(document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`))
-        document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
-            source: availableTags,
-            change: function (event, ui) {
-                console.log(availableTags)
-                console.log(event);
-                console.log(ui);
-                if (!ui.item) {document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`).value=""   
-                }
+       
 
-            }
-            
-        });
-        
-        /*
         $( function() {
             $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
                 source: availableTags,
@@ -503,8 +491,6 @@ function addInputColumn(params_addColumn) {
                 
             });
           } );
-
-     */
 
 
     }
