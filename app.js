@@ -9,6 +9,31 @@ var array_hiden_ID = "";
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
+var availableTags = [
+    "ActionScript",
+    "AppleScript",
+    "Asp",
+    "BASIC",
+    "C",
+    "C++",
+    "Clojure",
+    "COBOL",
+    "ColdFusion",
+    "Erlang",
+    "Fortran",
+    "Groovy",
+    "Haskell",
+    "Java",
+    "JavaScript",
+    "Lisp",
+    "Perl",
+    "PHP",
+    "Python",
+    "Ruby",
+    "Scala",
+    "Scheme"
+  ];
+
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
     changePage('index')
