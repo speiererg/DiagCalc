@@ -329,14 +329,15 @@ function edit_calculator() {
 
 function addInputRow() {
     let row_input = document.createElement('tr')
-    row_input.setAttribute('id', `tr_input_${modifierSub_nbr + 1}`)
+    let modifierSub_nbr_new = modifierSub_nbr + 1
+    row_input.setAttribute('id', `tr_input_${modifierSub_nbr_new}`)
     for (let i = 0; i < modifier_nbr; i++) {
         let column_input = document.createElement('td')
 
         let input_input = document.createElement('input')
-        input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
+        input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr_new}`);
         input_input.setAttribute('class', `input_modifier input_readonly`);
-        input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr + 1}`);
+        input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr_new}`);
         input_input.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_input)
 
@@ -345,9 +346,9 @@ function addInputRow() {
 
 
         let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
+        input_SNOMED.setAttribute('id', `inputSNOMED${i + 1}_${modifierSub_nbr_new}`);
         input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${i + 1}_${modifierSub_nbr_new}`);
         input_SNOMED.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_SNOMED)
 
@@ -356,11 +357,27 @@ function addInputRow() {
 
 
         let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
+        input_ICD.setAttribute('id', `inputICD${i + 1}_${modifierSub_nbr_new}`);
         input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
+        input_ICD.setAttribute('name', `inputICD${i + 1}_${modifierSub_nbr_new}`);
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
+
+        $( function() {
+            let id_variable= `inputICD${i + 1}_${modifierSub_nbr_new}`
+            $( "#" + id_variable ).autocomplete({
+                source: availableTagsICD,
+                change: function (event, ui) {
+                    if (!ui.item) {
+
+                        $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");
+                
+                    }
+    
+                }
+                
+            });
+          } );
 
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
 
@@ -470,19 +487,12 @@ function addInputColumn(params_addColumn) {
        
 
         $( function() {
-            console.log('test fuction qu')
             let id_variable= `inputICD${modifier_nbr_new}_${i + 1}`
-            console.log( "#" + id_variable)
             $( "#" + id_variable ).autocomplete({
-                source: availableTags,
+                source: availableTagsICD,
                 change: function (event, ui) {
-                    console.log(availableTags)
-                    console.log(event);
-                    console.log(ui);
                     if (!ui.item) {
-                        //http://api.jqueryui.com/autocomplete/#event-change -
-                        // The item selected from the menu, if any. Otherwise the property is null
-                        //so clear the item for force selection
+
                         $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");
                 
                     }
