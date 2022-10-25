@@ -464,6 +464,7 @@ function click_radio_input(event) {
     }
 }
 
+
 function click_calculate() {
     array_inputs_value = [];
     array_inputs_itemNbr = [];
