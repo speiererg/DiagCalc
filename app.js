@@ -28,7 +28,7 @@ function changePage(page, paramsPHP, paramsJS) {
     actualPage = page
     if (confirmBeforeNavigate == 1) {
         if (confirm("Sie haben Daten die noch nicht gespeichert sind, wenn sie okay clicken werden sie diese Daten verlieren")) {
-            changePageExecute(page, paramsPHP,paramsJS)
+            changePageExecute(page, paramsPHP, paramsJS)
             confirmBeforeNavigate = 0
         }
     } else {
@@ -190,7 +190,7 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', ()=>{addInputColumn()})
+    document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn() })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
 
@@ -199,41 +199,42 @@ function loading_page_calculator(paramsJS) {
     if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
 
-    $( function() {
+    $(function () {
         var availableTags = [
-          "ActionScript",
-          "AppleScript",
-          "Asp",
-          "BASIC",
-          "C",
-          "C++",
-          "Clojure",
-          "COBOL",
-          "ColdFusion",
-          "Erlang",
-          "Fortran",
-          "Groovy",
-          "Haskell",
-          "Java",
-          "JavaScript",
-          "Lisp",
-          "Perl",
-          "PHP",
-          "Python",
-          "Ruby",
-          "Scala",
-          "Scheme"
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
         ];
-        /*$( ".input_ICD" ).autocomplete({
+
+        /* $( ".input_ICD" ).autocomplete({
           source: availableTags
         });
         */
         $(".input_ICD").autocomplete({
             source: availableTags,
             change: function (event, ui) {
-                console.log(event)
-                console.log(ui)
-                if(!ui.item){
+                console.log(event);
+                console.log(ui);
+                if (!ui.item) {
                     //http://api.jqueryui.com/autocomplete/#event-change -
                     // The item selected from the menu, if any. Otherwise the property is null
                     //so clear the item for force selection
@@ -241,376 +242,377 @@ function loading_page_calculator(paramsJS) {
                 }
 
             }
-      } );
+        });
 
+    }
 }
 
 function importing_calculator(results_findOne) {
-    document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
-    document.getElementById('input_maindiagnose').value = results_findOne['mainName']
-    document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
-    document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
-    document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
-    document.getElementById('select_version').innerHTML = ""
+            document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
+            document.getElementById('input_maindiagnose').value = results_findOne['mainName']
+            document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
+            document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
+            document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
+            document.getElementById('select_version').innerHTML = ""
 
-    // Create version
-    for (let i = 1; i <= results_findOne['lastVersion']; i++) {
-        let versionOption = document.createElement('option')
-        if (i == results_findOne['version']) { versionOption.setAttribute('selected', 'true') }
-        versionOption.value = i
-        versionOption.appendChild(document.createTextNode(`Version ${i}`))
-        document.getElementById('select_version').appendChild(versionOption)
-    }
-    document.getElementById('input_last_version').value = results_findOne['lastVersion']
+            // Create version
+            for (let i = 1; i <= results_findOne['lastVersion']; i++) {
+                let versionOption = document.createElement('option')
+                if (i == results_findOne['version']) { versionOption.setAttribute('selected', 'true') }
+                versionOption.value = i
+                versionOption.appendChild(document.createTextNode(`Version ${i}`))
+                document.getElementById('select_version').appendChild(versionOption)
+            }
+            document.getElementById('input_last_version').value = results_findOne['lastVersion']
 
-    //desactivate edit if not last version
-    if (results_findOne['version'] != results_findOne['lastVersion']) { document.getElementById('button_edit_calculator').disabled = true }
-
-
-    modifier_nbr_target = results_findOne['modifier_nbr'] - 1
-    for (let l = 0; l < modifier_nbr_target; l++) {
-        addInputColumn(results_findOne['parameters'])
-    }
-
-    if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
-        document.getElementById(`checkbox_input_1`).checked = true
-    } else {
-        document.getElementById(`checkbox_input_1`).checked = false
-    }
-    if (results_findOne['parameters'][`checkbox_multiple_input_1`] == "true") {
-        document.getElementById(`checkbox_multiple_input_1`).checked = true
-    } else {
-        document.getElementById(`checkbox_multiple_input_1`).checked = false
-    }
-
-    modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
-    for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
-    
-    //Update inputs
-    let inputs_Submodifier = Object.entries(results_findOne['inputs'])
-    let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
-    let inputs_ICD = Object.entries(results_findOne['ICD'])
+            //desactivate edit if not last version
+            if (results_findOne['version'] != results_findOne['lastVersion']) { document.getElementById('button_edit_calculator').disabled = true }
 
 
-    for (i = 0; i < inputs_Submodifier.length; i++) {
-        document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1] 
-        document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1] 
-        document.getElementById(inputs_ICD[i][0]).value = inputs_ICD[i][1] 
-    }
-    
-    
-    
-    if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
+            modifier_nbr_target = results_findOne['modifier_nbr'] - 1
+            for (let l = 0; l < modifier_nbr_target; l++) {
+                addInputColumn(results_findOne['parameters'])
+            }
 
-    disable_input(true)
-}
+            if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
+                document.getElementById(`checkbox_input_1`).checked = true
+            } else {
+                document.getElementById(`checkbox_input_1`).checked = false
+            }
+            if (results_findOne['parameters'][`checkbox_multiple_input_1`] == "true") {
+                document.getElementById(`checkbox_multiple_input_1`).checked = true
+            } else {
+                document.getElementById(`checkbox_multiple_input_1`).checked = false
+            }
+
+            modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
+            for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
+
+            //Update inputs
+            let inputs_Submodifier = Object.entries(results_findOne['inputs'])
+            let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
+            let inputs_ICD = Object.entries(results_findOne['ICD'])
+
+
+            for (i = 0; i < inputs_Submodifier.length; i++) {
+                document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1]
+                document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1]
+                document.getElementById(inputs_ICD[i][0]).value = inputs_ICD[i][1]
+            }
+
+
+
+            if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
+
+            disable_input(true)
+        }
 
 function edit_calculator() {
-    confirmBeforeNavigate = 1
-    document.getElementById('button_edit_calculator').style.visibility = "hidden";
-    disable_input(false)
-    let versionOption = document.createElement('option')
-    versionOption.setAttribute('selected', 'true')
-    let neueVersion = parseInt(document.getElementById('select_version').value) + 1
-    versionOption.value = neueVersion
-    versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
-    document.getElementById('select_version').appendChild(versionOption)
-}
+            confirmBeforeNavigate = 1
+            document.getElementById('button_edit_calculator').style.visibility = "hidden";
+            disable_input(false)
+            let versionOption = document.createElement('option')
+            versionOption.setAttribute('selected', 'true')
+            let neueVersion = parseInt(document.getElementById('select_version').value) + 1
+            versionOption.value = neueVersion
+            versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
+            document.getElementById('select_version').appendChild(versionOption)
+        }
 
 
 function addInputRow() {
-    let row_input = document.createElement('tr')
-    row_input.setAttribute('id', `tr_input_${modifierSub_nbr + 1}`)
-    for (let i = 0; i < modifier_nbr; i++) {
-        let column_input = document.createElement('td')
+            let row_input = document.createElement('tr')
+            row_input.setAttribute('id', `tr_input_${modifierSub_nbr + 1}`)
+            for (let i = 0; i < modifier_nbr; i++) {
+                let column_input = document.createElement('td')
 
-        let input_input = document.createElement('input')
-        input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
-        input_input.setAttribute('class', `input_modifier input_readonly`);
-        input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr + 1}`);
-        input_input.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_input)
+                let input_input = document.createElement('input')
+                input_input.setAttribute('id', `input${i + 1}_${modifierSub_nbr + 1}`);
+                input_input.setAttribute('class', `input_modifier input_readonly`);
+                input_input.setAttribute('name', `input${i + 1}_${modifierSub_nbr + 1}`);
+                input_input.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_input)
 
-        let br_tag = document.createElement('br');
-        column_input.appendChild(br_tag)
-
-
-        let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
-        input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
-        input_SNOMED.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_SNOMED)
-
-        let br_tag2 = document.createElement('br');
-        column_input.appendChild(br_tag2)
+                let br_tag = document.createElement('br');
+                column_input.appendChild(br_tag)
 
 
-        let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
-        input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
-        input_ICD.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_ICD)
+                let input_SNOMED = document.createElement('input')
+                input_SNOMED.setAttribute('id', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
+                input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
+                input_SNOMED.setAttribute('name', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
+                input_SNOMED.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_SNOMED)
 
-        if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
+                let br_tag2 = document.createElement('br');
+                column_input.appendChild(br_tag2)
 
-        row_input.appendChild(column_input)
-    }
-    document.getElementById('table_input').appendChild(row_input)
-    modifierSub_nbr_change('++', 1)
-}
+
+                let input_ICD = document.createElement('input')
+                input_ICD.setAttribute('id', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
+                input_ICD.setAttribute('class', `input_ICD input_readonly`);
+                input_ICD.setAttribute('name', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
+                input_ICD.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_ICD)
+
+                if (document.getElementById(`radio_input_${i + 1}`).checked == true) { input_input.setAttribute("style", "display:none") }
+
+                row_input.appendChild(column_input)
+            }
+            document.getElementById('table_input').appendChild(row_input)
+            modifierSub_nbr_change('++', 1)
+        }
 
 function addInputColumn(params_addColumn) {
-    // Create radio
-    let input_radio = document.createElement('input');
-    input_radio.setAttribute('type', 'radio')
-    input_radio.setAttribute('name', `radio_input`)
-    input_radio.setAttribute('class', 'radio_input input_readonly')
-    input_radio.setAttribute('value', modifier_nbr + 1)
-    input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
-    input_radio.setAttribute('form', `form_saveMongoDB`);
+            // Create radio
+            let input_radio = document.createElement('input');
+            input_radio.setAttribute('type', 'radio')
+            input_radio.setAttribute('name', `radio_input`)
+            input_radio.setAttribute('class', 'radio_input input_readonly')
+            input_radio.setAttribute('value', modifier_nbr + 1)
+            input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
+            input_radio.setAttribute('form', `form_saveMongoDB`);
 
-    let column_input_radio = document.createElement('td')
-    column_input_radio.appendChild(input_radio);
-    column_input_radio.appendChild(document.createTextNode("Main"))
-    document.getElementById('tr_input_radio').appendChild(column_input_radio)
-    document.getElementById(`radio_input_${modifier_nbr + 1}`).dataset.id = modifier_nbr + 1
-
-
-    // Create Modifier Title
-    let column_input_title = document.createElement('td')
-    let input_title_span = document.createElement('span')
-    input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
-    input_title_span.setAttribute('class', 'input_title input_readonly')
-    column_input_title.appendChild(input_title_span)
-    document.getElementById('tr_input_title').appendChild(column_input_title)
+            let column_input_radio = document.createElement('td')
+            column_input_radio.appendChild(input_radio);
+            column_input_radio.appendChild(document.createTextNode("Main"))
+            document.getElementById('tr_input_radio').appendChild(column_input_radio)
+            document.getElementById(`radio_input_${modifier_nbr + 1}`).dataset.id = modifier_nbr + 1
 
 
-    //Create Select
-    let column_input_select = document.createElement('td')
-    let input_select = document.createElement('select');
-    input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
-    input_select.setAttribute('class', `input_select input_readonly`)
-    input_select.setAttribute('form', `form_saveMongoDB`);
-    input_select.setAttribute('name', `select_input_${modifier_nbr + 1}`)
-    input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
-    column_input_select.appendChild(input_select)
-    document.getElementById('tr_input_separator').appendChild(column_input_select)
-
-    // Checkbox Not Required
-    let input_checkbox = document.createElement('input');
-    input_checkbox.setAttribute('type', 'checkbox')
-    input_checkbox.setAttribute('value', true)
-    input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
-    input_checkbox.setAttribute('class', `input_checkbox input_readonly`)
-    input_checkbox.setAttribute('form', `form_saveMongoDB`);
-    input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr + 1}`)
-    let column_input_checkbox = document.createElement('td')
-    column_input_checkbox.appendChild(input_checkbox);
-    column_input_checkbox.appendChild(document.createTextNode("Not Required"))
-    document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-    document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
-
-    //Checkbox Multiple
-    let input_multiple_checkbox = document.createElement('input');
-    input_multiple_checkbox.setAttribute('type', 'checkbox')
-    input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
-    input_multiple_checkbox.setAttribute('class', `input_checkbox input_readonly`)
-    input_multiple_checkbox.setAttribute('value', true)
-    input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr + 1}`)
-    input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
-    let column_input_multiple_checkbox = document.createElement('td')
-    column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
-    column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
-    document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
+            // Create Modifier Title
+            let column_input_title = document.createElement('td')
+            let input_title_span = document.createElement('span')
+            input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+            input_title_span.setAttribute('class', 'input_title input_readonly')
+            column_input_title.appendChild(input_title_span)
+            document.getElementById('tr_input_title').appendChild(column_input_title)
 
 
-    // Create Input
-    for (let i = 0; i < modifierSub_nbr; i++) {
-        let column_input = document.createElement('td')
-        let input_input = document.createElement('input')
-        input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
-        input_input.setAttribute('class', `input_modifier input_readonly`);
-        input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
-        input_input.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_input)
+            //Create Select
+            let column_input_select = document.createElement('td')
+            let input_select = document.createElement('select');
+            input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
+            input_select.setAttribute('class', `input_select input_readonly`)
+            input_select.setAttribute('form', `form_saveMongoDB`);
+            input_select.setAttribute('name', `select_input_${modifier_nbr + 1}`)
+            input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
+            column_input_select.appendChild(input_select)
+            document.getElementById('tr_input_separator').appendChild(column_input_select)
 
-        let br_tag = document.createElement('br');
-        column_input.appendChild(br_tag)
-
-
-        let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
-        input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
-        input_SNOMED.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_SNOMED)
-
-        let br_tag2 = document.createElement('br');
-        column_input.appendChild(br_tag2)
-
-        let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
-        input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
-        input_ICD.setAttribute('form', `form_saveMongoDB`);
-        column_input.appendChild(input_ICD)
-
-        document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
-
-    }
-
-    document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
-
-    //Import Params
-    if (params_addColumn != null){
-        if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
+            // Checkbox Not Required
+            let input_checkbox = document.createElement('input');
+            input_checkbox.setAttribute('type', 'checkbox')
+            input_checkbox.setAttribute('value', true)
+            input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
+            input_checkbox.setAttribute('class', `input_checkbox input_readonly`)
+            input_checkbox.setAttribute('form', `form_saveMongoDB`);
+            input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr + 1}`)
+            let column_input_checkbox = document.createElement('td')
+            column_input_checkbox.appendChild(input_checkbox);
+            column_input_checkbox.appendChild(document.createTextNode("Not Required"))
+            document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
-        } else {
-            document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
-        }
-        if (params_addColumn[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
-            document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
-        } else {
-            document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
-        }
-    }
-  
 
-    // Modifier_nbr Increment
-    modifier_nbr_change('++', 1)
-}
+            //Checkbox Multiple
+            let input_multiple_checkbox = document.createElement('input');
+            input_multiple_checkbox.setAttribute('type', 'checkbox')
+            input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
+            input_multiple_checkbox.setAttribute('class', `input_checkbox input_readonly`)
+            input_multiple_checkbox.setAttribute('value', true)
+            input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr + 1}`)
+            input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
+            let column_input_multiple_checkbox = document.createElement('td')
+            column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
+            column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
+            document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
+
+
+            // Create Input
+            for (let i = 0; i < modifierSub_nbr; i++) {
+                let column_input = document.createElement('td')
+                let input_input = document.createElement('input')
+                input_input.setAttribute('id', `input${modifier_nbr + 1}_${i + 1}`);
+                input_input.setAttribute('class', `input_modifier input_readonly`);
+                input_input.setAttribute('name', `input${modifier_nbr + 1}_${i + 1}`);
+                input_input.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_input)
+
+                let br_tag = document.createElement('br');
+                column_input.appendChild(br_tag)
+
+
+                let input_SNOMED = document.createElement('input')
+                input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+                input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
+                input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+                input_SNOMED.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_SNOMED)
+
+                let br_tag2 = document.createElement('br');
+                column_input.appendChild(br_tag2)
+
+                let input_ICD = document.createElement('input')
+                input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
+                input_ICD.setAttribute('class', `input_ICD input_readonly`);
+                input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
+                input_ICD.setAttribute('form', `form_saveMongoDB`);
+                column_input.appendChild(input_ICD)
+
+                document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
+
+            }
+
+            document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
+
+            //Import Params
+            if (params_addColumn != null) {
+                if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
+                    document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
+                } else {
+                    document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
+                }
+                if (params_addColumn[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
+                    document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
+                } else {
+                    document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
+                }
+            }
+
+
+            // Modifier_nbr Increment
+            modifier_nbr_change('++', 1)
+        }
 
 //  *****************************  Function Calculator  *****************************
 
 function click_radio_input(event) {
-    radio_input_id = event.srcElement.dataset.id
-    if (array_hiden_ID != "") {
-        document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
-        document.getElementById(`checkbox_multiple_input_${array_hiden_ID}`).disabled = false
-        document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
-        for (let i = 2; i <= modifierSub_nbr; i++) {
-             document.getElementById(`input${array_hiden_ID}_${i}`).disabled = false;
-             document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).disabled = false;
-             document.getElementById(`inputICD${array_hiden_ID}_${i}`).disabled = false;          
+            radio_input_id = event.srcElement.dataset.id
+            if (array_hiden_ID != "") {
+                document.getElementById(`checkbox_input_${array_hiden_ID}`).disabled = false
+                document.getElementById(`checkbox_multiple_input_${array_hiden_ID}`).disabled = false
+                document.getElementById(`checkbox_input_${array_hiden_ID}`).checked = true
+                for (let i = 2; i <= modifierSub_nbr; i++) {
+                    document.getElementById(`input${array_hiden_ID}_${i}`).disabled = false;
+                    document.getElementById(`inputSNOMED${array_hiden_ID}_${i}`).disabled = false;
+                    document.getElementById(`inputICD${array_hiden_ID}_${i}`).disabled = false;
+                }
             }
-    }
-    if (radio_input_id != "0") {
-        console.log(modifierSub_nbr)
-        for (let i = 2; i <= modifierSub_nbr; i++) {
-            document.getElementById(`input${radio_input_id}_${i}`).disabled = true;
-            document.getElementById(`input${radio_input_id}_${i}`).value = ""
-            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).disabled = true;
-            document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
-            document.getElementById(`inputICD${radio_input_id}_${i}`).disabled = true;
-            document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
-            document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
-            document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
-            document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
-            document.getElementById(`checkbox_multiple_input_${radio_input_id}`).checked = false
-            array_hiden_ID = radio_input_id
+            if (radio_input_id != "0") {
+                console.log(modifierSub_nbr)
+                for (let i = 2; i <= modifierSub_nbr; i++) {
+                    document.getElementById(`input${radio_input_id}_${i}`).disabled = true;
+                    document.getElementById(`input${radio_input_id}_${i}`).value = ""
+                    document.getElementById(`inputSNOMED${radio_input_id}_${i}`).disabled = true;
+                    document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""
+                    document.getElementById(`inputICD${radio_input_id}_${i}`).disabled = true;
+                    document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
+                    document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
+                    document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
+                    document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
+                    document.getElementById(`checkbox_multiple_input_${radio_input_id}`).checked = false
+                    array_hiden_ID = radio_input_id
+                }
+            }
         }
-    }
-}
 
 
 function click_calculate() {
-    array_inputs_value = [];
-    array_inputs_itemNbr = [];
-    array_calculator = [];
-    for (let i = 1; i <= modifier_nbr; i++) {
-        let array_inputs_oneModifier = [];
-        let item_nbr = 0
-        let modifierSub_iterate = 1
-        if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
-            modifierSub_iterate = 0
-        }
-        for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
-            if (k == 0) {
-                item_nbr++
-                array_inputs_oneModifier.push('')
-            } else {
-                let input_value = document.getElementById(`input${i}_${k}`).value
-                if (input_value != '') {
-                    item_nbr++
-                    array_inputs_oneModifier.push(input_value)
+            array_inputs_value = [];
+            array_inputs_itemNbr = [];
+            array_calculator = [];
+            for (let i = 1; i <= modifier_nbr; i++) {
+                let array_inputs_oneModifier = [];
+                let item_nbr = 0
+                let modifierSub_iterate = 1
+                if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
+                    modifierSub_iterate = 0
                 }
+                for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
+                    if (k == 0) {
+                        item_nbr++
+                        array_inputs_oneModifier.push('')
+                    } else {
+                        let input_value = document.getElementById(`input${i}_${k}`).value
+                        if (input_value != '') {
+                            item_nbr++
+                            array_inputs_oneModifier.push(input_value)
+                        }
+                    }
+                }
+                array_inputs_itemNbr.push(item_nbr)
+                array_inputs_value.push(array_inputs_oneModifier);
             }
-        }
-        array_inputs_itemNbr.push(item_nbr)
-        array_inputs_value.push(array_inputs_oneModifier);
-    }
 
-    // Creation du array_Calculator
-    array_calculator.unshift(1)
-    for (let i = modifier_nbr; i > 1; i--) {
-        array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
-    }
-    create_calculator_output();
-}
+            // Creation du array_Calculator
+            array_calculator.unshift(1)
+            for (let i = modifier_nbr; i > 1; i--) {
+                array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
+            }
+            create_calculator_output();
+        }
 
 
 function create_calculator_output() {
-    document.getElementById('table_output_calculator').innerHTML = "";
+            document.getElementById('table_output_calculator').innerHTML = "";
 
-    var array_iterate = []
-    var itteration_id = modifier_nbr - 1
-    for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
+            var array_iterate = []
+            var itteration_id = modifier_nbr - 1
+            for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
 
-    // Send XML
-    XML_output = XML_Beginn
+            // Send XML
+            XML_output = XML_Beginn
 
-    // Creation of Items
-    let array_item0 = array_inputs_itemNbr[0]
-    array_inputs_itemNbr[0]++
-    while (array_iterate[0] < array_item0) {
-        var calculated_diag = ""
-        for (let i0 = 0; i0 < modifier_nbr; i0++) {
-            calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
-        }
-        calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
-        let row_output_calculator = document.createElement('tr')
-        let row_output_calculator_Column = document.createElement('td')
-        row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
-        row_output_calculator.appendChild(row_output_calculator_Column)
-        document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-
-
-        // Append to XML
-        console.log(calculated_diag)
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
-        document.getElementById('input_hidden_XML_output').value = XML_output
-
-        // Array Calculation
-        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
-            array_iterate[itteration_id]++
-        } else {
-            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
-                for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
-                    array_iterate[modifier_nbr - id_increment] = 0
-                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
-                        array_iterate[itteration_id - id_increment]++
-                        test_id = modifier_nbr + 1
-                    }
-                    test_id++
+            // Creation of Items
+            let array_item0 = array_inputs_itemNbr[0]
+            array_inputs_itemNbr[0]++
+            while (array_iterate[0] < array_item0) {
+                var calculated_diag = ""
+                for (let i0 = 0; i0 < modifier_nbr; i0++) {
+                    calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
                 }
+                calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
+                let row_output_calculator = document.createElement('tr')
+                let row_output_calculator_Column = document.createElement('td')
+                row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
+                row_output_calculator.appendChild(row_output_calculator_Column)
+                document.getElementById('table_output_calculator').appendChild(row_output_calculator);
+
+
+                // Append to XML
+                console.log(calculated_diag)
+                XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
+                document.getElementById('input_hidden_XML_output').value = XML_output
+
+                // Array Calculation
+                if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
+                    array_iterate[itteration_id]++
+                } else {
+                    if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
+                        for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
+                            array_iterate[modifier_nbr - id_increment] = 0
+                            if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
+                                array_iterate[itteration_id - id_increment]++
+                                test_id = modifier_nbr + 1
+                            }
+                            test_id++
+                        }
+                    }
+                }
+
             }
+
+            // finalize XML
+
+            XML_output = XML_output + XML_End
+            document.getElementById('input_XML').value = XML_output
         }
-
-    }
-
-    // finalize XML
-
-    XML_output = XML_output + XML_End
-    document.getElementById('input_XML').value = XML_output
-}
 
 
 
 
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
-    return XML_temp = `            
+            return XML_temp = `            
     <ss:Row>
     <ss:Cell>
         <ss:Data ss:Type="String">${ID_Term}</ss:Data>
@@ -675,7 +677,7 @@ function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactCommen
     <ss:Cell></ss:Cell>
     <ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
     </ss:Row>`
-}
+        }
 
 
 loadingIndex()
@@ -1561,7 +1563,7 @@ var XML_Beginn = `<?xml version="1.0" encoding="UTF-8"?>
                     <ss:Data ss:Type="String"></ss:Data>
                 </ss:Cell>
             </ss:Row>`
-var XML_End = `<ss:Row>
+    var XML_End = `<ss:Row>
 <ss:Cell ss:StyleID="SolidBlack">
     <ss:Comment ss:Author="Epic Export Utility">
         <ss:Data>#LAST_ROW</ss:Data>
