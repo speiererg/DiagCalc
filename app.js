@@ -242,9 +242,6 @@ function loading_page_calculator(paramsJS) {
 
             }
         });
-
-
-
       } );
 
 }
