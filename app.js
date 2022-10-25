@@ -63,6 +63,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 find_home_mongoDB()
             }
             if (page == "home") {
+                console.log('test1')
                 find_home_mongoDB()
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 console.log('test')
