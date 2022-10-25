@@ -70,7 +70,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               </form>
              <p>
             
-              <form name="form" action="download/download_txt.php" method="POST">
+              <form name="form" action="download/download_TXT.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_TXT" value="" >
                 <input type="submit" name="button2"  class="button_download" value="Download as TXT" />
               </form>
