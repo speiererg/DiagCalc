@@ -35,6 +35,39 @@ var availableTagsICD = [
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
     changePage('index')
+
+    const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+
+    function reportStatus() {
+        if (oXHR.readyState == 4) {
+            console.log(this.responseXML)    //  request completed.
+            showTheList(this.responseXML);      // Now show the data.
+        }
+    }
+
+    oXHR.onreadystatechange = reportStatus;
+    oXHR.open("GET", "XML/ICD.xml", true);
+    // true = asynchronous request (desirable), false = synchronous request.
+    oXHR.send();
+
+    function showTheList(xml) {
+        // The parent DIV element.
+
+        // The xml tag name.
+        let XML_list = xml.getElementsByTagName('diag');
+        var array_ICD10 = []
+        console.log(XML_list[10].getElementsByTagName('name'))
+        console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
+        console.log(Object.values(XML_list[10].getElementsByTagName('name')))
+        console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
+        for(let i=0; i<XML_list.length;i++)
+        {
+            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML} ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
+        }
+        console.log(array_ICD10)
+
+    }
+
 }
 
 function addEventListener() {
@@ -79,7 +112,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     confirmBeforeNavigate = 1
                     $(function () {
                         $("#inputICD1_1").autocomplete({
-                            source: availableTagsICD,
+                            source: array_ICD10,
                             change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
@@ -197,38 +230,7 @@ function testMongoDB() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 */
-    const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-
-    function reportStatus() {
-        if (oXHR.readyState == 4) {
-            console.log(this.responseXML)    //  request completed.
-            showTheList(this.responseXML);      // Now show the data.
-        }
-    }
-
-    oXHR.onreadystatechange = reportStatus;
-    oXHR.open("GET", "XML/ICD.xml", true);
-    // true = asynchronous request (desirable), false = synchronous request.
-    oXHR.send();
-
-    function showTheList(xml) {
-        // The parent DIV element.
-
-        // The xml tag name.
-        let XML_list = xml.getElementsByTagName('diag');
-        var array_ICD10 = []
-        console.log(XML_list[10].getElementsByTagName('name'))
-        console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
-        console.log(Object.values(XML_list[10].getElementsByTagName('name')))
-        console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
-        for(let i=0; i<XML_list.length;i++)
-        {
-            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML} ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
-        }
-        console.log(array_ICD10)
-
-    }
-
+  
 
 
 
@@ -406,7 +408,7 @@ function addInputRow() {
         $(function () {
             let id_variable = `inputICD${i + 1}_${modifierSub_nbr_new}`
             $("#" + id_variable).autocomplete({
-                source: availableTagsICD,
+                source: array_ICD10,
                 change: function (event, ui) {
                     if (!ui.item) {
 
@@ -529,7 +531,7 @@ function addInputColumn(params_addColumn) {
         $(function () {
             let id_variable = `inputICD${modifier_nbr_new}_${i + 1}`
             $("#" + id_variable).autocomplete({
-                source: availableTagsICD,
+                source: array_ICD10,
                 change: function (event, ui) {
                     if (!ui.item) {
 
