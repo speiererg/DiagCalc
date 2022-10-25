@@ -224,9 +224,23 @@ function loading_page_calculator(paramsJS) {
           "Scala",
           "Scheme"
         ];
-        $( ".input_ICD" ).autocomplete({
+        /*$( ".input_ICD" ).autocomplete({
           source: availableTags
         });
+        */
+        $(".input_ICD").autocomplete({
+            source: availableTags,
+            change: function (event, ui) {
+                console.log(event)
+                console.log(ui)
+                if(!ui.item){
+                    //http://api.jqueryui.com/autocomplete/#event-change -
+                    // The item selected from the menu, if any. Otherwise the property is null
+                    //so clear the item for force selection
+                    $(".input_ICD").val("");
+                }
+
+            }
       } );
 
 }
