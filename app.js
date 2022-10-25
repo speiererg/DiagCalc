@@ -419,7 +419,7 @@ function addInputColumn(params_addColumn) {
 
     console.log(params_addColumn)
     //Import Params
-    if (params_addColumn!=null){
+    if (params_addColumn != null){
         console.log('parames')
         if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
