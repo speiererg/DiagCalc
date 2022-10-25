@@ -447,12 +447,13 @@ function click_radio_input(event) {
             }
     }
     if (radio_input_id != "0") {
+        console.log(modifierSub_nbr)
         for (let i = 2; i <= modifierSub_nbr; i++) {
             document.getElementById(`input${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""            
-            document.getElementById(`inpuICDt${radio_input_id}_${i}`).style.display = "none";
+            document.getElementById(`inputICDt${radio_input_id}_${i}`).style.display = "none";
             document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
             document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
             document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
