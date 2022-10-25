@@ -417,6 +417,7 @@ function addInputColumn(params) {
 
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
+    console.log(params)
     //Import Params
     if (params=!null){
         console.log('parames')
