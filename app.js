@@ -219,6 +219,8 @@ function testMongoDB() {
         console.log(XML_list)
         console.log(XML_list[10])
         console.log(XML_list[10].getElementsByTagName('name')[0])
+        console.log(XML_list[10].getElementsByTagName('name')[1])
+        console.log(XML_list[10].getElementsByTagName('desc')[0])
     }
 
 
