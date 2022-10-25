@@ -364,6 +364,7 @@ function addInputColumn(params) {
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
     document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
+    console.log(document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked)
 
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
@@ -427,6 +428,7 @@ function addInputColumn(params) {
     } else {
         document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
     }
+    console.log(document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked)
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
