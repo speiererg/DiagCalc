@@ -35,7 +35,7 @@
       "Scala",
       "Scheme"
     ];
-    $( "#tags" ).autocomplete({
+    $( "#tags" ).autocompletes({
       source: availableTags
     });
   } );
