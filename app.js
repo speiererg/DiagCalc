@@ -10,28 +10,11 @@ var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
 var availableTags = [
-    "ActionScript",
-    "AppleScript",
-    "Asp",
-    "BASIC",
-    "C",
-    "C++",
-    "Clojure",
-    "COBOL",
-    "ColdFusion",
-    "Erlang",
-    "Fortran",
-    "Groovy",
-    "Haskell",
-    "Java",
-    "JavaScript",
-    "Lisp",
-    "Perl",
-    "PHP",
-    "Python",
-    "Ruby",
-    "Scala",
-    "Scheme"
+    "I01.0 Acute rheumatic pericarditis",
+    "I01.1 Acute rheumatic endocarditis",
+    "I01.2 Acute rheumatic myocarditis",
+    "I01.8 Other acute rheumatic heart disease",
+    "I01.9 Acute rheumatic heart disease, unspecified"
   ];
 
 // ***************************** Loading HOME  *****************************
