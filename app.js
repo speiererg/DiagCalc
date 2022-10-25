@@ -9,7 +9,7 @@ var array_hiden_ID = "";
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
-var availableTags = [
+var availableTagsICD = [
     "I01.0 Acute rheumatic pericarditis",
     "I01.1 Acute rheumatic endocarditis",
     "I01.2 Acute rheumatic myocarditis",
