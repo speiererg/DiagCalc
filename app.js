@@ -418,7 +418,7 @@ function addInputColumn(params) {
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
     //Import Params
-    if (params){
+    if (params=!null){
         console.log('parames')
         if (params[`checkbox_input_${modifier_nbr + 1}`] == "true") {
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
