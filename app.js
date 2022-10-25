@@ -61,11 +61,6 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 addEventListener()
                 find_home_mongoDB()
-            }
-            if (page == "home") {
-                console.log('test1')
-                find_home_mongoDB()
-                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 console.log('test')
                 $( function() {
                   var availableTags = [
@@ -96,6 +91,12 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     source: availableTags
                   });
                 } );
+            }
+            if (page == "home") {
+                console.log('test1')
+                find_home_mongoDB()
+                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
+
             }
         }
     }
