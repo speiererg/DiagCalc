@@ -224,10 +224,11 @@ function loading_page_calculator(paramsJS) {
           "Scala",
           "Scheme"
         ];
-        /*
+      
         $( ".input_ICD" ).autocomplete({
           source: availableTags
-        });*/
+        });
+          /*
         $(".input_ICD").autocomplete({
             source: availableTags,
             change: function (event, ui) {
@@ -242,6 +243,7 @@ function loading_page_calculator(paramsJS) {
 
             }
         });
+        */
       } );
 
 }
