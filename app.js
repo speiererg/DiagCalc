@@ -314,7 +314,7 @@ function addInputRow() {
     modifierSub_nbr_change('++', 1)
 }
 
-function addInputColumn(params) {
+function addInputColumn(params_addColumn) {
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
@@ -417,16 +417,16 @@ function addInputColumn(params) {
 
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
 
-    console.log(params)
+    console.log(params_addColumn)
     //Import Params
-    if (params=!null){
+    if (params_addColumn=!null){
         console.log('parames')
-        if (params[`checkbox_input_${modifier_nbr + 1}`] == "true") {
+        if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
         } else {
             document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
         }
-        if (params[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
+        if (params_addColumn[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
             document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
         } else {
             document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
