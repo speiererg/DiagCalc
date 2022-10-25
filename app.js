@@ -200,9 +200,10 @@ function testMongoDB() {
     const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
 
     function reportStatus() {
-        if (oXHR.readyState == 4)   
-        console.log(this.responseXML)    //  request completed.
+        if (oXHR.readyState == 4) {
+            console.log(this.responseXML)    //  request completed.
             showTheList(this.responseXML);      // Now show the data.
+        }
     }
 
     oXHR.onreadystatechange = reportStatus;
