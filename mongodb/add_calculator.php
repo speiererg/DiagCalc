@@ -8,7 +8,6 @@
 $mainName = ucfirst($_POST['input_maindiagnose']);
 
 $inputs_output = array();
-
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
       $input_ID = "input{$i}_{$k}";
@@ -16,9 +15,25 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    }
 }
 
+$SNOMED_output = array();
+for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
+   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
+      $inputSNOMED_ID = "inputSNOMED{$i}_{$k}";
+      $SNOMED_output = array_merge($SNOMED_output, array("inputSNOMED{$i}_{$k}" => $_POST[$inputSNOMED_ID]));
+   }
+}
+
+$ICD_output = array();
+for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
+   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
+      $inputICD_ID = "inputICD{$i}_{$k}";
+      $ICD_output = array_merge($ICD_output, array("inputICD{$i}_{$k}" => $_POST[$inputICD_ID]));
+   }
+}
+
+
 
 $parameters_output = array();
-
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $select_ID = "select_input_{$i}";
       $radio_ID = "radio_input";
@@ -116,6 +131,8 @@ $insertOneResult = $collection->insertOne([
    'created_Time' => $time,
    'created_timestamp' => time(),
    'inputs' => $inputs_output,
+   'SNOMED' => $SNOMED_output,
+   'ICD' => $ICD_output,
    'parameters' => $parameters_output,
    'XML_output' => $_POST['XML_output'],
    
