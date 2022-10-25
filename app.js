@@ -466,10 +466,6 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
-
-
-
-        console.log(document.getElementById(`inputICD${modifier_nbr + 1}_${i + 1}`))
        
 
         $( function() {
