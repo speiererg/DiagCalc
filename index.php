@@ -18,7 +18,7 @@ session_start();
 <body>
 
   <div id="header">
-    <div>DiagCalc by <img src="img/logo.png" width="100px" style="margin:0px;padding:0px"/></div>
+    <div>DiagCalc by <img src="img/logo.png" width="100px" style="vertical-align:middle"/></div>
   </div>
   <div id="headerbar"></div>
 
