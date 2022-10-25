@@ -223,7 +223,7 @@ function loading_page_calculator(paramsJS) {
     version_POST = document.getElementById('input_hidden_POST_version').value
     if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
-
+/*
     $( function() {
         var availableTags = [
             "ActionScript",
@@ -251,7 +251,7 @@ function loading_page_calculator(paramsJS) {
           ];
       
       } );
-
+*/
 }
 
 function importing_calculator(results_findOne) {
