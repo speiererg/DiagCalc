@@ -667,7 +667,7 @@ function create_calculator_output() {
 
 
 function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
-    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}`
+    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n`
 }
 
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
