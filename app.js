@@ -216,11 +216,13 @@ function testMongoDB() {
 
         // The xml tag name.
         let XML_list = xml.getElementsByTagName('diag');
-        console.log(XML_list)
-        console.log(XML_list[10])
-        console.log(XML_list[10].getElementsByTagName('name')[0])
-        console.log(XML_list[10].getElementsByTagName('name')[1])
-        console.log(XML_list[10].getElementsByTagName('desc')[0])
+        var array_ICD10 = []
+        for(let i=0; i<XML_list.length;i++)
+        {
+            array_ICD10.push(`${XML_list[10].getElementsByTagName('name')[0]} ${XML_list[10].getElementsByTagName('desc')[0]}`)
+        }
+        console.log(array_ICD10)
+    
     }
 
 
