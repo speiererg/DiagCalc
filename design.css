@@ -78,7 +78,9 @@ body {
 }
 
 #header span{
-display: inline-block;
+  text-align: center;
+  display: inline-block;
+
 vertical-align: middle;
 }
 
