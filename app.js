@@ -288,9 +288,9 @@ function addInputRow() {
 
 
         let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('id', `inputSNOMED${modifierSub_nbr + 1}_${i + 1}`);
         input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${modifier_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${modifierSub_nbr + 1}_${i + 1}`);
         input_SNOMED.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_SNOMED)
 
@@ -299,9 +299,9 @@ function addInputRow() {
 
 
         let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('id', `inputICD${modifierSub_nbr + 1}_${i + 1}`);
         input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${modifier_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('name', `inputICD${modifierSub_nbr + 1}_${i + 1}`);
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
