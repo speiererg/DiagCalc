@@ -78,7 +78,7 @@ body {
 
 #header div{
   text-align: center;
-
+display: inline-block;
 vertical-align: middle;
 }
 
