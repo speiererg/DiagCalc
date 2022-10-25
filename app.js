@@ -656,10 +656,12 @@ function create_calculator_output() {
     document.getElementById('input_hidden_TXT_output').value = XML_output
 
     // finalize XML
+    console.log(XML_output)
     XML_output = XML_output + XML_End
     document.getElementById('input_XML').value = XML_output
 
     // finalize TXT
+    console.log(TXT_output)
     document.getElementById('input_TXT').value = TXT_output
 }
 
