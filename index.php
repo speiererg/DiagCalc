@@ -47,8 +47,8 @@ session_start();
 
 
   <script src="app.js"></script>
-  <script src="jQuery/jQuery3.js"></script>
-  <script src="jQuery/jQuery-ui.js"></script>
+  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
+  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 
 </body>
 </html>
