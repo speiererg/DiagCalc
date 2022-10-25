@@ -219,7 +219,7 @@ function testMongoDB() {
         var array_ICD10 = []
         for(let i=0; i<XML_list.length;i++)
         {
-            array_ICD10.push(`${XML_list[10].getElementsByTagName('name')[0]} ${XML_list[10].getElementsByTagName('desc')[0]}`)
+            array_ICD10.push(`${XML.stringify(XML_list[10].getElementsByTagName('name')[0])} ${XML.stringify(XML_list[10].getElementsByTagName('desc')[0])}`)
         }
         console.log(array_ICD10)
     
