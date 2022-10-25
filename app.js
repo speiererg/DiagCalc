@@ -55,7 +55,7 @@ function loadingIndex() {
 
         // The xml tag name.
         let XML_list = xml.getElementsByTagName('diag');
-        var array_ICD10 = []
+        const array_ICD10 = []
         console.log(XML_list[10].getElementsByTagName('name'))
         console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
         console.log(Object.values(XML_list[10].getElementsByTagName('name')))
