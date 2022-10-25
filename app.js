@@ -218,7 +218,7 @@ function testMongoDB() {
         let XML_list = xml.getElementsByTagName('diag');
         var array_ICD10 = []
         
-        console.log(Object.entries(XML_list[10]))
+        console.log(Object.values(XML_list[10]))
         for(let i=0; i<XML_list.length;i++)
         {
             array_ICD10.push(`${XML.stringify(XML_list[10].getElementsByTagName('name')[0])} ${XML.stringify(XML_list[10].getElementsByTagName('desc')[0])}`)
