@@ -354,7 +354,6 @@ function addInputColumn(params) {
     // Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
-    input_checkbox.checked= true
     input_checkbox.setAttribute('value', true)
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
     input_checkbox.setAttribute('class', `input_checkbox input_readonly`)
@@ -364,6 +363,7 @@ function addInputColumn(params) {
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
+    document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
 
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
