@@ -5,21 +5,10 @@
     <ul>
     </ul>
 <td class="home_td"id="home_td2">
-<ul>
+    <ul>
     </ul>
-
-  <script>
-
-  </script>
-</head>
-<body>
- 
-<div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <input id="tags">
-</div>
 <td class="home_td"id="home_td3">
-<ul>
+    <ul>
     </ul>
 <td class="home_td"id="home_td4">
 <ul>
