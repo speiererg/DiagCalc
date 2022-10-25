@@ -466,9 +466,10 @@ function addInputColumn(params_addColumn) {
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
         console.log(availableTags)
+
         $(`#inputICD${modifier_nbr + 1}_${i + 1}`).autocomplete({
             source: availableTags,
-            change: function (event, ui) {
+           /* change: function (event, ui) {
                 console.log(event);
                 console.log(ui);
                 if (!ui.item) {
@@ -480,6 +481,7 @@ function addInputColumn(params_addColumn) {
                 }
 
             }
+            */
         });
 
         document.getElementById(`tr_input_${i + 1}`).appendChild(column_input)
