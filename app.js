@@ -244,6 +244,7 @@ function importing_calculator(results_findOne) {
     let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
     let inputs_ICD = Object.entries(results_findOne['ICD'])
 
+
     for (i = 0; i < inputs_Submodifier.length; i++) {
         document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1] 
         document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1] 
@@ -288,9 +289,9 @@ function addInputRow() {
 
 
         let input_SNOMED = document.createElement('input')
-        input_SNOMED.setAttribute('id', `inputSNOMED${modifierSub_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('id', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
         input_SNOMED.setAttribute('class', `input_SNOMED input_readonly`);
-        input_SNOMED.setAttribute('name', `inputSNOMED${modifierSub_nbr + 1}_${i + 1}`);
+        input_SNOMED.setAttribute('name', `inputSNOMED${i + 1}_${modifierSub_nbr + 1}`);
         input_SNOMED.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_SNOMED)
 
@@ -299,9 +300,9 @@ function addInputRow() {
 
 
         let input_ICD = document.createElement('input')
-        input_ICD.setAttribute('id', `inputICD${modifierSub_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('id', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
         input_ICD.setAttribute('class', `input_ICD input_readonly`);
-        input_ICD.setAttribute('name', `inputICD${modifierSub_nbr + 1}_${i + 1}`);
+        input_ICD.setAttribute('name', `inputICD${i + 1}_${modifierSub_nbr + 1}`);
         input_ICD.setAttribute('form', `form_saveMongoDB`);
         column_input.appendChild(input_ICD)
 
