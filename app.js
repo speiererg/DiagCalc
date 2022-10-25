@@ -215,7 +215,7 @@ function testMongoDB() {
         // The parent DIV element.
 
         // The xml tag name.
-        let XML_list = xml.getElementsByTagName('Diag');
+        let XML_list = xml.getElementsByTagName('diag');
         console.log(XML_list)
     }
 
