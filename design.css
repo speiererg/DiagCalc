@@ -77,6 +77,11 @@ body {
   vertical-align:middle;
 }
 
+#header span{
+display: inline-block;
+vertical-align: middle;
+}
+
 
 #headerbar {
   background-color: var(--div-seperation);
