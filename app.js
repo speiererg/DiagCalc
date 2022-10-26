@@ -725,7 +725,7 @@ function create_calculator_output() {
     document.getElementById('input_TXT').value = TXT_output
 
     //update total count
-    document.getElementById('total_count').setAttribute("display","block")
+    document.getElementById('total_count').display = "block"
     document.getElementById('total_count').innerHTML= EDG_id_iterate
 }
 
