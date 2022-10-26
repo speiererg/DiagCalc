@@ -147,7 +147,12 @@ vertical-align: middle;
   text-align: right;
 }
 
-#tr_maindiagnose {}
+#tr_maindiagnose td{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 .input_maindiagnose {
   border: solid 2px var(--div-seperation);
