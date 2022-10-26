@@ -149,7 +149,7 @@ function disable_input(toDo) {
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
-        Array.prototype.forEach.call(img_button_class, (element) => { console.log(element);element.style.display = "hide" })
+        Array.prototype.forEach.call(img_button_class, (element) => { console.log(element);element.style.display = "none" })
 
     } else if (toDo == false) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "block" })
