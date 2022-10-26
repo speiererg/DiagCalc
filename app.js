@@ -62,7 +62,7 @@ function loadingIndex() {
         console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
         for(let i=0; i<XML_list.length;i++)
         {
-            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML} ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
+            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
         console.log(array_ICD10)
 
