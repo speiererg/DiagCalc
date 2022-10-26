@@ -152,7 +152,7 @@ function disable_input(toDo) {
         console.log(img_button_class)
     } else if (toDo == false) {
         if (toDo == false) {
-            document.getElementById('img_button_add_row').;
+            document.getElementById('img_button_add_row').style.display = "block";
             document.getElementById('img_button_add_column').style.display = "block";
         }
     }
