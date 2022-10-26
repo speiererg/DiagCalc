@@ -122,6 +122,7 @@ vertical-align: middle;
 .CSS_contentTable {
   border: none;
   margin: 5px;
+  text-align: center;
 }
 
 .CSS_contentTable td {
