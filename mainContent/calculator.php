@@ -99,6 +99,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
         <tr>
           <td>
             <div >
+              <h3 id="total_count" style="display:none;">Total Count: </h3>
               <table id="table_output_calculator">
               </table>
             </div>
