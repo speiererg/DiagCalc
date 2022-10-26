@@ -1,3 +1,10 @@
+// ***************************** App Parameters *****************************
+const autocomplete_items = 50
+
+
+
+// ***************************** Load Variable  *****************************
+
 var modifier_nbr = 1
 var modifierSub_nbr = 1
 var confirmBeforeNavigate = 0
@@ -10,28 +17,6 @@ var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
 var array_ICD10 = []
-var availableTagsICD = [
-    "A00  Cholera",
-    "A01  Typhoid and paratyphoid fevers",
-    "A02  Other salmonella infections",
-    "A03  Shigellosis",
-    "A04  Other bacterial intestinal infections",
-    "A05  Other bacterial foodborne intoxications, not elsewhere classified",
-    "A06  Amebiasis",
-    "A07  Other protozoal intestinal diseases",
-    "A08  Viral and other specified intestinal infections",
-    "I01.0 Acute rheumatic pericarditis",
-    "I01.1 Acute rheumatic endocarditis",
-    "I01.2 Acute rheumatic myocarditis",
-    "I01.8 Other acute rheumatic heart disease",
-    "I01.9 Acute rheumatic heart disease, unspecified",
-    "I10  Essential (primary) hypertension",
-    "I11  Hypertensive heart disease",
-    "I12  Hypertensive chronic kidney disease",
-    "I13  Hypertensive heart and chronic kidney disease",
-    "I15  Secondary hypertension",
-    "I16  Hypertensive crisis",
-];
 
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
@@ -107,6 +92,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 modifierSub_nbr = 1
                 loading_page_calculator(paramsJS)
                 if (paramsJS == "newCalculator") {
+                    console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_edit_calculator').disabled = true
                     confirmBeforeNavigate = 1
@@ -115,7 +101,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                             minLength: 2,
                             source: function (request, response) {
                                 var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                                response(results.slice(0, 30)) },
+                                response(results.slice(0, autocomplete_items)) },
                             change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
@@ -414,7 +400,7 @@ function addInputRow() {
                 minLength: 2,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, 30)) },
+                    response(results.slice(0, autocomplete_items)) },
                 change: function (event, ui) { if (!ui.item) { $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");} }
             });
         });
@@ -532,13 +518,10 @@ function addInputColumn(params_addColumn) {
                 minLength: 2,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, 30)) },
+                    response(results.slice(0, autocomplete_items)) },
                 change: function (event, ui) { if (!ui.item) { $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");} }
             });
         });
-
-
-
     }
 
     document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
