@@ -726,7 +726,7 @@ function create_calculator_output() {
 
     //update total count
     document.getElementById('total_count').style.display = "block"
-    document.getElementById('total_count').innerHTML= EDG_id_iterate.slice(6, 11);
+    document.getElementById('total_count').innerHTML= EDG_id_iterate;
 }
 
 
