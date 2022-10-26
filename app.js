@@ -534,6 +534,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     
     for(let k=id_insert_column;k<modifier_nbr_new;k++){
         for(let g = 1; g<modifierSub_nbr;g++){
+            console.log(k + ' ' + g)
             document.getElementById(`input${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
             document.getElementById(`inputSNOMED${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
             document.getElementById(`inputICD${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
