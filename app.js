@@ -522,9 +522,9 @@ if(id_insert_column){
     for (let k = modifier_nbr_new-1; k >id_insert_column ; k--) {
         for (let g = 1; g <=modifierSub_nbr; g++) {
             console.log(k + ' ' + g)
-            document.getElementById(`input${k + 1}_${g}`).value = document.getElementById(`input${k-1}_${g}`).value
-                document.getElementById(`inputSNOMED${k + 1}_${g}`).value = document.getElementById(`inputSNOMED${k-1}_${g}`).value
-            document.getElementById(`inputICD${k + 1}_${g}`).value = document.getElementById(`inputICD${k-1}_${g}`).value
+            document.getElementById(`input${k}_${g}`).value = document.getElementById(`input${k-1}_${g}`).value
+                document.getElementById(`inputSNOMED${k}_${g}`).value = document.getElementById(`inputSNOMED${k-1}_${g}`).value
+            document.getElementById(`inputICD${k}_${g}`).value = document.getElementById(`inputICD${k-1}_${g}`).value
         }
     }
 
