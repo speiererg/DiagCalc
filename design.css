@@ -22,6 +22,9 @@
   padding: 0;
   overflow: hidden;
   background-color: var(--div-color-dunkel);
+  float: left;
+  position: relative;
+  left: 50%;
 }
 
 #navigationbar li {
