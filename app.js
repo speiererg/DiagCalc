@@ -519,7 +519,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
     // Displace Infos for Insert Columns
 if(id_insert_column){
-    for (let k = modifier_nbr_new-1; k >id_insert_column ; k--) {
+    for (let k = modifier_nbr_new; k >id_insert_column ; k--) {
         for (let g = 1; g <=modifierSub_nbr; g++) {
             console.log(k + ' ' + g)
             document.getElementById(`input${k}_${g}`).value = document.getElementById(`input${k-1}_${g}`).value
