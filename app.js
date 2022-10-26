@@ -229,10 +229,6 @@ function testMongoDB() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 */
-
-
-
-
 }
 
 function deleteAllMongoDB() {
@@ -414,6 +410,8 @@ function addInputColumn(params_addColumn) {
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
+    let insert_column_image = document.createElement('img')
+    insert_column_image.src = "img/add.png"
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
     input_title_span.setAttribute('class', 'input_title input_readonly')
@@ -522,6 +520,9 @@ function addInputColumn(params_addColumn) {
             document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
         }
     }
+
+
+    // Displace Infos for Insert Columns
 
 
     // Modifier_nbr Increment
