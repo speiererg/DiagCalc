@@ -640,7 +640,7 @@ function create_calculator_output() {
 
  
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
-    console.log(EDG_id_iterate)
+    var EDG_id_iterate_nbr = 0
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
@@ -654,6 +654,7 @@ function create_calculator_output() {
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
         EDG_id_iterate++
+        EDG_id_iterate_nbr++
         var calculated_diag = ""
         var calculated_SNOMED = ""
         var calculated_ICD = ""
@@ -726,7 +727,7 @@ function create_calculator_output() {
 
     //update total count
     document.getElementById('total_count').style.display = "block"
-    document.getElementById('total_count').innerHTML= `Total Count: ${EDG_id_iterate.toString().slice(6, 12)}`;
+    document.getElementById('total_count').innerHTML= `Total Count: ${EDG_id_iterate_nbr}`;
 }
 
 
