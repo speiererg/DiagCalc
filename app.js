@@ -630,7 +630,7 @@ function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
  
-    var EDG_id_iterate = document.getElementById('input_EDG_id')
+    var EDG_id_iterate = document.getElementById('input_EDG_id').value
     console.log(EDG_id_iterate)
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
