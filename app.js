@@ -320,6 +320,11 @@ function edit_calculator() {
     versionOption.value = neueVersion
     versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
     document.getElementById('select_version').appendChild(versionOption)
+    //disable button from selected radio
+    for(let i= 1;i<modifier_nbr;i++)
+    {
+        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_${i}`).click() }
+    }
 }
 
 
@@ -538,10 +543,6 @@ function addInputColumn(params_addColumn, id_insert_column) {
             document.getElementById(`inputICD${id_insert_column}_${g}`).value = ""
         }
     }
-
-
-
-
 
 
     // Modifier_nbr Increment
