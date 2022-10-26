@@ -62,7 +62,7 @@ function loadingIndex() {
         console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
         for(let i=0; i<XML_list.length;i++)
         {
-            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML} ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
+            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
         console.log(array_ICD10)
 
@@ -115,7 +115,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                             minLength: 2,
                             source: function (request, response) {
                                 var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                                response(results.slice(0, 10)) },
+                                response(results.slice(0, 40)) },
                             change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
@@ -409,18 +409,12 @@ function addInputRow() {
         column_input.appendChild(input_ICD)
 
         $(function () {
-            let id_variable = `inputICD${i + 1}_${modifierSub_nbr_new}`
-            $("#" + id_variable).autocomplete({
-                source: array_ICD10,
-                change: function (event, ui) {
-                    if (!ui.item) {
-
-                        $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");
-
-                    }
-
-                }
-
+            $("#inputICD1_1").autocomplete({
+                minLength: 2,
+                source: function (request, response) {
+                    var results = $.ui.autocomplete.filter(array_ICD10, request.term);
+                    response(results.slice(0, 40)) },
+                change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
             });
         });
 
