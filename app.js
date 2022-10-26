@@ -424,6 +424,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_title.appendChild(input_title_span)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
+    console.log(modifier_nbr_new)
     document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
 
 
