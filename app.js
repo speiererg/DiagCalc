@@ -651,7 +651,7 @@ function create_calculator_output() {
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
-            let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]};`
+            let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
             calculated_diag = calculated_diag + input_value_loop
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
             if (SNOMED_value_loop != ""){calculated_SNOMED = calculated_SNOMED + ";"}
