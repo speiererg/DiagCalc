@@ -250,6 +250,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
+    document.getElementById('input_EDG_id').value = results_findOne['EDG_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
     document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
     document.getElementById('select_version').innerHTML = ""

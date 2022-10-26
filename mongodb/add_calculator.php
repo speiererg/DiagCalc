@@ -71,6 +71,10 @@ if ($_POST['calculator_id'] == null){
    $lastId = $cursor_lastId->calculator_id;
    $lastId = $lastId + 1;
 
+   $str_length = 5;
+   $EDGId = substr("00000{$lastId}", -$str_length);
+   $EDGId = '8'. $EDGId . '00000';
+
    $collection2 = $client->DiagCalc_Calculators->Index;
 
 $insertOneResult2 = $collection2->insertOne([
@@ -78,7 +82,7 @@ $insertOneResult2 = $collection2->insertOne([
    'calculator_id' => intval($lastId),
    'mainName' => $mainName,
    'lastVersion' => intval($_POST['select_version']),
-   'EDG_id' => $_POST['EDG_id'],
+   'EDG_id' => intval($EDGId),
    'last_modification_Time' => $time,
    'last_modification_timestamp' => time(),
    'active' => 'yes'
@@ -87,6 +91,7 @@ $insertOneResult2 = $collection2->insertOne([
 
 }else{
    $lastId = $_POST['calculator_id'];
+   $EDGId = $_POST['EDG_id']
 echo $lastId;
    $collection2 = $client->DiagCalc_Calculators->Index;
 
@@ -95,7 +100,7 @@ echo $lastId;
       array('$set'=> array(
          'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version']),
-         'EDG_id' => $_POST['EDG_id'],
+         'EDG_id' => intval($EDGId),
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time()
           )
@@ -127,7 +132,7 @@ $insertOneResult = $collection->insertOne([
    'lastVersion' => intval($_POST['select_version']),
    'modifier_nbr' => intval($_POST['modifier_nbr']),
    'modifierSub_nbr' => intval($_POST['modifierSub_nbr']),
-   'EDG_id' => $_POST['EDG_id'],
+   'EDG_id' => intval($EDGId),
    'created_Time' => $time,
    'created_timestamp' => time(),
    'inputs' => $inputs_output,
