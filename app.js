@@ -112,7 +112,10 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     confirmBeforeNavigate = 1
                     $(function () {
                         $("#inputICD1_1").autocomplete({
-                            source: array_ICD10,
+                            minLength: 2,
+                            source: function (request, response) {
+                                var results = $.ui.autocomplete.filter(array_ICD10, request.term);
+                                response(results.slice(0, 10)) },
                             change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
