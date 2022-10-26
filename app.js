@@ -45,8 +45,7 @@ function loadingIndex() {
         console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
         console.log(Object.values(XML_list[10].getElementsByTagName('name')))
         console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
-        for(let i=0; i<XML_list.length;i++)
-        {
+        for (let i = 0; i < XML_list.length; i++) {
             array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
         console.log(array_ICD10)
@@ -91,20 +90,25 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
                 loading_page_calculator(paramsJS)
+
+                $(function () {
+                    $("#inputICD1_1").autocomplete({
+                        minLength: 2,
+                        source: function (request, response) {
+                            var results = $.ui.autocomplete.filter(array_ICD10, request.term);
+                            response(results.slice(0, autocomplete_items))
+                        },
+                        change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
+                    });
+                });
+
+                // if New Calculator
                 if (paramsJS == "newCalculator") {
                     console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_edit_calculator').disabled = true
                     confirmBeforeNavigate = 1
-                    $(function () {
-                        $("#inputICD1_1").autocomplete({
-                            minLength: 2,
-                            source: function (request, response) {
-                                var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                                response(results.slice(0, autocomplete_items)) },
-                            change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
-                        });
-                    });
+
 
                 } else { document.getElementById('input_hidden_new_calculator').value = 0 }
             }
@@ -219,7 +223,7 @@ function testMongoDB() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 */
-  
+
 
 
 
@@ -400,8 +404,9 @@ function addInputRow() {
                 minLength: 2,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, autocomplete_items)) },
-                change: function (event, ui) { if (!ui.item) { $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");} }
+                    response(results.slice(0, autocomplete_items))
+                },
+                change: function (event, ui) { if (!ui.item) { $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val(""); } }
             });
         });
 
@@ -518,8 +523,9 @@ function addInputColumn(params_addColumn) {
                 minLength: 2,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, autocomplete_items)) },
-                change: function (event, ui) { if (!ui.item) { $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");} }
+                    response(results.slice(0, autocomplete_items))
+                },
+                change: function (event, ui) { if (!ui.item) { $(`#inputICD${modifier_nbr_new}_${i + 1}`).val(""); } }
             });
         });
     }
