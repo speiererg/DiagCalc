@@ -726,7 +726,6 @@ function create_calculator_output() {
 
     //update total count
     document.getElementById('total_count').style.display = "block"
-    console.log(EDG_id_iterate)
     document.getElementById('total_count').innerHTML= `Total Count: ${EDG_id_iterate.toString().slice(6, 12)}`;
 }
 
