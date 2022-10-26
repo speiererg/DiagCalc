@@ -678,7 +678,7 @@ function create_calculator_output() {
 
         // Append to XML
         console.log(calculated_diag)
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
+        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         //Append to Txt
         TXT_output = TXT_output + createFlatFile('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
@@ -718,7 +718,7 @@ function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactC
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n`
 }
 
-function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
+function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
     return XML_temp = `            
     <ss:Row>
     <ss:Cell>
@@ -767,7 +767,7 @@ function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactCommen
         <ss:Data ss:Type="String">Term : Code</ss:Data>
     </ss:Cell>
     <ss:Cell>
-        <ss:Data ss:Type="String">I50.01</ss:Data>
+        <ss:Data ss:Type="String">${ICD}</ss:Data>
     </ss:Cell>
     <ss:Cell>
         <ss:Data ss:Type="String">NYHA&#10;Akute Dekompensation</ss:Data>
