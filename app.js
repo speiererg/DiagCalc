@@ -115,7 +115,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                             minLength: 2,
                             source: function (request, response) {
                                 var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                                response(results.slice(0, 40)) },
+                                response(results.slice(0, 30)) },
                             change: function (event, ui) { if (!ui.item) { $(`#inputICD1_1`).val(""); } }
                         });
                     });
@@ -411,10 +411,10 @@ function addInputRow() {
         $(function () {
             let id_variable = `inputICD${i + 1}_${modifierSub_nbr_new}`
             $("#" + id_variable).autocomplete({
-                minLength: 3,
+                minLength: 2,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, 10)) },
+                    response(results.slice(0, 30)) },
                 change: function (event, ui) { if (!ui.item) { $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");} }
             });
         });
@@ -529,18 +529,14 @@ function addInputColumn(params_addColumn) {
         $(function () {
             let id_variable = `inputICD${modifier_nbr_new}_${i + 1}`
             $("#" + id_variable).autocomplete({
-                source: array_ICD10,
-                change: function (event, ui) {
-                    if (!ui.item) {
-
-                        $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");
-
-                    }
-
-                }
-
+                minLength: 2,
+                source: function (request, response) {
+                    var results = $.ui.autocomplete.filter(array_ICD10, request.term);
+                    response(results.slice(0, 30)) },
+                change: function (event, ui) { if (!ui.item) { $(`#inputICD${modifier_nbr_new}_${i + 1}`).val("");} }
             });
         });
+
 
 
     }
