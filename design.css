@@ -262,11 +262,11 @@ vertical-align: middle;
 
 
 #table_output_calculator{
-  border: 2px solid var(--div-color-dunkel)
+  border: 3px solid var(--div-color-dunkel)
 }
 #table_output_calculator td{
   border: 1px solid var(--div-color-dunkel);
-  padding: 1px 3px 1px 3px;
+  padding: 1px 5px 1px 5px;
 }
 
 /* --------   Button Design ----------- */
