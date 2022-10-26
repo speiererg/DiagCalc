@@ -91,25 +91,24 @@ vertical-align: middle;
   width: 100%;
 }
 
-#mainpage {
-  width: 100%;
-  background-color: var(--div-color);
-  padding: 0px;
-  margin: 0px;
-}
+
 
 #maincontent {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
   width: 100%;
   padding: 0px;
   margin: 0px;
-
 }
-
+#mainpage {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: var(--div-color);
+  padding: 0px;
+  margin: 0px;
+}
 
 #sidebar {
   flex: 40%;
