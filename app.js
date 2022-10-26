@@ -377,9 +377,9 @@ function addInputRow() {
         });
 
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) {
-             input_input.readOnly = true
-             input_ICD.readOnly = true
-             input_SNOMED.readOnly = true
+             input_input.disabled = true
+             input_ICD.disabled = true
+             input_SNOMED.disabled = true
              }
        
 
