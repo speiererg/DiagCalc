@@ -147,8 +147,8 @@ function disable_input(toDo) {
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })
     button_save_calculator.disabled = toDo
     if (toDo == true) {
-        document.getElementById('img_button_add_row').style.display = "none";
-        document.getElementById('img_button_add_column').style.display = "none";
+        let img_button_class = document.getElementsByClassName('img_button')
+        console.log(img_button_class)
     } else if (toDo == false) {
         if (toDo == false) {
             document.getElementById('img_button_add_row').style.display = "block";
