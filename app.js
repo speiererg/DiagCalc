@@ -152,10 +152,7 @@ function disable_input(toDo) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "hide" })
 
     } else if (toDo == false) {
-        if (toDo == false) {
-            Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "block" })
-
-        }
+        Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "block" })
     }
 
 }
