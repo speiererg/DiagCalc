@@ -333,7 +333,10 @@ vertical-align: middle;
 
 
 /* **************** Home Design ********************** */
-#home_table {}
+#home_table {
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .home_td {
   border-right: solid 2px var(--div-seperation);
