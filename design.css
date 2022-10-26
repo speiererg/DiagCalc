@@ -266,7 +266,9 @@ vertical-align: middle;
 
 
 #table_output_calculator{
-  border: 3px solid var(--div-color-dunkel)
+  border: 3px solid var(--div-color-dunkel);
+  margin-left: auto;
+  margin-right: auto;
 }
 #table_output_calculator td{
   border: 1px solid var(--div-color-dunkel);
