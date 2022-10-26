@@ -415,7 +415,9 @@ function addInputColumn(params_addColumn) {
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
     input_title_span.setAttribute('class', 'input_title input_readonly')
+    column_input_title.appendChild(insert_column_image)
     column_input_title.appendChild(input_title_span)
+    
     document.getElementById('tr_input_title').appendChild(column_input_title)
 
 
