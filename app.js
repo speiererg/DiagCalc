@@ -732,7 +732,7 @@ function create_calculator_output() {
 
 
 function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment,ICD) {
-    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}`
+    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
