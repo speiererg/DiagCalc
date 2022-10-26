@@ -148,10 +148,11 @@ function disable_input(toDo) {
     button_save_calculator.disabled = toDo
     if (toDo == true) {
         let img_button_class = document.getElementsByClassName('img_button')
+        img_button_class.forEach((item)=>{item.style.display = "hide"})
         console.log(img_button_class)
     } else if (toDo == false) {
         if (toDo == false) {
-            document.getElementById('img_button_add_row').style.display = "block";
+            document.getElementById('img_button_add_row').;
             document.getElementById('img_button_add_column').style.display = "block";
         }
     }
