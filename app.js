@@ -146,14 +146,15 @@ function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })
     button_save_calculator.disabled = toDo
+    let img_button_class = document.getElementsByClassName('img_button')
+
     if (toDo == true) {
-        let img_button_class = document.getElementsByClassName('img_button')
-        img_button_class.forEach((item)=>{item.style.display = "hide"})
-        console.log(img_button_class)
+        Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "hide" })
+
     } else if (toDo == false) {
         if (toDo == false) {
-            document.getElementById('img_button_add_row').style.display = "block";
-            document.getElementById('img_button_add_column').style.display = "block";
+            Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "block" })
+
         }
     }
 
@@ -239,7 +240,7 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
-    document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('','') })
+    document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('', '') })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
 
@@ -273,7 +274,7 @@ function importing_calculator(results_findOne) {
 
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
     for (let l = 0; l < modifier_nbr_target; l++) {
-        addInputColumn(results_findOne['parameters'],'')
+        addInputColumn(results_findOne['parameters'], '')
     }
 
     if (results_findOne['parameters'][`checkbox_input_1`] == "true") {
@@ -402,7 +403,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let column_input_title = document.createElement('td')
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
-    insert_column_image.setAttribute("class","img_button")
+    insert_column_image.setAttribute("class", "img_button")
     insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
@@ -519,22 +520,22 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
 
     // Displace Infos for Insert Columns
-if(id_insert_column){
-    for (let k = modifier_nbr_new; k >id_insert_column ; k--) {
-        for (let g = 1; g <=modifierSub_nbr; g++) {
-            console.log(k + ' ' + g)
-            document.getElementById(`input${k}_${g}`).value = document.getElementById(`input${k-1}_${g}`).value
-                document.getElementById(`inputSNOMED${k}_${g}`).value = document.getElementById(`inputSNOMED${k-1}_${g}`).value
-            document.getElementById(`inputICD${k}_${g}`).value = document.getElementById(`inputICD${k-1}_${g}`).value
+    if (id_insert_column) {
+        for (let k = modifier_nbr_new; k > id_insert_column; k--) {
+            for (let g = 1; g <= modifierSub_nbr; g++) {
+                console.log(k + ' ' + g)
+                document.getElementById(`input${k}_${g}`).value = document.getElementById(`input${k - 1}_${g}`).value
+                document.getElementById(`inputSNOMED${k}_${g}`).value = document.getElementById(`inputSNOMED${k - 1}_${g}`).value
+                document.getElementById(`inputICD${k}_${g}`).value = document.getElementById(`inputICD${k - 1}_${g}`).value
+            }
+        }
+
+        for (let g = 1; g <= modifierSub_nbr; g++) {
+            document.getElementById(`input${id_insert_column}_${g}`).value = ""
+            document.getElementById(`inputSNOMED${id_insert_column}_${g}`).value = ""
+            document.getElementById(`inputICD${id_insert_column}_${g}`).value = ""
         }
     }
-
-    for (let g = 1; g <=modifierSub_nbr; g++) {
-        document.getElementById(`input${id_insert_column}_${g}`).value = ""
-        document.getElementById(`inputSNOMED${id_insert_column}_${g}`).value = ""
-        document.getElementById(`inputICD${id_insert_column}_${g}`).value = ""
-    }
-}
 
 
 
