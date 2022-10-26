@@ -180,6 +180,7 @@ function find_home_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
+            document.getElementById('home_td1').innerHTML=""
 
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 let link = document.createElement('li')
@@ -264,35 +265,6 @@ function loading_page_calculator(paramsJS) {
     version_POST = document.getElementById('input_hidden_POST_version').value
     if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
     document.getElementById(`radio_input_1`).dataset.id = 1
-    /*
-        $( function() {
-            var availableTags = [
-                "ActionScript",
-                "AppleScript",
-                "Asp",
-                "BASIC",
-                "C",
-                "C++",
-                "Clojure",
-                "COBOL",
-                "ColdFusion",
-                "Erlang",
-                "Fortran",
-                "Groovy",
-                "Haskell",
-                "Java",
-                "JavaScript",
-                "Lisp",
-                "Perl",
-                "PHP",
-                "Python",
-                "Ruby",
-                "Scala",
-                "Scheme"
-              ];
-          
-          } );
-    */
 }
 
 function importing_calculator(results_findOne) {
