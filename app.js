@@ -26,7 +26,6 @@ function loadingIndex() {
 
     function reportStatus() {
         if (oXHR.readyState == 4) {
-            console.log(this.responseXML)    //  request completed.
             showTheList(this.responseXML);      // Now show the data.
         }
     }
@@ -37,19 +36,10 @@ function loadingIndex() {
     oXHR.send();
 
     function showTheList(xml) {
-        // The parent DIV element.
-
-        // The xml tag name.
         let XML_list = xml.getElementsByTagName('diag');
-        console.log(XML_list[10].getElementsByTagName('name'))
-        console.log(XML_list[10].getElementsByTagName('name')[0].innerHTML)
-        console.log(Object.values(XML_list[10].getElementsByTagName('name')))
-        console.log(Object.entries(XML_list[10].getElementsByTagName('name')))
         for (let i = 0; i < XML_list.length; i++) {
             array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
-        console.log(array_ICD10)
-
     }
 
     $(document).keypress(
@@ -83,7 +73,6 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
-    console.log(paramsPHP)
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
@@ -110,7 +99,6 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
                 // if New Calculator
                 if (paramsJS == "newCalculator") {
-                    console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_edit_calculator').disabled = true
                     confirmBeforeNavigate = 1
@@ -124,7 +112,6 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 find_home_mongoDB()
             }
             if (page == "home") {
-                console.log('test1')
                 find_home_mongoDB()
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
 
@@ -206,7 +193,6 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_findOne = JSON.parse(this.responseText);
-            console.log(results_findOne)
             importing_calculator(results_findOne)
         }
     };
@@ -571,7 +557,6 @@ function click_radio_input(event) {
         }
     }
     if (radio_input_id != "0") {
-        console.log(modifierSub_nbr)
         for (let i = 2; i <= modifierSub_nbr; i++) {
             document.getElementById(`input${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`input${radio_input_id}_${i}`).value = ""
@@ -682,12 +667,10 @@ function create_calculator_output() {
     document.getElementById('input_hidden_TXT_output').value = XML_output
 
     // finalize XML
-    console.log(XML_output)
     XML_output = XML_output + XML_End
     document.getElementById('input_XML').value = XML_output
 
     // finalize TXT
-    console.log(TXT_output)
     document.getElementById('input_TXT').value = TXT_output
 }
 
