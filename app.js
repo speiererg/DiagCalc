@@ -513,25 +513,33 @@ function addInputColumn(params_addColumn, id_insert_column) {
         });
     }
 
-    document.getElementById(`radio_input_${modifier_nbr + 1}`).addEventListener('change', function (event) { click_radio_input(event) })
+    document.getElementById(`radio_input_${modifier_nbr_new}`).addEventListener('change', function (event) { click_radio_input(event) })
 
     //Import Params
     if (params_addColumn != null) {
-        if (params_addColumn[`checkbox_input_${modifier_nbr + 1}`] == "true") {
-            document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
+        if (params_addColumn[`checkbox_input_${modifier_nbr_new}`] == "true") {
+            document.getElementById(`checkbox_input_${modifier_nbr_new}`).checked = true
         } else {
-            document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = false
+            document.getElementById(`checkbox_input_${modifier_nbr_new}`).checked = false
         }
-        if (params_addColumn[`checkbox_multiple_input_${modifier_nbr + 1}`] == "true") {
-            document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = true
+        if (params_addColumn[`checkbox_multiple_input_${modifier_nbr_new}`] == "true") {
+            document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).checked = true
         } else {
-            document.getElementById(`checkbox_multiple_input_${modifier_nbr + 1}`).checked = false
+            document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).checked = false
         }
     }
 
 
     // Displace Infos for Insert Columns
-
+    
+    for(let k=id_insert_column;k<modifier_nbr_new;k++){
+        for(let g = 1; g<modifierSub_nbr;g++){
+            document.getElementById(`input${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
+            document.getElementById(`inputSNOMED${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
+            document.getElementById(`inputICD${k+1}_${g}`).value = document.getElementById(`input${k}_${g}`).value 
+        }
+        document.getElementById
+    }
 
     // Modifier_nbr Increment
     modifier_nbr_change('++', 1)
