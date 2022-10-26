@@ -681,7 +681,7 @@ function create_calculator_output() {
         XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         //Append to Txt
-        TXT_output = TXT_output + createFlatFile('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP')
+        TXT_output = TXT_output + createFlatFile('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
@@ -714,8 +714,8 @@ function create_calculator_output() {
 }
 
 
-function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment) {
-    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n`
+function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment,ICD) {
+    return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}`
 }
 
 function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
