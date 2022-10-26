@@ -631,6 +631,7 @@ function create_calculator_output() {
 
  
     var EDG_id_iterate = document.getElementById('input_EDG_id')
+    console.log(EDG_id_iterate)
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
