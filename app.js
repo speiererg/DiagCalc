@@ -412,6 +412,7 @@ function addInputColumn(params_addColumn) {
     let column_input_title = document.createElement('td')
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
+    insert_column_image.width="25px"
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
     input_title_span.setAttribute('class', 'input_title input_readonly')
