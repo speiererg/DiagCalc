@@ -580,6 +580,8 @@ function click_calculate() {
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let array_inputs_SNOMED_oneModifier = [];
+        let array_inputs_ICD_oneModifier = [];
+
         let item_nbr = 0
         let modifierSub_iterate = 1
         if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
@@ -589,6 +591,9 @@ function click_calculate() {
             if (k == 0) {
                 item_nbr++
                 array_inputs_oneModifier.push('')
+                array_inputs_SNOMED_oneModifier.push('')
+                array_inputs_ICD_oneModifier.push('')
+
             } else {
                 let input_value = document.getElementById(`input${i}_${k}`).value
                 let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
@@ -606,6 +611,9 @@ function click_calculate() {
         }
         array_inputs_itemNbr.push(item_nbr)
         array_inputs_value.push(array_inputs_oneModifier);
+        array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
+        array_ICD_value.push(array_inputs_ICD_oneModifier);
+
     }
 
     // Creation du array_Calculator
@@ -621,6 +629,8 @@ function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
     console.log(array_inputs_value)
+    console.log(array_SNOMED_value)
+    console.log(array_ICD_value)
     console.log(array_inputs_itemNbr)
 
     var array_iterate = []
