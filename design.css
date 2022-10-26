@@ -250,6 +250,12 @@ vertical-align: middle;
 .input_ICD:not(:focus) {
   width: 45px;
 }
+
+.img_button
+{
+  width: 25px;
+  height: 25px;
+}
 /* --------   Button Design ----------- */
 .button_download {
   background-color: var(--div-color-hell);
