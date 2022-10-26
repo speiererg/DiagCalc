@@ -1,6 +1,4 @@
-
 <table id ="home_table">
-<h1>Index</h1>
 <tr id="home_tr">
 <td class="home_td" id="home_td1">
     <ul>
