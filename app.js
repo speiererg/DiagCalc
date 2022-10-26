@@ -51,7 +51,13 @@ function loadingIndex() {
         console.log(array_ICD10)
 
     }
-
+    
+    $(document).keypress(
+        function (event) {
+            if (event.which == '13') {
+                event.preventDefault();
+            }
+        });
 }
 
 function addEventListener() {
