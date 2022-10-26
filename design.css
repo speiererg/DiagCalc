@@ -96,17 +96,17 @@ vertical-align: middle;
   background-color: var(--div-color);
   padding: 0px;
   margin: 0px;
-  text-align: center;
 }
 
 #maincontent {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 0px;
   margin: 0px;
-  text-align: center;
 
 }
 
