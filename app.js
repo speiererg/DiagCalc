@@ -651,7 +651,7 @@ function create_calculator_output() {
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
             calculated_SNOMED = calculated_SNOMED + `${array_SNOMED_value[i0][array_iterate[i0]]};`
-            calculated_ICD = calculated_SNOMED + `${array_ICD_value[i0][array_iterate[i0]]};`
+            calculated_ICD = calculated_ICD + `${array_ICD_value[i0][array_iterate[i0]]};`
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         let row_output_calculator = document.createElement('tr')
