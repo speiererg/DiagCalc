@@ -376,12 +376,12 @@ function addInputRow() {
             });
         });
 
-    /*    if (document.getElementById(`radio_input_${i + 1}`).checked == true) {
-             input_input.setAttribute("style", "display:none")
-             input_ICD.setAttribute("style", "display:none")
-             input_SNOMED.setAttribute("style", "display:none")
+        if (document.getElementById(`radio_input_${i + 1}`).checked == true) {
+             input_input.readOnly = true
+             input_ICD.readOnly = true
+             input_SNOMED.readOnly = true
              }
-      */  
+       
 
         row_input.appendChild(column_input)
     }
