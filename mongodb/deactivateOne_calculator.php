@@ -15,5 +15,7 @@ $cursor = $collection->updateOne(
 // 
 
 echo json_encode($cursor);
+header('Location: ../index.php?calculator='.$calculator_id);
+
 ?>
 
