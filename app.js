@@ -518,7 +518,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
 
     // Displace Infos for Insert Columns
-
+if(id_insert_column){
     for (let k = id_insert_column; k < modifier_nbr_new; k++) {
         for (let g = 1; g <=modifierSub_nbr; g++) {
             console.log(k + ' ' + g)
@@ -533,6 +533,8 @@ function addInputColumn(params_addColumn, id_insert_column) {
         document.getElementById(`inputSNOMED${id_insert_column}_${g}`).value = ""
         document.getElementById(`inputICD${id_insert_column}_${g}`).value = ""
     }
+}
+
 
 
 
