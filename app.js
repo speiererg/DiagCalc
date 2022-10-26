@@ -629,11 +629,8 @@ function click_calculate() {
 function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
-    console.log(array_inputs_value)
-    console.log(array_SNOMED_value)
-    console.log(array_ICD_value)
-    console.log(array_inputs_itemNbr)
-
+ 
+    var EDG_id_iterate = document.getElementById('input_EDG_id')
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
@@ -646,6 +643,7 @@ function create_calculator_output() {
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
+        EDG_id_iterate++
         var calculated_diag = ""
         var calculated_SNOMED = ""
         var calculated_ICD = ""
@@ -662,15 +660,18 @@ function create_calculator_output() {
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         let row_output_calculator = document.createElement('tr')
+        let row_output_EDGId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
 
-        console.log(calculated_ICD)
+
+        row_output_EDGId_column.appendChild(document.createTextNode(`MedSP_TERM_${EDG_id_iterate}`));
         row_output_calculator_column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator_SNOMED_column.appendChild(document.createTextNode(calculated_SNOMED));
         row_output_calculator_ICD_column.appendChild(document.createTextNode(calculated_ICD));
 
+        row_output_calculator.appendChild(row_output_EDGId_column)
         row_output_calculator.appendChild(row_output_calculator_column)
         row_output_calculator.appendChild(row_output_calculator_SNOMED_column)
         row_output_calculator.appendChild(row_output_calculator_ICD_column)
@@ -679,10 +680,10 @@ function create_calculator_output() {
 
         // Append to XML
         console.log(calculated_diag)
-        XML_output = XML_output + createXML('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
+        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         //Append to Txt
-        TXT_output = TXT_output + createFlatFile('ID_TERM_1234', 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
+        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
