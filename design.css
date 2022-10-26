@@ -256,6 +256,14 @@ vertical-align: middle;
   width: 25px;
   height: 25px;
 }
+
+
+/* --------   Output Table Design ----------- */
+
+
+#table_output_calculator{
+  border: 1px solid var(--div-color-dunkel)
+}
 /* --------   Button Design ----------- */
 .button_download {
   background-color: var(--div-color-hell);
