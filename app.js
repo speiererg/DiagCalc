@@ -411,10 +411,10 @@ function addInputRow() {
         $(function () {
             let id_variable = `inputICD${i + 1}_${modifierSub_nbr_new}`
             $("#" + id_variable).autocomplete({
-                minLength: 2,
+                minLength: 3,
                 source: function (request, response) {
                     var results = $.ui.autocomplete.filter(array_ICD10, request.term);
-                    response(results.slice(0, 40)) },
+                    response(results.slice(0, 10)) },
                 change: function (event, ui) { if (!ui.item) { $(`#inputICD${i + 1}_${modifierSub_nbr_new}`).val("");} }
             });
         });
