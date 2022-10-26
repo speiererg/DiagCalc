@@ -573,10 +573,13 @@ function click_radio_input(event) {
 
 function click_calculate() {
     array_inputs_value = [];
+    array_SNOMED_value = [];
+    array_ICD_value = [];
     array_inputs_itemNbr = [];
     array_calculator = [];
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
+        let array_inputs_SNOMED_oneModifier = [];
         let item_nbr = 0
         let modifierSub_iterate = 1
         if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
@@ -588,9 +591,16 @@ function click_calculate() {
                 array_inputs_oneModifier.push('')
             } else {
                 let input_value = document.getElementById(`input${i}_${k}`).value
+                let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
+                let ICD_value = document.getElementById(`inputSNOMED${i}_${k}`).value.split('::')[0]
+
                 if (input_value != '') {
                     item_nbr++
                     array_inputs_oneModifier.push(input_value)
+                    array_inputs_SNOMED_oneModifier.push(SNOMED_value)
+                    array_inputs_ICD_oneModifier.push(ICD_value)
+
+
                 }
             }
         }
@@ -610,6 +620,9 @@ function click_calculate() {
 function create_calculator_output() {
     document.getElementById('table_output_calculator').innerHTML = "";
 
+    console.log(array_inputs_value)
+    console.log(array_inputs_itemNbr)
+
     var array_iterate = []
     var itteration_id = modifier_nbr - 1
     for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
@@ -623,14 +636,26 @@ function create_calculator_output() {
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
         var calculated_diag = ""
+        var calculated_SNOMED = ""
+        var calculated_ICD = ""
         for (let i0 = 0; i0 < modifier_nbr; i0++) {
             calculated_diag = calculated_diag + `${array_inputs_value[i0][array_iterate[i0]]} `
+            calculated_SNOMED = calculated_SNOMED + `${array_inputs_SNOMED_value[i0][array_iterate[i0]]};`
+            calculated_ICD = calculated_SNOMED + `${array_inputs_ICD_value[i0][array_iterate[i0]]};`
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         let row_output_calculator = document.createElement('tr')
-        let row_output_calculator_Column = document.createElement('td')
-        row_output_calculator_Column.appendChild(document.createTextNode(calculated_diag));
-        row_output_calculator.appendChild(row_output_calculator_Column)
+        let row_output_calculator_column = document.createElement('td')
+        let row_output_calculator_SNOMED_column = document.createElement('td')
+        let row_output_calculator_ICD_column = document.createElement('td')
+
+        row_output_calculator_column.appendChild(document.createTextNode(calculated_diag));
+        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(calculated_SNOMED));
+        row_output_calculator_ICD_column.appendChild(document.createTextNode(calculated_ICD));
+
+        row_output_calculator.appendChild(row_output_calculator_column)
+        row_output_calculator.appendChild(row_output_calculator_SNOMED_column)
+        row_output_calculator.appendChild(row_output_calculator_ICD_column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 
 
