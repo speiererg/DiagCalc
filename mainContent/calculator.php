@@ -39,7 +39,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <td><select id="select_input_1" name="select_input_1" class="input_select input_disabled" disabled form="form_saveMongoDB"></select></td>
               </tr> 
              <tr id="tr_input_radio">
-             <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input input_disabled" form="form_saveMongoDB">Main</td>
+             <td><input type="radio" id="radio_input_1" name="radio_input" value="1" class="radio_input input_disabled" form="form_saveMongoDB" data-id="1">Main</td>
               </tr>  
               <tr id="tr_input_checkbox">
               <td><input type="checkbox" name="checkbox_input_1" id="checkbox_input_1" class="input_checkbox input_disabled" checked form="form_saveMongoDB" value="true">Not required</td>
@@ -91,7 +91,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 <!--  Right Component -->
            <td>
 </br></br></br>
-<input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input"  form="form_saveMongoDB">None is main</br>
+<input type="radio" id="radio_input_0" name="radio_input" value="0" class="radio_input"  form="form_saveMongoDB" data-id="0">None is main</br>
 </br></br>
               <img src="img/add.png" id="img_button_add_column" class="img_button">
           </td>
