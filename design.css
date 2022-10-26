@@ -25,7 +25,7 @@
 }
 
 #navigationbar li {
-  float: left;
+  float:none;
 }
 
 #navigationbar li a {
