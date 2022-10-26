@@ -7,8 +7,8 @@ $collection = $client->DiagCalc_Calculators->Index;
 $id = $_POST['calculator_id'];
 echo $id;
 $cursor = $collection->updateOne(
-  [ 'calculator_id' => $id ],
-  [ '$set' => ['active' => 'no']]
+  array( 'calculator_id' => $id ),
+  array( '$set' => array('active' => 'no'))
 );
 
 
