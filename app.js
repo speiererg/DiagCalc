@@ -659,6 +659,7 @@ function create_calculator_output() {
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
 
+        console.log(calculated_ICD)
         row_output_calculator_column.appendChild(document.createTextNode(calculated_diag));
         row_output_calculator_SNOMED_column.appendChild(document.createTextNode(calculated_SNOMED));
         row_output_calculator_ICD_column.appendChild(document.createTextNode(calculated_ICD));
