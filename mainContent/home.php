@@ -1,3 +1,5 @@
+<p>
+    <p>
 <table id ="home_table">
 <tr id="home_tr">
 <td class="home_td" id="home_td1">
