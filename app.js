@@ -149,7 +149,7 @@ function disable_input(toDo) {
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
-        Array.prototype.forEach.call(img_button_class, (element) => { console.log(element);element.style.display = "none" })
+        Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "none" })
 
     } else if (toDo == false) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "inline" })
@@ -221,7 +221,6 @@ function deleteAllMongoDB() {
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
         }
     };
     xmlhttp.open("POST", "mongodb/delete_all.php", true);
@@ -379,7 +378,6 @@ function addInputRow() {
 function addInputColumn(params_addColumn, id_insert_column) {
     let modifier_nbr_new = modifier_nbr + 1
 
-    console.log(id_insert_column)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
@@ -409,7 +407,6 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_title.appendChild(input_title_span)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
-    console.log(modifier_nbr_new)
     document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
 
 
@@ -520,7 +517,6 @@ function addInputColumn(params_addColumn, id_insert_column) {
     if (id_insert_column) {
         for (let k = modifier_nbr_new; k > id_insert_column; k--) {
             for (let g = 1; g <= modifierSub_nbr; g++) {
-                console.log(k + ' ' + g)
                 document.getElementById(`input${k}_${g}`).value = document.getElementById(`input${k - 1}_${g}`).value
                 document.getElementById(`inputSNOMED${k}_${g}`).value = document.getElementById(`inputSNOMED${k - 1}_${g}`).value
                 document.getElementById(`inputICD${k}_${g}`).value = document.getElementById(`inputICD${k - 1}_${g}`).value
