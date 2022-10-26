@@ -597,7 +597,7 @@ function click_calculate() {
             } else {
                 let input_value = document.getElementById(`input${i}_${k}`).value
                 let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
-                let ICD_value = document.getElementById(`inputSNOMED${i}_${k}`).value.split('::')[0]
+                let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
 
                 if (input_value != '') {
                     item_nbr++
