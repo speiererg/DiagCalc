@@ -145,6 +145,9 @@ function modifierSub_nbr_change(change, number) {
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })
+    DOM_readonly = document.getElementsByClassName('input_disabled')
+    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
+
     button_save_calculator.disabled = toDo
     let img_button_class = document.getElementsByClassName('img_button')
 
