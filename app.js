@@ -392,21 +392,23 @@ function addInputRow() {
 }
 
 function addInputColumn(params_addColumn, id_insert_column) {
+    let modifier_nbr_new = modifier_nbr + 1
+
     console.log(id_insert_column)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input`)
     input_radio.setAttribute('class', 'radio_input input_readonly')
-    input_radio.setAttribute('value', modifier_nbr + 1)
-    input_radio.setAttribute('id', `radio_input_${modifier_nbr + 1}`)
+    input_radio.setAttribute('value', modifier_nbr_new)
+    input_radio.setAttribute('id', `radio_input_${modifier_nbr_new}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
 
     let column_input_radio = document.createElement('td')
     column_input_radio.appendChild(input_radio);
     column_input_radio.appendChild(document.createTextNode("Main"))
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
-    document.getElementById(`radio_input_${modifier_nbr + 1}`).dataset.id = modifier_nbr + 1
+    document.getElementById(`radio_input_${modifier_nbr_new}`).dataset.id = modifier_nbr_new
 
 
     // Create Modifier Title
@@ -414,25 +416,25 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
     //    insert_column_image.setAttribute=("width","25px")
-    insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr + 1}`)
+    insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
     let input_title_span = document.createElement('span')
-    input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
+    input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
     input_title_span.setAttribute('class', 'input_title input_readonly')
     column_input_title.appendChild(insert_column_image)
     column_input_title.appendChild(input_title_span)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
-    document.getElementById(`img_button_insert_column${modifier_nbr + 1}`).addEventListener('click', () => { addInputColumn('', modifier_nbr + 1) })
+    document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
 
 
 
     //Create Select
     let column_input_select = document.createElement('td')
     let input_select = document.createElement('select');
-    input_select.setAttribute('id', `select_input_${modifier_nbr + 1}`)
+    input_select.setAttribute('id', `select_input_${modifier_nbr_new}`)
     input_select.setAttribute('class', `input_select input_readonly`)
     input_select.setAttribute('form', `form_saveMongoDB`);
-    input_select.setAttribute('name', `select_input_${modifier_nbr + 1}`)
+    input_select.setAttribute('name', `select_input_${modifier_nbr_new}`)
     input_select.innerHTML = `<option value="0" selected>space</option><option value="1">,</option><option value="2">;</option>`
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
@@ -441,30 +443,29 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('value', true)
-    input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr + 1}`)
+    input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr_new}`)
     input_checkbox.setAttribute('class', `input_checkbox input_readonly`)
     input_checkbox.setAttribute('form', `form_saveMongoDB`);
-    input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr + 1}`)
+    input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr_new}`)
     let column_input_checkbox = document.createElement('td')
     column_input_checkbox.appendChild(input_checkbox);
     column_input_checkbox.appendChild(document.createTextNode("Not Required"))
     document.getElementById('tr_input_checkbox').appendChild(column_input_checkbox)
-    document.getElementById(`checkbox_input_${modifier_nbr + 1}`).checked = true
+    document.getElementById(`checkbox_input_${modifier_nbr_new}`).checked = true
 
     //Checkbox Multiple
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
-    input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr + 1}`)
+    input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr_new}`)
     input_multiple_checkbox.setAttribute('class', `input_checkbox input_readonly`)
     input_multiple_checkbox.setAttribute('value', true)
-    input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr + 1}`)
+    input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr_new}`)
     input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
     let column_input_multiple_checkbox = document.createElement('td')
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
 
-    let modifier_nbr_new = modifier_nbr + 1
     // Create Input
     for (let i = 0; i < modifierSub_nbr; i++) {
 
