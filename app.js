@@ -391,7 +391,8 @@ function addInputRow() {
     modifierSub_nbr_change('++', 1)
 }
 
-function addInputColumn(params_addColumn) {
+function addInputColumn(params_addColumn,id_insert_column) {
+    console.log(id_insert_column)
     // Create radio
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
@@ -412,7 +413,8 @@ function addInputColumn(params_addColumn) {
     let column_input_title = document.createElement('td')
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
-    insert_column_image.width="25px"
+    insert_column_image.setAttribute=("width","25px")
+    insert_column_image.setAttribute("id",`img_button_insert_column${modifier_nbr + 1}`)
     let input_title_span = document.createElement('span')
     input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr + 1}`))
     input_title_span.setAttribute('class', 'input_title input_readonly')
@@ -420,6 +422,8 @@ function addInputColumn(params_addColumn) {
     column_input_title.appendChild(input_title_span)
     
     document.getElementById('tr_input_title').appendChild(column_input_title)
+    document.getElementById(`img_button_insert_column${modifier_nbr + 1}`).addEventListener('click', () => { addInputColumn('',modifier_nbr+1) })
+
 
 
     //Create Select
