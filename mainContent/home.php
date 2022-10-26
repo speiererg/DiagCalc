@@ -1,5 +1,5 @@
 <p>
-    <p>
+<h1 style="text-align:center;">Index</h1>
 <table id ="home_table">
 <tr id="home_tr">
 <td class="home_td" id="home_td1">
