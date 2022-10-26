@@ -25,7 +25,9 @@
 }
 
 #navigationbar li {
- display: inline-block;
+  float: left;
+  position: relative;
+  left: -50%;
 }
 
 #navigationbar li a {
