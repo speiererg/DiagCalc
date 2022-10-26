@@ -266,7 +266,7 @@ vertical-align: middle;
 }
 #table_output_calculator td{
   border: 1px solid var(--div-color-dunkel);
-  padding: 3px 0px 3px 0px;
+  padding: 1px 3px 1px 3px;
 }
 
 /* --------   Button Design ----------- */
