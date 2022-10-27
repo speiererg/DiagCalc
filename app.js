@@ -602,8 +602,6 @@ function click_calculate() {
 
             for (let k = 1; k <= modifierSub_nbr; k++) {
                 if (input_value != '') {
-
-                    item_nbr++
                     array_inputs_oneModifier.push('')
                     array_inputs_SNOMED_oneModifier.push('')
                     array_inputs_ICD_oneModifier.push('')
