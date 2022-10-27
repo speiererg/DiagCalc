@@ -658,13 +658,14 @@ function click_calculate() {
     for (let i = modifier_nbr; i > 1; i--) {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
+    console.log(array_inputs_modifierNbr)
+
     create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value);
 }
 
 
 function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value) {
     document.getElementById('table_output_calculator').innerHTML = "";
-console.log(array_inputs_modifierNbr)
     console.log(array_inputs_value)
     console.log(array_inputs_itemNbr)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
