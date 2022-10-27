@@ -614,7 +614,9 @@ function click_calculate() {
                         array_inputs_value.push(array_inputs_oneModifier);
                         array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
                         array_ICD_value.push(array_inputs_ICD_oneModifier);
+                    
                 }
+                console.log(array_inputs_value)
             }
 
 
