@@ -322,7 +322,7 @@ function edit_calculator() {
     document.getElementById('select_version').appendChild(versionOption)
     //disable button from selected radio
     for (let i = 1; i < modifier_nbr; i++) {
-        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click(); console.log('click') }
+        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click();}
     }
 }
 
@@ -655,7 +655,6 @@ function click_calculate() {
     for (let i = modifier_nbr; i > 1; i--) {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
-    console.log(array_inputs_modifierNbr)
 
     create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value,array_inputs_modifierNbr);
 }
@@ -663,10 +662,7 @@ function click_calculate() {
 
 function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value,array_inputs_modifierNbr) {
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length
-    console.log(array_calculator_inputs_modifierNbr)
     document.getElementById('table_output_calculator').innerHTML = "";
-    console.log(array_inputs_value)
-    console.log(array_inputs_itemNbr)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
     var array_iterate = []
@@ -681,6 +677,7 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
+        console.log('test')
         EDG_id_iterate++
         EDG_id_iterate_nbr++
         var calculated_diag = ""
@@ -720,7 +717,6 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
 
 
         // Append to XML
-        console.log(calculated_diag)
         XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
         //Append to Txt
