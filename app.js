@@ -243,8 +243,12 @@ function loading_page_calculator(paramsJS) {
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
-        if (document.getElementById(`checkbox_multiple_input_1`).checked == true) { document.getElementById(`checkbox_input_1`).disabled = true } else { document.getElementById(`checkbox_input_1`).disabled = false })
-
+        if (document.getElementById(`checkbox_multiple_input_1`).checked == true) {
+            document.getElementById(`checkbox_input_1`).disabled = true
+        } else {
+            document.getElementById(`checkbox_input_1`).disabled = false
+        }
+    })
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
@@ -464,13 +468,17 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
+
     document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).addEventListener('change', (event) => {
-        if (document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).checked == true) { document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = true } else { document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = false }
-    }
+        if (document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).checked == true) {
+            document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = true
+        } else {
+            document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = false
+        }
+    })
 
-
-// Create Input
-for (let i = 0; i < modifierSub_nbr; i++) {
+    // Create Input
+    for (let i = 0; i < modifierSub_nbr; i++) {
 
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
