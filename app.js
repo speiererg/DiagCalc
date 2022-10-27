@@ -617,8 +617,6 @@ function click_calculate() {
                     array_SNOMED_value.push(SNOMED_value);
                     array_ICD_value.push(ICD_value);
                 }
-                console.log(array_inputs_value)
-                console.log(k)
             }
 
 
