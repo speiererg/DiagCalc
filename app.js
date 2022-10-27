@@ -606,7 +606,7 @@ function click_calculate() {
                     array_inputs_SNOMED_oneModifier.push('')
                     array_inputs_ICD_oneModifier.push('')
                     array_inputs_itemNbr.push(2)
-                    console.log(`input${i}_${k}`).value)
+                    console.log(`input${i}_${k}`)
                     let input_value = document.getElementById(`input${i}_${k}`).value
                     let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
                     let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
