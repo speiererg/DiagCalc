@@ -242,7 +242,8 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('', '') })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
-    document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => { document.getElementById(`checkbox_input_1`).disabled=true})
+    document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
+        if (document.getElementById(`checkbox_multiple_input_1`).checked == true) { document.getElementById(`checkbox_input_1`).disabled = true } else { document.getElementById(`checkbox_input_1`).disabled = false })
 
 
     id_POST = document.getElementById('input_hidden_POST_id').value
@@ -324,7 +325,7 @@ function edit_calculator() {
     document.getElementById('select_version').appendChild(versionOption)
     //disable button from selected radio
     for (let i = 1; i < modifier_nbr; i++) {
-        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click();}
+        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click(); }
     }
 }
 
@@ -463,11 +464,13 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_multiple_checkbox.appendChild(input_multiple_checkbox);
     column_input_multiple_checkbox.appendChild(document.createTextNode("Multiple"))
     document.getElementById('tr_input_multiple_checkbox').appendChild(column_input_multiple_checkbox)
-    document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).addEventListener('change', (event) => { document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled=true})
+    document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).addEventListener('change', (event) => {
+        if (document.getElementById(`checkbox_multiple_input_${modifier_nbr_new}`).checked == true) { document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = true } else { document.getElementById(`checkbox_input_${modifier_nbr_new}`).disabled = false }
+    }
 
 
-    // Create Input
-    for (let i = 0; i < modifierSub_nbr; i++) {
+// Create Input
+for (let i = 0; i < modifierSub_nbr; i++) {
 
         let column_input = document.createElement('td')
         let input_input = document.createElement('input')
@@ -606,9 +609,9 @@ function click_calculate() {
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
 
             for (let k = 1; k <= modifierSub_nbr; k++) {
-                let input_value = ['',document.getElementById(`input${i}_${k}`).value]
-                let SNOMED_value = ['',document.getElementById(`inputSNOMED${i}_${k}`).value]
-                let ICD_value = ['',document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]]
+                let input_value = ['', document.getElementById(`input${i}_${k}`).value]
+                let SNOMED_value = ['', document.getElementById(`inputSNOMED${i}_${k}`).value]
+                let ICD_value = ['', document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]]
 
                 if (document.getElementById(`input${i}_${k}`).value != '') {
                     array_inputs_oneModifier.push('')
@@ -616,7 +619,7 @@ function click_calculate() {
                     array_inputs_ICD_oneModifier.push('')
                     array_inputs_itemNbr.push(2)
                     array_inputs_value.push(input_value);
-                    array_inputs_modifierNbr.push(i-1) //-1 because of array
+                    array_inputs_modifierNbr.push(i - 1) //-1 because of array
                     array_SNOMED_value.push(SNOMED_value);
                     array_ICD_value.push(ICD_value);
                 }
@@ -648,7 +651,7 @@ function click_calculate() {
             }
             array_inputs_itemNbr.push(item_nbr)
             array_inputs_value.push(array_inputs_oneModifier);
-            array_inputs_modifierNbr.push(i-1) //-1 because of array
+            array_inputs_modifierNbr.push(i - 1) //-1 because of array
             array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
             array_ICD_value.push(array_inputs_ICD_oneModifier);
         }
@@ -660,11 +663,11 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value,array_inputs_modifierNbr);
+    create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr);
 }
 
 
-function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value,array_inputs_modifierNbr) {
+function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length
     document.getElementById('table_output_calculator').innerHTML = "";
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
@@ -700,7 +703,7 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
 
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
-        calculated_diag = calculated_diag.charAt(0).toUpperCase()+ calculated_diag.slice(1)
+        calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
         let row_output_calculator = document.createElement('tr')
         let row_output_EDGId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
