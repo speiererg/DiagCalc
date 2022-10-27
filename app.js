@@ -601,6 +601,8 @@ function click_calculate() {
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
 
             for (let k = 1; k <= modifierSub_nbr; k++) {
+                if (input_value != '') {
+
                     item_nbr++
                     array_inputs_oneModifier.push('')
                     array_inputs_SNOMED_oneModifier.push('')
@@ -610,7 +612,6 @@ function click_calculate() {
                     let input_value = document.getElementById(`input${i}_${k}`).value
                     let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
                     let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
-                    if (input_value != '') {
                         array_inputs_value.push(array_inputs_oneModifier);
                         array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
                         array_ICD_value.push(array_inputs_ICD_oneModifier);
