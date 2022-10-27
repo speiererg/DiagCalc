@@ -647,6 +647,7 @@ function click_calculate() {
             }
             array_inputs_itemNbr.push(item_nbr)
             array_inputs_value.push(array_inputs_oneModifier);
+            array_inputs_modifierNbr.push(i)
             array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
             array_ICD_value.push(array_inputs_ICD_oneModifier);
         }
