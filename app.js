@@ -612,10 +612,10 @@ function click_calculate() {
                     array_inputs_ICD_oneModifier.push('')
                     array_inputs_itemNbr.push(2)
                     console.log(`input${i}_${k}`)
-                    array_inputs_value.push(array_inputs_oneModifier);
+                    array_inputs_value.push(input_value);
                     array_inputs_modifierNbr.push(i)
-                    array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
-                    array_ICD_value.push(array_inputs_ICD_oneModifier);
+                    array_SNOMED_value.push(SNOMED_value);
+                    array_ICD_value.push(ICD_value);
 
                 }
                 console.log(array_inputs_value)
