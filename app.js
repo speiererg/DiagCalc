@@ -665,14 +665,16 @@ function click_calculate() {
 
 
 function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value,array_inputs_modifierNbr) {
+    array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length
+    console.log(array_calculator_inputs_modifierNbr)
     document.getElementById('table_output_calculator').innerHTML = "";
     console.log(array_inputs_value)
     console.log(array_inputs_itemNbr)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
     var array_iterate = []
-    var itteration_id = modifier_nbr - 1
-    for (let i = 0; i < modifier_nbr; i++) { array_iterate.push('0') }
+    var itteration_id = array_calculator_inputs_modifierNbr - 1
+    for (let i = 0; i < array_calculator_inputs_modifierNbr; i++) { array_iterate.push('0') }
 
     // create XML/TXT
     var XML_output = XML_beginn
@@ -687,7 +689,8 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
         var calculated_diag = ""
         var calculated_SNOMED = ""
         var calculated_ICD = ""
-        for (let i0 = 0; i0 < array_inputs_modifierNbr.length; i0++) {
+        for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
+
             let input_value_loop = `${array_inputs_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]}`
             let ICD_value_loop = `${array_ICD_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]}`
@@ -730,11 +733,11 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
             array_iterate[itteration_id]++
         } else {
             if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
-                for (let test_id = 0, id_increment = 1; test_id <= modifier_nbr; id_increment++) {
-                    array_iterate[modifier_nbr - id_increment] = 0
+                for (let test_id = 0, id_increment = 1; test_id <= array_calculator_inputs_modifierNbr; id_increment++) {
+                    array_iterate[array_calculator_inputs_modifierNbr - id_increment] = 0
                     if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
                         array_iterate[itteration_id - id_increment]++
-                        test_id = modifier_nbr + 1
+                        test_id = array_calculator_inputs_modifierNbr + 1
                     }
                     test_id++
                 }
