@@ -540,6 +540,14 @@ function addInputColumn(params_addColumn, id_insert_column) {
         }
     }
 
+    for(let i=1;i<=modifier_nbr;i++){
+        if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true) {
+            document.getElementById(`checkbox_input_${i}`).disabled = true
+        } else {
+            document.getElementById(`checkbox_input_${i}`).disabled = false
+        }
+    }
+
 
     // Displace Infos for Insert Columns
     if (id_insert_column) {
