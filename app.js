@@ -688,9 +688,9 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
         var calculated_ICD = ""
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
 
-            let input_value_loop = `${array_inputs_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]} `
-            let SNOMED_value_loop = `${array_SNOMED_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]}`
-            let ICD_value_loop = `${array_ICD_value[array_inputs_modifierNbr[i0]][array_iterate[i0]]}`
+            let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
+            let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
+            let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
             calculated_diag = calculated_diag + input_value_loop
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
