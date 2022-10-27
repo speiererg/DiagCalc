@@ -606,7 +606,7 @@ function click_calculate() {
                 let SNOMED_value = ['',document.getElementById(`inputSNOMED${i}_${k}`).value]
                 let ICD_value = ['',document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]]
 
-                if (input_value != '') {
+                if (document.getElementById(`input${i}_${k}`).value != '') {
                     array_inputs_oneModifier.push('')
                     array_inputs_SNOMED_oneModifier.push('')
                     array_inputs_ICD_oneModifier.push('')
@@ -616,7 +616,6 @@ function click_calculate() {
                     array_inputs_modifierNbr.push(i)
                     array_SNOMED_value.push(SNOMED_value);
                     array_ICD_value.push(ICD_value);
-
                 }
                 console.log(array_inputs_value)
                 console.log(k)
