@@ -321,9 +321,8 @@ function edit_calculator() {
     versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
     document.getElementById('select_version').appendChild(versionOption)
     //disable button from selected radio
-    for(let i= 1;i<modifier_nbr;i++)
-    {
-        if (document.getElementById(`radio_input_${i}`).checked == true) {document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click();console.log('click') }
+    for (let i = 1; i < modifier_nbr; i++) {
+        if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click(); console.log('click') }
     }
 }
 
@@ -377,11 +376,11 @@ function addInputRow() {
         });
 
         if (document.getElementById(`radio_input_${i + 1}`).checked == true) {
-             input_input.disabled = true
-             input_ICD.disabled = true
-             input_SNOMED.disabled = true
-             }
-       
+            input_input.disabled = true
+            input_ICD.disabled = true
+            input_SNOMED.disabled = true
+        }
+
 
         row_input.appendChild(column_input)
     }
@@ -597,33 +596,58 @@ function click_calculate() {
         if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
             modifierSub_iterate = 0
         }
-        for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
-            if (k == 0) {
-                item_nbr++
-                array_inputs_oneModifier.push('')
-                array_inputs_SNOMED_oneModifier.push('')
-                array_inputs_ICD_oneModifier.push('')
 
-            } else {
-                let input_value = document.getElementById(`input${i}_${k}`).value
-                let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
-                let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
 
-                if (input_value != '') {
+        if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
+
+            for (let k = 0; k <= modifierSub_nbr; k++) {
+                if (k == 0) {
                     item_nbr++
-                    array_inputs_oneModifier.push(input_value)
-                    array_inputs_SNOMED_oneModifier.push(SNOMED_value)
-                    array_inputs_ICD_oneModifier.push(ICD_value)
+                    array_inputs_oneModifier.push('')
+                    array_inputs_SNOMED_oneModifier.push('')
+                    array_inputs_ICD_oneModifier.push('')
+                    array_inputs_itemNbr.push(2)
 
-
+                    let input_value = document.getElementById(`input${i}_${k}`).value
+                    let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
+                    let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
+                    if (input_value != '') {
+                        array_inputs_value.push(array_inputs_oneModifier);
+                        array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
+                        array_ICD_value.push(array_inputs_ICD_oneModifier);
+                    }
                 }
             }
-        }
-        array_inputs_itemNbr.push(item_nbr)
-        array_inputs_value.push(array_inputs_oneModifier);
-        array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
-        array_ICD_value.push(array_inputs_ICD_oneModifier);
 
+
+        } else {
+            for (let k = modifierSub_iterate; k <= modifierSub_nbr; k++) {
+                if (k == 0) {
+                    item_nbr++
+                    array_inputs_oneModifier.push('')
+                    array_inputs_SNOMED_oneModifier.push('')
+                    array_inputs_ICD_oneModifier.push('')
+
+                } else {
+                    let input_value = document.getElementById(`input${i}_${k}`).value
+                    let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
+                    let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
+
+                    if (input_value != '') {
+                        item_nbr++
+                        array_inputs_oneModifier.push(input_value)
+                        array_inputs_SNOMED_oneModifier.push(SNOMED_value)
+                        array_inputs_ICD_oneModifier.push(ICD_value)
+
+
+                    }
+                }
+            }
+            array_inputs_itemNbr.push(item_nbr)
+            array_inputs_value.push(array_inputs_oneModifier);
+            array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
+            array_ICD_value.push(array_inputs_ICD_oneModifier);
+        }
     }
 
     // Creation du array_Calculator
@@ -631,11 +655,11 @@ function click_calculate() {
     for (let i = modifier_nbr; i > 1; i--) {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
-    create_calculator_output(array_inputs_value,array_SNOMED_value,array_ICD_value);
+    create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value);
 }
 
 
-function create_calculator_output(array_inputs_value,array_SNOMED_value,array_ICD_value) {
+function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value) {
     document.getElementById('table_output_calculator').innerHTML = "";
 
     console.log(array_inputs_value)
@@ -665,9 +689,9 @@ function create_calculator_output(array_inputs_value,array_SNOMED_value,array_IC
             let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
             calculated_diag = calculated_diag + input_value_loop
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
-            if (SNOMED_value_loop != ""){calculated_SNOMED = calculated_SNOMED + ";"}
+            if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
-            if (ICD_value_loop != ""){calculated_ICD = calculated_ICD + ";"}
+            if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
 
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
@@ -728,11 +752,11 @@ function create_calculator_output(array_inputs_value,array_SNOMED_value,array_IC
 
     //update total count
     document.getElementById('total_count').style.display = "block"
-    document.getElementById('total_count').innerHTML= `Total Count: ${EDG_id_iterate_nbr}`;
+    document.getElementById('total_count').innerHTML = `Total Count: ${EDG_id_iterate_nbr}`;
 }
 
 
-function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment,ICD) {
+function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
