@@ -600,8 +600,7 @@ function click_calculate() {
 
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
 
-            for (let k = 0; k <= modifierSub_nbr; k++) {
-                if (k == 0) {
+            for (let k = 1; k <= modifierSub_nbr; k++) {
                     item_nbr++
                     array_inputs_oneModifier.push('')
                     array_inputs_SNOMED_oneModifier.push('')
@@ -615,7 +614,6 @@ function click_calculate() {
                         array_inputs_value.push(array_inputs_oneModifier);
                         array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
                         array_ICD_value.push(array_inputs_ICD_oneModifier);
-                    }
                 }
             }
 
