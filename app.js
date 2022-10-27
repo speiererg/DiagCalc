@@ -699,6 +699,7 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
 
         }
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
+        calculated_diag = calculated_diag.charAt(0).toUpperCase()+ calculated_diag.slice(1)
         let row_output_calculator = document.createElement('tr')
         let row_output_EDGId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
