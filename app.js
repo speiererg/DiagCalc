@@ -602,9 +602,9 @@ function click_calculate() {
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
 
             for (let k = 1; k <= modifierSub_nbr; k++) {
-                let input_value = array['',document.getElementById(`input${i}_${k}`).value]
-                let SNOMED_value = array['',document.getElementById(`inputSNOMED${i}_${k}`).value]
-                let ICD_value = array['',document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]]
+                let input_value = ['',document.getElementById(`input${i}_${k}`).value]
+                let SNOMED_value = ['',document.getElementById(`inputSNOMED${i}_${k}`).value]
+                let ICD_value = ['',document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]]
 
                 if (input_value != '') {
                     array_inputs_oneModifier.push('')
