@@ -585,6 +585,7 @@ function click_calculate() {
     array_SNOMED_value = [];
     array_ICD_value = [];
     array_inputs_itemNbr = [];
+    array_inputs_modifierNbr = [];
     array_calculator = [];
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
@@ -612,6 +613,7 @@ function click_calculate() {
                     array_inputs_itemNbr.push(2)
                     console.log(`input${i}_${k}`)
                     array_inputs_value.push(array_inputs_oneModifier);
+                    array_inputs_modifierNbr.push(i)
                     array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
                     array_ICD_value.push(array_inputs_ICD_oneModifier);
 
@@ -661,7 +663,7 @@ function click_calculate() {
 
 function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value) {
     document.getElementById('table_output_calculator').innerHTML = "";
-
+console.log(array_inputs_modifierNbr)
     console.log(array_inputs_value)
     console.log(array_inputs_itemNbr)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
