@@ -330,6 +330,11 @@ function edit_calculator() {
     //disable button from selected radio
     for (let i = 1; i < modifier_nbr; i++) {
         if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click(); }
+        if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true) {
+            document.getElementById(`checkbox_input_${i}`).disabled = true
+        } else {
+            document.getElementById(`checkbox_input_${i}`).disabled = false
+        }
     }
 }
 
