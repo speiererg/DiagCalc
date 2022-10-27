@@ -611,7 +611,6 @@ function click_calculate() {
                     array_inputs_SNOMED_oneModifier.push('')
                     array_inputs_ICD_oneModifier.push('')
                     array_inputs_itemNbr.push(2)
-                    console.log(`input${i}_${k}`)
                     array_inputs_value.push(input_value);
                     array_inputs_modifierNbr.push(i-1) //-1 because of array
                     array_SNOMED_value.push(SNOMED_value);
