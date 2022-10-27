@@ -619,6 +619,7 @@ function click_calculate() {
 
                 }
                 console.log(array_inputs_value)
+                console.log(k)
             }
 
 
