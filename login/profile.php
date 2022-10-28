@@ -6,7 +6,7 @@ if (!isset($_SESSION['loggedin']) ) {
 	header('Location: ../../login/login.html');
 	exit;
 }
-require "../../conf/user.php";
+require '../../conf/connect.php';
 
 
 

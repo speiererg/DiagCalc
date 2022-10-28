@@ -5,7 +5,7 @@ if (!isset($_SESSION['loggedin']) ) {
 	header('Location: ../../login/login.html');
 	exit;
 }
-require "../../conf/user.php";
+require '../../conf/connect.php';
 if ($stmt = $conn->prepare('SELECT ad FROM users WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
     $stmt->bind_param('s', $_SESSION['name']);

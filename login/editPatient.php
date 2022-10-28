@@ -1,6 +1,6 @@
 <?php
 require "../../conf/sessionStartPHPMySQL.php";
-require "../../conf/user.php";
+require '../../conf/connect.php';
 
 $userChange = $_SESSION['name'];
 $ISBett = $conn -> real_escape_string($_POST['EditISBettSelect']);
