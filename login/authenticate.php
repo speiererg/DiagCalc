@@ -21,7 +21,7 @@ $userName = $_POST['username'];
 $cursor_userGet = $collection_lastId->findOne(
     array('username' => $userName),
     array(
-        'projection' => array('password' => 1, 'function' => 1, 'id' => 1),
+        'projection' => array('password' => 1, 'role' => 1, 'id' => 1),
         'limit' => 1
         )
 );
