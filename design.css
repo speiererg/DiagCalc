@@ -1,6 +1,6 @@
 :root {
   --main-bg-color: #fff;
-  --div-color: #eef9ff;
+  --div-color: #fff;
   --div-color-hell: #cfe7f3;
   --div-color-dunkel: #6b9bda;
   --div-seperation: #0d3896;
@@ -11,10 +11,6 @@
 
 /* --------   Navigationbar Design ----------- */
 
-#navigationbar li a.REARed {
-  background-color: #d60d0d;
-  font-weight: bold;
-}
 
 #navigationbar ul {
   list-style-type: none;
