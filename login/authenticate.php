@@ -6,7 +6,7 @@ require '../../conf/connect.php';
 $client = new MongoDB\Client('mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
 echo password_hash($_POST['password'], PASSWORD_DEFAULT);
-
+echo '/////';
 
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
