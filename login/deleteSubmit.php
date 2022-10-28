@@ -7,6 +7,9 @@ if (!isset($_SESSION['loggedin']) ) {
 }
 
 require '../../conf/connect.php';
+$client = new MongoDB\Client('mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
+
+
 if ($stmt = $conn->prepare('SELECT ad FROM users WHERE username = ?')) {
 	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
     $stmt->bind_param('s', $_SESSION['name']);
