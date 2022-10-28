@@ -2,33 +2,37 @@
 session_start();
 include "../../conf/user.php";
 
-if ( mysqli_connect_errno() ) {
-	// If there is an error with the connection, stop the script and display the error.
-	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
-}
-
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
 	exit('Please fill both the username and password fields!');
 }
 
-if ($stmt = $conn->prepare('SELECT id, pass, role FROM users WHERE username = ?')) {
 
-	// Bind parameters (s = string, i = int, b = blob, etc), in our case the username is a string so we use "s"
-    $stmt->bind_param('s', $_POST['username']);
-	$stmt->execute();
-	// Store the result so we can check if the account exists in the database.
-	$stmt->store_result();
+$collection_userGet = $client->DiagCalc_Config->Users;
 
-    if ($stmt->num_rows > 0) {
-        $stmt->bind_result($id, $pass ,$role);
-        $stmt->fetch();
-        
+$userName = $_POST['username'];
+
+$cursor_userGet = $collection_lastId->findOne(
+    array('username' => $userName),
+    array(
+        'projection' => array('password' => 1, 'function' => 1, 'id' => 1),
+        'limit' => 1
+        )
+);
+
+   $password = $cursor_userGet->password;
+   $role = $cursor_userGet->role;
+   $id = $cursor_userGet->id;
+
+   echo $password;
+   echo $role;
+
+
+    if ($password) {
+
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
         
-        //$_POST['password'] ==="$pass"
-        //password_verify($_POST['password'], $pass)
         if (password_verify($_POST['password'], $pass)) {   
         // if (password_verify($_POST['password'], $pass)) {
 
@@ -47,6 +51,5 @@ if ($stmt = $conn->prepare('SELECT id, pass, role FROM users WHERE username = ?'
         echo 'Incorrect username! <a href="login.html"> Return to Login</a>';
     }
 
-	$stmt->close();
-}
+
 ?>
