@@ -1,7 +1,6 @@
 
 <?php
   require '../vendor/autoload.php';
-
   require '../../conf/connect.php';
 
 $collection = $client->DiagCalc_Calculators->Calculators;
