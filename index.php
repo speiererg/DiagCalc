@@ -26,6 +26,15 @@ if (!isset($_SESSION['loggedin'])) {
   </div>
   <div id="headerbar"></div>
 
+  <nav class="navtop">
+					<div>
+						<h1>DiagCalculator by MedSP</h1>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+						<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+					</div>
+				</nav>
+
   <div id="navigationbar">
     <ul>
       <li><a id="navPageHome">Main - Index</a></li>
