@@ -11,6 +11,6 @@ setInterval(() => {
 
         if (x > windowsMax|| x<100){xz=xz*-1}
         if (y > windowsMaxHeight|| y<100){yz=yz*-1}
-    rectangleLogin.style.left = `${x+(xz*0.2)}px`
-    rectangleLogin.style.bottom = `${y+(yz*0.2)}px`
+    rectangleLogin.style.left = `${x+(xz*0.4)}px`
+    rectangleLogin.style.bottom = `${y+(yz*0.4)}px`
 }, 1);
