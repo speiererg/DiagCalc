@@ -2,10 +2,10 @@
 session_start();
 require '../vendor/autoload.php';
 require '../../conf/connect.php';
-echo 'mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority';
 
 $client = new MongoDB\Client('mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
+echo password_hash($_POST['password'], PASSWORD_DEFAULT);
 
 
 if ( !isset($_POST['username'], $_POST['password']) ) {
