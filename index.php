@@ -27,8 +27,6 @@ if (!isset($_SESSION['loggedin'])) {
 
   <nav class="navtop">
 					<div>
-						<h1>DiagCalculator by MedSP</h1>
-            <img src="img/logo.png" width="100px" style="vertical-align:middle"/>
             <a id="navPageHome">Main - Index</a>
             <a id="navPageCalculator">New Calculator</a>
             <a id="navPageTest">TestMongoDB</a>
