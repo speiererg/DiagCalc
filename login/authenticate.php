@@ -5,9 +5,6 @@ require '../../conf/connect.php';
 
 $client = new MongoDB\Client('mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
-echo password_hash($_POST['password'], PASSWORD_DEFAULT);
-echo '/////';
-
 if ( !isset($_POST['username'], $_POST['password']) ) {
 	// Could not get the data that should have been sent.
 	exit('Please fill both the username and password fields!');
@@ -30,16 +27,13 @@ $cursor_userGet = $collection_userGet->findOne(
    $role = $cursor_userGet->role;
    $id = $cursor_userGet->id;
 
-   echo $password;
-   echo $role;
-
 
     if ($password) {
 
         // Account exists, now we verify the password.
         // Note: remember to use password_hash in your registration file to store the hashed passwords.
         
-        if (password_verify($_POST['password'], $pass)) {   
+        if (password_verify($_POST['password'], $password)) {   
         // if (password_verify($_POST['password'], $pass)) {
 
             // Verification success! User has loggedin!
