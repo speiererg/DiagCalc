@@ -1,5 +1,6 @@
 <?php
 session_start();
+require '../vendor/autoload.php';
 require '../../conf/connect.php';
 echo 'mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority';
 
