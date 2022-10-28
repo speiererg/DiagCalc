@@ -101,7 +101,7 @@ body {
 }
 
 #header {
-  color: var(--div-seperation);
+  color: var(--div-color-dunkel);
   text-align: center;
   background-color: var(--div-color);
   text-shadow: black;
