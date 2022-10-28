@@ -1,7 +1,7 @@
 <?php
   require '../vendor/autoload.php';
+  require '../../conf/connect.php';
 
-$client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
 
 $collection = $client->DiagCalc_Calculators->Index;
 $id = intval($_POST['calculator_id']);
