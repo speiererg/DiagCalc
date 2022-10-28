@@ -10,47 +10,6 @@
 }
 
 /* --------   Navigationbar Design ----------- */
-
-
-#navigationbar ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: var(--div-color-dunkel);
-}
-
-#navigationbar li {
-  float: left;
-}
-
-#navigationbar li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 3px 8px 3px 8px;
-  text-decoration: none;
-  border-right: 4px solid var(--div-seperation);
-}
-
-
-
-#navigationbar li a:hover {
-  background-color: var(--div-seperation);
-}
-
-
-.navigationbarButton {
-  width: 15px;
-  height: 15px;
-  margin: 0px;
-  padding: 0px;
-  border: 0px;
-  border-radius: 1px;
-  vertical-align: middle;
-}
-
-
 .navtop {
 	background-color: #6b9bda;
 	height: 50px;
