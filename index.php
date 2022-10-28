@@ -32,6 +32,9 @@ if (!isset($_SESSION['loggedin'])) {
       <li><a id="navPageCalculator">New Calculator</a></li>
       <li><a id="navPageTest">TestMongoDB</a></li>
       <li><a id="navPageDelete">Delete all</a></li>
+      <li><a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+      
+
 
     </ul>
   </div>
