@@ -24,7 +24,6 @@ if (!isset($_SESSION['loggedin'])) {
   <div id="header">
     <div>DiagCalc by <img src="img/logo.png" width="100px" style="vertical-align:middle"/></div>
   </div>
-  <div id="headerbar"></div>
 
   <nav class="navtop">
 					<div>
@@ -40,7 +39,6 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
-  <div id="headerbar"></div>
 
   
   <div id="maincontent">
