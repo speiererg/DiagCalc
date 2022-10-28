@@ -29,24 +29,15 @@ if (!isset($_SESSION['loggedin'])) {
   <nav class="navtop">
 					<div>
 						<h1>DiagCalculator by MedSP</h1>
-            <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-            <a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-						<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+            <a id="navPageHome">Main - Index</a>
+            <a id="navPageCalculator">New Calculator</a>
+            <a id="navPageTest">TestMongoDB</a>
+            <a id="navPageDelete">Delete all</a>
+            <a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 					</div>
 				</nav>
 
-  <div id="navigationbar">
-    <ul>
-      <li><a id="navPageHome">Main - Index</a></li>
-      <li><a id="navPageCalculator">New Calculator</a></li>
-      <li><a id="navPageTest">TestMongoDB</a></li>
-      <li><a id="navPageDelete">Delete all</a></li>
-      <li><a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
-      
 
-
-    </ul>
-  </div>
 
   <div id="headerbar"></div>
 
