@@ -18,7 +18,7 @@ $collection_userGet = $client->DiagCalc_Config->Users;
 
 $userName = $_POST['username'];
 
-$cursor_userGet = $collection_lastId->findOne(
+$cursor_userGet = $collection_userGet->findOne(
     array('username' => $userName),
     array(
         'projection' => array('password' => 1, 'role' => 1, 'id' => 1),
