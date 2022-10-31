@@ -713,6 +713,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
+        console.log('test')
 
         let calculated_diag = ""
         let calculated_SNOMED = ""
