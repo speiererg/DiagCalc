@@ -1,4 +1,3 @@
-
 <?php
 echo "<input type='hidden' name='input_hidden_POST_id' id='input_hidden_POST_id' value='" . $_POST['calculator_id'] . "' >";
 echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POST_version' value='" . $_POST['version'] . "' >";

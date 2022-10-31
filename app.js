@@ -76,6 +76,8 @@ function changePage(page, paramsPHP, paramsJS) {
 
 function changePageExecute(page, paramsPHP, paramsJS) {
     console.log('change page' + page)
+    console.log(paramsPHP)
+    console.log(paramsJS)
 
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
