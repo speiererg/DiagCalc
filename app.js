@@ -755,7 +755,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
                     test_id++
                 }
             }
-        } a
+        }
 
     }
     console.log(output_array)
