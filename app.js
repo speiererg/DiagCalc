@@ -647,6 +647,7 @@ function click_calculate() {
                     array_inputs_modifierNbr.push(i - 1) //-1 because of array
                     array_SNOMED_value.push(SNOMED_value);
                     array_ICD_value.push(ICD_value);
+                    if(document.getElementById(`radio_input_${i}`).checked == false){array_modifier_isMain.push('0')}else{array_modifier_isMain.push('1')}
                 }
             }
 
@@ -696,6 +697,7 @@ function click_calculate() {
 
 function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr,array_modifier_isMain) {
 console.log(array_modifier_isMain)
+console.log(array_inputs_value)
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
