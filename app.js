@@ -32,7 +32,7 @@ function loadingIndex() {
                 event.preventDefault();
             }
         });
-        */
+        */a
 }
 
 function addEventListener() {
