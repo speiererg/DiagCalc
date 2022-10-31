@@ -693,11 +693,11 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain);
+    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain,array_inputs_itemNbr);
 }
 
 
-function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain) {
+function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain,array_inputs_itemNbr) {
     console.log(array_modifier_isMain)
     console.log(array_inputs_value)
     let output_array = []
@@ -713,7 +713,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
-        console.log('test')
+        console.log('testa')
 
         let calculated_diag = ""
         let calculated_SNOMED = ""
