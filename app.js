@@ -689,6 +689,7 @@ function click_calculate() {
 
 
 function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
+    let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
@@ -722,6 +723,9 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
 
         }
+
+        output_array.push([calculated_diag,calculated_SNOMED,calculated_ICD])
+        
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
         let row_output_calculator = document.createElement('tr')
@@ -781,6 +785,7 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
     //update total count
     document.getElementById('total_count').style.display = "block"
     document.getElementById('total_count').innerHTML = `Total Count: ${EDG_id_iterate_nbr}`;
+    console.log(output_array)
 }
 
 
