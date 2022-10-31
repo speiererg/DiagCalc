@@ -87,6 +87,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <input type="hidden" name="modifierSub_nbr" id="input_hidden_modifierSub_nbr" value="" >
               <input type="hidden" name="XML_output" id="input_hidden_XML_output" value="" >
               <input type="hidden" name="TXT_output" id="input_hidden_TXT_output" value="" >
+              <input type="hidden" name="array_output" id="input_hidden_array_output" value="" >
+
                 <input type="submit" name="button2" id="button_save_calculator"  class="button_download" value="Save new Version" />
               </form>  
             </td>

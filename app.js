@@ -613,23 +613,23 @@ function click_radio_input(event) {
 
 
 function click_calculate() {
-    array_inputs_value = [];
-    array_SNOMED_value = [];
-    array_ICD_value = [];
-    array_inputs_itemNbr = [];
-    array_inputs_modifierNbr = [];
-    array_calculator = [];
+    let array_inputs_value = [];
+    let array_SNOMED_value = [];
+    let array_ICD_value = [];
+    let array_modifier_isMain = [];
+    let array_inputs_itemNbr = [];
+    let array_inputs_modifierNbr = [];
+    let array_calculator = [];
+    let array_main =[]
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let array_inputs_SNOMED_oneModifier = [];
         let array_inputs_ICD_oneModifier = [];
-
         let item_nbr = 0
         let modifierSub_iterate = 1
         if (document.getElementById(`checkbox_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
             modifierSub_iterate = 0
         }
-
 
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true && document.getElementById(`radio_input_${i}`).checked == false) {
 
@@ -663,13 +663,13 @@ function click_calculate() {
                     let input_value = document.getElementById(`input${i}_${k}`).value
                     let SNOMED_value = document.getElementById(`inputSNOMED${i}_${k}`).value
                     let ICD_value = document.getElementById(`inputICD${i}_${k}`).value.split('::')[0]
+                    let modifier_value = document.getElementById(`input${i}_${k}`).value
 
                     if (input_value != '') {
                         item_nbr++
                         array_inputs_oneModifier.push(input_value)
                         array_inputs_SNOMED_oneModifier.push(SNOMED_value)
                         array_inputs_ICD_oneModifier.push(ICD_value)
-
 
                     }
                 }
@@ -679,6 +679,8 @@ function click_calculate() {
             array_inputs_modifierNbr.push(i - 1) //-1 because of array
             array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
             array_ICD_value.push(array_inputs_ICD_oneModifier);
+            if(document.getElementById(`radio_input_${i}`).checked == false){array_modifier_isMain.push('0')}else{array_modifier_isMain.push('1')}
+
         }
     }
 
@@ -688,11 +690,12 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr);
+    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr,array_modifier_isMain);
 }
 
 
-function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
+function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr,array_modifier_isMain) {
+console.log(array_modifier_isMain)
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -793,6 +796,8 @@ function printing_calculator_output(output_array) {
     // update hidden input for Database save
     document.getElementById('input_hidden_XML_output').value = XML_output
     document.getElementById('input_hidden_TXT_output').value = XML_output
+    document.getElementById('input_hidden_array_output').value = XML_output
+
 
     // finalize XML
     XML_output = XML_output + XML_End
