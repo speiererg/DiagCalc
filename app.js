@@ -754,7 +754,7 @@ console.log(array_inputs_value)
         }
 
     }
-
+console.log(output_array)
     printing_calculator_output(output_array)
 }
 
