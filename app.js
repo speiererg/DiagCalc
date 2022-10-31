@@ -711,8 +711,6 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
-        console.log('testa')
-
         let calculated_diag = ""
         let calculated_SNOMED = ""
         let calculated_ICD = ""
@@ -724,11 +722,12 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
             let input_modifier_loop = `${array_inputs_value[i0][array_iterate[i0]]}`
 
             calculated_diag = calculated_diag + input_value_loop
+            if (input_value_loop != "") { calculated_diag = calculated_diag + " " }
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
-            if (array_modifier_isMain[i0] == 0) { calculated_modifier.push(input_modifier_loop) }
+            if (array_modifier_isMain[i0] == 0 && input_modifier_loop != "") { calculated_modifier.push(input_modifier_loop) }
         }
 
         //Creating Output Array
