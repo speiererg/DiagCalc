@@ -684,11 +684,11 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr);
+    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr);
 }
 
 
-function create_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
+function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -698,9 +698,6 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
     var itteration_id = array_calculator_inputs_modifierNbr - 1
     for (let i = 0; i < array_calculator_inputs_modifierNbr; i++) { array_iterate.push('0') }
 
-    // create XML/TXT
-    var XML_output = XML_beginn
-    var TXT_output = TXT_beginn
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -723,11 +720,45 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
 
         }
-
-        output_array.push([calculated_diag,calculated_SNOMED,calculated_ICD])
         
+        //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
+        output_array.push([calculated_diag,calculated_SNOMED,calculated_ICD])
+        
+
+        // Array Calculation
+        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
+            array_iterate[itteration_id]++
+        } else {
+            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
+                for (let test_id = 0, id_increment = 1; test_id <= array_calculator_inputs_modifierNbr; id_increment++) {
+                    array_iterate[array_calculator_inputs_modifierNbr - id_increment] = 0
+                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
+                        array_iterate[itteration_id - id_increment]++
+                        test_id = array_calculator_inputs_modifierNbr + 1
+                    }
+                    test_id++
+                }
+            }
+        }
+
+    }
+
+    console.log(output_array)
+}
+
+function printing_calculator_output(output_array){
+
+    // create XML/TXT
+    var XML_output = XML_beginn
+    var TXT_output = TXT_beginn
+
+    output_array.forEach((element)=>{
+
+
+
+
         let row_output_calculator = document.createElement('tr')
         let row_output_EDGId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
@@ -753,23 +784,8 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
         //Append to Txt
         TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
 
-        // Array Calculation
-        if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
-            array_iterate[itteration_id]++
-        } else {
-            if (array_iterate[0] < (array_inputs_itemNbr[0] - 1)) {
-                for (let test_id = 0, id_increment = 1; test_id <= array_calculator_inputs_modifierNbr; id_increment++) {
-                    array_iterate[array_calculator_inputs_modifierNbr - id_increment] = 0
-                    if (array_iterate[itteration_id - id_increment] < (array_inputs_itemNbr[itteration_id - id_increment] - 1)) {
-                        array_iterate[itteration_id - id_increment]++
-                        test_id = array_calculator_inputs_modifierNbr + 1
-                    }
-                    test_id++
-                }
-            }
-        }
 
-    }
+    })
 
     // update hidden input for Database save
     document.getElementById('input_hidden_XML_output').value = XML_output
@@ -785,7 +801,7 @@ function create_calculator_output(array_inputs_value, array_SNOMED_value, array_
     //update total count
     document.getElementById('total_count').style.display = "block"
     document.getElementById('total_count').innerHTML = `Total Count: ${EDG_id_iterate_nbr}`;
-    console.log(output_array)
+
 }
 
 
