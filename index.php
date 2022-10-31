@@ -54,7 +54,7 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
-  <!--<script src="app.js"></script>-->
+ <script src="app.js"></script>
 
 </body>
 </html>

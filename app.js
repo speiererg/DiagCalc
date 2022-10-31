@@ -78,6 +78,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
+        console.log('change page')
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
@@ -163,6 +164,7 @@ function disable_input(toDo) {
 // *****************************   MongoDB Tools   *****************************
 
 function find_home_mongoDB(id, version) {
+    console.log('find home mongodb')
     var xmlhttp = new XMLHttpRequest();
     let params = 'item=active&value=yes';
     xmlhttp.onreadystatechange = function () {
