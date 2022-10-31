@@ -692,8 +692,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
-    var EDG_id_iterate = document.getElementById('input_EDG_id').value
-    var EDG_id_iterate_nbr = 0
+
     var array_iterate = []
     var itteration_id = array_calculator_inputs_modifierNbr - 1
     for (let i = 0; i < array_calculator_inputs_modifierNbr; i++) { array_iterate.push('0') }
@@ -703,11 +702,10 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let array_item0 = array_inputs_itemNbr[0]
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
-        EDG_id_iterate++
-        EDG_id_iterate_nbr++
-        var calculated_diag = ""
-        var calculated_SNOMED = ""
-        var calculated_ICD = ""
+
+        let calculated_diag 
+        let calculated_SNOMED 
+        let calculated_ICD 
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
 
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
@@ -720,12 +718,12 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
 
         }
-        
+
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag,calculated_SNOMED,calculated_ICD])
-        
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD])
+
 
         // Array Calculation
         if (array_iterate[itteration_id] < (array_inputs_itemNbr[itteration_id] - 1)) {
@@ -745,18 +743,24 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
     }
 
-    console.log(output_array)
+    printing_calculator_output(output_array)
 }
 
-function printing_calculator_output(output_array){
+function printing_calculator_output(output_array) {
+    console.log(output_array)
+
+
+    var EDG_id_iterate = document.getElementById('input_EDG_id').value
+    var EDG_id_iterate_nbr = 0
 
     // create XML/TXT
     var XML_output = XML_beginn
     var TXT_output = TXT_beginn
 
-    output_array.forEach((element)=>{
+    output_array.forEach((element) => {
 
-
+        EDG_id_iterate++
+        EDG_id_iterate_nbr++
 
 
         let row_output_calculator = document.createElement('tr')
