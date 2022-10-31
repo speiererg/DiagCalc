@@ -21,7 +21,6 @@ var array_ICD10 = []
 
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
-    console.log('loading Index')
     changePage('index')
 
     const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
@@ -75,9 +74,6 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
-    console.log('change page' + page)
-    console.log(paramsPHP)
-    console.log(paramsJS)
 
     if(paramsPHP){}else{paramsPHP=''}
     let targetpage
@@ -87,8 +83,6 @@ function changePageExecute(page, paramsPHP, paramsJS) {
     xhttp.onreadystatechange = function () {
 
         if (this.readyState == 4 && this.status == 200) {
-            console.log('change pageload')
-
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
@@ -173,7 +167,6 @@ function disable_input(toDo) {
 // *****************************   MongoDB Tools   *****************************
 
 function find_home_mongoDB(id, version) {
-    console.log('find home mongodb')
     var xmlhttp = new XMLHttpRequest();
     let params = 'item=active&value=yes';
     xmlhttp.onreadystatechange = function () {
