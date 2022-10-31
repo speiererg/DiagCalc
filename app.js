@@ -20,6 +20,7 @@ var array_ICD10 = []
 
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
+    console.log('loading Index')
     changePage('index')
 
     const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
