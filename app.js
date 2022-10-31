@@ -24,13 +24,11 @@ function loadingIndex() {
     changePage('index')
 
     const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-
     function reportStatus() {
         if (oXHR.readyState == 4) {
             showTheList(this.responseXML);      // Now show the data.
         }
     }
-
     oXHR.onreadystatechange = reportStatus;
     oXHR.open("GET", "XML/ICD.xml", true);
     // true = asynchronous request (desirable), false = synchronous request.
@@ -734,7 +732,8 @@ console.log(array_inputs_value)
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD,calculated_modifier])
+        console.log(calculated_modifier)
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD])
 
 
         // Array Calculation
@@ -751,7 +750,7 @@ console.log(array_inputs_value)
                     test_id++
                 }
             }
-        }
+        }a
 
     }
 console.log(output_array)
