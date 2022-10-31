@@ -41,6 +41,7 @@ function loadingIndex() {
         for (let i = 0; i < XML_list.length; i++) {
             array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
+        console.log(array_ICD10)
     }
 
     $(document).keypress(
@@ -715,21 +716,25 @@ console.log(array_inputs_value)
         let calculated_diag = ""
         let calculated_SNOMED = ""
         let calculated_ICD = ""
+        let calculated_modifier = []
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
             let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
+            let input_modifier_loop = `${array_inputs_value[i0][array_iterate[i0]]}`
+
             calculated_diag = calculated_diag + input_value_loop
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
+            if (array_modifier_isMain[i0]==0){calculated_modifier.push(input_modifier_loop)}
         }
 
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD])
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD,calculated_modifier])
 
 
         // Array Calculation
