@@ -735,6 +735,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
+        console.log(calculated_diag)
         console.log(calculated_modifier)
         output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD])
 
