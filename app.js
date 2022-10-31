@@ -783,10 +783,10 @@ function printing_calculator_output(output_array) {
 
 
         // Append to XML
-        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
+        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', element[2])
 
         //Append to Txt
-        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', calculated_diag, 'Created by MedSP', calculated_ICD)
+        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', element[2])
 
 
     })
