@@ -771,9 +771,9 @@ function printing_calculator_output(output_array) {
 
 
         row_output_EDGId_column.appendChild(document.createTextNode(`MedSP_TERM_${EDG_id_iterate}`));
-        row_output_calculator_column.appendChild(document.createTextNode(calculated_diag));
-        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(calculated_SNOMED));
-        row_output_calculator_ICD_column.appendChild(document.createTextNode(calculated_ICD));
+        row_output_calculator_column.appendChild(document.createTextNode(element[0]));
+        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(element[1]));
+        row_output_calculator_ICD_column.appendChild(document.createTextNode(element[2]));
 
         row_output_calculator.appendChild(row_output_EDGId_column)
         row_output_calculator.appendChild(row_output_calculator_column)
