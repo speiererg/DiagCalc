@@ -23,24 +23,7 @@ var array_ICD10 = []
 function loadingIndex() {
     changePage('index')
 
-    const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
-    function reportStatus() {
-        if (oXHR.readyState == 4) {
-            showTheList(this.responseXML);      // Now show the data.
-        }
-    }
-    oXHR.onreadystatechange = reportStatus;
-    oXHR.open("GET", "XML/ICD.xml", true);
-    // true = asynchronous request (desirable), false = synchronous request.
-    oXHR.send();
-
-    function showTheList(xml) {
-        let XML_list = xml.getElementsByTagName('diag');
-        for (let i = 0; i < XML_list.length; i++) {
-            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
-        }
-        console.log(array_ICD10)
-    }
+    setTimeout(loadXML_ICD, 2000)
 
     $(document).keypress(
         function (event) {
@@ -74,7 +57,7 @@ function changePage(page, paramsPHP, paramsJS) {
 
 function changePageExecute(page, paramsPHP, paramsJS) {
 
-    if(paramsPHP){}else{paramsPHP=''}
+    if (paramsPHP) { } else { paramsPHP = '' }
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
@@ -163,6 +146,26 @@ function disable_input(toDo) {
 
 }
 
+function loadXML_ICD() {
+    const oXHR = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+    function reportStatus() {
+        if (oXHR.readyState == 4) {
+            showTheList(this.responseXML);      // Now show the data.
+        }
+    }
+    oXHR.onreadystatechange = reportStatus;
+    oXHR.open("GET", "XML/ICD.xml", true);
+    // true = asynchronous request (desirable), false = synchronous request.
+    oXHR.send();
+
+    function showTheList(xml) {
+        let XML_list = xml.getElementsByTagName('diag');
+        for (let i = 0; i < XML_list.length; i++) {
+            array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
+        }
+        console.log(array_ICD10)
+    }
+}
 // *****************************   MongoDB Tools   *****************************
 
 function find_home_mongoDB(id, version) {
@@ -619,7 +622,7 @@ function click_calculate() {
     let array_inputs_itemNbr = [];
     let array_inputs_modifierNbr = [];
     let array_calculator = [];
-    let array_main =[]
+    let array_main = []
     for (let i = 1; i <= modifier_nbr; i++) {
         let array_inputs_oneModifier = [];
         let array_inputs_SNOMED_oneModifier = [];
@@ -646,7 +649,7 @@ function click_calculate() {
                     array_inputs_modifierNbr.push(i - 1) //-1 because of array
                     array_SNOMED_value.push(SNOMED_value);
                     array_ICD_value.push(ICD_value);
-                    if(document.getElementById(`radio_input_${i}`).checked == false){array_modifier_isMain.push('0')}else{array_modifier_isMain.push('1')}
+                    if (document.getElementById(`radio_input_${i}`).checked == false) { array_modifier_isMain.push('0') } else { array_modifier_isMain.push('1') }
                 }
             }
 
@@ -679,7 +682,7 @@ function click_calculate() {
             array_inputs_modifierNbr.push(i - 1) //-1 because of array
             array_SNOMED_value.push(array_inputs_SNOMED_oneModifier);
             array_ICD_value.push(array_inputs_ICD_oneModifier);
-            if(document.getElementById(`radio_input_${i}`).checked == false){array_modifier_isMain.push('0')}else{array_modifier_isMain.push('1')}
+            if (document.getElementById(`radio_input_${i}`).checked == false) { array_modifier_isMain.push('0') } else { array_modifier_isMain.push('1') }
 
         }
     }
@@ -690,13 +693,13 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr,array_modifier_isMain);
+    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain);
 }
 
 
-function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr,array_modifier_isMain) {
-console.log(array_modifier_isMain)
-console.log(array_inputs_value)
+function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain) {
+    console.log(array_modifier_isMain)
+    console.log(array_inputs_value)
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -726,7 +729,7 @@ console.log(array_inputs_value)
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
-            if (array_modifier_isMain[i0]==0){calculated_modifier.push(input_modifier_loop)}
+            if (array_modifier_isMain[i0] == 0) { calculated_modifier.push(input_modifier_loop) }
         }
 
         //Creating Output Array
@@ -750,10 +753,10 @@ console.log(array_inputs_value)
                     test_id++
                 }
             }
-        }a
+        } a
 
     }
-console.log(output_array)
+    console.log(output_array)
     printing_calculator_output(output_array)
 }
 
