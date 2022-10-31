@@ -706,9 +706,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
 
-        let calculated_diag
-        let calculated_SNOMED
-        let calculated_ICD
+        let calculated_diag = ""
+        let calculated_SNOMED = ""
+        let calculated_ICD = ""
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
