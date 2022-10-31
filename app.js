@@ -712,8 +712,8 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     array_inputs_itemNbr[0]++
     while (array_iterate[0] < array_item0) {
         let calculated_diag = ""
-        let calculated_SNOMED = ""
-        let calculated_ICD = ""
+        let calculated_SNOMED = []
+        let calculated_ICD = []
         let calculated_modifier = []
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]}`
@@ -724,9 +724,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
             calculated_diag = calculated_diag + input_value_loop
             if (input_value_loop != "") { calculated_diag = calculated_diag + " " }
             calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
-            if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
+            if (SNOMED_value_loop != "") { calculated_SNOMED.push(SNOMED_value_loop)}
             calculated_ICD = calculated_ICD + ICD_value_loop
-            if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
+            if (ICD_value_loop != "") { calculated_ICD.push(ICD_value_loop)}
             if (array_modifier_isMain[i0] == 0 && input_modifier_loop != "") { calculated_modifier.push(input_modifier_loop) }
         }
 
@@ -780,8 +780,8 @@ function printing_calculator_output(output_array) {
 
         row_output_EDGId_column.appendChild(document.createTextNode(`MedSP_TERM_${EDG_id_iterate}`));
         row_output_calculator_column.appendChild(document.createTextNode(element[0]));
-        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(element[1]));
-        row_output_calculator_ICD_column.appendChild(document.createTextNode(element[2]));
+        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
+        row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
 
         row_output_calculator.appendChild(row_output_EDGId_column)
         row_output_calculator.appendChild(row_output_calculator_column)
@@ -791,10 +791,10 @@ function printing_calculator_output(output_array) {
 
 
         // Append to XML
-        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', element[2])
+        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
 
         //Append to Txt
-        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', element[2])
+        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
 
 
     })
