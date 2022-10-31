@@ -79,6 +79,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
     console.log(paramsPHP)
     console.log(paramsJS)
 
+    if(paramsPHP){}else{paramsPHP=''}
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
