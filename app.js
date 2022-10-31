@@ -23,6 +23,7 @@ var array_ICD10 = []
 function loadingIndex() {
     changePage('index')
 
+    /*
     setTimeout(loadXML_ICD, 2000)
 
     $(document).keypress(
@@ -31,6 +32,7 @@ function loadingIndex() {
                 event.preventDefault();
             }
         });
+        */
 }
 
 function addEventListener() {
