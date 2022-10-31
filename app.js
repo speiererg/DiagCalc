@@ -690,6 +690,8 @@ function click_calculate() {
 
 function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
     console.log(array_inputs_value)
+    console.log(array_calculator_inputs_modifierNbr)
+
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -708,7 +710,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         let calculated_SNOMED
         let calculated_ICD
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
-
+console.log(array_inputs_value[i0][array_iterate[i0]])
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
             let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
