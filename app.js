@@ -163,8 +163,8 @@ function loadXML_ICD() {
         for (let i = 0; i < XML_list.length; i++) {
             array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
-        console.log(array_ICD10)
     }
+    console.log('loading ICD')
 }
 // *****************************   MongoDB Tools   *****************************
 
