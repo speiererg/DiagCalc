@@ -742,6 +742,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
     }
+    console.log(output_array)
 
    // printing_calculator_output(output_array)
 }
