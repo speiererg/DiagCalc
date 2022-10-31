@@ -689,9 +689,6 @@ function click_calculate() {
 
 
 function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr) {
-    console.log(array_inputs_value)
-    console.log(array_inputs_modifierNbr)
-
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -718,8 +715,6 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
-            console.log(calculated_diag)
-
         }
 
         //Creating Output Array
@@ -746,13 +741,10 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
     }
 
- printing_calculator_output(output_array)
+    printing_calculator_output(output_array)
 }
 
 function printing_calculator_output(output_array) {
-    console.log(output_array)
-
-
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
 
