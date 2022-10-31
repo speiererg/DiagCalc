@@ -75,12 +75,15 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
+    console.log('change page' + page)
+
     let targetpage
     if (page == "index") { targetpage = 'home' } else { targetpage = page }
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        console.log('change page')
+        console.log('change pageload')
+
         if (this.readyState == 4 && this.status == 200) {
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
