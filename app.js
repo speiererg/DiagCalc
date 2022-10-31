@@ -85,9 +85,10 @@ function changePageExecute(page, paramsPHP, paramsJS) {
     var xhttp;
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function () {
-        console.log('change pageload')
 
         if (this.readyState == 4 && this.status == 200) {
+            console.log('change pageload')
+
             document.getElementById("mainpage").innerHTML = ""
             document.getElementById("mainpage").innerHTML = this.responseText
             if (page == "calculator") {
