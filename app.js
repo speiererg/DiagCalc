@@ -723,9 +723,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
             calculated_diag = calculated_diag + input_value_loop
             if (input_value_loop != "") { calculated_diag = calculated_diag + " " }
-            calculated_SNOMED = calculated_SNOMED + SNOMED_value_loop
             if (SNOMED_value_loop != "") { calculated_SNOMED.push(SNOMED_value_loop)}
-            calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD.push(ICD_value_loop)}
             if (array_modifier_isMain[i0] == 0 && input_modifier_loop != "") { calculated_modifier.push(input_modifier_loop) }
         }
