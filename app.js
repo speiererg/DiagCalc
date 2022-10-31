@@ -1,3 +1,4 @@
+/*
 // ***************************** App Parameters *****************************
 const autocomplete_items = 50
 
@@ -207,7 +208,7 @@ function findOne_Calculator_mongoDB(id, version) {
 }
 
 function testMongoDB() {
-    /*var xmlhttp = new XMLHttpRequest();
+    var xmlhttp = new XMLHttpRequest();
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
@@ -219,7 +220,7 @@ function testMongoDB() {
     xmlhttp.open("POST", "mongodb/test.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
-*/
+
 }
 
 function deleteAllMongoDB() {
