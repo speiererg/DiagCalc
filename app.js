@@ -710,7 +710,6 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         let calculated_SNOMED
         let calculated_ICD
         for (let i0 = 0; i0 < array_calculator_inputs_modifierNbr; i0++) {
-    console.log(array_inputs_value[i0][array_iterate[i0]])
             let input_value_loop = `${array_inputs_value[i0][array_iterate[i0]]} `
             let SNOMED_value_loop = `${array_SNOMED_value[i0][array_iterate[i0]]}`
             let ICD_value_loop = `${array_ICD_value[i0][array_iterate[i0]]}`
@@ -719,6 +718,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
             if (SNOMED_value_loop != "") { calculated_SNOMED = calculated_SNOMED + ";" }
             calculated_ICD = calculated_ICD + ICD_value_loop
             if (ICD_value_loop != "") { calculated_ICD = calculated_ICD + ";" }
+            console.log(calculated_diag)
 
         }
 
