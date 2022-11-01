@@ -502,7 +502,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     input_checkbox.setAttribute('type', 'checkbox')
     input_checkbox.setAttribute('value', true)
     input_checkbox.setAttribute('id', `checkbox_input_${modifier_nbr_new}`)
-    input_checkbox.setAttribute('class', `input_checkbox input_disabled`)
+    input_checkbox.setAttribute('class', `input_checkbox`)
     input_checkbox.setAttribute('form', `form_saveMongoDB`);
     input_checkbox.setAttribute('name', `checkbox_input_${modifier_nbr_new}`)
     let column_input_checkbox = document.createElement('td')
@@ -515,7 +515,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let input_multiple_checkbox = document.createElement('input');
     input_multiple_checkbox.setAttribute('type', 'checkbox')
     input_multiple_checkbox.setAttribute('id', `checkbox_multiple_input_${modifier_nbr_new}`)
-    input_multiple_checkbox.setAttribute('class', `input_checkbox input_disabled`)
+    input_multiple_checkbox.setAttribute('class', `input_checkbox`)
     input_multiple_checkbox.setAttribute('value', true)
     input_multiple_checkbox.setAttribute('name', `checkbox_multiple_input_${modifier_nbr_new}`)
     input_multiple_checkbox.setAttribute('form', `form_saveMongoDB`);
