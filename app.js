@@ -788,7 +788,8 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
     }
     
-
+    document.getElementById('button_edit_calculator').style.visibility = "inline";
+    document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
     disable_input(true)
     printing_calculator_output(output_array)
