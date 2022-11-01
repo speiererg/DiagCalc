@@ -58,6 +58,7 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
+    console.log(window.location.search)
 
     if (paramsPHP) { } else { paramsPHP = '' }
     let targetpage
@@ -72,6 +73,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             if (page == "calculator") {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
+                var output_array = []
                 loading_page_calculator(paramsJS)
 
                 $(function () {
@@ -697,11 +699,11 @@ function click_calculate() {
         array_calculator.unshift(array_calculator[0] * array_inputs_itemNbr[i - 1])
     }
 
-    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain,array_inputs_itemNbr);
+    calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain, array_inputs_itemNbr);
 }
 
 
-function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain,array_inputs_itemNbr) {
+function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain, array_inputs_itemNbr) {
     let output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
@@ -727,15 +729,15 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
             calculated_diag = calculated_diag + input_value_loop
             if (input_value_loop != "") { calculated_diag = calculated_diag + " " }
-            if (SNOMED_value_loop != "") { calculated_SNOMED.push(SNOMED_value_loop)}
-            if (ICD_value_loop != "") { calculated_ICD.push(ICD_value_loop)}
+            if (SNOMED_value_loop != "") { calculated_SNOMED.push(SNOMED_value_loop) }
+            if (ICD_value_loop != "") { calculated_ICD.push(ICD_value_loop) }
             if (array_modifier_isMain[i0] == 0 && input_modifier_loop != "") { calculated_modifier.push(input_modifier_loop) }
         }
 
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD,calculated_modifier])
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier])
 
 
         // Array Calculation
@@ -759,13 +761,40 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     printing_calculator_output(output_array)
 }
 
+function creating_XML(output_array) {
+    let XML_output = XML_beginn
+
+    output_array.forEach((element) => {
+        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+    })
+
+    document.getElementById('input_hidden_XML_output').value = XML_output
+
+    // finalize XML
+    XML_output = XML_output + XML_End
+    document.getElementById('input_XML').value = XML_output
+    return XML_output
+}
+
+function creating_TXT(output_array) {
+    let TXT_output = TXT_beginn
+
+    output_array.forEach((element) => {
+        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+    })
+
+    document.getElementById('input_hidden_TXT_output').value = TXT_output
+
+    // finalize TXT
+    document.getElementById('input_TXT').value = TXT_output
+    return TXT_output
+
+}
+
 function printing_calculator_output(output_array) {
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
 
-    // create XML/TXT
-    var XML_output = XML_beginn
-    var TXT_output = TXT_beginn
 
     output_array.forEach((element) => {
 
@@ -792,27 +821,18 @@ function printing_calculator_output(output_array) {
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
 
 
-        // Append to XML
-        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
 
-        //Append to Txt
-        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
 
 
     })
 
     // update hidden input for Database save
-    document.getElementById('input_hidden_XML_output').value = XML_output
-    document.getElementById('input_hidden_TXT_output').value = TXT_output
+
     document.getElementById('input_hidden_array_output').value = JSON.stringify(output_array)
 
 
-    // finalize XML
-    XML_output = XML_output + XML_End
-    document.getElementById('input_XML').value = XML_output
 
-    // finalize TXT
-    document.getElementById('input_TXT').value = TXT_output
+
 
     //update total count
     document.getElementById('total_count').style.display = "block"
