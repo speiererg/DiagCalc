@@ -71,13 +71,13 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 </td><td>
 <form name="form" action="download/download_XML.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_XML" value="" >
-                <input type="submit" name="button1"  class="button_download" value="Download as XML" />
+                <input type="submit" name="button1"  class="button_download" id = "button_download_XML" value="Download as XML" />
               </form>
              <p>
             
               <form name="form" action="download/download_TXT.php" method="POST">
                 <input type="hidden" name="input_TXT" id="input_TXT" value="" >
-                <input type="submit" name="button2"  class="button_download" value="Download as TXT" />
+                <input type="submit" name="button2"  class="button_download" id="button_download_TXT" value="Download as TXT" />
               </form>
               </td>
               <td>
