@@ -146,16 +146,21 @@ function disable_input(toDo) {
     let DOM_disabled = document.getElementsByClassName('input_disabled')
     Array.prototype.forEach.call(DOM_disabled, (element) => { element.disabled = toDo })
     let DOM_checkbox = document.getElementsByClassName('input_checkbox')
+    let DOM_radio = document.getElementsByClassName('radio_input')
+
    
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "none" })
         Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "none"})
+        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "none"})
 
     } else if (toDo == false) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "inline" })
         Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "auto"})
+        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "auto"})
+
     }
 
 }
@@ -454,7 +459,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let input_radio = document.createElement('input');
     input_radio.setAttribute('type', 'radio')
     input_radio.setAttribute('name', `radio_input`)
-    input_radio.setAttribute('class', 'radio_input input_readonly')
+    input_radio.setAttribute('class', 'radio_input')
     input_radio.setAttribute('value', modifier_nbr_new)
     input_radio.setAttribute('id', `radio_input_${modifier_nbr_new}`)
     input_radio.setAttribute('form', `form_saveMongoDB`);
