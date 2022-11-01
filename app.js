@@ -295,7 +295,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
     document.getElementById('select_version').innerHTML = ""
 
-    output_array = (results_findOne['output_array'])
+    output_array = results_findOne['output_array']
 
     // Create version
     for (let i = 1; i <= results_findOne['lastVersion']; i++) {
