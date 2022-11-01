@@ -379,7 +379,7 @@ function edit_calculator() {
     versionOption.value = neueVersion
     versionOption.appendChild(document.createTextNode(`Version ${neueVersion}`))
     document.getElementById('select_version').appendChild(versionOption)
-    //disable button from selected radio
+    /* //disable button from selected radio
     for (let i = 1; i < modifier_nbr; i++) {
         if (document.getElementById(`radio_input_${i}`).checked == true) { document.getElementById(`radio_input_0`).click(); document.getElementById(`radio_input_${i}`).click(); }
         if (document.getElementById(`checkbox_multiple_input_${i}`).checked == true) {
@@ -388,6 +388,7 @@ function edit_calculator() {
             document.getElementById(`checkbox_input_${i}`).disabled = false
         }
     }
+    */
 }
 
 
