@@ -7,9 +7,7 @@ if (!isset($_SESSION['loggedin'])) {
 }
   require '../vendor/autoload.php';
   require '../../conf/connect.php';
-  $client = new MongoDB\Client("'mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority'");
-
-  //$client = new MongoDB\Client('mongodb+srv://speiererg:guichsp2004Pi@cluster0.lhafb.mongodb.net/?retryWrites=true&w=majority');
+  $client = new MongoDB\Client('mongodb+srv://'.$DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
 
 
