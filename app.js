@@ -788,7 +788,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
     }
     
-    document.getElementById('button_edit_calculator').disabled = true
+    document.getElementById('button_edit_calculator').disabled = false
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
     disable_input(true)
