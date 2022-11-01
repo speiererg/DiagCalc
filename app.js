@@ -802,7 +802,7 @@ function printing_calculator_output(output_array) {
     // update hidden input for Database save
     document.getElementById('input_hidden_XML_output').value = XML_output
     document.getElementById('input_hidden_TXT_output').value = XML_output
-    document.getElementById('input_hidden_array_output').value = XML_output
+    document.getElementById('input_hidden_array_output').value = JSON.stringify(output_array)
 
 
     // finalize XML
