@@ -19,7 +19,7 @@
 .navtop div {
 	display: flex;
 	margin: 0 auto;
-	width: 60%;
+	width: 50%;
 	height: 100%;
 }
 .navtop div h1, .navtop div a {
