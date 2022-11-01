@@ -58,7 +58,7 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
-    console.log(window.location.search)
+    console.log(transformToAssocArray(window.location.search))
 
     if (paramsPHP) { } else { paramsPHP = '' }
     let targetpage
@@ -169,6 +169,16 @@ function loadXML_ICD() {
         }
     }
     console.log('loading ICD')
+}
+
+function transformToAssocArray( prmstr ) {
+    var params = {};
+    var prmarr = prmstr.split("&");
+    for ( var i = 0; i < prmarr.length; i++) {
+        var tmparr = prmarr[i].split("=");
+        params[tmparr[0]] = tmparr[1];
+    }
+    return params;
 }
 // *****************************   MongoDB Tools   *****************************
 
