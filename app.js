@@ -143,16 +143,22 @@ function modifierSub_nbr_change(change, number) {
 function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })
-    DOM_readonly = document.getElementsByClassName('input_disabled')
-    Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
+    DOM_disabled = document.getElementsByClassName('input_disabled')
+    Array.prototype.forEach.call(DOM_disabled, (element) => { element.disabled = toDo })
+    DOM_checkbox = document.getElementsByClassName('input_checkbox')
+    
 
+
+   
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "none" })
+        Array.prototype.forEach.call(DOM_readonly, (element) => { element.style.pointerEvents = "none"})
 
     } else if (toDo == false) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "inline" })
+        Array.prototype.forEach.call(DOM_readonly, (element) => { element.style.pointerEvents = "auto"})
     }
 
 }
