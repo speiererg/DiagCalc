@@ -292,7 +292,7 @@ function importing_calculator(results_findOne) {
     document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
     document.getElementById('select_version').innerHTML = ""
 
-    console.log(results_findOne['output_array'])
+    output_array = (results_findOne['output_array'])
 
     // Create version
     for (let i = 1; i <= results_findOne['lastVersion']; i++) {
@@ -344,6 +344,7 @@ function importing_calculator(results_findOne) {
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
     disable_input(true)
+    printing_calculator_output(output_array)
 }
 
 function edit_calculator() {
@@ -816,19 +817,16 @@ function printing_calculator_output(output_array) {
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
 
-
     output_array.forEach((element) => {
 
         EDG_id_iterate++
         EDG_id_iterate_nbr++
-
 
         let row_output_calculator = document.createElement('tr')
         let row_output_EDGId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
-
 
         row_output_EDGId_column.appendChild(document.createTextNode(`MedSP_TERM_${EDG_id_iterate}`));
         row_output_calculator_column.appendChild(document.createTextNode(element[0]));
@@ -840,20 +838,10 @@ function printing_calculator_output(output_array) {
         row_output_calculator.appendChild(row_output_calculator_SNOMED_column)
         row_output_calculator.appendChild(row_output_calculator_ICD_column)
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
-
-
-
-
-
     })
 
     // update hidden input for Database save
-
     document.getElementById('input_hidden_array_output').value = JSON.stringify(output_array)
-
-
-
-
 
     //update total count
     document.getElementById('total_count').style.display = "block"
