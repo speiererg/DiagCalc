@@ -815,11 +815,13 @@ function creating_TXT(output_array_f) {
 
 }
 
-function printing_calculator_output(output_array) {
+function printing_calculator_output(output_array_f) {
+    console.log(output_array)
+    console.log(output_array_f)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
 
-    output_array.forEach((element) => {
+    output_array_f.forEach((element) => {
 
         EDG_id_iterate++
         EDG_id_iterate_nbr++
