@@ -175,7 +175,6 @@ function loadXML_ICD() {
             array_ICD10.push(`${XML_list[i].getElementsByTagName('name')[0].innerHTML}:: ${XML_list[i].getElementsByTagName('desc')[0].innerHTML}`)
         }
     }
-    console.log('loading ICD')
 }
 
 function transformToAssocArray(prmstr) {
@@ -353,8 +352,6 @@ function importing_calculator(results_findOne) {
 
     disable_input(true)
 
-    console.log(results_findOne['output_array'])
-    console.log(output_array)
     printing_calculator_output(output_array)
 }
 
@@ -797,6 +794,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
     disable_input(true)
+    console.log(output_array)
     printing_calculator_output(output_array)
 }
 
@@ -831,8 +829,6 @@ function creating_TXT(output_array_f) {
 }
 
 function printing_calculator_output(output_array_f) {
-    console.log(output_array)
-    console.log(output_array_f)
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
     var EDG_id_iterate_nbr = 0
 
