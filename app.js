@@ -308,7 +308,12 @@ function importing_calculator(results_findOne) {
     document.getElementById('input_last_version').value = results_findOne['lastVersion']
 
     //desactivate edit if not last version
-    if (results_findOne['version'] != results_findOne['lastVersion']) { document.getElementById('button_edit_calculator').disabled = true }
+    if (results_findOne['version'] != results_findOne['lastVersion']) {
+         document.getElementById('button_edit_calculator').disabled = true 
+         document.getElementById('button_download_TXT').disabled = true 
+         document.getElementById('button_download_TXT').disabled = true 
+
+        }
 
 
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
