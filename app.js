@@ -58,6 +58,14 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
+
+    if (window.location.search){
+        let GET_object = transformToAssocArray(window.location.search)
+        if (Object.property(GET_object)[0] == 'calculator'){
+            page = 'calculator'
+            paramsPHP = `calculator_id=${Object.values(GET_object)[0]}&version=${Object.values(GET_object)[1]}`
+        }
+    }
     console.log(transformToAssocArray(window.location.search))
 
     if (paramsPHP) { } else { paramsPHP = '' }
