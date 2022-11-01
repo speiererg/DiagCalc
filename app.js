@@ -61,6 +61,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
     if (window.location.search) {                                        //test if GET Parameters are passed
         let GET_object = transformToAssocArray(window.location.search)
+        window.location.replace('index.php')
         if (Object.keys(GET_object)[0] == 'calculator') {
             page = 'calculator'
             paramsPHP = `calculator_id=${Object.values(GET_object)[0]}&version=${Object.values(GET_object)[1]}`
