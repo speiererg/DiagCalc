@@ -13,7 +13,13 @@ if (!isset($_SESSION['loggedin'])) {
 
 
 
+  echo $_POST['array_output'];
+  $array_output = json_decode($_POST['array_output']);
+  echo gettype($array_output);
+
 $mainName = ucfirst($_POST['input_maindiagnose']);
+
+
 
 $inputs_output = array();
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
@@ -153,5 +159,5 @@ $insertOneResult = $collection->insertOne([
 
 
 
- header('Location: ../index.php?calculator='.$calculator_id);
+ //header('Location: ../index.php?calculator='.$calculator_id);
 ?>
