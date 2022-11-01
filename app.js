@@ -265,6 +265,7 @@ function deleteAllMongoDB() {
 function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
+    document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = true
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
@@ -356,6 +357,7 @@ function importing_calculator(results_findOne) {
 function edit_calculator() {
     confirmBeforeNavigate = 1
     document.getElementById('button_edit_calculator').style.visibility = "hidden";
+    document.getElementById('button_calculate').disabled = false;
     document.getElementById('button_download_TXT').disabled = true;
     document.getElementById('button_download_XML').disabled = true;
 
