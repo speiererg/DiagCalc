@@ -14,6 +14,8 @@ var array_inputs_itemNbr = [];
 var array_calculator = [];
 var array_hiden_ID = "";
 
+var output_array = []
+
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
@@ -80,7 +82,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             if (page == "calculator") {
                 modifier_nbr = 1
                 modifierSub_nbr = 1
-                var output_array = []
+                output_array = []
                 loading_page_calculator(paramsJS)
 
                 $(function () {
@@ -726,7 +728,7 @@ function click_calculate() {
 
 
 function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain, array_inputs_itemNbr) {
-    let output_array = []
+    output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
 
@@ -783,10 +785,10 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     printing_calculator_output(output_array)
 }
 
-function creating_XML(output_array) {
+function creating_XML(output_array_f) {
     let XML_output = XML_beginn
 
-    output_array.forEach((element) => {
+    output_array_f.forEach((element) => {
         XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
     })
 
@@ -798,10 +800,10 @@ function creating_XML(output_array) {
     return XML_output
 }
 
-function creating_TXT(output_array) {
+function creating_TXT(output_array_f) {
     let TXT_output = TXT_beginn
 
-    output_array.forEach((element) => {
+    output_array_f.forEach((element) => {
         TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
     })
 
