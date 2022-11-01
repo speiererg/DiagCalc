@@ -80,7 +80,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               </form>
               </td>
               <td>
-            <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
+            <button class="btn btn-1 hover-filled-slide-right" id="button_calculate">Calculate</button>
                   </td>
               <td>
               <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
