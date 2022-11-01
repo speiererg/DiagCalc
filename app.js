@@ -346,6 +346,7 @@ function importing_calculator(results_findOne) {
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
     disable_input(true)
+    console.log(output_array)
     printing_calculator_output(output_array)
 }
 
