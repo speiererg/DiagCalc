@@ -25,8 +25,8 @@ var array_ICD10 = []
 function loadingIndex() {
     changePage('index')
 
-    /*
-    setTimeout(loadXML_ICD, 2000)
+
+    setTimeout(loadXML_ICD, 1500)
 
     $(document).keypress(
         function (event) {
@@ -34,7 +34,6 @@ function loadingIndex() {
                 event.preventDefault();
             }
         });
-        */
 }
 
 function addEventListener() {
