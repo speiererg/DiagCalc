@@ -150,6 +150,7 @@ $insertOneResult = $collection->insertOne([
    'inputs' => $inputs_output,
    'SNOMED' => $SNOMED_output,
    'ICD' => $ICD_output,
+   'output_array' => $array_output,
    'parameters' => $parameters_output,
    'XML_output' => $_POST['XML_output'],
    
