@@ -59,14 +59,13 @@ function changePage(page, paramsPHP, paramsJS) {
 
 function changePageExecute(page, paramsPHP, paramsJS) {
 
-    if (window.location.search){
+    if (window.location.search) {                                        //test if GET Parameters are passed
         let GET_object = transformToAssocArray(window.location.search)
-        if (Object.property(GET_object)[0] == 'calculator'){
+        if (Object.keys(GET_object)[0] == 'calculator') {
             page = 'calculator'
             paramsPHP = `calculator_id=${Object.values(GET_object)[0]}&version=${Object.values(GET_object)[1]}`
         }
     }
-    console.log(transformToAssocArray(window.location.search))
 
     if (paramsPHP) { } else { paramsPHP = '' }
     let targetpage
@@ -179,10 +178,10 @@ function loadXML_ICD() {
     console.log('loading ICD')
 }
 
-function transformToAssocArray( prmstr ) {
+function transformToAssocArray(prmstr) {
     var params = {};
     var prmarr = prmstr.substring(1).split("&");
-    for ( var i = 0; i < prmarr.length; i++) {
+    for (var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
         params[tmparr[0]] = tmparr[1];
     }
