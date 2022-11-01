@@ -11,9 +11,7 @@ session_start();
 
 
 
-  echo $_POST['array_output'];
   $array_output = json_decode($_POST['array_output']);
-  echo gettype($array_output);
 
 $mainName = ucfirst($_POST['input_maindiagnose']);
 
