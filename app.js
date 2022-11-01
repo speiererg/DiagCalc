@@ -173,7 +173,7 @@ function loadXML_ICD() {
 
 function transformToAssocArray( prmstr ) {
     var params = {};
-    var prmarr = prmstr.split("&");
+    var prmarr = prmstr.substring(1).split("&");
     for ( var i = 0; i < prmarr.length; i++) {
         var tmparr = prmarr[i].split("=");
         params[tmparr[0]] = tmparr[1];
