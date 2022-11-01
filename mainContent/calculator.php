@@ -66,9 +66,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
             <p>
               <table>
                 <tr>
-                  <td>
-            <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
-</td><td>
+
+            <td>
 <form name="form" action="download/download_XML.php" method="POST">
                 <input type="hidden" name="input_XML" id="input_XML" value="" >
                 <input type="submit" name="button1"  class="button_download" id = "button_download_XML" value="Download as XML" />
@@ -80,6 +79,9 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
                 <input type="submit" name="button2"  class="button_download" id="button_download_TXT" value="Download as TXT" />
               </form>
               </td>
+              <td>
+            <button class="btn btn-1 hover-filled-slide-right" id="button_calculate"><span>Calculate</span></button>
+                  </td>
               <td>
               <form id="form_saveMongoDB" action="mongodb/add_calculator.php" method="POST">
               <input type="hidden" name="new_calculator" id="input_hidden_new_calculator" value="1" >

@@ -147,7 +147,6 @@ function disable_input(toDo) {
     DOM_readonly = document.getElementsByClassName('input_disabled')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.disabled = toDo })
 
-    button_save_calculator.disabled = toDo
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
@@ -266,6 +265,7 @@ function deleteAllMongoDB() {
 function loading_page_calculator(paramsJS) {
     document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
+    document.getElementById('button_save_calculator').disabled = true
     document.getElementById('button_calculate').addEventListener('click', click_calculate)
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('', '') })
@@ -785,7 +785,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
     }
-    console.log(output_array)
+    
+
+    document.getElementById('button_save_calculator').disabled = false
     printing_calculator_output(output_array)
 }
 
