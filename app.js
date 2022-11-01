@@ -356,7 +356,7 @@ function importing_calculator(results_findOne) {
 
 function edit_calculator() {
     confirmBeforeNavigate = 1
-    document.getElementById('button_edit_calculator').style.visibility = "hidden";
+    document.getElementById('button_edit_calculator').disabled = true;
     document.getElementById('button_calculate').disabled = false;
     document.getElementById('button_download_TXT').disabled = true;
     document.getElementById('button_download_XML').disabled = true;
@@ -788,7 +788,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
     }
     
-    document.getElementById('button_edit_calculator').style.visibility = "block";
+    document.getElementById('button_edit_calculator').disabled = true
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
     disable_input(true)
