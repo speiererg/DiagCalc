@@ -58,7 +58,7 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
-
+console.log(window.location.search)
     if (window.location.search) {                                        //test if GET Parameters are passed
         let GET_object = transformToAssocArray(window.location.search)
         window.location.replace('index.php')
