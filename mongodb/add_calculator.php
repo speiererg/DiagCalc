@@ -91,7 +91,7 @@ $insertOneResult2 = $collection2->insertOne([
 $inputs_array = array();
 $SNOMED_array = array();
 $ICD_array = array();
-$modifiers_array = array()
+$modifiers_array = array();
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $select_ID = "select_input_{$i}";
    $radio_ID = "radio_input";
