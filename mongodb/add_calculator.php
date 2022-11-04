@@ -53,7 +53,7 @@ $cursor_lastModifierId = $collection_lastModifierId->findOne(
 
 if ($cursor_lastModifierId->modifier_id)
 {
-   $lastModifierId = $cursor_lastId->modifier_id;
+   $lastModifierId = intval($cursor_lastId->modifier_id);
 }else{
    $lastModifierId = 0;
 }
@@ -197,7 +197,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    }else{
       $modifier_id = $_POST[$modifier_id_name];
    }
-
+echo $modifier_id;
    $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id , 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
