@@ -17,6 +17,9 @@ $deleteResult = $collection->deleteMany(array());
 $collection2 = $client->DiagCalc_Calculators->Index;
 $deleteResult = $collection2->deleteMany(array());
 
+$collection2 = $client->DiagCalc_Calculators->Modifiers;
+$deleteResult = $collection2->deleteMany(array());
+
 echo 'delete all'
   ?>
 
