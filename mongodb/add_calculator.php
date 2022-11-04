@@ -15,48 +15,7 @@ session_start();
 
 $mainName = ucfirst($_POST['input_maindiagnose']);
 
-
-
-$inputs_output = array();
-for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
-   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
-      $input_ID = "input{$i}_{$k}";
-      $inputs_output = array_merge($inputs_output, array("input{$i}_{$k}" => $_POST[$input_ID]));
-   }
-}
-
-$SNOMED_output = array();
-for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
-   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
-      $inputSNOMED_ID = "inputSNOMED{$i}_{$k}";
-      $SNOMED_output = array_merge($SNOMED_output, array("inputSNOMED{$i}_{$k}" => $_POST[$inputSNOMED_ID]));
-   }
-}
-
-$ICD_output = array();
-for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
-   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
-      $inputICD_ID = "inputICD{$i}_{$k}";
-      $ICD_output = array_merge($ICD_output, array("inputICD{$i}_{$k}" => $_POST[$inputICD_ID]));
-   }
-}
-
-
-
-$parameters_output = array();
-for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
-      $select_ID = "select_input_{$i}";
-      $radio_ID = "radio_input";
-      $checkbox_ID = "checkbox_input_{$i}";
-      $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
-
-      $parameters_output = array_merge($parameters_output, array(
-         $select_ID => $_POST[$select_ID],
-         $radio_ID => $_POST[$radio_ID],
-         $checkbox_ID => $_POST[$checkbox_ID],
-         $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]));
-}
-
+[idDiag,idModifier,name,modifierSubNbr,[NYHA I,NYHA II,NYHA III],[SNOMED1,SNOMED2,SNOMED3],[ICD1,ICD2,ICD3]]
 
 date_default_timezone_set("Europe/Paris");
 $time = date("d.m.Y h:i:sa");
@@ -64,8 +23,6 @@ $calculator_id = $_POST['calculator_id'];
 
 
 $collection_lastId = $client->DiagCalc_Calculators->Calculators;
-// $id = $_POST['id'];
-// $version = $_POST['version'];
 
 $cursor_lastId = $collection_lastId->findOne(
     array(),
@@ -75,7 +32,8 @@ $cursor_lastId = $collection_lastId->findOne(
         'limit' => 1
         )
 );
-echo $_POST['calculator_id'];
+
+
 if ($_POST['calculator_id'] == null){
    echo 'egal null';
    $lastId = $cursor_lastId->calculator_id;
@@ -131,9 +89,32 @@ $insertOneResult2 = $collection2->insertOne([
    );
 };
 
-echo 'lastId :'.$lastId;
-$collection = $client->DiagCalc_Calculators->Calculators;
+//calculate the modifier Array
+$inputs_array = array();
+$SNOMED_array = array();
+$ICD_array = array();
+$modifiers_array = array()
+for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
+   $select_ID = "select_input_{$i}";
+   $radio_ID = "radio_input";
+   $checkbox_ID = "checkbox_input_{$i}";
+   $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
+   for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
+      $inputs_array = array_merge($inputs_array, array("input{$i}_{$k}" => $_POST[$input_ID]));
+      $SNOMED_array = array_merge($SNOMED_array, array("inputSNOMED{$i}_{$k}" => $_POST[$inputSNOMED_ID]));
+      $ICD_array = array_merge($ICD_array, array("inputICD{$i}_{$k}" => $_POST[$inputICD_ID]));
+   }
+   $parameters_output = array(
+      $radio_ID => $_POST[$radio_ID],
+      $select_ID => $_POST[$select_ID],
+      $checkbox_ID => $_POST[$checkbox_ID],
+      $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]);
 
+   $modifiers_array = array_merge($modifiers_array, array(intval($lastId),'modifierId','modifiername', intval($_POST['modifier_nbr']),intval($_POST['modifierSub_nbr']),$input_array,$SNOMED_array,$ICD_array,$parameters_output))
+}
+
+//Inserting the Calculators in Calculators
+$collection = $client->DiagCalc_Calculators->Calculators;
 $insertOneResult = $collection->insertOne([
  
    'calculator_id' => intval($lastId),
@@ -145,9 +126,7 @@ $insertOneResult = $collection->insertOne([
    'EDG_id' => intval($EDGId),
    'created_Time' => $time,
    'created_timestamp' => time(),
-   'inputs' => $inputs_output,
-   'SNOMED' => $SNOMED_output,
-   'ICD' => $ICD_output,
+   'modifiers' => $modifiers_array,
    'output_array' => $array_output,
    'parameters' => $parameters_output,
    'XML_output' => $_POST['XML_output'],
