@@ -233,8 +233,8 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_findOne = JSON.parse(this.responseText);
-            importing_calculator(results_findOne)
             console.log(results_findOne)
+            importing_calculator(results_findOne)
         }
     };
     xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
