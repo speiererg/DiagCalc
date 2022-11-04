@@ -348,12 +348,6 @@ function importing_calculator(results_findOne) {
     modifierSub_nbr_target = results_findOne['modifierSub_nbr'] - 1
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
 
-    //Update inputs
-    /*
-    let inputs_Submodifier = Object.entries(results_findOne['inputs'])
-    let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
-    let inputs_ICD = Object.entries(results_findOne['ICD'])
-*/
     let modifiers_array = results_findOne['modifiers']
     console.log(modifiers_array)
     console.log(modifiers_array[0])
