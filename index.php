@@ -32,6 +32,9 @@ if (!isset($_SESSION['loggedin'])) {
     <div>
       <a id="navPageHome">Main - Index</a>
       <a id="navPageCalculator">New Calculator</a>
+      <a id="navPageMappingUpdate">Mapping Update</a>
+      <a id="navPageModifierManagment">Modifiers Managment</a>
+
       <!--
                <a id="navPageTest">TestMongoDB</a>
             <a id="navPageDelete">Delete all</a>

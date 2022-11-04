@@ -19,7 +19,7 @@
 .navtop div {
 	display: flex;
 	margin: 0 auto;
-	width: 40%;
+	width: 50%;
 	height: 100%;
 }
 .navtop div h1, .navtop div a {
@@ -104,15 +104,6 @@ vertical-align: middle;
   padding: 0px;
   margin: 0px;
 }
-
-#sidebar {
-  flex: 40%;
-  background-color: #f1f1f1;
-  margin: 30px;
-  margin-right: 50px;
-  padding: 20px;
-}
-
 
 /* --------   Content Table Design ----------- */
 
