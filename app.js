@@ -96,6 +96,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 });
 
                 // if New Calculator
+                console.log(paramsJS)
                 if (paramsJS == "newCalculator") {
                     console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
