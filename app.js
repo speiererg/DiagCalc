@@ -349,18 +349,23 @@ function importing_calculator(results_findOne) {
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
 
     //Update inputs
+    /*
     let inputs_Submodifier = Object.entries(results_findOne['inputs'])
     let inputs_SNOMED = Object.entries(results_findOne['SNOMED'])
     let inputs_ICD = Object.entries(results_findOne['ICD'])
+*/
+    let modifiers_array = results_findOne['modifiers']
+console.log(modifiers_array)
+console.log(modifiers_array[i-1])
+console.log(modifiers_array[i-1]['modifier_array'])
 
-
-    for (i = 0; i < inputs_Submodifier.length; i++) {
-        document.getElementById(inputs_Submodifier[i][0]).value = inputs_Submodifier[i][1]
-        document.getElementById(inputs_SNOMED[i][0]).value = inputs_SNOMED[i][1]
-        document.getElementById(inputs_ICD[i][0]).value = inputs_ICD[i][1]
+for(i=1; i< results_findOne['modifier_nbr'];i++){
+    for (k=1;k<=results_findOne['modifierSub_nbr'],k++){
+        document.getElementById(`input${i}_${k}`).value = modifiers_array[i-1]['modifier_array'][k-1]
+        document.getElementById(`inputSNOMED${i}_${k}`).value = modifiers_array[i-1]['SNOMED_array'][k-1]
+        document.getElementById(`inputICD${i}_${k}`).value = modifiers_array[i-1]['ICD_array'][k-1]
     }
-
-
+}
 
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
