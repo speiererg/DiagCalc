@@ -478,6 +478,8 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_modifier_id.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
     document.getElementById('tr_input_modifier_id').appendChild(column_input_modifier_id)
     document.getElementById(`td_input_modifier_id_${modifier_nbr_new}`).dataset.modifierId = 'new'
+    document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
+
 
 
     // Create Modifier Title
@@ -493,7 +495,6 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_title.appendChild(input_title)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
-    document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
 
 
 
@@ -522,7 +523,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_radio.appendChild(document.createTextNode("Main"))
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
     document.getElementById(`radio_input_${modifier_nbr_new}`).dataset.id = modifier_nbr_new
-    
+
     // Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
