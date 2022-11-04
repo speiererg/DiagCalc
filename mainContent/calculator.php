@@ -47,7 +47,12 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
     <td>
       <table id="table_input">
       <tr id="tr_input_modifier_id">
-          <td id="td_input_modifier_id_1" class="td_modifier_id"> Modifier-Id:1 </td>
+          <td id="td_input_modifier_id_1" class="td_modifier_id"> Modifier X
+          <input type="hidden" name="input_modifier_id_1" id="input_modifier_id_1" value="">
+
+
+          </td>
+
         </tr>
         <tr id="tr_input_title">
           <td id="td_input_modifier_title_1"> <input type="text" id="input_modifier_title1" name="input_modifier_title1" value="Modifier 1" class="input_title input_readonly"
