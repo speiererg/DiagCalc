@@ -189,7 +189,16 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       )
    );
 
-   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'modifier_id' => 'modifierId', 'modifier_name' => 'modifiername', 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
+   $modifier_id_name = "input_modifier_id_{$i}";
+   $modifier_mainName = "input_modifier_title_{$i}";
+
+   if($_POST[$modifier_id_name]==null){
+      $lastModifierId = $lastModifierId + 1; $modifier_id = $lastModifierId;
+   }else{
+      $modifier_id = $_POST[$modifier_id_name];
+   }
+
+   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'modifier_id' => $modifier_id , 'modifier_name' => $modifier_mainName, 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
 //Inserting the Calculators in Calculators
