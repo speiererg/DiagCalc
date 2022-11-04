@@ -97,6 +97,9 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $radio_ID = "radio_input";
    $checkbox_ID = "checkbox_input_{$i}";
    $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
+   $inputs_array = [];
+   $SNOMED_array= [];
+   $ICD_array = [];
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
       $input_ID = "input{$i}_{$k}";
       $inputSNOMED_ID = "inputSNOMED{$i}_{$k}";
