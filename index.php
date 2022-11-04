@@ -16,8 +16,8 @@ if (!isset($_SESSION['loggedin'])) {
   <link rel="stylesheet" href="design.css">
   <link rel="stylesheet" href="jQuery/jquery-ui.css">
   <link rel="icon" type="image/png" href="img/logo.png" />
- 
-   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
+
+  <script language="JavaScript" type="text/javascript" src="jQuery/jQuery3.js"></script>
   <script language="JavaScript" type="text/javascript" src="jQuery/jQuery-ui.js"></script>
 
 </head>
@@ -25,27 +25,28 @@ if (!isset($_SESSION['loggedin'])) {
 <body>
 
   <div id="header">
-    <div>DiagCalc by <img src="img/logo.png" width="100px" style="vertical-align:middle"/></div>
+    <div>DiagCalc by <img src="img/logo.png" width="100px" style="vertical-align:middle" /></div>
   </div>
 
   <nav class="navtop">
-					<div>
-            <a id="navPageHome">Main - Index</a>
-            <a id="navPageCalculator">New Calculator</a>
-            <!--
+    <div>
+      <a id="navPageHome">Main - Index</a>
+      <a id="navPageCalculator">New Calculator</a>
+      <!--
                <a id="navPageTest">TestMongoDB</a>
             <a id="navPageDelete">Delete all</a>
             -->
-            <a href="https://browser.ihtsdotools.org/multi-extension-search.html" target="_blank" rel="noopener noreferrer">SNOMED Browser</a>
-            <a href="https://icd.who.int/browse10/2019/en#/" target="_blank" rel="noopener noreferrer">ICD-10 Browser</a>
-            <a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-					</div>
-				</nav>
+      <a href="https://browser.ihtsdotools.org/multi-extension-search.html" target="_blank"
+        rel="noopener noreferrer">SNOMED Browser</a>
+      <a href="https://icd.who.int/browse10/2019/en#/" target="_blank" rel="noopener noreferrer">ICD-10 Browser</a>
+      <a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+    </div>
+  </nav>
 
 
 
 
-  
+
   <div id="maincontent">
     <div id="mainpage">
     </div>
@@ -57,7 +58,8 @@ if (!isset($_SESSION['loggedin'])) {
 
 
   <script src="var.js"></script>
- <script src="app.js"></script>
+  <script src="app.js"></script>
 
 </body>
+
 </html>
