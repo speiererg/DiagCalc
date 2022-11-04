@@ -66,7 +66,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               form="form_saveMongoDB" data-id="1">Main</td>
         </tr>
         <tr id="tr_input_checkbox">
-          <td><input type="checkbox" name="checkbox_input_1" id="checkbox_input_1" class="input_checkbox" checked
+          <td><input type="checkbox" name="checkbox_input_1" id="checkbox_input_1" class="input_checkbox"
               form="form_saveMongoDB" value="true">Not required</td>
         </tr>
         <tr id="tr_input_multiple_checkbox">
