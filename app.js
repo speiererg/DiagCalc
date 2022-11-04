@@ -484,14 +484,12 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
-
     let input_title = document.createElement('input')
     column_input_title.setAttribute('id', `td_input_modifier_title_${modifier_nbr_new}`);
     input_title.setAttribute('id', `input_modifier_title${modifier_nbr_new}`);
     input_title.setAttribute('name', `input_modifier_title${modifier_nbr_new}`);
     input_title.setAttribute('value', `Modifier ${modifier_nbr_new}`)
     input_title.setAttribute('class', 'input_title input_readonly')
-    column_input_title.appendChild(insert_column_image)
     column_input_title.appendChild(input_title)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
