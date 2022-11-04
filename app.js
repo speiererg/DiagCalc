@@ -474,7 +474,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_modifier_id.setAttribute('class', 'td_modifier_id')
     column_input_modifier_id.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
     
-    let span_modifier_id = document.createElement('input')
+    let span_modifier_id = document.createElement('span')
     span_modifier_id.setAttribute('id',`span_modifier_id_${modifier_nbr_new}`)
     span_modifier_id.appendChild(document.createTextNode(`Modifier Id: X`))
 
