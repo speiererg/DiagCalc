@@ -100,6 +100,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_calculate').disabled = false
+                    document.getElementById('button_edit_calculator').disabled = true 
+                    document.getElementById('button_download_XML').disabled = true 
+                    document.getElementById('button_download_TXT').disabled = true 
                     confirmBeforeNavigate = 1
 
 
