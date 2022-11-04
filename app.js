@@ -354,8 +354,8 @@ function importing_calculator(results_findOne) {
     console.log(modifiers_array[0]['modifier_array'])
 
     for (i = 1; i <= results_findOne['modifier_nbr']; i++) {
-        document.getElementById(`td_input_modifier_id_1${i}`).innerHTML = `Modifier Id: ${modifiers_array[i - 1]['modifier_id']}`
-        document.getElementById(`input_modifier_id_1${i}`).value = modifiers_array[i - 1]['modifier_id']
+        document.getElementById(`td_input_modifier_id_${i}`).innerHTML = `Modifier Id: ${modifiers_array[i - 1]['modifier_id']}`
+        document.getElementById(`input_modifier_id_${i}`).value = modifiers_array[i - 1]['modifier_id']
         document.getElementById(`input_modifier_title_${i}`).value = modifiers_array[i - 1]['modifier_name']
 
         for (k = 1; k <= results_findOne['modifierSub_nbr']; k++) {
