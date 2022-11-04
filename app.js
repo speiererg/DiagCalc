@@ -96,7 +96,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 });
 
                 // if New Calculator
-                console.log(paramsJS)
+                console.log(paramsJSa)
                 if (paramsJS == "newCalculator") {
                     console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
@@ -369,6 +369,7 @@ function importing_calculator(results_findOne) {
 
 function edit_calculator() {
     confirmBeforeNavigate = 1
+    console.log('test edit')
     document.getElementById('button_edit_calculator').disabled = true;
     document.getElementById('button_calculate').disabled = false;
     document.getElementById('button_save_calculator').disabled = true
