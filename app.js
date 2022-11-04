@@ -100,9 +100,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_calculate').disabled = false
-                    document.getElementById('button_edit_calculator').disabled = true 
-                    document.getElementById('button_download_XML').disabled = true 
-                    document.getElementById('button_download_TXT').disabled = true 
+                    document.getElementById('button_edit_calculator').disabled = true
+                    document.getElementById('button_download_XML').disabled = true
+                    document.getElementById('button_download_TXT').disabled = true
                     confirmBeforeNavigate = 1
 
 
@@ -152,18 +152,18 @@ function disable_input(toDo) {
     let DOM_checkbox = document.getElementsByClassName('input_checkbox')
     let DOM_radio = document.getElementsByClassName('radio_input')
 
-   
+
     let img_button_class = document.getElementsByClassName('img_button')
 
     if (toDo == true) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "none" })
-        Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "none"})
-        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "none"})
+        Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "none" })
+        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "none" })
 
     } else if (toDo == false) {
         Array.prototype.forEach.call(img_button_class, (element) => { element.style.display = "inline" })
-        Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "auto"})
-        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "auto"})
+        Array.prototype.forEach.call(DOM_checkbox, (element) => { element.style.pointerEvents = "auto" })
+        Array.prototype.forEach.call(DOM_radio, (element) => { element.style.pointerEvents = "auto" })
 
     }
 
@@ -322,11 +322,11 @@ function importing_calculator(results_findOne) {
     //desactivate edit if not last version
     if (results_findOne['version'] != results_findOne['lastVersion']) {
         console.log('test')
-         document.getElementById('button_edit_calculator').disabled = true 
-         document.getElementById('button_download_XML').disabled = true 
-         document.getElementById('button_download_TXT').disabled = true 
+        document.getElementById('button_edit_calculator').disabled = true
+        document.getElementById('button_download_XML').disabled = true
+        document.getElementById('button_download_TXT').disabled = true
 
-        }
+    }
 
 
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
@@ -355,17 +355,17 @@ function importing_calculator(results_findOne) {
     let inputs_ICD = Object.entries(results_findOne['ICD'])
 */
     let modifiers_array = results_findOne['modifiers']
-console.log(modifiers_array)
-console.log(modifiers_array[i-1])
-console.log(modifiers_array[i-1]['modifier_array'])
+    console.log(modifiers_array)
+    console.log(modifiers_array[i - 1])
+    console.log(modifiers_array[i - 1]['modifier_array'])
 
-for(i=1; i< results_findOne['modifier_nbr'];i++){
-    for (k=1;k<=results_findOne['modifierSub_nbr'],k++){
-        document.getElementById(`input${i}_${k}`).value = modifiers_array[i-1]['modifier_array'][k-1]
-        document.getElementById(`inputSNOMED${i}_${k}`).value = modifiers_array[i-1]['SNOMED_array'][k-1]
-        document.getElementById(`inputICD${i}_${k}`).value = modifiers_array[i-1]['ICD_array'][k-1]
+    for (i = 1; i < results_findOne['modifier_nbr']; i++) {
+        for (k = 1; k <= results_findOne['modifierSub_nbr'], k++) {
+            document.getElementById(`input${i}_${k}`).value = modifiers_array[i - 1]['modifier_array'][k - 1]
+            document.getElementById(`inputSNOMED${i}_${k}`).value = modifiers_array[i - 1]['SNOMED_array'][k - 1]
+            document.getElementById(`inputICD${i}_${k}`).value = modifiers_array[i - 1]['ICD_array'][k - 1]
+        }
     }
-}
 
     if (results_findOne['parameters'][`radio_input`] != null) { document.getElementById(`radio_input_${results_findOne['parameters'][`radio_input`]}`).click() }
 
@@ -384,7 +384,7 @@ function edit_calculator() {
     document.getElementById('button_download_XML').disabled = true;
 
     disable_input(false)
-    
+
     let versionOption = document.createElement('option')
     versionOption.setAttribute('selected', 'true')
     let neueVersion = parseInt(document.getElementById('select_version').value) + 1
@@ -812,7 +812,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
     }
-    
+
     document.getElementById('button_edit_calculator').disabled = false
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
