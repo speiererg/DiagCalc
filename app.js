@@ -473,6 +473,8 @@ function addInputColumn(params_addColumn, id_insert_column) {
     input_modifier_id.setAttribute('id',`input_modifier_id_${modifier_nbr_new}`)
     input_modifier_id.setAttribute('name',`input_modifier_id_${modifier_nbr_new}`)
     input_modifier_id.setAttribute('value',null)
+    input_modifier_id.setAttribute('form', `form_saveMongoDB`);
+
 
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
@@ -496,6 +498,8 @@ function addInputColumn(params_addColumn, id_insert_column) {
     input_title.setAttribute('name', `input_modifier_title_${modifier_nbr_new}`);
     input_title.setAttribute('value', `Modifier ${modifier_nbr_new}`)
     input_title.setAttribute('class', 'input_title input_readonly')
+    input_title.setAttribute('form', `form_saveMongoDB`);
+
     column_input_title.appendChild(input_title)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
