@@ -30,7 +30,7 @@ if (!isset($_SESSION['loggedin'])) {
 
   <nav class="navtop">
     <div>
-      <a id="navPageHome">Main - Index</a>
+      <a id="navPageHome">Main Index</a>
       <a id="navPageCalculator">New Calculator</a>
       <a id="navPageMappingUpdate">Mapping Update</a>
       <a id="navPageModifierManagment">Modifiers Managment</a>

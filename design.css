@@ -257,6 +257,10 @@ vertical-align: middle;
   height: 25px;
 }
 
+.td_modifier_id{
+  font-size: 0.7em;
+  font-style:italic;
+}
 
 /* --------   Output Table Design ----------- */
 
