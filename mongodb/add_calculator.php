@@ -223,7 +223,7 @@ $insertOneResult = $collection->insertOne(
 
 $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 $insertOneResult = $collectionModifier->insertMany(
-   [$modifiers_array]
+   $modifiers_array
 );
 
 
