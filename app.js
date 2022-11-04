@@ -360,7 +360,7 @@ function importing_calculator(results_findOne) {
     console.log(modifiers_array[i - 1]['modifier_array'])
 
     for (i = 1; i < results_findOne['modifier_nbr']; i++) {
-        for (k = 1; k <= results_findOne['modifierSub_nbr'], k++) {
+        for (k = 1; k <= results_findOne['modifierSub_nbr']; k++) {
             document.getElementById(`input${i}_${k}`).value = modifiers_array[i - 1]['modifier_array'][k - 1]
             document.getElementById(`inputSNOMED${i}_${k}`).value = modifiers_array[i - 1]['SNOMED_array'][k - 1]
             document.getElementById(`inputICD${i}_${k}`).value = modifiers_array[i - 1]['ICD_array'][k - 1]
