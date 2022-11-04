@@ -97,6 +97,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
                 // if New Calculator
                 if (paramsJS == "newCalculator") {
+                    console.log('new Calculator')
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_edit_calculator').disabled = false
                     confirmBeforeNavigate = 1
