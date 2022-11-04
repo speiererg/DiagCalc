@@ -477,6 +477,11 @@ function addInputColumn(params_addColumn, id_insert_column) {
     document.getElementById('tr_input_radio').appendChild(column_input_radio)
     document.getElementById(`radio_input_${modifier_nbr_new}`).dataset.id = modifier_nbr_new
 
+    // Create Modifier ID
+    let column_input_modifier_id = document.createElement('td')
+    column_input_modifier_id.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
+    column_input_modifier_id.setAttribute('class', 'td_modifier_id')
+    document.getElementById('tr_input_modifier_id').appendChild(column_input_modifier_id)
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
@@ -484,11 +489,12 @@ function addInputColumn(params_addColumn, id_insert_column) {
     insert_column_image.src = "img/add.png"
     insert_column_image.setAttribute("class", "img_button")
     insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
-    let input_title_span = document.createElement('span')
-    input_title_span.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
-    input_title_span.setAttribute('class', 'input_title input_readonly')
+    let input_title = document.createElement('input')
+    input_input.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
+    input_title.setAttribute('value', `Modifier ${modifier_nbr_new}`)
+    input_title.setAttribute('class', 'input_title input_readonly')
     column_input_title.appendChild(insert_column_image)
-    column_input_title.appendChild(input_title_span)
+    column_input_title.appendChild(input_title)
 
     document.getElementById('tr_input_title').appendChild(column_input_title)
     document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
