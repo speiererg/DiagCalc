@@ -50,8 +50,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
           <td id="td_input_modifier_id_1" class="td_modifier_id"> Modifier-Id:1 </td>
         </tr>
         <tr id="tr_input_title">
-          <td> <input type="text" id="input1_1" name="input1_1" value="" class="input_modifier input_readonly input_title"
-              form="form_saveMongoDB" value="Herzinsuffizienz"></td>
+          <td> <input type="text" id="input_modifier_title1" name="input_modifier_title1" value="" class="input_modifier input_readonly input_title"
+              form="form_saveMongoDB"></td>
         </tr>
         <tr id="tr_input_separator">
           <td><select id="select_input_1" name="select_input_1" class="input_select input_disabled" disabled
