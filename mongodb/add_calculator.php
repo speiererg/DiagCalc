@@ -98,9 +98,16 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $checkbox_ID = "checkbox_input_{$i}";
    $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
    for ($k = 1; $k <= $_POST['modifierSub_nbr']; $k++) {
-      $inputs_array = array_merge($inputs_array, array("input{$i}_{$k}" => $_POST[$input_ID]));
-      $SNOMED_array = array_merge($SNOMED_array, array("inputSNOMED{$i}_{$k}" => $_POST[$inputSNOMED_ID]));
-      $ICD_array = array_merge($ICD_array, array("inputICD{$i}_{$k}" => $_POST[$inputICD_ID]));
+      $input_ID = "input{$i}_{$k}";
+      $inputSNOMED_ID = "inputSNOMED{$i}_{$k}";
+      $inputICD_ID = "inputICD{$i}_{$k}";
+      if ($_POST[$input_ID]==""){$output_input = null;}else{$output_input = $_POST[$input_ID];}
+      if ($_POST[$inputSNOMED_ID]==""){$output_SNOMED = null;}else{$output_SNOMED = $_POST[$inputSNOMED_ID];}
+      if ($_POST[$inputICD_ID]==""){$output_ICD = null;}else{$output_ICD = $_POST[$inputICD_ID];}
+
+      $inputs_array = array_merge($inputs_array, array($output_input));
+      $SNOMED_array = array_merge($SNOMED_array, array($output_SNOMED));
+      $ICD_array = array_merge($ICD_array, array($output_ICD));
    }
    $parameters_output = array(
       $radio_ID => $_POST[$radio_ID],
@@ -108,7 +115,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $checkbox_ID => $_POST[$checkbox_ID],
       $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]);
 
-   $modifiers_array = array_merge($modifiers_array, array(intval($lastId),'modifierId','modifiername', intval($_POST['modifier_nbr']),intval($_POST['modifierSub_nbr']),$input_array,$SNOMED_array,$ICD_array,$parameters_output));
+   $modifiers_array = array_push($modifiers_array, array(intval($lastId),'modifierId','modifiername', intval($_POST['modifier_nbr']),intval($_POST['modifierSub_nbr']),$inputs_array,$SNOMED_array,$ICD_array,$parameters_output));
 }
 
 //Inserting the Calculators in Calculators
