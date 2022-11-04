@@ -317,6 +317,7 @@ function importing_calculator(results_findOne) {
 
     //desactivate edit if not last version
     if (results_findOne['version'] != results_findOne['lastVersion']) {
+        console.log('test')
          document.getElementById('button_edit_calculator').disabled = true 
          document.getElementById('button_download_XML').disabled = true 
          document.getElementById('button_download_TXT').disabled = true 
