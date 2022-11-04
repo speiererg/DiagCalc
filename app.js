@@ -490,7 +490,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     insert_column_image.setAttribute("class", "img_button")
     insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
     let input_title = document.createElement('input')
-    input_input.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
+    input_title.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
     input_title.setAttribute('value', `Modifier ${modifier_nbr_new}`)
     input_title.setAttribute('class', 'input_title input_readonly')
     column_input_title.appendChild(insert_column_image)
