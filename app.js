@@ -462,20 +462,7 @@ function addInputRow() {
 function addInputColumn(params_addColumn, id_insert_column) {
     let modifier_nbr_new = modifier_nbr + 1
 
-    // Create radio
-    let input_radio = document.createElement('input');
-    input_radio.setAttribute('type', 'radio')
-    input_radio.setAttribute('name', `radio_input`)
-    input_radio.setAttribute('class', 'radio_input')
-    input_radio.setAttribute('value', modifier_nbr_new)
-    input_radio.setAttribute('id', `radio_input_${modifier_nbr_new}`)
-    input_radio.setAttribute('form', `form_saveMongoDB`);
-
-    let column_input_radio = document.createElement('td')
-    column_input_radio.appendChild(input_radio);
-    column_input_radio.appendChild(document.createTextNode("Main"))
-    document.getElementById('tr_input_radio').appendChild(column_input_radio)
-    document.getElementById(`radio_input_${modifier_nbr_new}`).dataset.id = modifier_nbr_new
+    
 
     // Create Modifier ID
     let column_input_modifier_id = document.createElement('td')
@@ -521,6 +508,21 @@ function addInputColumn(params_addColumn, id_insert_column) {
     column_input_select.appendChild(input_select)
     document.getElementById('tr_input_separator').appendChild(column_input_select)
 
+    // Create radio
+    let input_radio = document.createElement('input');
+    input_radio.setAttribute('type', 'radio')
+    input_radio.setAttribute('name', `radio_input`)
+    input_radio.setAttribute('class', 'radio_input')
+    input_radio.setAttribute('value', modifier_nbr_new)
+    input_radio.setAttribute('id', `radio_input_${modifier_nbr_new}`)
+    input_radio.setAttribute('form', `form_saveMongoDB`);
+
+    let column_input_radio = document.createElement('td')
+    column_input_radio.appendChild(input_radio);
+    column_input_radio.appendChild(document.createTextNode("Main"))
+    document.getElementById('tr_input_radio').appendChild(column_input_radio)
+    document.getElementById(`radio_input_${modifier_nbr_new}`).dataset.id = modifier_nbr_new
+    
     // Checkbox Not Required
     let input_checkbox = document.createElement('input');
     input_checkbox.setAttribute('type', 'checkbox')
