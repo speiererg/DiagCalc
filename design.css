@@ -262,6 +262,7 @@ vertical-align: middle;
 .td_modifier_id{
   font-size: 0.7em;
   font-style:italic;
+  vertical-align: bottom;
 }
 
 /* --------   Output Table Design ----------- */
