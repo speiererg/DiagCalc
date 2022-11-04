@@ -96,6 +96,8 @@ $inputs_array = array();
 $SNOMED_array = array();
 $ICD_array = array();
 $modifiers_array = array();
+$parameters_output_forMongo = array();
+
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
    $inputs_array = [];
@@ -125,18 +127,14 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $SNOMED_array = array_merge($SNOMED_array, array($output_SNOMED));
       $ICD_array = array_merge($ICD_array, array($output_ICD));
    }
-   $parameters_output_forMongo = array(
-      $radio_ID => $_POST[$radio_ID],
-      $select_ID => $_POST[$select_ID],
-      $checkbox_ID => $_POST[$checkbox_ID],
-      $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]
-   );
+
 
    if ($_POST[$radio_ID] == $i) {
       $radio_on = true;
    } else {
       $radio_on = false;
    }
+
    $parameters_output = array(
       'main' => $radio_on,
       'separator' => $_POST[$select_ID],
@@ -144,7 +142,6 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       'multiple' => $_POST[$checkbox_multiple_ID]
    );
 
-   $parameters_output_forMongo = array();
    for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $select_ID = "select_input_{$i}";
       $radio_ID = "radio_input";
