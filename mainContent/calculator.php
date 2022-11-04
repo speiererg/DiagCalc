@@ -55,7 +55,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
 
         </tr>
         <tr id="tr_input_title">
-          <td id="td_input_modifier_title_1"> <input type="text" id="input_modifier_title1" name="input_modifier_title1" value="Modifier 1" class="input_title input_readonly"
+          <td id="td_input_modifier_title_1"> <input type="text" id="input_modifier_title_1" name="input_modifier_title_1" value="Modifier 1" class="input_title input_readonly"
               form="form_saveMongoDB"></td>
         </tr>
         <tr id="tr_input_separator">
