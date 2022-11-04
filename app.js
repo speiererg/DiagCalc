@@ -479,19 +479,23 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
     // Create Modifier ID
     let column_input_modifier_id = document.createElement('td')
-    column_input_modifier_id.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
     column_input_modifier_id.setAttribute('class', 'td_modifier_id')
     column_input_modifier_id.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
+    
+    let insert_column_image = document.createElement('img')
+    insert_column_image.src = "img/add.png"
+    insert_column_image.setAttribute("class", "img_button")
+    insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
+    
+    column_input_modifier_id.appendChild(insert_column_image)
+    column_input_modifier_id.appendChild(document.createTextNode(`Modifier ${modifier_nbr_new}`))
     document.getElementById('tr_input_modifier_id').appendChild(column_input_modifier_id)
     document.getElementById(`td_input_modifier_id_${modifier_nbr_new}`).dataset.modifierId = 'new'
 
 
     // Create Modifier Title
     let column_input_title = document.createElement('td')
-    let insert_column_image = document.createElement('img')
-    insert_column_image.src = "img/add.png"
-    insert_column_image.setAttribute("class", "img_button")
-    insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
+
     let input_title = document.createElement('input')
     column_input_title.setAttribute('id', `td_input_modifier_title_${modifier_nbr_new}`);
     input_title.setAttribute('id', `input_modifier_title${modifier_nbr_new}`);
