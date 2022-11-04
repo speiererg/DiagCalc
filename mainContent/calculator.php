@@ -49,8 +49,6 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
       <tr id="tr_input_modifier_id">
           <td id="td_input_modifier_id_1" class="td_modifier_id"> Modifier X
           <input type="hidden" name="input_modifier_id_1" id="input_modifier_id_1" value="" form="form_saveMongoDB">
-
-
           </td>
 
         </tr>
