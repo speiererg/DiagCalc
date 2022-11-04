@@ -474,7 +474,6 @@ function addInputColumn(params_addColumn, id_insert_column) {
     input_modifier_id.setAttribute('type', 'hidden')
     input_modifier_id.setAttribute('id',`input_modifier_id_${modifier_nbr_new}`)
     input_modifier_id.setAttribute('name',`input_modifier_id_${modifier_nbr_new}`)
-    input_modifier_id.setAttribute('value',null)
     input_modifier_id.setAttribute('form', `form_saveMongoDB`);
 
 
