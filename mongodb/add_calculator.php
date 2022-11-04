@@ -51,9 +51,10 @@ $cursor_lastModifierId = $collection_lastModifierId->findOne(
    )
 );
 
+echo $cursor_lastModifierId->modifier_id;
 if ($cursor_lastModifierId->modifier_id)
 {
-   $lastModifierId = intval($cursor_lastId->modifier_id);
+   $lastModifierId = intval($cursor_lastModifierId->modifier_id);
 }else{
    $lastModifierId = 0;
 }
