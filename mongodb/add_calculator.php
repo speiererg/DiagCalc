@@ -221,6 +221,10 @@ $insertOneResult = $collection->insertOne(
    ]
 );
 
+$collectionModifier = $client->DiagCalc_Calculators->Modifiers;
+$insertOneResult = $collectionModifier->insertMany(
+   [$modifiers_array]
+);
 
 
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
