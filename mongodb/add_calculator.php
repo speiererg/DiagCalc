@@ -15,8 +15,6 @@ session_start();
 
 $mainName = ucfirst($_POST['input_maindiagnose']);
 
-[idDiag,idModifier,name,modifierSubNbr,[NYHA I,NYHA II,NYHA III],[SNOMED1,SNOMED2,SNOMED3],[ICD1,ICD2,ICD3]]
-
 date_default_timezone_set("Europe/Paris");
 $time = date("d.m.Y h:i:sa");
 $calculator_id = $_POST['calculator_id'];
