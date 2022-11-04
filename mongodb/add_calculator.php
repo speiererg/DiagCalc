@@ -108,7 +108,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $checkbox_ID => $_POST[$checkbox_ID],
       $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]);
 
-   $modifiers_array = array_merge($modifiers_array, array(intval($lastId),'modifierId','modifiername', intval($_POST['modifier_nbr']),intval($_POST['modifierSub_nbr']),$input_array,$SNOMED_array,$ICD_array,$parameters_output))
+   $modifiers_array = array_merge($modifiers_array, array(intval($lastId),'modifierId','modifiername', intval($_POST['modifier_nbr']),intval($_POST['modifierSub_nbr']),$input_array,$SNOMED_array,$ICD_array,$parameters_output));
 }
 
 //Inserting the Calculators in Calculators
