@@ -472,6 +472,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     input_modifier_id.setAttribute('type', 'hidden')
     input_modifier_id.setAttribute('id',`input_modifier_id_${modifier_nbr_new}`)
     input_modifier_id.setAttribute('name',`input_modifier_id_${modifier_nbr_new}`)
+    input_modifier_id.setAttribute('value',null)
 
     let insert_column_image = document.createElement('img')
     insert_column_image.src = "img/add.png"
@@ -479,11 +480,10 @@ function addInputColumn(params_addColumn, id_insert_column) {
     insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
     
     column_input_modifier_id.appendChild(insert_column_image)
-    column_input_modifier_id.appendChild(document.createTextNode(`Modifier Id: ${modifier_nbr_new}`))
+    column_input_modifier_id.appendChild(document.createTextNode(`Modifier Id: X`))
     column_input_modifier_id.appendChild(input_modifier_id)
 
     document.getElementById('tr_input_modifier_id').appendChild(column_input_modifier_id)
-    document.getElementById(`td_input_modifier_id_${modifier_nbr_new}`).dataset.modifierId = 'new'
     document.getElementById(`img_button_insert_column${modifier_nbr_new}`).addEventListener('click', () => { addInputColumn('', modifier_nbr_new) })
 
 
