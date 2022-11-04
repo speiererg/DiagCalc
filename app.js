@@ -354,9 +354,7 @@ function importing_calculator(results_findOne) {
     console.log(modifiers_array[0]['modifier_array'])
 
     for (i = 1; i <= results_findOne['modifier_nbr']; i++) {
-        console.log(`input_modifier_id_${i}`)
-        console.log(modifiers_array[i - 1]['modifier_id'])
-        document.getElementById(`td_input_modifier_id_${i}`).innerHTML = `Modifier Id: ${modifiers_array[i - 1]['modifier_id']}`
+        document.getElementById(`span_modifier_id_${i}`).innerHTML = `Modifier Id: ${modifiers_array[i - 1]['modifier_id']}`
         document.getElementById(`input_modifier_id_${i}`).value = modifiers_array[i - 1]['modifier_id']
         document.getElementById(`input_modifier_title_${i}`).value = modifiers_array[i - 1]['modifier_name']
 
@@ -475,6 +473,12 @@ function addInputColumn(params_addColumn, id_insert_column) {
     let column_input_modifier_id = document.createElement('td')
     column_input_modifier_id.setAttribute('class', 'td_modifier_id')
     column_input_modifier_id.setAttribute('id', `td_input_modifier_id_${modifier_nbr_new}`);
+    
+    let span_modifier_id = document.createElement('input')
+    span_modifier_id.setAttribute('id',`span_modifier_id_${modifier_nbr_new}`)
+    span_modifier_id.appendChild(document.createTextNode(`Modifier Id: X`))
+
+
     let input_modifier_id = document.createElement('input')
     input_modifier_id.setAttribute('type', 'hidden')
     input_modifier_id.setAttribute('id',`input_modifier_id_${modifier_nbr_new}`)
@@ -489,7 +493,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
     insert_column_image.setAttribute("id", `img_button_insert_column${modifier_nbr_new}`)
     
     column_input_modifier_id.appendChild(insert_column_image)
-    column_input_modifier_id.appendChild(document.createTextNode(`Modifier Id: X`))
+    column_input_modifier_id.appendChild(span_modifier_id)
     column_input_modifier_id.appendChild(input_modifier_id)
 
     document.getElementById('tr_input_modifier_id').appendChild(column_input_modifier_id)
