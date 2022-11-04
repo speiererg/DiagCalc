@@ -274,6 +274,7 @@ function deleteAllMongoDB() {
 
 
 function loading_page_calculator(paramsJS) {
+    document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_hidden_modifier_nbr').value = modifier_nbr
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
     document.getElementById('button_calculate').disabled = true
@@ -299,7 +300,6 @@ function loading_page_calculator(paramsJS) {
 
 function importing_calculator(results_findOne) {
     console.log(results_findOne)
-    document.getElementById('button_edit_calculator').addEventListener('click', () => { edit_calculator() })
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_EDG_id').value = results_findOne['EDG_id']
