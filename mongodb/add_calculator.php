@@ -19,7 +19,7 @@ date_default_timezone_set("Europe/Paris");
 $time = date("d.m.Y h:i:sa");
 $calculator_id = $_POST['calculator_id'];
 
-
+// Search for last Calculator Id 
 $collection_lastId = $client->DiagCalc_Calculators->Calculators;
 
 $cursor_lastId = $collection_lastId->findOne(
@@ -31,11 +31,40 @@ $cursor_lastId = $collection_lastId->findOne(
    )
 );
 
+if ($cursor_lastId->calculator_id)
+{
+   $lastFoundId = $cursor_lastId->calculator_id;
+}else{
+   $lastFoundId = 0;
+
+}
+
+
+// Search for last Modifier Id 
+$collection_lastModifierId = $client->DiagCalc_Calculators->Modifiers;
+$cursor_lastModifierId = $collection_lastModifierId->findOne(
+   array(),
+   array(
+      'projection' => array('modifier_id' => 1),
+      'sort' => array('modifier_id' => -1),
+      'limit' => 1
+   )
+);
+
+if ($cursor_lastModifierId->modifier_id)
+{
+   $lastModifierId = $cursor_lastId->modifier_id;
+}else{
+   $lastModifierId = 0;
+}
+
+echo 'Last found id' . $lastFoundId . '</br>';
+echo 'Last Modifier id'. $lastModifierId . '</br>';
+
 
 if ($_POST['calculator_id'] == null) {
    echo 'egal null';
-   $lastId = $cursor_lastId->calculator_id;
-   $lastId = $lastId + 1;
+   $lastId = $lastFoundId + 1;
 
    $str_length = 5;
    $EDGId = substr("00000{$lastId}", -$str_length);
@@ -159,7 +188,6 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
          $checkbox_multiple_ID => $_POST[$checkbox_multiple_ID]
       )
    );
-
 
    $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'modifier_id' => 'modifierId', 'modifier_name' => 'modifiername', 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
