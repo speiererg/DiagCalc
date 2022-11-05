@@ -885,7 +885,10 @@ function printing_calculator_output(output_array_f) {
 
 }
 
-/* ************************** Downloading/Creating XML+TXT *************************/
+/*           ************************** Downloading/Creating XML+TXT ************************      */
+
+
+
 function download_XML(){
 
 }
