@@ -56,9 +56,9 @@ if (!isset($_SESSION['loggedin'])) {
   </div>
 
 
-
-  <script src="var.js"></script>
-  <script src="app.js"></script>
+  <script src="js/download.js"></script>
+  <script src="js/var.js"></script>
+  <script src="js/app.js"></script>
 
 </body>
 
