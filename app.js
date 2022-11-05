@@ -284,6 +284,11 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('', '') })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
+    document.getElementById('button_download_XML').addEventListener('click', function(event) {download_XML()})    
+    document.getElementById('button_download_TXT').addEventListener('click', function(event) {download_TXT()})
+
+
+
     document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
         if (document.getElementById(`checkbox_multiple_input_1`).checked == true) {
             document.getElementById(`checkbox_input_1`).disabled = true
@@ -319,7 +324,7 @@ function importing_calculator(results_findOne) {
     }
     document.getElementById('input_last_version').value = results_findOne['lastVersion']
 
-    //desactivate edit if not last version
+    //desactivate edit/download XML+TXT if not last version
     if (results_findOne['version'] != results_findOne['lastVersion']) {
         console.log('test')
         document.getElementById('button_edit_calculator').disabled = true
@@ -842,35 +847,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     printing_calculator_output(output_array)
 }
 
-function creating_XML(output_array_f) {
-    let XML_output = XML_beginn
 
-    output_array_f.forEach((element) => {
-        XML_output = XML_output + createXML(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
-    })
-
-    document.getElementById('input_hidden_XML_output').value = XML_output
-
-    // finalize XML
-    XML_output = XML_output + XML_End
-    document.getElementById('input_XML').value = XML_output
-    return XML_output
-}
-
-function creating_TXT(output_array_f) {
-    let TXT_output = TXT_beginn
-
-    output_array_f.forEach((element) => {
-        TXT_output = TXT_output + createFlatFile(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
-    })
-
-    document.getElementById('input_hidden_TXT_output').value = TXT_output
-
-    // finalize TXT
-    document.getElementById('input_TXT').value = TXT_output
-    return TXT_output
-
-}
 
 function printing_calculator_output(output_array_f) {
     var EDG_id_iterate = document.getElementById('input_EDG_id').value
@@ -908,12 +885,51 @@ function printing_calculator_output(output_array_f) {
 
 }
 
+/* ************************** Downloading/Creating XML+TXT *************************/
+function download_XML(){
 
-function createFlatFile(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
+}
+
+function download_TXT(){
+
+}
+
+
+function creating_XML(output_array_f) {
+    let XML_output = XML_beginn
+
+    output_array_f.forEach((element) => {
+        XML_output = XML_output + createXMLRow(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+    })
+
+    document.getElementById('input_hidden_XML_output').value = XML_output
+
+    // finalize XML
+    XML_output = XML_output + XML_End
+    document.getElementById('input_XML').value = XML_output
+    return XML_output
+}
+
+function creating_TXT(output_array_f) {
+    let TXT_output = TXT_beginn
+
+    output_array_f.forEach((element) => {
+        TXT_output = TXT_output + createFlatFileRow(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+    })
+
+    document.getElementById('input_hidden_TXT_output').value = TXT_output
+
+    // finalize TXT
+    document.getElementById('input_TXT').value = TXT_output
+    return TXT_output
+
+}
+
+function createFlatFileRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
-function createXML(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
+function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
     return XML_temp = `            
     <ss:Row>
     <ss:Cell>
