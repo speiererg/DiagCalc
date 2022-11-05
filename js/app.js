@@ -29,7 +29,7 @@ function loadingIndex() {
         });
 }
 
-function addEventListener() {
+function addEventListenerByLoading() {
     document.getElementById('navPageHome').addEventListener('click', function () { changePage('home') })
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator', '', 'newCalculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
@@ -103,7 +103,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
-                addEventListener()
+                addEventListenerByLoading()
                 find_home_mongoDB()
             }
             if (page == "home") {
