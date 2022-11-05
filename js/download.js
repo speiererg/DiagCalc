@@ -2,17 +2,7 @@
 
 
 
-function download_XML() {
-    console.log('download XML')
-    if (output_array) {
-        creating_XML(output_array)
-        console.log(document.getElementById('button_download_XML_submit'))
-        document.getElementById('button_download_XML_submit').click()
 
-    } else {
-        alert('Please calculate the DiagCalc and save it once again before exporting')
-    }
-}
 
 async function download_TXT() {
     if (output_array) {
