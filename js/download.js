@@ -2,25 +2,27 @@
 
 
 
-function download_XML(){
+async function download_XML(){
     if(output_array){
-        creating_XML(output_array)
+        await creating_XML(output_array)
+        document.getElementById('button_download_XML_submit').click()
+
     }else{
         alert('Please calculate the DiagCalc and save it once again before exporting')
     }
     }
     
-    function download_TXT(){
+    async function download_TXT(){
         if(output_array){
-            creating_TXT(output_array)
-            document.getElementById('button_download_TXT_submit').addEventListener('')
+            await creating_TXT(output_array)
+            document.getElementById('button_download_TXT_submit').click()
         }else{
             alert('Please calculate the DiagCalc and save it once again before exporting')
         }
     }
     
     
-    function creating_XML(output_array_f) {
+    async function creating_XML(output_array_f) {
         let XML_output = XML_beginn
     
         output_array_f.forEach((element) => {
@@ -35,7 +37,7 @@ function download_XML(){
         return XML_output
     }
     
-    function creating_TXT(output_array_f) {
+    async function creating_TXT(output_array_f) {
         let TXT_output = TXT_beginn
     
         output_array_f.forEach((element) => {
