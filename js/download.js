@@ -3,6 +3,7 @@
 
 
 async function download_XML() {
+    console.log('download XML')
     if (output_array) {
         await creating_XML(output_array)
         document.getElementById('button_download_XML_submit').click()
