@@ -28,7 +28,7 @@ async function creating_XML(output_array_f) {
     let XML_output = XML_beginn
 
     output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`MedSp_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+        XML_output = XML_output + createXMLRow(`MedSp_Id_X`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
     })
 
     document.getElementById('input_hidden_XML_output').value = XML_output
@@ -43,7 +43,7 @@ async function creating_TXT(output_array_f) {
     let TXT_output = TXT_beginn
 
     output_array_f.forEach((element) => {
-        TXT_output = TXT_output + createFlatFileRow(`MedSP_Id_${EDG_id_iterate}`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+        TXT_output = TXT_output + createFlatFileRow(`MedSP_Id_X`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
     })
 
     document.getElementById('input_hidden_TXT_output').value = TXT_output
