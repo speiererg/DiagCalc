@@ -24,6 +24,7 @@ async function download_TXT() {
 
 
 async function creating_XML(output_array_f) {
+    console.log(output_array_f)
     let XML_output = XML_beginn
 
     output_array_f.forEach((element) => {
