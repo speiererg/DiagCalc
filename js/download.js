@@ -2,10 +2,10 @@
 
 
 
-async function download_XML() {
+function download_XML() {
     console.log('download XML')
     if (output_array) {
-        await creating_XML(output_array)
+        creating_XML(output_array)
         document.getElementById('button_download_XML_submit').click()
 
     } else {
@@ -23,7 +23,7 @@ async function download_TXT() {
 }
 
 
-async function creating_XML(output_array_f) {
+function creating_XML(output_array_f) {
     console.log(output_array_f)
     let XML_output = XML_beginn
 
