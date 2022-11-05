@@ -1,4 +1,5 @@
-
+var Code_Return = "&#10;"
+var Code_ModifierSeparator = "&#1;"
 
 var TXT_beginn = "##INI=EDG \n"
 

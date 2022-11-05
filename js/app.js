@@ -1,6 +1,4 @@
 
-// ***************************** App Parameters *****************************
-const autocomplete_items = 50
 
 
 
@@ -13,12 +11,7 @@ var array_inputs_value = [];
 var array_inputs_itemNbr = [];
 var array_calculator = [];
 var array_hiden_ID = "";
-
 var output_array = []
-
-var Code_Return = "&#10;"
-var Code_ModifierSeparator = "&#1;"
-
 var array_ICD10 = []
 
 // ***************************** Loading HOME  *****************************
