@@ -94,16 +94,17 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
           <td>
             <form name="form" action="download/download_XML.php" method="POST">
               <input type="hidden" name="input_XML" id="input_XML" value="">
-              <input type="submit" name="button1" class="button_download" id="button_download_XML"
-                value="Download as XML" />
+              <input type="button" class="button_download" id="button_download_XML"value="Download as XML" />
+              <input type="submit" name="button1" class="button_download" id="button_download_XML_Submit"value="Download as XML" style="display:none" />
             </form>
             <p>
 
 
             <form name="form" action="download/download_TXT.php" method="POST">
               <input type="hidden" name="input_TXT" id="input_TXT" value="">
-              <input type="submit" name="button2" class="button_download" id="button_download_TXT"
-                value="Download as TXT" />
+              <input type="button" class="button_download" id="button_download_TXT" value="Download as TXT" />
+              <input type="submit" name="button2" class="button_download" id="button_download_TXT_submit" value="Download as TXT" style="display:none"/>
+
             </form>
           </td>
           <td>
@@ -118,8 +119,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <input type="hidden" name="TXT_output" id="input_hidden_TXT_output" value="">
               <input type="hidden" name="array_output" id="input_hidden_array_output" value="">
 
-              <input type="submit" name="button2" id="button_save_calculator" class="button_download"
-                value="Save new Version" />
+              <input type="submit" name="button2" id="button_save_calculator" class="button_download" value="Save new Version" />
             </form>
           </td>
         </tr>
