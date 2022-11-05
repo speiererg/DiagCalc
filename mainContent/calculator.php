@@ -95,7 +95,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
             <form name="form" action="download/download_XML.php" method="POST">
               <input type="hidden" name="input_XML" id="input_XML" value="">
               <input type="button" class="button_download" id="button_download_XML"value="Download as XML" />
-              <input type="submit" name="button1" class="button_download" id="button_download_XML_Submit"value="Download as XML" style="display:none" />
+              <input type="submit" name="button1" class="button_download" id="button_download_XML_Submit" value="Download as XML"/>
             </form>
             <p>
 
