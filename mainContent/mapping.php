@@ -14,7 +14,7 @@ if (!isset($_SESSION['loggedin'])) {
 <button class="button_download" id ="button_concept_SNOMED_search">Search</button>
 <ul id="mapping_ul_SNOMED">
 </ul>
-<button class="button_download" id ="button_concept_SNOMED_remplace">Search</button>
+<button class="button_download" id ="button_concept_SNOMED_remplace">Remplace All</button>
 
 <p>
 <h2>Search ICD_Codes</h2>
