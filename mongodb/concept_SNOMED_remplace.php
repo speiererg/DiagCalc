@@ -19,6 +19,7 @@ $sPOSTRemplace = $_POST['remplace'];
 $cursor = $collection->updateMany(
     [],
     ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => $sPOSTRemplace ]],
+    ['$set' => ['updateMapping' => true ]],
     ['arrayFilters' => [["arraySNOMED" => $sPOSTConcept]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
