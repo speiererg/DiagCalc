@@ -111,6 +111,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
+                addEventListenerByLoading()
                 find_home_mongoDB()
             }
             if (page == "mapping") {
