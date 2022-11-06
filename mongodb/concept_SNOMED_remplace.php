@@ -16,14 +16,12 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->updateMany(
-  [
     [],
     ['$set' => ['modifiers.$[].SNOMED_array.$[array]' => 'test123' ]],
     ['$arrayFilters' => ['array' => [$sPOSTConcept]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
-  ]
 );
 
 /*
