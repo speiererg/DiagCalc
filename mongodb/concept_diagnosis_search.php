@@ -17,7 +17,7 @@ $sPOSTConcept = '"'.$_POST['concept'].'"';
 
 $cursor = $collection->aggregate(
   [
-    ['$match' => ['$text' =>['$search'=> $sPOSTConcept]]],
+    ['$match' => ['$text' =>['$search'=> 'Herz']]],
     ['$match' => ['$expr' =>['$eq'=> ['$version','$lastVersion']]]],
 
     //['$match' => ['modifiers.modifier_array' => ['$in'=> [$sPOSTConcept]]]],
