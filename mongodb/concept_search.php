@@ -16,7 +16,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->aggregate(
-  ['$match' => ['$in','123' ]]
+  ['$project' => ['$in','123' ]]
 );
 
 /*
