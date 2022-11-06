@@ -31,6 +31,7 @@ function find_SNOMED_concept_mongoDB(concept) {
     xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
+    return results_JSON
 }
 
 function mapping_diagnosis_search_onClick(){
