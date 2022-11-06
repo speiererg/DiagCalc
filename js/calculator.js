@@ -60,6 +60,12 @@ function importing_calculator(results_findOne) {
 
     }
 
+    if (results_findOne['updateMapping'] == true) {
+        alert('This DiagCalc received an update, please recalculate the Diag to be able to download the import files')
+        document.getElementById('button_download_XML').disabled = true
+        document.getElementById('button_download_TXT').disabled = true
+
+    }
 
     modifier_nbr_target = results_findOne['modifier_nbr'] - 1
     for (let l = 0; l < modifier_nbr_target; l++) {
