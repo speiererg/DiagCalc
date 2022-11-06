@@ -17,7 +17,7 @@ $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->aggregate(
   [
-    ['$match' => ['modifiers.0.SNOMED_array' => ['$in'=> ['654']]]],
+    ['$match' => ['modifiers..SNOMED_array' => ['$in'=> ['654']]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
