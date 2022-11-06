@@ -18,7 +18,7 @@ $sPOSTConcept = $_POST['concept'];
 $cursor = $collection->aggregate(
   [
     ['$match' => ['modifiers.modifier_array' => ['$in'=> [$sPOSTConcept]]]],
-    ['$match' => ['version' => '$.lastversion']],
+    ['$match' => ['$expr' =>['$eq'=>['version' => '$.lastversion']]]],
 
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
