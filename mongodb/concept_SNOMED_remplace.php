@@ -17,7 +17,7 @@ $sPOSTConcept = $_POST['concept'];
 $sPOSTRemplace = $_POST['remplace'];
 
 $cursor = $collection->updateMany(
-    [],
+    ['$expr' =>['$eq'=> ['$version','$lastVersion']]],
     ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => $sPOSTRemplace, 'updateMapping' => true ]],
     ['arrayFilters' => [["arraySNOMED" => $sPOSTConcept]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
