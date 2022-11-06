@@ -9,6 +9,9 @@ function loading_page_mapping(){
 function mapping_SNOMED_search_onClick(){
 let input_concept = document.getElementById('input_concept_SNOMED_search').value
 let output_SNOMED_Search = find_SNOMED_concept_mongoDB(input_concept)
+console.log(output_SNOMED_Search)
+console.log(output_SNOMED_Search[0])
+
 output_SNOMED_Search.forEach(element => {
 document.getElementById(mapping_ul_SNOMED).appendChild(mapping_create_li(`Id ${element['calculator_id']}: ${element['mainName']}`)) 
 });
