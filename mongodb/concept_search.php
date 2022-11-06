@@ -15,8 +15,8 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $sPOSTConcept = $_POST['concept'];
 
-$cursor = $collection->find(
-  array('modifiers.0.SNOMED_array',array('$in' , '123' ))
+$cursor = $collection->aggregate(
+  array('$match' , '123' )
 );
 
 /*
