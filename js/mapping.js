@@ -46,11 +46,13 @@ function find_diagnosis_concept_mongoDB(concept) {
 
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
-            document.getElementById('mapping_ul_diagnosis').appendChild(mapping_create_li(
-                `Id ${element['calculator_id']}: ${element['mainName']}`,
-                `index.php?calculator=${element['calculator_id']}&version=${element['version']}`
-            ))
-        });
+            results_JSON.forEach(element => {
+                document.getElementById('mapping_ul_diagnosis').appendChild(mapping_create_li(
+                    `Id ${element['calculator_id']}: ${element['mainName']}`,
+                    `index.php?calculator=${element['calculator_id']}&version=${element['version']}`
+                ))
+            })
+
         }
     };
     xmlhttp.open("POST", "mongodb/concept_diagnosis_search.php", true);
