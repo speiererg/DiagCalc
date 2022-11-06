@@ -13,6 +13,7 @@ var array_calculator = [];
 var array_hiden_ID = "";
 var output_array = []
 var array_ICD10 = []
+var reload = false
 
 // ***************************** Loading HOME  *****************************
 function loadingIndex() {
@@ -59,6 +60,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
         if (Object.keys(GET_object)[0] == 'calculator') {
             page = 'calculator'
             paramsPHP = `calculator_id=${Object.values(GET_object)[0]}&version=${Object.values(GET_object)[1]}`
+            reload = true
         }
     }
 
@@ -101,10 +103,14 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
 
                 } else { document.getElementById('input_hidden_new_calculator').value = 0 }
+
+                if (reload == true){
+                    addEventListenerByLoading()
+                    reload = false
+                }
             }
             if (page == "index") {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
-                addEventListenerByLoading()
                 find_home_mongoDB()
             }
             if (page == "mapping") {
