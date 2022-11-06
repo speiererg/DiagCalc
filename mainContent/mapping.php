@@ -14,6 +14,8 @@ if (!isset($_SESSION['loggedin'])) {
 <button class="button_download" id ="button_concept_SNOMED_search">Search</button>
 <ul id="mapping_ul_SNOMED">
 </ul>
+<input type="text" id="input_concept_SNOMED_remplace">
+
 <button class="button_download" id ="button_concept_SNOMED_remplace">Remplace All</button>
 
 <p>

@@ -14,11 +14,12 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $sPOSTConcept = $_POST['concept'];
+$sPOSTRemplace = $_POST['remplace'];
 
 $cursor = $collection->updateMany(
     [],
-    ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => 'test456' ]],
-    ['arrayFilters' => [["arraySNOMED" => $sPOSTConcepta]]],
+    ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => $sPOSTRemplace ]],
+    ['arrayFilters' => [["arraySNOMED" => $sPOSTConcept]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]

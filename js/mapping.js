@@ -38,12 +38,15 @@ function find_SNOMED_concept_mongoDB(concept) {
 
 function mapping_SNOMED_remplace_onClick() {
     let input_concept = document.getElementById('input_concept_SNOMED_search').value
-    remplace_SNOMED_concept_mongoDB(input_concept)
+    let remplace_concept = document.getElementById('input_concept_SNOMED_remplace').value
+
+    remplace_SNOMED_concept_mongoDB(input_concept,remplace_concept)
 }
 
-function remplace_SNOMED_concept_mongoDB(concept) {
+function remplace_SNOMED_concept_mongoDB(concept,remplace_concept) {
+    
     var xmlhttp = new XMLHttpRequest();
-    let params = `concept=${concept}`;
+    let params = `concept=${concept}&remplace=${remplace_concept}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
            
