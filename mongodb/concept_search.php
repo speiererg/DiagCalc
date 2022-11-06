@@ -14,7 +14,7 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $sPOSTConcept = $_POST['concept'];
-
+echo $sPOSTConcept;
 $cursor = $collection->aggregate(
   [
     ['$match' => ['modifiers.SNOMED_array' => ['$in'=> [$sPOSTConcept]]]],
