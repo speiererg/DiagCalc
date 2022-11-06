@@ -59,7 +59,7 @@ function importing_calculator(results_findOne) {
         document.getElementById('button_download_TXT').disabled = true
 
     }
-
+console.log(results_findOne['updateMapping'])
     if (results_findOne['updateMapping'] == true) {
         alert('This DiagCalc received an update, please recalculate the Diag to be able to download the import files')
         document.getElementById('button_download_XML').disabled = true
