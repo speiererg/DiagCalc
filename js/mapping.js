@@ -54,7 +54,7 @@ function remplace_SNOMED_concept_mongoDB(concept) {
             });
         }
     };
-    xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
+    xmlhttp.open("POST", "mongodb/concept_SNOMED_remplace.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
