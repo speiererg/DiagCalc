@@ -24,4 +24,5 @@ if (!isset($_SESSION['loggedin'])) {
 <input type="text" id="input_concept_diagnosis_search">
 <p>
 <button class="button_download" id ="button_concept_diagnosis_search">Search</button>
-<p>
+<ul id="mapping_ul_SNOMED">
+</ul>
