@@ -29,6 +29,12 @@ function find_SNOMED_concept_mongoDB(concept) {
                     `index.php?calculator=${element['calculator_id']}&version=${element['version']}`
                 ))
             });
+            if (this.responseText!=[           ]){
+                document.getElementById('input_concept_SNOMED_remplace').style.display="inline"
+                document.getElementById('button_concept_SNOMED_remplace').style.display="inline"
+
+                
+            }
         }
     };
     xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);

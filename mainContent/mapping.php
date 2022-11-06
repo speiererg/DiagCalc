@@ -8,15 +8,15 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <p>
 <h1 style="text-align:center;">Mapping managment</h1>
-<h2>Search SNOMED_Codes</h2>
-<input type="text" id="input_concept_SNOMED_search">
+<h2>Search SNOMED_Codes</h2> 
+<input type="text" id="input_concept_SNOMED_search" label="Search:">
 <p>
 <button class="button_download" id ="button_concept_SNOMED_search">Search</button>
 <ul id="mapping_ul_SNOMED">
 </ul>
-<input type="text" id="input_concept_SNOMED_remplace">
+<input type="text" id="input_concept_SNOMED_remplace" label="Remplace with:" style="display:none">
 
-<button class="button_download" id ="button_concept_SNOMED_remplace">Remplace All</button>
+<button class="button_download" id ="button_concept_SNOMED_remplace" style="display:none">Remplace All</button>
 
 <p>
 <h2>Search ICD_Codes</h2>
