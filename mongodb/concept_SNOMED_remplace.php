@@ -17,8 +17,8 @@ $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->updateMany(
     [],
-    ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => 'test123' ]],
-    ['arrayFilters' => [["arraySNOMED" => '123']]],
+    ['$set' => ['modifiers.$[].SNOMED_array.$[arraySNOMED]' => 'test456' ]],
+    ['arrayFilters' => [["arraySNOMED" => $sPOSTConcept]]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
@@ -30,7 +30,7 @@ $cursor = $collection->updateMany(
  echo "</pre>";
  */
 
-echo json_encode(iterator_to_array($cursor));
+//echo json_encode(iterator_to_array($cursor));
 
 ?>
 
