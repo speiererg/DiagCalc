@@ -16,7 +16,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->find(
-  array($in , 'Herzinsuffizienz' ),
+  array($in , '123' ),
   array(  )
 );
 
