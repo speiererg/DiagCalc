@@ -55,6 +55,7 @@ if (!isset($_SESSION['loggedin'])) {
   <div id="footer">
   </div>
 
+  <script src="js/mapping.js"></script>
   <script src="js/params.js"></script>
   <script src="js/calculator.js"></script>
   <script src="js/download.js"></script>

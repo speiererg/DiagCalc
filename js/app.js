@@ -34,6 +34,7 @@ function addEventListenerByLoading() {
     document.getElementById('navPageCalculator').addEventListener('click', function () { changePage('calculator', '', 'newCalculator') })
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
     document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
+    document.getElementById('navPageMappingUpdate').addEventListener('click', function () { changePage('mapping', '', '') })
 
 }
 
@@ -105,6 +106,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 addEventListenerByLoading()
                 find_home_mongoDB()
+            }
+            if (page == "mapping") {
+                loading_page_mapping()
             }
             if (page == "home") {
                 find_home_mongoDB()
