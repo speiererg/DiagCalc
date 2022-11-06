@@ -8,7 +8,10 @@ function loading_page_mapping(){
 
 function mapping_SNOMED_search_onClick(){
 let input_concept = document.getElementById('input_concept_SNOMED_search').value
-find_SNOMED_concept_mongoDB(input_concept)
+let output_SNOMED_Search = find_SNOMED_concept_mongoDB(input_concept)
+output_SNOMED_Search.array.forEach(element => {
+document.getElementById(mapping_ul_SNOMED).appendChild(mapping_create_li(`Id ${element['calculator_id']}: ${element['mainName']}`)) 
+});
 }
 
 function find_SNOMED_concept_mongoDB(concept) {
@@ -19,8 +22,8 @@ function find_SNOMED_concept_mongoDB(concept) {
             console.log(this.responseText)
 
             let results_JSON = JSON.parse(this.responseText);
-           console.log(results_JSON)
-
+            console.log(results_JSON)
+            return results_JSON
         }
     };
     xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
@@ -49,4 +52,16 @@ function mapping_diagnosis_search_onClick(){
         xmlhttp.open("POST", "mongodb/concept_diagnosis_search.php", true);
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp.send(params);
+    }
+
+
+    /* ************** Tools ******************** */
+
+    function mapping_create_li(name,URL){
+        let li = document.createElement('li')
+        let ahref= document.createElement('a')
+        ahref.setAttribute('href',URL)
+        ahref.appendChild(document.createTextNode(name))
+        li.appendChild(ahref)
+        return li;
     }

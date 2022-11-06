@@ -12,6 +12,8 @@ if (!isset($_SESSION['loggedin'])) {
 <input type="text" id="input_concept_SNOMED_search">
 <p>
 <button class="button_download" id ="button_concept_SNOMED_search">Search</button>
+<ul id="mapping_ul_SNOMED">
+</ul>
 <p>
 <h2>Search ICD_Codes</h2>
 <input type="text" id="input_concept_ICD_search">
