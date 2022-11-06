@@ -6,7 +6,7 @@ function loading_page_mapping(){
 
 function mapping_search_onClick(){
 let input_concept = document.getElementById('input_concept_search')
-find_allconcept_mongoDB(concept)
+find_allconcept_mongoDB(input_concept)
 }
 
 function find_allconcept_mongoDB(concept) {
