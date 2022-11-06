@@ -36,7 +36,7 @@ function mapping_diagnosis_search_onClick(){
     function find_diagnosis_concept_mongoDB(concept) {
         var xmlhttp = new XMLHttpRequest();
         let params = `concept=${concept}`;
-        console.log('params')
+        console.log(params)
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText)
