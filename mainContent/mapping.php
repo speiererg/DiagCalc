@@ -8,6 +8,18 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <p>
 <h1 style="text-align:center;">Mapping managment</h1>
-<input type="text" id="input_concept_search">
+<h2>Search SNOMED_Codes</h2>
+<input type="text" id="input_concept_SNOMED_search">
 <p>
-<button class="button_download" id ="button_concept_search">Search</button>
+<button class="button_download" id ="button_concept_SNOMED_search">Search</button>
+<p>
+<h2>Search ICD_Codes</h2>
+<input type="text" id="input_concept_ICD_search">
+<p>
+<button class="button_download" id ="button_concept_ICD_search">Search</button>
+<p>
+<h2>Search Diagnosis</h2>
+<input type="text" id="input_concept_diagnosis_search">
+<p>
+<button class="button_download" id ="button_concept_diagnosis_search">Search</button>
+<p>

@@ -1,15 +1,17 @@
 function loading_page_mapping(){
-    document.getElementById('button_concept_search').addEventListener('click', function(event){mapping_search_onClick(event)})
+    document.getElementById('button_concept_SNOMED_search').addEventListener('click', function(event){mapping_SNOMED_search_onClick(event)})
+    document.getElementById('button_concept_diagnosis_search').addEventListener('click', function(event){mapping_diagnosis_search_onClick(event)})
+
 }
 
 
 
-function mapping_search_onClick(){
-let input_concept = document.getElementById('input_concept_search').value
-find_allconcept_mongoDB(input_concept)
+function mapping_SNOMED_search_onClick(){
+let input_concept = document.getElementById('input_concept_SNOMED_search').value
+find_SNOMED_concept_mongoDB(input_concept)
 }
 
-function find_allconcept_mongoDB(concept) {
+function find_SNOMED_concept_mongoDB(concept) {
     var xmlhttp = new XMLHttpRequest();
     let params = `concept=${concept}`;
     xmlhttp.onreadystatechange = function () {
@@ -21,7 +23,29 @@ function find_allconcept_mongoDB(concept) {
 
         }
     };
-    xmlhttp.open("POST", "mongodb/concept_search.php", true);
+    xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
+
+function mapping_diagnosis_search_onClick(){
+    let input_concept = document.getElementById('input_concept_diagnosis_search').value
+    find_diagnosis_concept_mongoDB(input_concept)
+    }
+    
+    function find_diagnosis_concept_mongoDB(concept) {
+        var xmlhttp = new XMLHttpRequest();
+        let params = `concept=${concept}`;
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                console.log(this.responseText)
+    
+                let results_JSON = JSON.parse(this.responseText);
+               console.log(results_JSON)
+    
+            }
+        };
+        xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
+        xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+        xmlhttp.send(params);
+    }
