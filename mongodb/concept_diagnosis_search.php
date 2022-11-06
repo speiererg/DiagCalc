@@ -13,7 +13,7 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 
 $collection = $client->DiagCalc_Calculators->Calculators;
 
-$sPOSTConcept = $_POST['concept'];
+$sPOSTConcept = '"'.$_POST['concept'].'"';
 
 $cursor = $collection->aggregate(
   [
