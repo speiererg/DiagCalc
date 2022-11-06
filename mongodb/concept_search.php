@@ -20,7 +20,13 @@ $cursor = $collection->find(
   array(  )
 );
 
-echo json_encode(iterator_to_array($cursor));
+//*
+ echo "<pre>";
+ print_r($cursor);
+ echo "</pre>";
+ /*/
+
+//echo json_encode(iterator_to_array($cursor));
 
 ?>
 
