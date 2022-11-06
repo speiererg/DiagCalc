@@ -16,7 +16,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->find(
-  array('$in' , '1667573138' )
+  array('modifiers.0.SNOMED_array',array('$in' , '123' ))
 );
 
 /*
