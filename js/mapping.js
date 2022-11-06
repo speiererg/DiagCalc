@@ -54,7 +54,7 @@ function remplace_SNOMED_concept_mongoDB(concept, remplace_concept) {
     let params = `concept=${concept}&remplace=${remplace_concept}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-
+            find_SNOMED_concept_mongoDB(concept)
         }
     };
     xmlhttp.open("POST", "mongodb/concept_SNOMED_remplace.php", true);
