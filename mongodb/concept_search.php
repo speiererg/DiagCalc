@@ -16,7 +16,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->find(
-  array($in , array('123') )
+  array('$in' , array('123') )
 );
 
 /*
