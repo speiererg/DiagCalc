@@ -36,6 +36,7 @@ function mapping_diagnosis_search_onClick(){
     function find_diagnosis_concept_mongoDB(concept) {
         var xmlhttp = new XMLHttpRequest();
         let params = `concept=${concept}`;
+        console.log('params')
         xmlhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
                 console.log(this.responseText)
@@ -45,7 +46,7 @@ function mapping_diagnosis_search_onClick(){
     
             }
         };
-        xmlhttp.open("POST", "mongodb/concept_SNOMED_search.php", true);
+        xmlhttp.open("POST", "mongodb/concept_diagnosis_search.php", true);
         xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
         xmlhttp.send(params);
     }
