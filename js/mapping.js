@@ -21,7 +21,10 @@ function find_SNOMED_concept_mongoDB(concept) {
             results_JSON.forEach(element => {
                 console.log(element)
                 console.log(element['calculator_id'])
-                document.getElementById('mapping_ul_SNOMED').appendChild(mapping_create_li(`Id ${element['calculator_id']}: ${element['mainName']}`,''))
+                document.getElementById('mapping_ul_SNOMED').appendChild(mapping_create_li(
+                    `Id ${element['calculator_id']}: ${element['mainName']}`,
+                    `index.php?calculator=${element['calculator_id']}&version=${element['version']}`
+                ))
             });
         }
     };
