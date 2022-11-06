@@ -12,6 +12,7 @@ find_allconcept_mongoDB(input_concept)
 function find_allconcept_mongoDB(concept) {
     var xmlhttp = new XMLHttpRequest();
     let params = `concept=${concept}`;
+    console.log(params)
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
