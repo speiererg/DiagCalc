@@ -14,7 +14,9 @@ Search: <input type="text" id="input_concept_SNOMED_search" label="Search:">
 <button class="button_download" id ="button_concept_SNOMED_search">Search</button>
 <ul id="mapping_ul_SNOMED">
 </ul>
-Remplace with: <input type="text" id="input_concept_SNOMED_remplace" label="Remplace with:" style="display:none">
+<div id="div_concept_SNOMED_remplace" style="display:none">
+Remplace with: <input type="text" id="input_concept_SNOMED_remplace" label="Remplace with:" >
+</div>
 
 <button class="button_download" id ="button_concept_SNOMED_remplace" style="display:none">Remplace All</button>
 

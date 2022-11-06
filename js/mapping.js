@@ -31,7 +31,7 @@ function find_SNOMED_concept_mongoDB(concept) {
             });
             if (this.responseText != "[]") {
 
-                document.getElementById('input_concept_SNOMED_remplace').style.display = "inline"
+                document.getElementById('div_concept_SNOMED_remplace').style.display = "inline"
                 document.getElementById('button_concept_SNOMED_remplace').style.display = "inline"
             }
         }
