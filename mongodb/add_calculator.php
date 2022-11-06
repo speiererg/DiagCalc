@@ -216,6 +216,7 @@ $insertOneResult = $collection->insertOne(
       'output_array' => $array_output,
       'parameters' => $parameters_output_forMongo,
       'XML_output' => $_POST['XML_output'],
+      'updateMapping' => false
    ]
 );
 
