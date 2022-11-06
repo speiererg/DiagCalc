@@ -19,8 +19,7 @@ function find_SNOMED_concept_mongoDB(concept) {
     let params = `concept=${concept}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
-
+            //console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
             return results_JSON
@@ -63,5 +62,6 @@ function mapping_diagnosis_search_onClick(){
         ahref.setAttribute('href',URL)
         ahref.appendChild(document.createTextNode(name))
         li.appendChild(ahref)
+        console.log(li)
         return li;
     }
