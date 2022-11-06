@@ -17,7 +17,7 @@ $sPOSTConcept = $_POST['concept'];
 
 $cursor = $collection->aggregate(
   [
-    ['$match' => ['calculator_id' => '1']],
+    ['$match' => ['calculator_id' => 1]],
     //[ '$group' => ['_id' => ['day' => '$day'], 'n' => ['$sum' => 1]  ] ],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
