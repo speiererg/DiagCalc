@@ -1,9 +1,12 @@
 function loading_page_mapping() {
     document.getElementById('button_concept_SNOMED_search').addEventListener('click', function (event) { mapping_SNOMED_search_onClick(event) })
+    document.getElementById('button_concept_SNOMED_remplace').addEventListener('click', function (event) { mapping_SNOMED_remplace_onClick(event) })
+
     document.getElementById('button_concept_diagnosis_search').addEventListener('click', function (event) { mapping_diagnosis_search_onClick(event) })
 
 }
 
+/* ********************************** SNOMED ***************************************/
 
 
 function mapping_SNOMED_search_onClick() {
@@ -30,6 +33,15 @@ function find_SNOMED_concept_mongoDB(concept) {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
+
+function mapping_SNOMED_remplace_onClick() {
+    let input_concept = document.getElementById('input_concept_SNOMED_search').value
+    find_SNOMED_concept_mongoDB(input_concept)
+}
+
+
+/* ********************************** Diagnostic ***************************************/
+
 
 function mapping_diagnosis_search_onClick() {
     let input_concept = document.getElementById('input_concept_diagnosis_search').value
