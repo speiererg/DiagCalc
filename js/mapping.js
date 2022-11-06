@@ -21,7 +21,7 @@ function find_SNOMED_concept_mongoDB(concept) {
         if (this.readyState == 4 && this.status == 200) {
             //console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
-            document.getElementById('mapping_ul_SNOMED').innerHTML=""
+            document.getElementById('mapping_ul_SNOMED').innerHTML = ""
 
             results_JSON.forEach(element => {
                 document.getElementById('mapping_ul_SNOMED').appendChild(mapping_create_li(
@@ -29,11 +29,10 @@ function find_SNOMED_concept_mongoDB(concept) {
                     `index.php?calculator=${element['calculator_id']}&version=${element['version']}`
                 ))
             });
-            if (this.responseText!=[           ]){
-                document.getElementById('input_concept_SNOMED_remplace').style.display="inline"
-                document.getElementById('button_concept_SNOMED_remplace').style.display="inline"
+            if (this.responseText != "[]") {
 
-                
+                document.getElementById('input_concept_SNOMED_remplace').style.display = "inline"
+                document.getElementById('button_concept_SNOMED_remplace').style.display = "inline"
             }
         }
     };
@@ -46,16 +45,16 @@ function mapping_SNOMED_remplace_onClick() {
     let input_concept = document.getElementById('input_concept_SNOMED_search').value
     let remplace_concept = document.getElementById('input_concept_SNOMED_remplace').value
 
-    remplace_SNOMED_concept_mongoDB(input_concept,remplace_concept)
+    remplace_SNOMED_concept_mongoDB(input_concept, remplace_concept)
 }
 
-function remplace_SNOMED_concept_mongoDB(concept,remplace_concept) {
-    
+function remplace_SNOMED_concept_mongoDB(concept, remplace_concept) {
+
     var xmlhttp = new XMLHttpRequest();
     let params = `concept=${concept}&remplace=${remplace_concept}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-           
+
         }
     };
     xmlhttp.open("POST", "mongodb/concept_SNOMED_remplace.php", true);
