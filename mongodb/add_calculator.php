@@ -229,12 +229,10 @@ $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
-   $array_temp = array_push($array_output[0],'test');
-   print_r($array_temp);
-   $array_output_new = array_push($array_output_new, $array_temp);
+   array_push($array_output[$i],'test');
 }
 
-print_r($array_output_new); //first
+print_r($array_output); //first
 print_r($array_output[0]);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
