@@ -230,6 +230,7 @@ $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
    $array_temp = array_unshift($array_output[$i],'test');
+   print_r($array_temp);
    $array_output_new = array_push($array_output_new, $array_temp);
 }
 
