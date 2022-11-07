@@ -233,6 +233,6 @@ for ($i=0;$i<$output_array_length;$i++){
 }
 
 print_r($array_output_new); //first
-print_r($array_output[0])
+print_r($array_output[0]);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
