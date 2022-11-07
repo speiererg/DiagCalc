@@ -608,6 +608,7 @@ function printing_calculator_output(output_array_f) {
     })
 
     // update hidden input for Database save
+    console.log(output_array)
     document.getElementById('input_hidden_array_output').value = JSON.stringify(output_array)
 
     //update total count
