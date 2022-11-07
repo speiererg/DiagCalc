@@ -225,7 +225,13 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
-print_r($array_output); //first
+$output_array_length = count($array_output);
+
+for ($i=0;$i<$output_array_length;$i++){
+   $array_output_new = array_unshift($array_output[$i],'test');
+}
+
+print_r($array_output_new); //first
 
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
