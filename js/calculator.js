@@ -53,13 +53,11 @@ function importing_calculator(results_findOne) {
 
     //desactivate edit/download XML+TXT if not last version
     if (results_findOne['version'] != results_findOne['lastVersion']) {
-        console.log('test')
         document.getElementById('button_edit_calculator').disabled = true
         document.getElementById('button_download_XML').disabled = true
         document.getElementById('button_download_TXT').disabled = true
 
     }
-    console.log(results_findOne['updateMapping'])
     if (results_findOne['updateMapping'] == true) {
         alert(alert_update_mapping)
         document.getElementById('button_download_XML').disabled = true
@@ -87,9 +85,6 @@ function importing_calculator(results_findOne) {
     for (let i = 0; i < modifierSub_nbr_target; i++) { addInputRow() }
 
     let modifiers_array = results_findOne['modifiers']
-    console.log(modifiers_array)
-    console.log(modifiers_array[0])
-    console.log(modifiers_array[0]['modifier_array'])
 
     for (let i = 1, targetI = results_findOne['modifier_nbr']; i <= targetI; i++) {
         document.getElementById(`span_modifier_id_${i}`).innerHTML = `Modifier Id: ${modifiers_array[i - 1]['modifier_id']}`
@@ -113,7 +108,6 @@ function importing_calculator(results_findOne) {
 
 function edit_calculator() {
     confirmBeforeNavigate = 1
-    console.log('test edit')
     document.getElementById('button_edit_calculator').disabled = true;
     document.getElementById('button_calculate').disabled = false;
     document.getElementById('button_save_calculator').disabled = true
@@ -516,7 +510,6 @@ function click_calculate() {
 
 
 function calculating_calculator_output(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain, array_inputs_itemNbr) {
-    console.log(array_inputs_value, array_SNOMED_value, array_ICD_value, array_inputs_modifierNbr, array_modifier_isMain, array_inputs_itemNbr)
     output_array = []
     array_calculator_inputs_modifierNbr = array_inputs_modifierNbr.length  //give the number of array (modifier_nbr + multiple)
     document.getElementById('table_output_calculator').innerHTML = "";
