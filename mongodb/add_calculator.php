@@ -225,6 +225,7 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
+print_r($array_output); //first
 
-header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
+//header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
