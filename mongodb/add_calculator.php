@@ -220,13 +220,7 @@ $cursor_array_medspTerm = $collection_Index->findOne(
       'projection' => ['MedSP_term' => 1],
    )
 );
-
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-if ($lastEDGId and $results_medSP_term) {
-} else {
-   header('Location: ../index.php?alert=Problem during Saving of Calculator');
-}
-
 $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 
 
