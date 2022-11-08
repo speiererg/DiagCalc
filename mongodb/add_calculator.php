@@ -277,7 +277,7 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
-header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
+header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 echo 'Last found id' . $lastFoundId . '</br>';
 echo 'Last Modifier id' . $lastModifierId . '</br>';
 echo '</br> list term old:' . json_encode($medSP_array);
