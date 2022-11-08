@@ -41,6 +41,9 @@ if ($cursor_lastId->calculator_id) {
 
 // Search for last Modifier Id 
 $collection_lastModifierId = $client->DiagCalc_Calculators->Modifiers;
+$collection_Index = $client->DiagCalc_Calculators->Index;
+
+
 $cursor_lastModifierId = $collection_lastModifierId->findOne(
    array(),
    array(
@@ -72,8 +75,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
 
    $lastEDGId = $EDGId;
 
-   $collection2 = $client->DiagCalc_Calculators->Index;
-   $insertOneResult2 = $collection2->insertOne(
+   $insertOneResult2 = $collection_Index->insertOne(
       [
          'calculator_id' => intval($lastId),
          'mainName' => $mainName,
@@ -90,9 +92,9 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
 } else { // ***************************         if Calculator exist
    $lastId = $_POST['calculator_id'];
    $EDGId = $_POST['EDG_id'];
-   $collection2 = $client->DiagCalc_Calculators->Index;
 
    // find last EDG Id
+
    $cursor_lastEDGId = $collection_Index->findOne(
       array('calculator_id' => intval($lastId)),
       array(
@@ -101,7 +103,6 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    );
    $lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
 
-   $collection_Index = $client->DiagCalc_Calculators->Index;
    $cursor_array_medspTerm = $collection_Index->findOne(
       array('calculator_id' => intval($lastId)),
       array(
@@ -120,7 +121,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 
 
-   $insertOneResult2 = $collection2->updateOne(
+   $insertOneResult2 = $collection_Index->updateOne(
       array('calculator_id' => intval($lastId)),
       array(
          '$set' => array(
@@ -250,7 +251,7 @@ for ($i = 0; $i < $output_array_length; $i++) {
    $array_output[$i] = array_merge([$update_EDG_id], $array_output[$i]);
 }
 
-$insertOneResult2 = $collection2->updateOne(
+$insertOneResult2 = $collection_Index->updateOne(
    array('calculator_id' => intval($lastId)),
    array(
       '$set' => array(
