@@ -231,7 +231,7 @@ $insertOneResult = $collectionModifier->insertMany(
 $collection_Index = $client->DiagCalc_Calculators->Index;
 $results_medSP_term = $collection_Index->aggregate([
    [ '$match' => ['calculator_id' => intval($lastId)]],
-   [ '$project' => [['MedSP_term' => 1,'_id'=>0]]],
+   [ '$project' => ['MedSP_term' => 1,'_id'=>0]],
    ]);
    /*
 $cursor_array_medspTerm = $collection_Index->findOne(
