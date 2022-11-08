@@ -245,11 +245,11 @@ echo array_search('B1 C2',$medSP_array);
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
-      'projection' => ['EDG_last_id'],
+      'projection' => ['EDG_last_ID'=>1],
    )
 );
 
-$lastEDGId = $cursor_lastEDGId->EDG_last_id;
+$lastEDGId = $cursor_lastEDGId->EDG_last_ID;
 
 echo '\n lastEDGId' . $lastEDGId;
 
