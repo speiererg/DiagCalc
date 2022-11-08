@@ -248,12 +248,10 @@ if($results_medSP_term){
 echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
 print_r($results_medSP_term);
 
-$medSP_array = json_decode(json_encode($results_medSP_term->toArray(),true), true);
+//$medSP_array = json_decode(json_encode($results_medSP_term->toArray(),true), true);
 
-echo 'MedSP Array:' . json_encode($medSP_array) . '</br>';
-echo 'search:' . gettype($medSP_array) . array_search("A2 B1",$medSP_array,false). '</br>';
-print_r($medSP_array);
-echo 'test' . $medSP_array[0]. '</br>';
+//echo 'MedSP Array:' . json_encode($medSP_array) . '</br>';
+echo 'search:' . gettype($results_medSP_term) . array_search("A2 B1",$results_medSP_term,false). '</br>';
 }
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
