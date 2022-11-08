@@ -249,7 +249,7 @@ $cursor_lastEDGId = $collection_Index->findOne(
    )
 );
 
-$lastEDGId = $cursor_lastEDGId->EDG_last_ID;
+$lastEDGId = intval($cursor_lastEDGId->EDG_last_ID);
 
 echo '\n lastEDGId' . $lastEDGId;
 
