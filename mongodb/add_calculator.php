@@ -241,7 +241,7 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 */
-$results_medSP_term = $results_medSP_term->MedSP_term;
+$results_medSP_term = $results_medSP_term['MedSP_term'];
 
 if($results_medSP_term){
 echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
