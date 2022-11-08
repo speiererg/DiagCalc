@@ -224,7 +224,7 @@ $lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
 
 
 $output_array_length = count($array_output);
-$medsp_array_output = [];
+$medsp_array_output = [$medSP_array];
 
 for ($i = 0; $i < $output_array_length; $i++) {
    $actual_EDG_id = array_search($array_output[$i][0],$medSP_array,false);
