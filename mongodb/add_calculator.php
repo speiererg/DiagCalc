@@ -247,7 +247,7 @@ $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 if($results_medSP_term){
 echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
 
-$medSP_array = json_decode(json_encode($results_medSP_term->toArray(),true), true);
+$medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
 echo 'MedSP Array:' . json_encode($medSP_array) . '</br>';
 echo 'search:' . gettype($medSP_array) . array_search("A2 B1",$medSP_array,false). '</br>';
