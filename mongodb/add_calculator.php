@@ -237,7 +237,9 @@ $cursor_array_medspTerm = $collection_Index->findOne(
 );
 
 echo 'MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
-echo array_search('B1 C2',$cursor_array_medspTerm->MedSP_term);
+$medSP_array = json_decode(json_encode($cursor_array_medspTerm->MedSP_term->toArray(),true), true);
+
+echo array_search('B1 C2',$medSP_array);
 
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
