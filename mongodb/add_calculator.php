@@ -258,7 +258,7 @@ $array_output_new = [];
 
 for ($i = 0; $i < $output_array_length; $i++) {
    $lastEDGId++;
-   array_push($array_output_new, array('medsp_term_' . $EDGId => [$array_output[$i][0], $EDGId]));
+   array_push($array_output_new, array('medsp_term_' . $lastEDGId => [$array_output[$i][0], $lastEDGId]));
 }
 
 $insertOneResult2 = $collection2->updateOne(
@@ -266,7 +266,7 @@ $insertOneResult2 = $collection2->updateOne(
    array(
       '$set' => array(
          'MedSP_term' => $array_output_new,
-         'EDG_last_ID' => intval($EDGId)
+         'EDG_last_ID' => intval($lastEDGId)
       )
    )
 );
