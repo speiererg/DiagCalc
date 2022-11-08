@@ -246,11 +246,11 @@ echo '\r\n' . array_search('B1 C2',$medSP_array);
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
-      'projection' => ['EDG_last_ID'=>1],
+      'projection' => ['EDG_last_id'=>1],
    )
 );
 
-$lastEDGId = intval($cursor_lastEDGId->EDG_last_ID);
+$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
 
 echo '\n\n\r\n lastEDGId' . $lastEDGId;
 
@@ -267,7 +267,7 @@ $insertOneResult2 = $collection2->updateOne(
    array(
       '$set' => array(
          'MedSP_term' => $array_output_new,
-         'EDG_last_ID' => intval($lastEDGId)
+         'EDG_last_id' => intval($lastEDGId)
       )
    )
 );
