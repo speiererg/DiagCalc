@@ -229,11 +229,12 @@ $insertOneResult = $collectionModifier->insertMany(
 /////////// EDG ID
 
 $collection_Index = $client->DiagCalc_Calculators->Index;
+/*
 $results_medSP_term = $collection_Index->aggregate([
    [ '$match' => ['calculator_id' => intval($lastId)]],
    [ '$project' => ['MedSP_term' => 1,'_id'=>0]],
    ]);
-   /*
+   */
 $cursor_array_medspTerm = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
@@ -241,8 +242,8 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 
-$results_medSP_term = $results_medSP_term['MedSP_term'];
-*/
+$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
+
 if($results_medSP_term){
 echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
 print_r($results_medSP_term);
