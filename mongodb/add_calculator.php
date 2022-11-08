@@ -1,10 +1,10 @@
 <?php
 session_start();
 // If the user is not logged in redirect to the login page...
-/*if (!isset($_SESSION['loggedin'])) {
+if (!isset($_SESSION['loggedin'])) {
   header('Location: login/login.html');
   exit;
-}*/
+}
 require '../vendor/autoload.php';
 require '../../conf/connect.php';
 $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
@@ -59,8 +59,7 @@ if ($cursor_lastModifierId->modifier_id) {
    $lastModifierId = 0;
 }
 
-echo 'Last found id' . $lastFoundId . '</br>';
-echo 'Last Modifier id' . $lastModifierId . '</br>';
+
 
 
 
@@ -111,11 +110,9 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    );
 
    $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-   if ($lastEDGId AND $results_medSP_term){
-
-   }else{
+   if ($lastEDGId and $results_medSP_term) {
+   } else {
       header('Location: ../index.php?alert=Problem during Saving of Calculator');
-
    }
 
    $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
@@ -261,9 +258,7 @@ $insertOneResult2 = $collection_Index->updateOne(
    )
 );
 
-echo '</br> list term old:' . json_encode($medSP_array);
-echo '</br> list term new:' . json_encode($medsp_array_output);
-echo '</br> Output Calculator:' . json_encode($array_output);
+
 
 
 //Inserting the Calculators in Calculators
@@ -293,4 +288,9 @@ $insertOneResult = $collectionModifier->insertMany(
 );
 
 header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
+echo 'Last found id' . $lastFoundId . '</br>';
+echo 'Last Modifier id' . $lastModifierId . '</br>';
+echo '</br> list term old:' . json_encode($medSP_array);
+echo '</br> list term new:' . json_encode($medsp_array_output);
+echo '</br> Output Calculator:' . json_encode($array_output);
 ?>
