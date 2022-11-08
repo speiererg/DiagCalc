@@ -229,7 +229,7 @@ $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
-  $array_output_new = array_merge($array_output_new,array(['test'] => $array_output[$i][0]));
+ array_push($array_output_new,array('test' => $array_output[$i][0]));
 }
 
 echo json_encode($array_output_new);
