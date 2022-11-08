@@ -62,7 +62,7 @@ echo 'Last found id' . $lastFoundId . '</br>';
 echo 'Last Modifier id'. $lastModifierId . '</br>';
 
 
-if ($_POST['calculator_id'] == null) {
+if ($_POST['calculator_id'] == null) { // ***************************         if new Calculator
    echo 'egal null';
    $lastId = $lastFoundId + 1;
 
@@ -80,12 +80,12 @@ if ($_POST['calculator_id'] == null) {
          'EDG_id' => intval($EDGId),
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
-         'active' => 'yes'
-
+         'active' => 'yes',
+         'MedSP_term' => []
       ]
    );
 
-} else {
+} else {                          // ***************************         if Calculator exist
    $lastId = $_POST['calculator_id'];
    $EDGId = $_POST['EDG_id'];
    $collection2 = $client->DiagCalc_Calculators->Index;
@@ -225,10 +225,23 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
+
+$collection_Index = $client->DiagCalc_Calculators->Index;
+$cursor_array_medspTerm = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['MedSP_term'],
+   )
+);
+
+echo json_encode($cursor_array_medspTerm);
+
+
 $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
+
  array_push($array_output_new,array('test' => $array_output[$i][0]));
 }
 
