@@ -274,7 +274,7 @@ for ($i = 0; $i < $output_array_length; $i++) {
       $update_EDG_id = $lastEDGId;
    }
    $array_output_new = array_replace($array_output_new, array(intval($update_EDG_id) => $array_output[$i][0]));
-   $array_output[$i] = array_unshift($array_output[$i],[$update_EDG_id]);
+   $array_output[$i] = array_merge([$update_EDG_id],$array_output[$i]);
 }
 
 $insertOneResult2 = $collection2->updateOne(
