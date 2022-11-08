@@ -229,7 +229,7 @@ $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
-  $array_output[$i] = array_unshift($array_output[$i],'test');
+  $array_output[$i] = array_push($array_output[$i],'test');
 }
 
 print_r($array_output); //first
