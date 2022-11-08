@@ -240,8 +240,9 @@ $cursor_array_medspTerm = $collection_Index->findOne(
       'projection' => ['MedSP_term' => 1],
    )
 );
-$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 */
+$results_medSP_term = $results_medSP_term->MedSP_term;
+
 if($results_medSP_term){
 echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
 $medSP_array = json_decode(json_encode($results_medSP_term->toArray(),true), true);
