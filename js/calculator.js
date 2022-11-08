@@ -588,10 +588,10 @@ function printing_calculator_output(output_array_f) {
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
 
-        row_output_EDGId_column.appendChild(document.createTextNode(`MedSP_TERM_${EDG_id_iterate}`));
-        row_output_calculator_column.appendChild(document.createTextNode(element[0]));
-        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
-        row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
+        row_output_EDGId_column.appendChild(document.createTextNode(element[0]));
+        row_output_calculator_column.appendChild(document.createTextNode(element[1]));
+        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
+        row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
 
         row_output_calculator.appendChild(row_output_EDGId_column)
         row_output_calculator.appendChild(row_output_calculator_column)

@@ -199,6 +199,58 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id, 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
+/////////// EDG ID
+
+$collection_Index = $client->DiagCalc_Calculators->Index;
+$cursor_array_medspTerm = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['MedSP_term' => 1],
+   )
+);
+
+$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
+$medSP_array = json_decode(json_encode($results_medSP_term,true), true);
+
+// find last EDG Id
+$cursor_lastEDGId = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['EDG_last_id'=>1],
+   )
+);
+$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
+
+
+$output_array_length = count($array_output);
+$medsp_array_output = [];
+
+for ($i = 0; $i < $output_array_length; $i++) {
+   $actual_EDG_id = array_search($array_output[$i][0],$medSP_array,false);
+   if($actual_EDG_id){
+      $update_EDG_id = $actual_EDG_id;
+   }else{
+      $lastEDGId++;
+      $update_EDG_id = $lastEDGId;
+   }
+   $medsp_array_output = array_replace($medsp_array_output, array(intval($update_EDG_id) => $array_output[$i][0]));
+   $array_output[$i] = array_merge([$update_EDG_id],$array_output[$i]);
+}
+
+$insertOneResult2 = $collection2->updateOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      '$set' => array(
+         'MedSP_term' => $medsp_array_output,
+         'EDG_last_id' => intval($lastEDGId)
+      )
+   )
+);
+
+echo '</br> New:'. json_encode($array_output_new);
+echo '</br> Output:'. json_encode($array_output);
+
+
 //Inserting the Calculators in Calculators
 $collection = $client->DiagCalc_Calculators->Calculators;
 $insertOneResult = $collection->insertOne(
@@ -224,71 +276,6 @@ $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
-
-
-/////////// EDG ID
-
-$collection_Index = $client->DiagCalc_Calculators->Index;
-/*
-$results_medSP_term = $collection_Index->aggregate([
-   [ '$match' => ['calculator_id' => intval($lastId)]],
-   [ '$project' => ['MedSP_term' => 1,'_id'=>0]],
-   ]);
-   */
-$cursor_array_medspTerm = $collection_Index->findOne(
-   array('calculator_id' => intval($lastId)),
-   array(
-      'projection' => ['MedSP_term' => 1],
-   )
-);
-
-$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-
-if($results_medSP_term){
-echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
-
-$medSP_array = json_decode(json_encode($results_medSP_term,true), true);
-
-}
-
-$cursor_lastEDGId = $collection_Index->findOne(
-   array('calculator_id' => intval($lastId)),
-   array(
-      'projection' => ['EDG_last_id'=>1],
-   )
-);
-
-$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
-
-echo 'lastEDGId' . $lastEDGId. '</br>';
-
-$output_array_length = count($array_output);
-$array_output_new = [];
-
-for ($i = 0; $i < $output_array_length; $i++) {
-   $actual_EDG_id =array_search($array_output[$i][0],$medSP_array,false);
-   if($actual_EDG_id){
-      $update_EDG_id = $actual_EDG_id;
-   }else{
-      $lastEDGId++;
-      $update_EDG_id = $lastEDGId;
-   }
-   $array_output_new = array_replace($array_output_new, array(intval($update_EDG_id) => $array_output[$i][0]));
-   $array_output[$i] = array_merge([$update_EDG_id],$array_output[$i]);
-}
-
-$insertOneResult2 = $collection2->updateOne(
-   array('calculator_id' => intval($lastId)),
-   array(
-      '$set' => array(
-         'MedSP_term' => $array_output_new,
-         'EDG_last_id' => intval($lastEDGId)
-      )
-   )
-);
-
-echo '</br> New:'. json_encode($array_output_new);
-echo '</br> Output:'. json_encode($array_output);
 
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
