@@ -237,7 +237,9 @@ $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
 
 for ($i = 0; $i < $output_array_length; $i++) {
-   $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
+   if($medSP_array){
+      $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
+   }
    if ($actual_EDG_id) {
       $update_EDG_id = $actual_EDG_id;
    } else {
