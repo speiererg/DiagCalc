@@ -31,10 +31,9 @@ $cursor_lastId = $collection_lastId->findOne(
    )
 );
 
-if ($cursor_lastId->calculator_id)
-{
+if ($cursor_lastId->calculator_id) {
    $lastFoundId = $cursor_lastId->calculator_id;
-}else{
+} else {
    $lastFoundId = 0;
 
 }
@@ -51,15 +50,14 @@ $cursor_lastModifierId = $collection_lastModifierId->findOne(
    )
 );
 
-if ($cursor_lastModifierId->modifier_id)
-{
+if ($cursor_lastModifierId->modifier_id) {
    $lastModifierId = intval($cursor_lastModifierId->modifier_id);
-}else{
+} else {
    $lastModifierId = 0;
 }
 
 echo 'Last found id' . $lastFoundId . '</br>';
-echo 'Last Modifier id'. $lastModifierId . '</br>';
+echo 'Last Modifier id' . $lastModifierId . '</br>';
 
 
 if ($_POST['calculator_id'] == null) { // ***************************         if new Calculator
@@ -78,7 +76,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
          'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version']),
          'EDG_id' => intval($EDGId),
-         'EDG_last_id' => intval($EDGId) + 1,
+         'EDG_last_id' => intval($EDGId),
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
          'active' => 'yes',
@@ -86,7 +84,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
       ]
    );
 
-} else {                          // ***************************         if Calculator exist
+} else { // ***************************         if Calculator exist
    $lastId = $_POST['calculator_id'];
    $EDGId = $_POST['EDG_id'];
    $collection2 = $client->DiagCalc_Calculators->Index;
@@ -192,12 +190,13 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $modifier_id_name = "input_modifier_id_{$i}";
    $modifier_mainName = "input_modifier_title_{$i}";
 
-   if($_POST[$modifier_id_name]==null){
-      $lastModifierId = $lastModifierId + 1; $modifier_id = $lastModifierId;
-   }else{
+   if ($_POST[$modifier_id_name] == null) {
+      $lastModifierId = $lastModifierId + 1;
+      $modifier_id = $lastModifierId;
+   } else {
       $modifier_id = $_POST[$modifier_id_name];
    }
-   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id , 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
+   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id, 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
 //Inserting the Calculators in Calculators
@@ -238,14 +237,26 @@ $cursor_array_medspTerm = $collection_Index->findOne(
 );
 
 echo 'MedSP_term:' . json_encode($cursor_array_medspTerm);
-echo 'MedSP_term 0: ' . $cursor_array_medspTerm[0];
+echo '/n MedSP_term 0: ' . $cursor_array_medspTerm[0];
+echo array_search('B1 C2',$cursor_array_medspTerm);
+
+$cursor_lastEDGId = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['EDG_last_id'],
+   )
+);
+
+$lastEDGId = $cursor_lastEDGId->EDG_last_id;
+
+echo '\n lastEDGId' . $lastEDGId;
 
 $output_array_length = count($array_output);
 $array_output_new = [];
 
-for ($i=0;$i<$output_array_length;$i++){
-   $EDGId ++;
- array_push($array_output_new,array('medsp_term_'.$EDGId => [$array_output[$i][0],$EDGId]));
+for ($i = 0; $i < $output_array_length; $i++) {
+   $lastEDGId++;
+   array_push($array_output_new, array('medsp_term_' . $EDGId => [$array_output[$i][0], $EDGId]));
 }
 
 $insertOneResult2 = $collection2->updateOne(
@@ -253,10 +264,11 @@ $insertOneResult2 = $collection2->updateOne(
    array(
       '$set' => array(
          'MedSP_term' => $array_output_new,
+         'EDG_last_ID' => intval($EDGId)
       )
    )
 );
 
-echo json_encode ($array_output_new);
+echo json_encode($array_output_new);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
