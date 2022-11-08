@@ -267,7 +267,7 @@ $array_output_new = [];
 
 for ($i = 0; $i < $output_array_length; $i++) {
    $lastEDGId++;
-   array_replace($array_output_new, array(intval($lastEDGId) => $array_output[$i][0]));
+   $array_output_new = array_replace($array_output_new, array(intval($lastEDGId) => $array_output[$i][0]));
 }
 
 $insertOneResult2 = $collection2->updateOne(
