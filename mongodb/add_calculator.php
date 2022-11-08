@@ -60,16 +60,19 @@ echo 'Last found id' . $lastFoundId . '</br>';
 echo 'Last Modifier id' . $lastModifierId . '</br>';
 
 
+
+
+
 if ($_POST['calculator_id'] == null) { // ***************************         if new Calculator
-   echo 'egal null';
    $lastId = $lastFoundId + 1;
 
    $str_length = 5;
    $EDGId = substr("00000{$lastId}", -$str_length);
-   $EDGId = '8' . $EDGId . '00000';
+   $EDGId = '8' . $EDGId . '000000';
+
+   $lastEDGId = $EDGId;
 
    $collection2 = $client->DiagCalc_Calculators->Index;
-
    $insertOneResult2 = $collection2->insertOne(
       [
          'calculator_id' => intval($lastId),
@@ -88,6 +91,34 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    $lastId = $_POST['calculator_id'];
    $EDGId = $_POST['EDG_id'];
    $collection2 = $client->DiagCalc_Calculators->Index;
+
+   // find last EDG Id
+   $cursor_lastEDGId = $collection_Index->findOne(
+      array('calculator_id' => intval($lastId)),
+      array(
+         'projection' => ['EDG_last_id' => 1],
+      )
+   );
+   $lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
+
+   $collection_Index = $client->DiagCalc_Calculators->Index;
+   $cursor_array_medspTerm = $collection_Index->findOne(
+      array('calculator_id' => intval($lastId)),
+      array(
+         'projection' => ['MedSP_term' => 1],
+      )
+   );
+
+   $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
+   if ($lastEDGId AND $results_medSP_term){
+
+   }else{
+      header('Location: ../index.php?alert=Problem during Saving of Calculator');
+
+   }
+
+   $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
+
 
    $insertOneResult2 = $collection2->updateOne(
       array('calculator_id' => intval($lastId)),
@@ -201,40 +232,22 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
 
 /////////// EDG ID
 
-$collection_Index = $client->DiagCalc_Calculators->Index;
-$cursor_array_medspTerm = $collection_Index->findOne(
-   array('calculator_id' => intval($lastId)),
-   array(
-      'projection' => ['MedSP_term' => 1],
-   )
-);
 
-$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-$medSP_array = json_decode(json_encode($results_medSP_term,true), true);
-
-// find last EDG Id
-$cursor_lastEDGId = $collection_Index->findOne(
-   array('calculator_id' => intval($lastId)),
-   array(
-      'projection' => ['EDG_last_id'=>1],
-   )
-);
-$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
 
 
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
 
 for ($i = 0; $i < $output_array_length; $i++) {
-   $actual_EDG_id = array_search($array_output[$i][0],$medSP_array,false);
-   if($actual_EDG_id){
+   $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
+   if ($actual_EDG_id) {
       $update_EDG_id = $actual_EDG_id;
-   }else{
+   } else {
       $lastEDGId++;
       $update_EDG_id = $lastEDGId;
    }
    $medsp_array_output = array_replace($medsp_array_output, array(intval($update_EDG_id) => $array_output[$i][0]));
-   $array_output[$i] = array_merge([$update_EDG_id],$array_output[$i]);
+   $array_output[$i] = array_merge([$update_EDG_id], $array_output[$i]);
 }
 
 $insertOneResult2 = $collection2->updateOne(
@@ -247,9 +260,9 @@ $insertOneResult2 = $collection2->updateOne(
    )
 );
 
-echo '</br> list term old:'. json_encode($medSP_array);
-echo '</br> list term new:'. json_encode($medsp_array_output);
-echo '</br> Output Calculator:'. json_encode($array_output);
+echo '</br> list term old:' . json_encode($medSP_array);
+echo '</br> list term new:' . json_encode($medsp_array_output);
+echo '</br> Output Calculator:' . json_encode($array_output);
 
 
 //Inserting the Calculators in Calculators

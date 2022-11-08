@@ -62,6 +62,11 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             paramsPHP = `calculator_id=${Object.values(GET_object)[0]}&version=${Object.values(GET_object)[1]}`
             reload = true
         }
+        if (Object.keys(GET_object)[0] == 'alert') {
+            page = 'home'
+            alert(`${toString(Object.values(GET_object)[0])}`)
+            reload = true
+        }
     }
 
     if (paramsPHP) { } else { paramsPHP = '' }
