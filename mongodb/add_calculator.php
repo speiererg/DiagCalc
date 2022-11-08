@@ -235,7 +235,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
 
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
-
+if($medSP_array){}else{$medsp_array_output= [];}
 for ($i = 0; $i < $output_array_length; $i++) {
    if($medSP_array){
       $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
