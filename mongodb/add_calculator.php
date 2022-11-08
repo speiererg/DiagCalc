@@ -92,30 +92,6 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    $lastId = $_POST['calculator_id'];
    $EDGId = $_POST['EDG_id'];
 
-   // find last EDG Id
-
-   $cursor_lastEDGId = $collection_Index->findOne(
-      array('calculator_id' => intval($lastId)),
-      array(
-         'projection' => ['EDG_last_id' => 1],
-      )
-   );
-   $lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
-
-   $cursor_array_medspTerm = $collection_Index->findOne(
-      array('calculator_id' => intval($lastId)),
-      array(
-         'projection' => ['MedSP_term' => 1],
-      )
-   );
-
-   $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-   if ($lastEDGId and $results_medSP_term) {
-   } else {
-      header('Location: ../index.php?alert=Problem during Saving of Calculator');
-   }
-
-   $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 
 
    $insertOneResult2 = $collection_Index->updateOne(
@@ -230,16 +206,34 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
 
 /////////// EDG ID
 
+$cursor_lastEDGId = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['EDG_last_id' => 1],
+   )
+);
+$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
 
+$cursor_array_medspTerm = $collection_Index->findOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      'projection' => ['MedSP_term' => 1],
+   )
+);
+
+$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
+if ($lastEDGId and $results_medSP_term) {
+} else {
+   header('Location: ../index.php?alert=Problem during Saving of Calculator');
+}
+
+$medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 
 
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
-if($medSP_array){}else{$medsp_array_output= [];}
 for ($i = 0; $i < $output_array_length; $i++) {
-   if($medSP_array){
       $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
-   }
    if ($actual_EDG_id) {
       $update_EDG_id = $actual_EDG_id;
    } else {
