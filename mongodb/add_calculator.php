@@ -238,7 +238,7 @@ $cursor_array_medspTerm = $collection_Index->findOne(
 
 echo 'MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-$medSP_array = json_decode(json_encode($results_medSP_term->toArray(),true), true);
+$medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
 echo array_search('B1 C2',$medSP_array);
 
