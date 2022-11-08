@@ -78,6 +78,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
          'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version']),
          'EDG_id' => intval($EDGId),
+         'EDG_last_id' => intval($EDGId) + 1,
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
          'active' => 'yes',
@@ -226,6 +227,8 @@ $insertOneResult = $collectionModifier->insertMany(
 );
 
 
+/////////// EDG ID
+
 $collection_Index = $client->DiagCalc_Calculators->Index;
 $cursor_array_medspTerm = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
@@ -234,17 +237,26 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 
-echo json_encode($cursor_array_medspTerm);
-
+echo 'MedSP_term:' . json_encode($cursor_array_medspTerm);
+echo 'MedSP_term 0: ' . $cursor_array_medspTerm[0];
 
 $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
-
- array_push($array_output_new,array('test' => $array_output[$i][0]));
+   $EDGId ++;
+ array_push($array_output_new,array('medsp_term_'.$EDGId => [$array_output[$i][0],$EDGId]));
 }
 
-echo json_encode($array_output_new);
+$insertOneResult2 = $collection2->updateOne(
+   array('calculator_id' => intval($lastId)),
+   array(
+      '$set' => array(
+         'MedSP_term' => $array_output_new,
+      )
+   )
+);
+
+echo json_encode ($array_output_new);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
