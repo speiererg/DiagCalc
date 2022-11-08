@@ -229,9 +229,9 @@ $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i=0;$i<$output_array_length;$i++){
-  $array_output[$i] = array_merge($array_output[$i],['test']);
+  array_push($array_output_new,array(['test'] => $array_output[$i][0]));
 }
 
-echo json_encode($array_output);
+echo json_encode($array_output_new);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
