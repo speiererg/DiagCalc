@@ -34,7 +34,7 @@ function importing_calculator(results_findOne) {
     console.log(results_findOne['modifiers'][0])
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
-    document.getElementById('input_EDG_id').value = results_findOne['EDG_id']
+    document.getElementById('input_medsp_id').value = results_findOne['medsp_id']
     document.getElementById('input_hidden_form_deactivate_calculator').value = results_findOne['calculator_id']
     document.getElementById('select_version').addEventListener('change', (event) => { changePage(`calculator`, `calculator_id=${results_findOne['calculator_id']}&version=${document.getElementById('select_version').value}`, '') })
     document.getElementById('select_version').innerHTML = ""
@@ -574,12 +574,12 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
 
 function printing_calculator_output(output_array_f, printFrom) {
-    EDG_id_iterate_nbr=0
+    medsp_id_iterate_nbr=0
     output_array_f.forEach((element) => {
-        EDG_id_iterate_nbr++
+        medsp_id_iterate_nbr++
 
         let row_output_calculator = document.createElement('tr')
-        let row_output_EDGId_column = document.createElement('td')
+        let row_output_medspId_column = document.createElement('td')
         let row_output_calculator_column = document.createElement('td')
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
@@ -587,19 +587,19 @@ function printing_calculator_output(output_array_f, printFrom) {
 
 
         if (printFrom == "calculate") {
-            row_output_EDGId_column.appendChild(document.createTextNode('medsp_term_X'));
+            row_output_medspId_column.appendChild(document.createTextNode('medsp_term_X'));
             row_output_calculator_column.appendChild(document.createTextNode(element[0]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
         }else{
-            row_output_EDGId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
+            row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
             row_output_calculator_column.appendChild(document.createTextNode(element[1]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
         }
 
 
-        row_output_calculator.appendChild(row_output_EDGId_column)
+        row_output_calculator.appendChild(row_output_medspId_column)
         row_output_calculator.appendChild(row_output_calculator_column)
         row_output_calculator.appendChild(row_output_calculator_SNOMED_column)
         row_output_calculator.appendChild(row_output_calculator_ICD_column)
@@ -612,7 +612,7 @@ function printing_calculator_output(output_array_f, printFrom) {
 
     //update total count
     document.getElementById('total_count').style.display = "block"
-    document.getElementById('total_count').innerHTML = `Total Count: ${EDG_id_iterate_nbr}`;
+    document.getElementById('total_count').innerHTML = `Total Count: ${medsp_id_iterate_nbr}`;
 
 }
 

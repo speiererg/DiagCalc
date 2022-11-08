@@ -37,9 +37,9 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
       </select>
       Last Version: <input type="number" id="input_last_version" name="lastVersion" class="input_calculator_id" value=""
         form="form_saveMongoDB" readonly>
-      MedSP Calculator ID: <input type="number" id="input_calculator_id" name="calculator_id"
+      Calculator ID: <input type="number" id="input_calculator_id" name="calculator_id"
         class="input_calculator_id" value="" form="form_saveMongoDB" readonly>
-      EDG_id: <input type="number" id="input_EDG_id" name="EDG_id" class="input_maindiagnose" value=""
+      MedSP_id: <input type="number" id="input_medsp_id" name="medsp_id" class="input_maindiagnose" value=""
         form="form_saveMongoDB" readonly>
     </td>
   </tr>
