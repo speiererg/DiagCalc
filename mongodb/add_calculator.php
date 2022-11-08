@@ -232,13 +232,13 @@ $collection_Index = $client->DiagCalc_Calculators->Index;
 $cursor_array_medspTerm = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
-      'projection' => ['MedSP_term'],
+      'projection' => ['MedSP_term' => 1],
    )
 );
 
-echo 'MedSP_term:' . json_encode($cursor_array_medspTerm);
-echo '/n MedSP_term 0: ' . $cursor_array_medspTerm[0];
-echo array_search('B1 C2',iterator_to_array($cursor_array_medspTerm));
+echo 'MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
+echo '/n MedSP_term 0: ' . $cursor_array_medspTerm->MedSP_term[0];
+echo array_search('B1 C2',iterator_to_array($cursor_array_medspTerm->MedSP_term));
 
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
