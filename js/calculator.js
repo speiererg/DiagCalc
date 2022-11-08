@@ -103,7 +103,7 @@ function importing_calculator(results_findOne) {
 
     disable_input(true)
 
-    printing_calculator_output(output_array)
+    printing_calculator_output(output_array, 'import')
 }
 
 function edit_calculator() {
@@ -543,7 +543,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push(['X',calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier])
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier])
 
 
         // Array Calculation
@@ -568,12 +568,12 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
     disable_input(true)
-    printing_calculator_output(output_array)
+    printing_calculator_output(output_array, 'calculate')
 }
 
 
 
-function printing_calculator_output(output_array_f) {
+function printing_calculator_output(output_array_f, printFrom) {
 
     output_array_f.forEach((element) => {
 
@@ -584,10 +584,20 @@ function printing_calculator_output(output_array_f) {
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
 
-        row_output_EDGId_column.appendChild(document.createTextNode(element[0]));
-        row_output_calculator_column.appendChild(document.createTextNode(element[1]));
-        row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
-        row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
+
+
+        if (printFrom == "calculate") {
+            row_output_EDGId_column.appendChild(document.createTextNode('medsp_term_X'));
+            row_output_calculator_column.appendChild(document.createTextNode(element[0]));
+            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
+            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
+        }else{
+            row_output_EDGId_column.appendChild(document.createTextNode(element[0]));
+            row_output_calculator_column.appendChild(document.createTextNode(element[1]));
+            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
+            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
+        }
+
 
         row_output_calculator.appendChild(row_output_EDGId_column)
         row_output_calculator.appendChild(row_output_calculator_column)
