@@ -69,18 +69,18 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
    $lastId = $lastFoundId + 1;
 
    $str_length = 5;
-   $EDGId = substr("00000{$lastId}", -$str_length);
-   $EDGId = '8' . $EDGId . '000000';
+   $medspId = substr("00000{$lastId}", -$str_length);
+   $medspId = '8' . $medspId . '000000';
 
-   $lastEDGId = $EDGId;
+   $lastMedspId = $medspId;
 
    $insertOneResult2 = $collection_Index->insertOne(
       [
          'calculator_id' => intval($lastId),
          'mainName' => $mainName,
          'lastVersion' => intval($_POST['select_version']),
-         'EDG_id' => intval($EDGId),
-         'EDG_last_id' => intval($EDGId),
+         'medsp_id' => intval($medspId),
+         'medsp_last_id' => intval($medspId),
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
          'active' => 'yes',
@@ -90,7 +90,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
 
 } else { // ***************************         if Calculator exist
    $lastId = $_POST['calculator_id'];
-   $EDGId = $_POST['EDG_id'];
+   $medspId = $_POST['medsp_id'];
 
 
 
@@ -100,7 +100,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
          '$set' => array(
             'mainName' => $mainName,
             'lastVersion' => intval($_POST['select_version']),
-            'EDG_id' => intval($EDGId),
+            'medsp_id' => intval($medspId),
             'last_modification_Time' => $time,
             'last_modification_timestamp' => time()
          )
@@ -204,15 +204,15 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id, 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
-/////////// EDG ID
+/////////// medsp ID
 
-$cursor_lastEDGId = $collection_Index->findOne(
+$cursor_lastMedspId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
-      'projection' => ['EDG_last_id' => 1],
+      'projection' => ['medsp_last_id' => 1],
    )
 );
-$lastEDGId = intval($cursor_lastEDGId->EDG_last_id);
+$lastMedspId = intval($cursor_lastMedspId->medsp_last_id);
 
 $cursor_array_medspTerm = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
@@ -227,15 +227,15 @@ $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
 for ($i = 0; $i < $output_array_length; $i++) {
-      $actual_EDG_id = array_search($array_output[$i][0], $medSP_array, false);
-   if ($actual_EDG_id) {
-      $update_EDG_id = $actual_EDG_id;
+      $actual_medsp_id = array_search($array_output[$i][0], $medSP_array, false);
+   if ($actual_medsp_id) {
+      $update_medsp_id = $actual_medsp_id;
    } else {
-      $lastEDGId++;
-      $update_EDG_id = $lastEDGId;
+      $lastMedspId++;
+      $update_medsp_id = $lastMedspId;
    }
-   $medsp_array_output = array_replace($medsp_array_output, array(intval($update_EDG_id) => $array_output[$i][0]));
-   $array_output[$i] = array_merge([$update_EDG_id], $array_output[$i]);
+   $medsp_array_output = array_replace($medsp_array_output, array(intval($update_medsp_id) => $array_output[$i][0]));
+   $array_output[$i] = array_merge([$update_medsp_id], $array_output[$i]);
 }
 
 $insertOneResult2 = $collection_Index->updateOne(
@@ -243,7 +243,7 @@ $insertOneResult2 = $collection_Index->updateOne(
    array(
       '$set' => array(
          'MedSP_term' => $medsp_array_output,
-         'EDG_last_id' => intval($lastEDGId)
+         'medsp_last_id' => intval($lastMedspId)
       )
    )
 );
@@ -261,7 +261,7 @@ $insertOneResult = $collection->insertOne(
       'lastVersion' => intval($_POST['select_version']),
       'modifier_nbr' => intval($_POST['modifier_nbr']),
       'modifierSub_nbr' => intval($_POST['modifierSub_nbr']),
-      'EDG_id' => intval($EDGId),
+      'medsp_id' => intval($medspId),
       'created_Time' => $time,
       'created_timestamp' => time(),
       'modifiers' => $modifiers_array,
