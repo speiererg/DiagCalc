@@ -243,7 +243,8 @@ $medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
 echo 'MedSP Array:' . json_encode($medSP_array) . '</br>';
 echo 'search:' . gettype($medSP_array) . array_search("A2 B1",$medSP_array[0],false). '</br>';
-echo 'test' . $medSP_array[0]['80000100063']. '</br>';
+print_r($medSP_array);
+echo 'test' . $medSP_array[0]. '</br>';
 }
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
