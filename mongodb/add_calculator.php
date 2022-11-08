@@ -232,7 +232,6 @@ for ($i=0;$i<$output_array_length;$i++){
   $array_output[$i] = array_merge($array_output[$i],['test']);
 }
 
-print_r($array_output); //first
 echo json_encode($array_output);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
