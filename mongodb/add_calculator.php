@@ -249,9 +249,8 @@ echo 'MedSP_term:' . json_encode($results_medSP_term) . '</br>';
 
 $medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
-echo 'MedSP Array:' . json_encode($medSP_array) . '</br>';
-echo 'search:' . gettype($medSP_array) . array_search("A2 B1",$medSP_array,false). '</br>';
 }
+
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
@@ -267,8 +266,15 @@ $output_array_length = count($array_output);
 $array_output_new = [];
 
 for ($i = 0; $i < $output_array_length; $i++) {
-   $lastEDGId++;
-   $array_output_new = array_replace($array_output_new, array(intval($lastEDGId) => $array_output[$i][0]));
+   $actual_EDG_id =array_search($array_output[$i][0],$medSP_array,false);
+   if($actual_EDG_id){
+      $update_EDG_id = $actual_EDG_id;
+   }else{
+      $lastEDGId++;
+      $update_EDG_id = $lastEDGId;
+   }
+   $array_output_new = array_replace($array_output_new, array(intval($update_EDG_id) => $array_output[$i][0]));
+   $array_output[$i] = array_unshift($array_output[$i],[$update_EDG_id]);
 }
 
 $insertOneResult2 = $collection2->updateOne(
@@ -281,6 +287,8 @@ $insertOneResult2 = $collection2->updateOne(
    )
 );
 
-echo '</br>'. json_encode($array_output_new);
+echo '</br> New:'. json_encode($array_output_new);
+echo '</br> Output:'. json_encode($array_output);
+
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
