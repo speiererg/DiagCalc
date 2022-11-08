@@ -236,7 +236,6 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 
-if()
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 if($results_medSP_term){
 echo '\n\n\r\n MedSP_term:' . json_encode($results_medSP_term);
