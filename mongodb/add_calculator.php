@@ -236,12 +236,14 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 
-echo '\n\n\r\n MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
+if()
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
+if($results_medSP_term){
+echo '\n\n\r\n MedSP_term:' . json_encode($results_medSP_term);
 $medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
 echo '\r\n' . array_search('B1 C2',$medSP_array);
-
+}
 $cursor_lastEDGId = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
