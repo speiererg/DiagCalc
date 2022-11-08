@@ -211,7 +211,6 @@ $cursor_array_medspTerm = $collection_Index->findOne(
 
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 $medSP_array = json_decode(json_encode($results_medSP_term,true), true);
-echo '</br> medSp:'. json_encode($medSP_array);
 
 // find last EDG Id
 $cursor_lastEDGId = $collection_Index->findOne(
@@ -248,8 +247,9 @@ $insertOneResult2 = $collection2->updateOne(
    )
 );
 
-echo '</br> New:'. json_encode($medsp_array_output);
-echo '</br> Output:'. json_encode($array_output);
+echo '</br> list term old:'. json_encode($medSP_array);
+echo '</br> list term new:'. json_encode($medsp_array_output);
+echo '</br> Output Calculator:'. json_encode($array_output);
 
 
 //Inserting the Calculators in Calculators
