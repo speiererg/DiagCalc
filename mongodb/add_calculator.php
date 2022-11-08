@@ -236,7 +236,7 @@ $cursor_array_medspTerm = $collection_Index->findOne(
    )
 );
 
-echo 'MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
+echo '\n\n MedSP_term:' . json_encode($cursor_array_medspTerm->MedSP_term);
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 $medSP_array = json_decode(json_encode($results_medSP_term,true), true);
 
@@ -251,7 +251,7 @@ $cursor_lastEDGId = $collection_Index->findOne(
 
 $lastEDGId = intval($cursor_lastEDGId->EDG_last_ID);
 
-echo '\n lastEDGId' . $lastEDGId;
+echo '\n\n lastEDGId' . $lastEDGId;
 
 $output_array_length = count($array_output);
 $array_output_new = [];
@@ -271,6 +271,6 @@ $insertOneResult2 = $collection2->updateOne(
    )
 );
 
-echo json_encode($array_output_new);
+echo '\n\n' . json_encode($array_output_new);
 //header('Location: ../index.php?calculator=' . $calculator_id . '&version=' . $_POST['select_version']);
 ?>
