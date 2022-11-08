@@ -574,9 +574,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
 
 function printing_calculator_output(output_array_f, printFrom) {
-
+    EDG_id_iterate_nbr=0
     output_array_f.forEach((element) => {
-
+        EDG_id_iterate_nbr++
 
         let row_output_calculator = document.createElement('tr')
         let row_output_EDGId_column = document.createElement('td')
