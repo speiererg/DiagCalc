@@ -41,7 +41,6 @@ if (!isset($_SESSION['loggedin'])) {
       <a href="https://icd.who.int/browse10/2019/en#/" target="_blank" rel="noopener noreferrer">ICD-10 Browser</a>
       <a href="login/logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
     </div>
-    Welcome <?php echo $_SESSION['username']?>
   </nav>
 
 
@@ -49,6 +48,8 @@ if (!isset($_SESSION['loggedin'])) {
 
 
   <div id="maincontent">
+  Welcome <?php echo $_SESSION['username']?>
+
     <div id="mainpage">
     </div>
   </div>
