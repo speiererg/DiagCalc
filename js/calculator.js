@@ -581,7 +581,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
 function calculated_diag_trim(calculated_diag_f){
     calculated_diag_f = calculated_diag_f.replace(/\s+/g, ' ').trim()
-    calculated_diag_f = calculated_diag_f.charAt(0).toUpperCase() + calculated_diag.slice(1)
+    calculated_diag_f = calculated_diag_f.charAt(0).toUpperCase() + calculated_diag_f.slice(1)
     return calculated_diag_f;
 }
 
