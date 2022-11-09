@@ -42,8 +42,9 @@ async function creating_XML(output_array_f) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
                 if (l != modifier_length - 1) { modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator }
                 console.log(allowed_modifier_4040_array.indexOf(element['modifier_array']))
-                if (allowed_modifier_4040_array.indexOf(element['modifier_array']) === -1) {
-                    allowed_modifier_4040_array.push(element['modifier_array']);
+                if (allowed_modifier_4040_array.indexOf(element['modifier_array'][l]) === -1) {
+                    console.log(element['modifier_array'][l])
+                    allowed_modifier_4040_array.push(element['modifier_array'][l]);
                   }
             }
 
