@@ -5,7 +5,7 @@
 async function download_XML() {
     console.log('download XML')
     if (output_array) {
-       await creating_XML(output_array)
+        await creating_XML(output_array)
         console.log(document.getElementById('button_download_XML_submit'))
         document.getElementById('button_download_XML_submit').click()
 
@@ -28,27 +28,27 @@ async function creating_XML(output_array_f) {
     console.log(output_array_f)
     let XML_output = XML_beginn
 
-//append main Diagnostic
-let allowed_modifier_4040 = []
-let  resolved_term_4043 = ""
-let resolved_term_name_4043dot = ""
-let modifier_values_4044 = "" 
+    //append main Diagnostic
+    let allowed_modifier_4040 = []
+    let resolved_term_4043 = ""
+    let resolved_term_name_4043dot = ""
+    let modifier_values_4044 = ""
 
 
-main_Diagnostic = output_array_f.shift();
-output_array_f.forEach((element) => {
-allowed_modifier = 
-resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
-resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
-modifier_values_4044 = modifier_values_4044
-console.log(element['modifier_array'])
-})
-XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array'],resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044))
+    main_Diagnostic = output_array_f.shift();
+    output_array_f.forEach((element) => {
+        allowed_modifier = allowed_modifier
+        resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
+        resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
+        modifier_values_4044 = modifier_values_4044
+        console.log(element['modifier_array'])
+    })
+    XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array'], resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044))
 
 
     // append Specific Diagnostic
     output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array'],'','',''))
+        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array'], '', '', ''))
     })
 
     document.getElementById('input_hidden_XML_output').value = XML_output
@@ -78,7 +78,7 @@ function createFlatFileRow(ID_Term, DiagnosisVendor, DiagnosisDescription, Conta
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
-function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD, resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044) {
+function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044) {
     return XML_temp = `            
         <ss:Row>
         <ss:Cell>
