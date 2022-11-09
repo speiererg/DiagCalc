@@ -206,11 +206,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
 
 
 
-echo 'Last found id' . $lastFoundId . '</br>';
-echo 'Last Modifier id' . $lastModifierId . '</br>';
-echo '</br> list term old:' . json_encode($medSP_array);
-echo '</br> list term new:' . json_encode($medsp_array_output);
-echo '</br> Output Calculator:' . json_encode($array_output);
+
 
 /////////// medsp ID
 
@@ -256,7 +252,11 @@ $insertOneResult2 = $collection_Index->updateOne(
    )
 );
 
-
+echo 'Last found id' . $lastFoundId . '</br>';
+echo 'Last Modifier id' . $lastModifierId . '</br>';
+echo '</br> list term old:' . json_encode($medSP_array);
+echo '</br> list term new:' . json_encode($medsp_array_output);
+echo '</br> Output Calculator:' . json_encode($array_output);
 
 
 //Inserting the Calculators in Calculators
