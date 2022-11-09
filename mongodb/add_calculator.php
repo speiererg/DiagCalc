@@ -231,7 +231,7 @@ $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
 for ($i = 0; $i < $output_array_length; $i++) {
-   echo json_encode($array_output[$i]['diagnostic_name']);
+   echo json_encode($array_output[$i]["diagnostic_name"]);
 
       //$actual_medsp_id = array_search($array_output[$i]['diagnostic_name'], $medSP_array, false);
    if ($actual_medsp_id) {
