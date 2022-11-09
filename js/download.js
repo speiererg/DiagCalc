@@ -71,6 +71,7 @@ async function creating_XML(output_array_f) {
         // finalize XML
         XML_output = XML_output + XML_End
         document.getElementById('input_XML').value = XML_output
+        console.log(XML_output)
         return XML_output
     }
     create_rest_XML()
