@@ -29,14 +29,26 @@ async function creating_XML(output_array_f) {
     let XML_output = XML_beginn
 
 //append main Diagnostic
+let allowed_modifier_4040 = []
+let  resolved_term_4043 = ""
+let resolved_term_name_4043dot = ""
+let modifier_values_4044 = "" 
+
+
 main_Diagnostic = output_array_f.shift();
-console.log(main_Diagnostic)
-XML_output = XML_output + createXMLRow(`MedSp_Id_${main_Diagnostic['medsp_term']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']))
+output_array_f.forEach((element) => {
+allowed_modifier = 
+resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
+resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
+modifier_values_4044 = modifier_values_4044
+console.log(element['modifier_array'])
+})
+XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array'],resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044))
 
 
     // append Specific Diagnostic
     output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`MedSp_Id_${element['medsp_term']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']))
+        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array'],'','',''))
     })
 
     document.getElementById('input_hidden_XML_output').value = XML_output
@@ -66,7 +78,7 @@ function createFlatFileRow(ID_Term, DiagnosisVendor, DiagnosisDescription, Conta
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
-function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD) {
+function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD, resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044) {
     return XML_temp = `            
         <ss:Row>
         <ss:Cell>
@@ -121,13 +133,13 @@ function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactCom
             <ss:Data ss:Type="String">NYHA&#10;Akute Dekompensation</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">190035&#10;190040&#10;190046&#10;190057&#10;190090</ss:Data>
+            <ss:Data ss:Type="String">${resolved_term_4043}</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">Herzinsuffizienz NYHA I&#10;Herzinsuffizienz NYHA II&#10;Herzinsuffizienz NYHA III&#10;Herzinsuffizienz NYHA IV&#10;Dekompensierte Herzinsuffizienz</ss:Data>
+            <ss:Data ss:Type="String">${resolved_term_name_4043dot}</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">NYHA I&#10;NYHA II&#10;NYHA III&#10;NYHA IV&#10;NYHA I&#1;Linkfsführende</ss:Data>
+            <ss:Data ss:Type="String">${modifier_values_4044}</ss:Data>
         </ss:Cell>
         <ss:Cell></ss:Cell>
         <ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
