@@ -614,7 +614,7 @@ function printing_calculator_output(output_array_f, printFrom) {
             row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element['medsp_id']}`));
             row_output_calculator_column.appendChild(document.createTextNode(element['diagnostic_name']));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element['SNOMED_array'])));
-            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element['ICD_array']])));
+            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element['ICD_array'])));
             row_output_calculator_typ.appendChild(document.createTextNode(element['typ']));
         }
 
