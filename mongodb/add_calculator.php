@@ -226,6 +226,7 @@ $cursor_array_medspTerm = $collection_Index->findOne(
 );
 $results_medSP_term = $cursor_array_medspTerm->MedSP_term;
 $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
+$array_output_decode = json_decode(json_encode($array_output, true), true);
 
 
 $output_array_length = count($array_output);
@@ -240,7 +241,7 @@ for ($i = 0; $i < $output_array_length; $i++) {
       $update_medsp_id = $lastMedspId;
    }
    $medsp_array_output = array_replace($medsp_array_output, array(intval($update_medsp_id) => $array_output[$i]->diagnostic_name));
-   $array_output[$i] = array_merge(['medsp_id' => $update_medsp_id], $array_output[$i]);
+   $array_output[$i] = array_merge(['medsp_id' => $update_medsp_id], $array_output_decode[$i]);
 }
 
 $insertOneResult2 = $collection_Index->updateOne(
