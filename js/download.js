@@ -28,7 +28,6 @@ async function creating_XML(output_array_f) {
 
     //append main Diagnostic
     let allowed_modifier_4040 = ""
-    let allowed_modifier_4040_array = []
     let resolved_term_4043 = ""
     let resolved_term_name_4043dot = ""
     let modifier_values_4044 = ""
@@ -42,19 +41,19 @@ async function creating_XML(output_array_f) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
                 if (l != modifier_length - 1) { modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator }
                 console.log(allowed_modifier_4040_array.indexOf(element['modifier_array']))
-                if (allowed_modifier_4040_array.indexOf(element['modifier_array'][l]) === -1) {
-                    console.log(element['modifier_array'][l])
-                    allowed_modifier_4040_array.push(element['modifier_array'][l]);
-                  }
+                
             }
 
             resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
             resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
         })
-        console.log(allowed_modifier_4040_array)
-        allowed_modifier_4040_array.forEach((element)=>{
-            allowed_modifier_4040 = allowed_modifier_4040 + element + + Code_Return
-        })
+       for(let i=0;i<=modifier_nbr;i++){
+        let modifier_name = document.getElementById(`input_modifier_title_${i}`).value
+        if (document.getElementById(`radio_input_${i}`).checked==false){
+            allowed_modifier_4040 = allowed_modifier_4040 + modifier_name + Code_Return
+
+        }
+       }
         console.log(allowed_modifier_4040)
 
 
