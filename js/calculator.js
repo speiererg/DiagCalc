@@ -524,8 +524,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let calculated_modifier = []
     let main_id = array_modifier_isMain.indexOf('1')
     calculated_diag = calculated_diag_trim(array_inputs_value[main_id][0])
-    calculated_SNOMED.push(array_SNOMED_value[main_id][0])
-    calculated_ICD.push(array_ICD_value[main_id][0])
+    if (array_SNOMED_value[main_id][0] != "") { calculated_SNOMED.push(array_SNOMED_value[main_id][0]) }
+    if (array_ICD_value[main_id][0] != "") { calculated_ICD.push(array_ICD_value[main_id][0]) }
+
     output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, [], 'main'])
 
     // Creation of Items
@@ -574,12 +575,12 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     document.getElementById('button_edit_calculator').disabled = false
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
-   console.log(output_array)
+    console.log(output_array)
     disable_input(true)
     printing_calculator_output(output_array, 'calculate')
 }
 
-function calculated_diag_trim(calculated_diag_f){
+function calculated_diag_trim(calculated_diag_f) {
     calculated_diag_f = calculated_diag_f.replace(/\s+/g, ' ').trim()
     calculated_diag_f = calculated_diag_f.charAt(0).toUpperCase() + calculated_diag_f.slice(1)
     return calculated_diag_f;
