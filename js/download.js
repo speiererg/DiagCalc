@@ -37,7 +37,6 @@ async function creating_XML(output_array_f) {
     main_Diagnostic = output_array_f.shift();
 
     async function create_array_main_diagnosis(output_array_f) {
-        console.log(element['modifier_array'])
         output_array_f.forEach((element) => {
             for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
