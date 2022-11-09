@@ -43,12 +43,12 @@ async function creating_XML(output_array_f) {
         modifier_values_4044 = modifier_values_4044
         console.log(element['modifier_array'])
     })
-    XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array'], resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044))
+    XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
 
 
     // append Specific Diagnostic
     output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array'], '', '', ''))
+        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '')
     })
 
     document.getElementById('input_hidden_XML_output').value = XML_output
