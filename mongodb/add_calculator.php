@@ -264,11 +264,12 @@ $insertOneResult = $collection->insertOne(
       'medsp_id' => intval($medspId),
       'created_Time' => $time,
       'created_timestamp' => time(),
+      'user' => $_SESSION['username'],
       'modifiers' => $modifiers_array,
       'output_array' => $array_output,
       'parameters' => $parameters_output_forMongo,
-      'XML_output' => $_POST['XML_output'],
-      'updateMapping' => false
+      'updateMapping' => false,
+      'MedSP_term' => $medsp_array_output,
    ]
 );
 
