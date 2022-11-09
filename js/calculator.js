@@ -10,7 +10,6 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('img_button_add_row').addEventListener('click', addInputRow)
     document.getElementById('img_button_add_column').addEventListener('click', () => { addInputColumn('', '') })
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
-    document.getElementById(`radio_input_0`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById('button_download_XML').addEventListener('click', function (event) { download_XML() })
     document.getElementById('button_download_TXT').addEventListener('click', function (event) { download_TXT() })
 
