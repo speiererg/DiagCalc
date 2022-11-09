@@ -37,9 +37,11 @@ async function creating_XML(output_array_f) {
 
     main_Diagnostic = output_array_f.shift();
     output_array_f.forEach((element) => {
-        element['modifier_array'].forEach((element) => {
-            modifier_values_4044 = modifier_values_4044 + element + Code_ModifierSeparator
-        })
+        for(let l=0, modifier_length=element['modifier_array'].length;i<modifier_length;i++)
+        {
+            modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l] 
+            if (l!= modifier_length -1){modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator}
+        }
         modifier_values_4044 = modifier_values_4044 + Code_Return
         resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
         resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
