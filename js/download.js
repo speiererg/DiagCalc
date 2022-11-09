@@ -37,7 +37,7 @@ async function creating_XML(output_array_f) {
 
     main_Diagnostic = output_array_f.shift();
     output_array_f.forEach((element) => {
-        allowed_modifier = allowed_modifier
+        allowed_modifier_4040 = allowed_modifier_4040
         resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
         resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
         modifier_values_4044 = modifier_values_4044
