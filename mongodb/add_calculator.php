@@ -204,6 +204,14 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id, 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
+
+
+echo 'Last found id' . $lastFoundId . '</br>';
+echo 'Last Modifier id' . $lastModifierId . '</br>';
+echo '</br> list term old:' . json_encode($medSP_array);
+echo '</br> list term new:' . json_encode($medsp_array_output);
+echo '</br> Output Calculator:' . json_encode($array_output);
+
 /////////// medsp ID
 
 $cursor_lastMedspId = $collection_Index->findOne(
@@ -278,10 +286,7 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
+
 header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
-echo 'Last found id' . $lastFoundId . '</br>';
-echo 'Last Modifier id' . $lastModifierId . '</br>';
-echo '</br> list term old:' . json_encode($medSP_array);
-echo '</br> list term new:' . json_encode($medsp_array_output);
-echo '</br> Output Calculator:' . json_encode($array_output);
+
 ?>
