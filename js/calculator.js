@@ -519,6 +519,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
 
     // Creation of General Diagnostic 
+    calculated_diag= array_inputs_value[array_modifier_isMain.indexOf('1')]
+
+console.log(calculated_diag)
     console.log(array_inputs_value)
     console.log(array_modifier_isMain)
     //output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier,'main'])
