@@ -31,12 +31,12 @@ async function creating_XML(output_array_f) {
 //append main Diagnostic
 main_Diagnostic = output_array_f.shift();
 console.log(main_Diagnostic)
-XML_output = XML_output + createXMLRow(`MedSp_Id_${main_Diagnostic[0]}`, 'MedSP', main_Diagnostic[1], 'Created by MedSP', JSON.stringify(element[2]))
+XML_output = XML_output + createXMLRow(`MedSp_Id_${main_Diagnostic['medsp_term']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']))
 
 
     // append Specific Diagnostic
     output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`MedSp_Id_X`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
+        XML_output = XML_output + createXMLRow(`MedSp_Id_${element['medsp_term']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']))
     })
 
     document.getElementById('input_hidden_XML_output').value = XML_output
