@@ -599,6 +599,8 @@ function printing_calculator_output(output_array_f, printFrom) {
         let row_output_calculator_column = document.createElement('td')
         let row_output_calculator_SNOMED_column = document.createElement('td')
         let row_output_calculator_ICD_column = document.createElement('td')
+        let row_output_calculator_typ = document.createElement('td')
+
 
 
 
@@ -607,11 +609,13 @@ function printing_calculator_output(output_array_f, printFrom) {
             row_output_calculator_column.appendChild(document.createTextNode(element[0]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
+            row_output_calculator_typ.appendChild(document.createTextNode(element[3]));
         } else {
             row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
             row_output_calculator_column.appendChild(document.createTextNode(element[1]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
+            row_output_calculator_typ.appendChild(document.createTextNode(element[4]));
         }
 
 
@@ -619,6 +623,8 @@ function printing_calculator_output(output_array_f, printFrom) {
         row_output_calculator.appendChild(row_output_calculator_column)
         row_output_calculator.appendChild(row_output_calculator_SNOMED_column)
         row_output_calculator.appendChild(row_output_calculator_ICD_column)
+        row_output_calculator.appendChild(row_output_calculator_typ)
+
         document.getElementById('table_output_calculator').appendChild(row_output_calculator);
     })
 
