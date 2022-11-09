@@ -46,7 +46,7 @@ async function creating_XML(output_array_f) {
             resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
             resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
         })
-       for(let i=0;i<=modifier_nbr;i++){
+       for(let i=1;i<=modifier_nbr;i++){
         let modifier_name = document.getElementById(`input_modifier_title_${i}`).value
         if (document.getElementById(`radio_input_${i}`).checked==false){
             allowed_modifier_4040 = allowed_modifier_4040 + modifier_name + Code_Return
