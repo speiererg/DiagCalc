@@ -104,6 +104,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                     document.getElementById('button_edit_calculator').disabled = true
                     document.getElementById('button_download_XML').disabled = true
                     document.getElementById('button_download_TXT').disabled = true
+                    document.getElementById(`radio_input_1`).checked == true
                     confirmBeforeNavigate = 1
 
 
