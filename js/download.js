@@ -40,7 +40,6 @@ async function creating_XML(output_array_f) {
             for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
                 if (l != modifier_length - 1) { modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator }
-                console.log(allowed_modifier_4040_array.indexOf(element['modifier_array']))
                 
             }
 
