@@ -579,6 +579,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     document.getElementById('button_edit_calculator').disabled = false
     document.getElementById('button_calculate').disabled = true
     document.getElementById('button_save_calculator').disabled = false
+   console.log(output_array)
     disable_input(true)
     printing_calculator_output(output_array, 'calculate')
 }
