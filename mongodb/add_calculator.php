@@ -239,7 +239,7 @@ for ($i = 0; $i < $output_array_length; $i++) {
       $lastMedspId++;
       $update_medsp_id = $lastMedspId;
    }
-   $medsp_array_output = array_replace($medsp_array_output, array(intval($update_medsp_id) => $array_output[$i][0]));
+   $medsp_array_output = array_replace($medsp_array_output, array(intval($update_medsp_id) => $array_output[$i]->diagnostic_name));
    $array_output[$i] = array_merge(['medsp_id' => $update_medsp_id], $array_output[$i]);
 }
 
