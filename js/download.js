@@ -50,10 +50,11 @@ async function creating_XML(output_array_f) {
             resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
             resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
         })
-        console.log(resolved_term_4043)
         allowed_modifier_4040_array.forEach((element)=>{
-            modifier_values_4044 = modifier_values_4044 + element + + Code_Return
+            allowed_modifier_4040 = allowed_modifier_4040 + element + + Code_Return
         })
+        console.log(allowed_modifier_4040)
+
 
     }
 
