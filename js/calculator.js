@@ -551,6 +551,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
         //Creating Output Array
+        console.log(calculated_diag,calculated_diag_main)
         if (calculated_diag != calculated_diag_main){
             output_array.push([calculated_diag_trim(calculated_diag), calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
         }
