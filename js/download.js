@@ -78,7 +78,7 @@ function createFlatFileRow(ID_Term, DiagnosisVendor, DiagnosisDescription, Conta
     return TXT_temp = `1,${ID_Term}\n2,${DiagnosisVendor}\n3,${DiagnosisDescription}\n35,${ID_Term}\n4000,ICD-10-GM\n4005,${ICD}\n`
 }
 
-function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044) {
+function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactComment, ICD, resolved_term_4043_f, resolved_term_name_4043dot_f, modifier_values_4044_f) {
     return XML_temp = `            
         <ss:Row>
         <ss:Cell>
@@ -133,13 +133,13 @@ function createXMLRow(ID_Term, DiagnosisVendor, DiagnosisDescription, ContactCom
             <ss:Data ss:Type="String">NYHA&#10;Akute Dekompensation</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">${resolved_term_4043}</ss:Data>
+            <ss:Data ss:Type="String">${resolved_term_4043_f}</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">${resolved_term_name_4043dot}</ss:Data>
+            <ss:Data ss:Type="String">${resolved_term_name_4043dot_f}</ss:Data>
         </ss:Cell>
         <ss:Cell>
-            <ss:Data ss:Type="String">${modifier_values_4044}</ss:Data>
+            <ss:Data ss:Type="String">${modifier_values_4044_f}</ss:Data>
         </ss:Cell>
         <ss:Cell></ss:Cell>
         <ss:Cell ss:StyleID="SolidBlack"></ss:Cell>
