@@ -40,7 +40,7 @@ async function creating_XML(output_array_f) {
         for(let l=0, modifier_length=element['modifier_array'].length;i<modifier_length;i++)
         {
             modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l] 
-            if (l!= modifier_length -1){modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator}
+            if (l != modifier_length -1){modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator}
         }
         modifier_values_4044 = modifier_values_4044 + Code_Return
         resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
