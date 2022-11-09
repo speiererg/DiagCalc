@@ -519,12 +519,17 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
 
     // Creation of General Diagnostic 
-    calculated_diag= array_inputs_value[array_modifier_isMain.indexOf('1')]
-
-console.log(calculated_diag)
+    let calculated_SNOMED = []
+    let calculated_ICD = []
+    let calculated_modifier = []
+    let main_id = array_modifier_isMain.indexOf('1')
+    calculated_diag = array_inputs_value[main_id]
+    calculated_SNOMED.push(array_SNOMED_value[main_id][0])
+    calculated_ICD.push(array_ICD_value[main_id][0])
+    console.log(calculated_diag)
     console.log(array_inputs_value)
     console.log(array_modifier_isMain)
-    //output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier,'main'])
+    output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, [], 'main'])
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -550,7 +555,7 @@ console.log(calculated_diag)
         //Creating Output Array
         calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
         calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier,'specific'])
+        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
 
 
         // Array Calculation
@@ -581,7 +586,7 @@ console.log(calculated_diag)
 
 
 function printing_calculator_output(output_array_f, printFrom) {
-    medsp_id_iterate_nbr=0
+    medsp_id_iterate_nbr = 0
     output_array_f.forEach((element) => {
         medsp_id_iterate_nbr++
 
@@ -598,7 +603,7 @@ function printing_calculator_output(output_array_f, printFrom) {
             row_output_calculator_column.appendChild(document.createTextNode(element[0]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
-        }else{
+        } else {
             row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
             row_output_calculator_column.appendChild(document.createTextNode(element[1]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
