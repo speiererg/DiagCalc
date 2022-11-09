@@ -36,32 +36,37 @@ async function creating_XML(output_array_f) {
 
 
     main_Diagnostic = output_array_f.shift();
-    output_array_f.forEach((element) => {
-        for(let l=0, modifier_length=element['modifier_array'].length;l<modifier_length;l++)
-        {
-            modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l] 
-            if (l != modifier_length -1){modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator}
-        }
-        modifier_values_4044 = modifier_values_4044 + Code_Return
-        resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
-        resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
-        modifier_values_4044 = modifier_values_4044
-        console.log(element['modifier_array'])
-    })
-    XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
 
+    async function create_array_main_diagnosis(output_array_f) {
+        output_array_f.forEach((element) => {
+            for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
+                modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
+                if (l != modifier_length - 1) { modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator }
+            }
+            modifier_values_4044 = modifier_values_4044 + Code_Return
+            resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
+            resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
+            modifier_values_4044 = modifier_values_4044
+            console.log(element['modifier_array'])
+        })
+    }
+    
+    async function create_rest_XML() {
+        await (create_array_main_diagnosis(output_array_f))
+        XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
+        // append Specific Diagnostic
+        output_array_f.forEach((element) => {
+            XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '')
+        })
 
-    // append Specific Diagnostic
-    output_array_f.forEach((element) => {
-        XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '')
-    })
+        document.getElementById('input_hidden_XML_output').value = XML_output
 
-    document.getElementById('input_hidden_XML_output').value = XML_output
-
-    // finalize XML
-    XML_output = XML_output + XML_End
-    document.getElementById('input_XML').value = XML_output
-    return XML_output
+        // finalize XML
+        XML_output = XML_output + XML_End
+        document.getElementById('input_XML').value = XML_output
+        return XML_output
+    }
+    create_rest_XML()
 }
 
 async function creating_TXT(output_array_f) {
