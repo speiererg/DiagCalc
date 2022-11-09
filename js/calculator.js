@@ -523,11 +523,11 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let calculated_ICD = []
     let calculated_modifier = []
     let main_id = array_modifier_isMain.indexOf('1')
-    calculated_diag = calculated_diag_trim(array_inputs_value[main_id][0])
+    calculated_diag_main = calculated_diag_trim(array_inputs_value[main_id][0])
     if (array_SNOMED_value[main_id][0] != "") { calculated_SNOMED.push(array_SNOMED_value[main_id][0]) }
     if (array_ICD_value[main_id][0] != "") { calculated_ICD.push(array_ICD_value[main_id][0]) }
 
-    output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, [], 'main'])
+    output_array.push([calculated_diag_main, calculated_SNOMED, calculated_ICD, [], 'main'])
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -551,7 +551,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
         //Creating Output Array
-        output_array.push([calculated_diag_trim(calculated_diag), calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
+        if (calculated_diag != calculated_diag_main){
+            output_array.push([calculated_diag_trim(calculated_diag), calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
+        }
 
 
         // Array Calculation
