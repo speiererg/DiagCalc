@@ -523,12 +523,9 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let calculated_ICD = []
     let calculated_modifier = []
     let main_id = array_modifier_isMain.indexOf('1')
-    calculated_diag = array_inputs_value[main_id][0]
+    calculated_diag = calculated_diag_trim(array_inputs_value[main_id][0])
     calculated_SNOMED.push(array_SNOMED_value[main_id][0])
     calculated_ICD.push(array_ICD_value[main_id][0])
-    console.log(calculated_diag)
-    console.log(array_inputs_value)
-    console.log(array_modifier_isMain)
     output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, [], 'main'])
 
     // Creation of Items
@@ -553,9 +550,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         }
 
         //Creating Output Array
-        calculated_diag = calculated_diag.replace(/\s+/g, ' ').trim()
-        calculated_diag = calculated_diag.charAt(0).toUpperCase() + calculated_diag.slice(1)
-        output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
+        output_array.push([calculated_diag_trim(calculated_diag), calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
 
 
         // Array Calculation
@@ -584,7 +579,11 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     printing_calculator_output(output_array, 'calculate')
 }
 
-
+function calculated_diag_trim(calculated_diag_f){
+    calculated_diag_f = calculated_diag_f.replace(/\s+/g, ' ').trim()
+    calculated_diag_f = calculated_diag_f.charAt(0).toUpperCase() + calculated_diag.slice(1)
+    return calculated_diag_f;
+}
 
 function printing_calculator_output(output_array_f, printFrom) {
     medsp_id_iterate_nbr = 0
