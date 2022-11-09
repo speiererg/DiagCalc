@@ -527,7 +527,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     if (array_SNOMED_value[main_id][0] != "") { calculated_SNOMED.push(array_SNOMED_value[main_id][0]) }
     if (array_ICD_value[main_id][0] != "") { calculated_ICD.push(array_ICD_value[main_id][0]) }
 
-    output_array.push([calculated_diag_main, calculated_SNOMED, calculated_ICD, [], 'main'])
+    output_array.push({'diagnostic_name':calculated_diag_main, 'SNOMED_array': calculated_SNOMED, 'ICD_array':calculated_ICD, 'modifier_array':calculated_modifier, 'typ':'main'})
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
