@@ -523,7 +523,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     let calculated_ICD = []
     let calculated_modifier = []
     let main_id = array_modifier_isMain.indexOf('1')
-    calculated_diag = array_inputs_value[main_id]
+    calculated_diag = array_inputs_value[main_id][0]
     calculated_SNOMED.push(array_SNOMED_value[main_id][0])
     calculated_ICD.push(array_ICD_value[main_id][0])
     console.log(calculated_diag)
