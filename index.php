@@ -54,7 +54,7 @@ if (!isset($_SESSION['loggedin'])) {
   </div>
 
   <div id="footer">
-  Welcome <?php echo $_SESSION['username'] .', '. date("Y/m/d") ?>
+  Welcome <?php echo $_SESSION['username'] .', '. sdate("Y/m/d") ?>
 
   </div>
 
