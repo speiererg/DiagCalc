@@ -3,7 +3,6 @@
 
 
 async function download_XML() {
-    console.log('download XML')
     if (output_array) {
         await creating_XML(output_array)
         console.log(document.getElementById('button_download_XML_submit'))
@@ -25,7 +24,6 @@ async function download_TXT() {
 
 
 async function creating_XML(output_array_f) {
-    console.log(output_array_f)
     let XML_output = XML_beginn
 
     //append main Diagnostic
@@ -38,6 +36,7 @@ async function creating_XML(output_array_f) {
     main_Diagnostic = output_array_f.shift();
 
     async function create_array_main_diagnosis(output_array_f) {
+        console.log(output_array_f)
         output_array_f.forEach((element) => {
             for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
@@ -47,10 +46,10 @@ async function creating_XML(output_array_f) {
             resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
             resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
             modifier_values_4044 = modifier_values_4044
-            console.log(element['modifier_array'])
         })
+        console.log(resolved_term_4043)
     }
-    
+
     async function create_rest_XML() {
         await (create_array_main_diagnosis(output_array_f))
         XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
