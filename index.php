@@ -48,13 +48,14 @@ if (!isset($_SESSION['loggedin'])) {
 
 
   <div id="maincontent">
-  Welcome <?php echo $_SESSION['username']?>
 
     <div id="mainpage">
     </div>
   </div>
 
   <div id="footer">
+  Welcome <?php echo $_SESSION['username'] .', '. date("Y/m/d") ?>
+
   </div>
 
   <script src="js/mapping.js"></script>
