@@ -553,7 +553,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
         //Creating Output Array
         calculated_diag = calculated_diag_trim(calculated_diag)
         if (calculated_diag != calculated_diag_main){
-            output_array.push([calculated_diag, calculated_SNOMED, calculated_ICD, calculated_modifier, 'specific'])
+            output_array.push({'diagnostic_name':calculated_diag, 'SNOMED_array': calculated_SNOMED, 'ICD_array':calculated_ICD, 'modifier_array':calculated_modifier, 'typ':'specific'})
         }
 
 
@@ -606,16 +606,16 @@ function printing_calculator_output(output_array_f, printFrom) {
 
         if (printFrom == "calculate") {
             row_output_medspId_column.appendChild(document.createTextNode('medsp_term_X'));
-            row_output_calculator_column.appendChild(document.createTextNode(element[0]));
-            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
-            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
-            row_output_calculator_typ.appendChild(document.createTextNode(element[4]));
+            row_output_calculator_column.appendChild(document.createTextNode(element['diagnostic_name']));
+            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element['SNOMED_array'])));
+            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element['ICD_array'])));
+            row_output_calculator_typ.appendChild(document.createTextNode(element['typ']));
         } else {
-            row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
-            row_output_calculator_column.appendChild(document.createTextNode(element[1]));
-            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
-            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
-            row_output_calculator_typ.appendChild(document.createTextNode(element[5]));
+            row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element['medsp_id']}`));
+            row_output_calculator_column.appendChild(document.createTextNode(element['diagnostic_name']));
+            row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element['SNOMED_array'])));
+            row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element['ICD_array']])));
+            row_output_calculator_typ.appendChild(document.createTextNode(element['typ']));
         }
 
 

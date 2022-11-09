@@ -28,6 +28,13 @@ async function creating_XML(output_array_f) {
     console.log(output_array_f)
     let XML_output = XML_beginn
 
+//append main Diagnostic
+main_Diagnostic = output_array_f.shift();
+console.log(main_Diagnostic)
+XML_output = XML_output + createXMLRow(`MedSp_Id_${main_Diagnostic[0]}`, 'MedSP', main_Diagnostic[1], 'Created by MedSP', JSON.stringify(element[2]))
+
+
+    // append Specific Diagnostic
     output_array_f.forEach((element) => {
         XML_output = XML_output + createXMLRow(`MedSp_Id_X`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))
     })

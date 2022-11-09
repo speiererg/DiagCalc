@@ -227,7 +227,7 @@ $medSP_array = json_decode(json_encode($results_medSP_term, true), true);
 $output_array_length = count($array_output);
 $medsp_array_output = $medSP_array;
 for ($i = 0; $i < $output_array_length; $i++) {
-      $actual_medsp_id = array_search($array_output[$i][0], $medSP_array, false);
+      $actual_medsp_id = array_search($array_output[$i]['diagnostic_name'], $medSP_array, false);
    if ($actual_medsp_id) {
       $update_medsp_id = $actual_medsp_id;
    } else {
@@ -235,7 +235,7 @@ for ($i = 0; $i < $output_array_length; $i++) {
       $update_medsp_id = $lastMedspId;
    }
    $medsp_array_output = array_replace($medsp_array_output, array(intval($update_medsp_id) => $array_output[$i][0]));
-   $array_output[$i] = array_merge([$update_medsp_id], $array_output[$i]);
+   $array_output[$i] = array_merge(['medsp_id' => $update_medsp_id], $array_output[$i]);
 }
 
 $insertOneResult2 = $collection_Index->updateOne(
