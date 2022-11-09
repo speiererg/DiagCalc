@@ -609,13 +609,13 @@ function printing_calculator_output(output_array_f, printFrom) {
             row_output_calculator_column.appendChild(document.createTextNode(element[0]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[1])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
-            row_output_calculator_typ.appendChild(document.createTextNode(element[3]));
+            row_output_calculator_typ.appendChild(document.createTextNode(element[4]));
         } else {
             row_output_medspId_column.appendChild(document.createTextNode(`medsp_term_${element[0]}`));
             row_output_calculator_column.appendChild(document.createTextNode(element[1]));
             row_output_calculator_SNOMED_column.appendChild(document.createTextNode(JSON.stringify(element[2])));
             row_output_calculator_ICD_column.appendChild(document.createTextNode(JSON.stringify(element[3])));
-            row_output_calculator_typ.appendChild(document.createTextNode(element[4]));
+            row_output_calculator_typ.appendChild(document.createTextNode(element[5]));
         }
 
 
