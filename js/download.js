@@ -37,7 +37,7 @@ async function creating_XML(output_array_f) {
 
     main_Diagnostic = output_array_f.shift();
     output_array_f.forEach((element) => {
-        for(let l=0, modifier_length=element['modifier_array'].length;i<modifier_length;i++)
+        for(let l=0, modifier_length=element['modifier_array'].length;l<modifier_length;l++)
         {
             modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l] 
             if (l != modifier_length -1){modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator}
