@@ -363,7 +363,7 @@ body {
 }
 
 .home_link {
-  color: var(--div-color-dunkel);
+  color: var(--div-seperation);
   text-decoration: underline;
   font-size: medium;
 }
