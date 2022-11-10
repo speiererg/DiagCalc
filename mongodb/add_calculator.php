@@ -129,6 +129,7 @@ $SNOMED_array = array();
 $ICD_array = array();
 $modifiers_array = array();
 $parameters_output_forMongo = array();
+$modifiers_id_array = array();
 
 for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    $checkbox_multiple_ID = "checkbox_multiple_input_{$i}";
@@ -201,7 +202,8 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    } else {
       $modifier_id = $_POST[$modifier_id_name];
    }
-   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'calculator_name' => $mainName, 'lastUpdate_timestamp' => time(), 'modifier_id' => intval($modifier_id), 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
+   array_push($modifiers_id_array,intval($modifier_id));
+   $modifiers_array[] = array('current_verion'=> true, 'calcualtor_id' => intval($lastId), 'calculator_name' => $mainName, 'calculator_version' => intval($_POST['select_version']) ,'lastUpdate_timestamp' => time(), 'modifier_id' => intval($modifier_id), 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
 
@@ -284,6 +286,18 @@ $insertOneResult = $collection->insertOne(
 );
 
 $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
+
+$cursor = $collectionModifier->aggregate(
+   [
+     ['$match' => ['modifier_id' => ['$in' => $modifiers_id_array]]],
+     ['$set' => ['current_version' => false ]],
+    // ['$project' => ['lastUpdate_timestamp' => 1]]
+     //[ '$sort' => ['_id' => 1] ],
+     //[ '$limit' => 14 ]
+ 
+   ]
+ );
+
 $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
