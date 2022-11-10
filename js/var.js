@@ -1031,16 +1031,16 @@ var XML_calculator_End = `<ss:Row>
 </Worksheet>
 </Workbook>`
 
-var XML_modifier_beginn =""
-var XML_modifier_end =""
+var XML_modifier_beginn ="<XML_Beginn>"
+var XML_modifier_end ="<XML_Beginn>"
 
 
-var TXT_modifier_beginn =""
+var TXT_modifier_beginn ="<TXT_Beginn>"
 
-var XML_sub_modifier_beginn =""
-var XML_sub_modifier_end =""
+var XML_sub_modifier_beginn ="<XML_Beginn>"
+var XML_sub_modifier_end ="<XML_Beginn>"
 
-var TXT_sub_modifier_beginn =""
+var TXT_sub_modifier_beginn ="<TXT_Beginn>"
 
 
 
