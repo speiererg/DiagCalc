@@ -1,6 +1,10 @@
 function loading_page_modifiers() {
     find_modifiers()
     document.getElementById('button_download_modifier_XML').addEventListener('click', function (event) { download_modifier_XML() })
+    document.getElementById('button_download_sub_modifier_XML').addEventListener('click', function (event) { download_sub_modifier_XML() })
+    document.getElementById('button_download_modifier_TXT').addEventListener('click', function (event) { download_modifier_TXT() })
+
+
 }
 
 function find_modifiers() {
