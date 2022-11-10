@@ -25,6 +25,7 @@ $cursor = $collection->aggregate(
   [
     ['$match' => ['parameters.main'=>false]],
     [ '$group' => ['_id' => '$modifier_id']],
+    ['$project'=>['lastUpdate_timestamp'=>1]]
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
   ]
