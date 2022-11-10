@@ -101,7 +101,7 @@ async function download_sub_modifier_XML() {
 }
 
 
-async function creating_modifier_XML(output_array_f) {
+async function creating_sub_modifier_XML(output_array_f) {
     let XML_sub_modifier_output = XML_sub_modifier_beginn
 
     output_array_f.forEach((element) => {
