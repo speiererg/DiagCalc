@@ -1,9 +1,8 @@
 function loading_page_modifiers() {
-    find_modifiers()
-    document.getElementById('button_download_modifier_XML').addEventListener('click', function (event) { download_modifier_XML() })
     var modifier_array_toDownload = []
     var subModifier_array_toDownload = []
-
+    find_modifiers()
+    document.getElementById('button_download_modifier_XML').addEventListener('click', function (event) { download_modifier_XML() })
 }
 
 function find_modifiers() {
