@@ -65,7 +65,7 @@ async function creating_modifier_XML(output_array_f) {
 
     output_array_f.forEach((element) => {
         XML_modifier_output = XML_modifier_output + create_modifier_XML_row(element[0], element[1])
-
+        console.log(XML_modifier_output)
     })
 
     // finalize XML
