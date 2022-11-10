@@ -27,7 +27,7 @@ $cursor = $collection->aggregate(
     [
       '$group' => [
         '_id' => '$modifier_id',
-        'lastUpdate_timestamp' => ['$max' => '$lastUpdate_timestamp']
+        'lastUpdate_timestamps' => ['$max' => '$lastUpdate_timestamp']
       ]
     ],
    // ['$project' => ['lastUpdate_timestamp' => 1]]
