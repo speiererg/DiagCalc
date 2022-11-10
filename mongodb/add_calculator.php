@@ -287,7 +287,7 @@ $insertOneResult = $collection->insertOne(
 
 $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 
-$cursor = $collectionModifier->aggregate(
+$cursormodifier = $collectionModifier->aggregate(
    [
      ['$match' => ['modifier_id' => ['$in' => $modifiers_id_array]]],
      ['$set' => ['current_version' => false ]],
@@ -303,6 +303,7 @@ $insertOneResult = $collectionModifier->insertMany(
 );
 
 echo '</br> list term old:' . json_encode($modifiers_id_array);
+echo '</br> list term old:' . json_encode($cursormodifier);
 
 //header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 
