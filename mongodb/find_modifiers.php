@@ -12,18 +12,9 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 
 $collection = $client->DiagCalc_Calculators->Modifiers;
 
-/*
- $cursor = $collection->find(
- //
- array('parameters.main' => false),
- array(
- 'sort' => array('modifier_name' => 1),
- )
- );
- */
 $cursor = $collection->find(
   ['parameters.main' => false, 'current_version' => true],
-  ['$sort' => ['modifier_name' => 1]],
+  ['$sort' => ['modifier_name' => -1]],
   // ['$project' => ['lastUpdate_timestamp' => 1]]
   //[ '$limit' => 14 ]
 );
