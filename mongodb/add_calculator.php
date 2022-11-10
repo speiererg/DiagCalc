@@ -301,7 +301,7 @@ $cursormodifier = $collectionModifier->aggregate(
 */
 
 $cursormodifier = $collectionModifier->updateMany(
-   array('modifier_id' => ['$in'=>[1,2,3,4]]),
+   array('modifier_id' => ['$in'=>$modifiers_id_array]),
    array('$set' => ['current_version' => false ])
 );
 
