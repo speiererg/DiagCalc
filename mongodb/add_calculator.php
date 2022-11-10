@@ -84,7 +84,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
          'active' => 'yes',
-         'MedSP_term' => []
+         'medsp_term' => []
       ]
    );
 
@@ -221,19 +221,19 @@ $lastMedspId = intval($cursor_lastMedspId->medsp_last_id);
 $cursor_array_medspTerm = $collection_Index->findOne(
    array('calculator_id' => intval($lastId)),
    array(
-      'projection' => ['MedSP_term' => 1],
+      'projection' => ['medsp_term' => 1],
    )
 );
-$results_medSP_term = $cursor_array_medspTerm->MedSP_term;
-$medSP_array = json_decode(json_encode($results_medSP_term, true), true);
+$results_medsp_term = $cursor_array_medspTerm->medsp_term;
+$medsp_array = json_decode(json_encode($results_medsp_term, true), true);
 $array_output_decode = json_decode(json_encode($array_output, true), true);
 
 
 $output_array_length = count($array_output);
-$medsp_array_output = $medSP_array;
+$medsp_array_output = $medsp_array;
 for ($i = 0; $i < $output_array_length; $i++) {
 
-      $actual_medsp_id = array_search($array_output[$i]->diagnostic_name, $medSP_array, false);
+      $actual_medsp_id = array_search($array_output[$i]->diagnostic_name, $medsp_array, false);
    if ($actual_medsp_id) {
       $update_medsp_id = $actual_medsp_id;
    } else {
@@ -248,7 +248,7 @@ $insertOneResult2 = $collection_Index->updateOne(
    array('calculator_id' => intval($lastId)),
    array(
       '$set' => array(
-         'MedSP_term' => $medsp_array_output,
+         'medsp_term' => $medsp_array_output,
          'medsp_last_id' => intval($lastMedspId)
       )
    )
@@ -256,7 +256,7 @@ $insertOneResult2 = $collection_Index->updateOne(
 
 echo 'Last found id' . $lastFoundId . '</br>';
 echo 'Last Modifier id' . $lastModifierId . '</br>';
-echo '</br> list term old:' . json_encode($medSP_array);
+echo '</br> list term old:' . json_encode($medsp_array);
 echo '</br> list term new:' . json_encode($medsp_array_output);
 echo '</br> Output Calculator:' . json_encode($array_output);
 
@@ -279,7 +279,7 @@ $insertOneResult = $collection->insertOne(
       'output_array' => $array_output,
       'parameters' => $parameters_output_forMongo,
       'updateMapping' => false,
-      'MedSP_term' => $medsp_array_output,
+      'medsp_term' => $medsp_array_output,
    ]
 );
 
