@@ -14,8 +14,8 @@ $collection = $client->DiagCalc_Calculators->Modifiers;
 
 
 $cursor = $collection->find(
-  //'parameters.main' => 'false'
-  array(),
+  //
+  array('parameters.main' => false),
   array(
     'sort' => array('modifier_name' => 1),
   )
