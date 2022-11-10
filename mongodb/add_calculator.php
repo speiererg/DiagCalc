@@ -201,7 +201,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
    } else {
       $modifier_id = $_POST[$modifier_id_name];
    }
-   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'lastUpdate_timestamp' => time(), 'modifier_id' => $modifier_id, 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
+   $modifiers_array[] = array('calcualtor_id' => intval($lastId), 'calculator_name' => $mainName, 'lastUpdate_timestamp' => time(), 'modifier_id' => intval($modifier_id), 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
 
