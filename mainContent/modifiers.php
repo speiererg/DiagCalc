@@ -33,8 +33,8 @@ if (!isset($_SESSION['loggedin'])) {
           <td>
             <form name="form" action="download/download_sub_modifier_XML.php" method="POST">
               <input type="hidden" name="input_XML" id="input_XML" value="">
-              <input type="button" class="button_download" id="button_download_sub_modifier_XML"value="Download as XML" />
-              <input type="submit" name="button1" class="button_download" id="button_download_sub_modifier_XML_submit" value="Download Sub-Modifier as XML" style="display:none"/>
+              <input type="button" class="button_download" id="button_download_sub_modifier_XML"value="Download Sub-Modifier as XML" />
+              <input type="submit" name="button1" class="button_download" id="button_download_sub_modifier_XML_submit" style="display:none"/>
             </form>
             <p>
 
