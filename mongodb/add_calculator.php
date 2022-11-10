@@ -302,6 +302,7 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
+echo '</br> list term old:' . json_encode($modifiers_id_array);
 
 header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 
