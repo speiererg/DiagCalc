@@ -880,7 +880,7 @@ var XML_calculator_beginn = `<?xml version="1.0" encoding="UTF-8"?>
                     <ss:Data ss:Type="String"></ss:Data>
                 </ss:Cell>
             </ss:Row>`
-var XML_calculator_End = `<ss:Row>
+var XML_calculator_end = `<ss:Row>
 <ss:Cell ss:StyleID="SolidBlack">
     <ss:Comment ss:Author="Epic Export Utility">
         <ss:Data>#LAST_ROW</ss:Data>
