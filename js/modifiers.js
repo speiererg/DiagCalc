@@ -21,6 +21,7 @@ function find_modifiers() {
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
                 link.appendChild(text_name)
                 document.getElementById('modifier_typ_ul').appendChild(link)
+                console.log(params_link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
 
