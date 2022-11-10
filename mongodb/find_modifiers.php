@@ -22,13 +22,10 @@ $collection = $client->DiagCalc_Calculators->Modifiers;
  );
  */
 $cursor = $collection->find(
-    ['parameters.main' => false,'current_version'=>true],
-    [ '$sort' => ['modifier_name' => 1] ],
-   // ['$project' => ['lastUpdate_timestamp' => 1]]
-
-    //[ '$limit' => 14 ]
-
-  ]
+  ['parameters.main' => false, 'current_version' => true],
+  ['$sort' => ['modifier_name' => 1]],
+  // ['$project' => ['lastUpdate_timestamp' => 1]]
+  //[ '$limit' => 14 ]
 );
 
 echo json_encode(iterator_to_array($cursor));
