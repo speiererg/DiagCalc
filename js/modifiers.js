@@ -1,6 +1,5 @@
 function loading_page_modifiers() {
-    var modifier_array_toDownload = []
-    var subModifier_array_toDownload = []
+
     find_modifiers()
     document.getElementById('button_download_modifier_XML').addEventListener('click', function (event) { download_modifier_XML() })
 }
@@ -10,6 +9,8 @@ function find_modifiers() {
     let params = '';
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            var modifier_array_toDownload = []
+            var subModifier_array_toDownload = []
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
 
