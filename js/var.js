@@ -1,9 +1,9 @@
 var Code_Return = "&#10;"
 var Code_ModifierSeparator = "&#1;"
 
-var TXT_beginn = "##INI=EDG \n"
+var TXT_calculator_beginn = "##INI=EDG \n"
 
-var XML_beginn = `<?xml version="1.0" encoding="UTF-8"?>
+var XML_calculator_beginn = `<?xml version="1.0" encoding="UTF-8"?>
 <?mso-application progid="Excel.Sheet"?>
 <Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:x2="http://schemas.microsoft.com/office/excel/2003/xml" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns:rs="urn:schemas-microsoft-com:rowset" xmlns:s="uuid:BDC6E3F0-6DA3-11d1-A2A3-00AA00C14882" xmlns:z="#RowsetSchema" xmlns:udc="http://schemas.microsoft.com/data/udc" xmlns:udcs="http://schemas.microsoft.com/data/udc/soap" xmlns:udcxf="http://schemas.microsoft.com/data/udc/xmfile" xmlns:c="urn:schemas-microsoft-com:office:component:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40">
     <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
@@ -880,7 +880,7 @@ var XML_beginn = `<?xml version="1.0" encoding="UTF-8"?>
                     <ss:Data ss:Type="String"></ss:Data>
                 </ss:Cell>
             </ss:Row>`
-var XML_End = `<ss:Row>
+var XML_calculator_End = `<ss:Row>
 <ss:Cell ss:StyleID="SolidBlack">
     <ss:Comment ss:Author="Epic Export Utility">
         <ss:Data>#LAST_ROW</ss:Data>
@@ -1030,5 +1030,17 @@ var XML_End = `<ss:Row>
 </x:WorksheetOptions>
 </Worksheet>
 </Workbook>`
+
+var XML_modifier_beginn =""
+var XML_modifier_end =""
+
+
+var TXT_modifier_beginn =""
+
+var XML_sub_modifier_beginn =""
+var XML_sub_modifier_end =""
+
+var TXT_sub_modifier_beginn =""
+
 
 

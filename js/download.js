@@ -13,18 +13,9 @@ async function download_XML() {
     }
 }
 
-async function download_TXT() {
-    if (output_array) {
-        await creating_TXT(output_array)
-        document.getElementById('button_download_TXT_submit').click()
-    } else {
-        alert('Please calculate the DiagCalc and save it once again before exporting')
-    }
-}
-
 
 async function creating_XML(output_array_f) {
-    let XML_output = XML_beginn
+    let XML_output = XML_calculator_beginn
 
     //append main Diagnostic
     let allowed_modifier_4040 = ""
@@ -69,7 +60,7 @@ async function creating_XML(output_array_f) {
         document.getElementById('input_hidden_XML_output').value = XML_output
 
         // finalize XML
-        XML_output = XML_output + XML_End
+        XML_output = XML_output + XML_calculator_end
         document.getElementById('input_XML').value = XML_output
         console.log(XML_output)
         return XML_output
@@ -77,8 +68,19 @@ async function creating_XML(output_array_f) {
     create_rest_XML()
 }
 
+async function download_TXT() {
+    if (output_array) {
+        await creating_TXT(output_array)
+        document.getElementById('button_download_TXT_submit').click()
+    } else {
+        alert('Please calculate the DiagCalc and save it once again before exporting')
+    }
+}
+
+
+
 async function creating_TXT(output_array_f) {
-    let TXT_output = TXT_beginn
+    let TXT_output = TXT_calculator_beginn
 
     output_array_f.forEach((element) => {
         TXT_output = TXT_output + createFlatFileRow(`MedSP_Id_X`, 'MedSP', element[0], 'Created by MedSP', JSON.stringify(element[2]))

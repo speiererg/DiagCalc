@@ -1,5 +1,9 @@
 function loading_page_modifiers() {
     find_modifiers()
+    document.getElementById('button_download_modifier_XML').addEventListener('click', function (event) { download_modifier_XML() })
+    var modifier_array_toDownload = []
+    var subModifier_array_toDownload = []
+
 }
 
 function find_modifiers() {
@@ -11,8 +15,6 @@ function find_modifiers() {
             console.log(results_JSON)
 
             document.getElementById('modifier_typ_ul').innerHTML = ""
-            let modifier_array_toDownload = []
-            let subModifier_array_toDownload = []
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 let element = results_JSON[i]
                 let link = document.createElement('li')
@@ -46,3 +48,43 @@ function find_modifiers() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
+
+
+/* ******************* Download ************************************/
+
+async function download_modifier_XML() {
+    if (modifier_array_toDownload) {
+        await creating_modifier_XML(modifier_array_toDownload)
+        document.getElementById('button_download_modifier_XML_submit').click()
+
+    } else {
+        alert('Error, no file to download, please contact the administrator')
+    }
+}
+
+
+async function creating_modifier_XML(output_array_f) {
+    let XML_modifier_output = XML_modifier_beginn
+
+    output_array_f.forEach((element) => {
+        XML_modifier_output = XML_modifier_output + createXMLRow(element[0], element[1])
+
+    })
+
+    // finalize XML
+    XML_modifier_output = XML_modifier_output + XML_modifier_end
+    document.getElementById('input_hidden_modifier_XML').value = XML_modifier_output
+    console.log(XML_modifier_output)
+    return XML_modifier_output
+}
+
+function create_modifier_XML_row(modifier_id, modifier_name) {
+    return XML_temp = `            
+        <ss:Row>
+        <ss:Cell>
+            <ss:Data ss:Type="String">${modifier_id}</ss:Data>
+        </ss:Cell>
+        </ss:Row>`
+}
+
+
