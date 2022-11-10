@@ -111,7 +111,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
                 } else { document.getElementById('input_hidden_new_calculator').value = 0 }
 
-                if (reload == true){
+                if (reload == true) {
                     addEventListenerByLoading()
                     reload = false
                 }
@@ -128,6 +128,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 find_home_mongoDB()
                 document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
 
+            }
+            if (page == "modifiers") {
+                loading_page_modifiers()
             }
         }
     }

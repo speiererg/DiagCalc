@@ -1,4 +1,8 @@
-function find_home_mongoDB(id, version) {
+function loading_page_modifiers() {
+find_modifiers()
+}
+
+function find_modifiers() {
     var xmlhttp = new XMLHttpRequest();
     let params = 'item=active&value=yes';
     xmlhttp.onreadystatechange = function () {
