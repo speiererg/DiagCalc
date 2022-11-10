@@ -415,12 +415,15 @@ function click_radio_input(event) {
             document.getElementById(`inputSNOMED${radio_input_id}_${i}`).value = ""
             document.getElementById(`inputICD${radio_input_id}_${i}`).disabled = true;
             document.getElementById(`inputICD${radio_input_id}_${i}`).value = ""
-            document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
-            document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
-            document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
-            document.getElementById(`checkbox_multiple_input_${radio_input_id}`).checked = false
             array_hiden_ID = radio_input_id
         }
+        document.getElementById(`checkbox_input_${radio_input_id}`).disabled = true
+        document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
+        document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
+        document.getElementById(`checkbox_multiple_input_${radio_input_id}`).checked = false
+        document.getElementById(`input_modifier_title_${array_hiden_ID}`).value = document.getElementById(`input${radio_input_id}_1`).value
+
+
     }
 }
 
@@ -527,7 +530,7 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     if (array_SNOMED_value[main_id][0] != "") { calculated_SNOMED.push(array_SNOMED_value[main_id][0]) }
     if (array_ICD_value[main_id][0] != "") { calculated_ICD.push(array_ICD_value[main_id][0]) }
 
-    output_array.push({'diagnostic_name':calculated_diag_main, 'SNOMED_array': calculated_SNOMED, 'ICD_array':calculated_ICD, 'modifier_array':calculated_modifier, 'typ':'main'})
+    output_array.push({ 'diagnostic_name': calculated_diag_main, 'SNOMED_array': calculated_SNOMED, 'ICD_array': calculated_ICD, 'modifier_array': calculated_modifier, 'typ': 'main' })
 
     // Creation of Items
     let array_item0 = array_inputs_itemNbr[0]
@@ -552,8 +555,8 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
 
         //Creating Output Array
         calculated_diag = calculated_diag_trim(calculated_diag)
-        if (calculated_diag != calculated_diag_main){
-            output_array.push({'diagnostic_name':calculated_diag, 'SNOMED_array': calculated_SNOMED, 'ICD_array':calculated_ICD, 'modifier_array':calculated_modifier, 'typ':'specific'})
+        if (calculated_diag != calculated_diag_main) {
+            output_array.push({ 'diagnostic_name': calculated_diag, 'SNOMED_array': calculated_SNOMED, 'ICD_array': calculated_ICD, 'modifier_array': calculated_modifier, 'typ': 'specific' })
         }
 
 
