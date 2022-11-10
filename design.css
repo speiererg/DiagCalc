@@ -11,42 +11,49 @@
 
 /* --------   Navigationbar Design ----------- */
 .navtop {
-	background-color: #6b9bda;
-	height: 50px;
-	width: 100%;
-	border: 0;
+  background-color: #6b9bda;
+  height: 50px;
+  width: 100%;
+  border: 0;
 }
+
 .navtop div {
-	display: flex;
-	margin: 0 auto;
-	width: 50%;
-	height: 100%;
+  display: flex;
+  margin: 0 auto;
+  width: 50%;
+  height: 100%;
 }
-.navtop div h1, .navtop div a {
-	display: inline-flex;
-	align-items: center;
-}
-.navtop div h1 {
-	flex: 1;
-	font-size: 30px;
-	padding: 0;
-	margin: 0;
-	color: #eaebed;
-	font-weight: normal;
-}
+
+.navtop div h1,
 .navtop div a {
-	padding: 0 20px;
-	text-decoration: none;
-	color: #dadfe4;
-	font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+}
+
+.navtop div h1 {
+  flex: 1;
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+  color: #eaebed;
+  font-weight: normal;
+}
+
+.navtop div a {
+  padding: 0 20px;
+  text-decoration: none;
+  color: #dadfe4;
+  font-weight: bold;
   font-size: 1.3em;
   text-align: center;
 }
+
 .navtop div a i {
-	padding: 2px 8px 0 0;
+  padding: 2px 8px 0 0;
 }
+
 .navtop div a:hover {
-	color: #f4f8ff;
+  color: #f4f8ff;
 }
 
 /* --------   Page Structure ----------- */
@@ -68,13 +75,13 @@ body {
   padding: 0px;
   font-size: xx-large;
   font-weight: bolder;
-  vertical-align:middle;
+  vertical-align: middle;
 }
 
-#header div{
+#header div {
   text-align: center;
-display: inline-block;
-vertical-align: middle;
+  display: inline-block;
+  vertical-align: middle;
 }
 
 
@@ -96,6 +103,7 @@ vertical-align: middle;
   padding: 0px;
   margin: 0px;
 }
+
 #mainpage {
   align-items: center;
   justify-content: center;
@@ -105,8 +113,8 @@ vertical-align: middle;
   margin: 5px;
 }
 
-#footer{
-  margin:5px;
+#footer {
+  margin: 5px;
   font-style: italic;
 }
 
@@ -119,8 +127,7 @@ vertical-align: middle;
   margin-right: auto;
 }
 
-.CSS_contentTable td {
-}
+.CSS_contentTable td {}
 
 /* --------   Input Table Design ----------- */
 #table_input {
@@ -143,7 +150,7 @@ vertical-align: middle;
   text-align: center;
 }
 
-#tr_maindiagnose td{
+#tr_maindiagnose td {
   margin-left: auto;
   margin-right: auto;
 }
@@ -164,7 +171,7 @@ vertical-align: middle;
 .input_calculator_id {
   border: solid 2px var(--div-seperation);
   background-color: var(--div-color-hell);
-  width:40px;
+  width: 40px;
   border-radius: 3px;
   font-size: var(--font-size)
 }
@@ -220,6 +227,7 @@ vertical-align: middle;
   border-radius: 3px;
   font-size: var(--font-size);
 }
+
 .input_modifier:read-only {
   border: grey;
 }
@@ -234,7 +242,7 @@ vertical-align: middle;
 
 }
 
-  .input_SNOMED:read-only {
+.input_SNOMED:read-only {
   border: grey;
 }
 
@@ -247,37 +255,40 @@ vertical-align: middle;
   text-align: right;
   padding-left: 2px;
 }
+
 .input_ICD:read-only {
   border: grey;
 }
+
 .input_ICD:focus {
   width: 150px;
 }
+
 .input_ICD:not(:focus) {
   width: 45px;
 }
 
-.img_button
-{
+.img_button {
   width: 25px;
   height: 25px;
 }
 
-.td_modifier_id{
+.td_modifier_id {
   font-size: 0.7em;
-  font-style:italic;
+  font-style: italic;
   vertical-align: bottom;
 }
 
 /* --------   Output Table Design ----------- */
 
 
-#table_output_calculator{
+#table_output_calculator {
   border: 3px solid var(--div-color-dunkel);
   margin-left: auto;
   margin-right: auto;
 }
-#table_output_calculator td{
+
+#table_output_calculator td {
   border: 1px solid var(--div-color-dunkel);
   padding: 1px 5px 1px 5px;
 }
@@ -362,8 +373,7 @@ vertical-align: middle;
   cursor: pointer;
 }
 
-.home_sublink{
+.home_sublink {
   color: black;
-  display:inline-block;
-    text-decoration: none;
+  text-decoration: none;
 }
