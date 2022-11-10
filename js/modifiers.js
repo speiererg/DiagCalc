@@ -28,7 +28,7 @@ function find_modifiers() {
                     sub_li.appendChild(document.createTextNode(element))
                     sub_li.setAttribute('class', 'home_sublink')
                     sub_ul.appendChild(sub_li)
-                    subModifier_array_toDownload.push([element])
+                    sub_modifier_array_toDownload.push([element])
 
                 })
                 link.appendChild(sub_ul)
@@ -38,7 +38,7 @@ function find_modifiers() {
             }
             modifier_array_toDownload.sort()
             console.log(modifier_array_toDownload)
-            console.log(subModifier_array_toDownload)
+            console.log(sub_modifier_array_toDownload)
         }
     };
     xmlhttp.open("POST", "mongodb/find_modifiers.php", true);
@@ -64,7 +64,7 @@ async function creating_modifier_XML(output_array_f) {
     let XML_modifier_output = XML_modifier_beginn
 
     output_array_f.forEach((element) => {
-        XML_modifier_output = XML_modifier_output + createXMLRow(element[0], element[1])
+        XML_modifier_output = XML_modifier_output + create_modifier_XML_row(element[0], element[1])
 
     })
 
@@ -76,6 +76,44 @@ async function creating_modifier_XML(output_array_f) {
 }
 
 function create_modifier_XML_row(modifier_id, modifier_name) {
+    return XML_temp = `            
+        <ss:Row>
+        <ss:Cell>
+            <ss:Data ss:Type="String">${modifier_id}</ss:Data>
+        </ss:Cell>
+        </ss:Row>`
+}
+
+
+
+//*** Submodifier ***//
+async function download_sub_modifier_XML() {
+    if (modifier_array_toDownload) {
+        await creating_sub_modifier_XML(modifier_array_toDownload)
+        document.getElementById('button_download_sub_modifier_XML_submit').click()
+
+    } else {
+        alert('Error, no file to download, please contact the administrator')
+    }
+}
+
+
+async function creating_modifier_XML(output_array_f) {
+    let XML_sub_modifier_output = XML_sub_modifier_beginn
+
+    output_array_f.forEach((element) => {
+        XML_sub_modifier_output = XML_sub_modifier_output + create_sub_modifier_XML_row(element[0], element[1])
+
+    })
+
+    // finalize XML
+    XML_sub_modifier_output = XML_sub_modifier_output + XML_sub_modifier_end
+    document.getElementById('input_hidden_sub_modifier_XML').value = XML_sub_modifier_output
+    console.log(XML_sub_modifier_output)
+    return XML_sub_modifier_output
+}
+
+function create_sub_modifier_XML_row(modifier_id, modifier_name) {
     return XML_temp = `            
         <ss:Row>
         <ss:Cell>

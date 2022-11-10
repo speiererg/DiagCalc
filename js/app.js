@@ -14,7 +14,7 @@ var array_hiden_ID = "";
 var output_array = []
 var array_ICD10 = []
 var modifier_array_toDownload = []
-var subModifier_array_toDownload = []
+var sub_modifier_array_toDownload = []
 var reload = false
 
 // ***************************** Loading HOME  *****************************
