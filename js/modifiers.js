@@ -17,7 +17,7 @@ function find_modifiers() {
                 let link = document.createElement('li')
                 link.setAttribute('class', 'home_link')
                 link.setAttribute('id', `modifier_link_id_${element['modifier_id']}`)
-                let text_name = document.createTextNode(`Id ${element['modifier_id']}: ${element['modifier_name']} (DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`)
+                let text_name = document.createTextNode(`${element['modifier_name']} (id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
                 link.appendChild(text_name)
                 document.getElementById('modifier_typ_ul').appendChild(link)

@@ -21,11 +21,11 @@ $collection = $client->DiagCalc_Calculators->Modifiers;
  )
  );
  */
-$cursor = $collection->aggregate(
-  [
-    ['$match' => ['parameters.main' => false,'current_version'=>true]],
+$cursor = $collection->find(
+    ['parameters.main' => false,'current_version'=>true],
+    [ '$sort' => ['modifier_name' => 1] ],
    // ['$project' => ['lastUpdate_timestamp' => 1]]
-    //[ '$sort' => ['_id' => 1] ],
+
     //[ '$limit' => 14 ]
 
   ]
