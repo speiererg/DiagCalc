@@ -364,5 +364,6 @@ vertical-align: middle;
 
 .home_sublink{
   color: black;
+  display:table;
   text-decoration: none;
 }
