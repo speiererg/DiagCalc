@@ -25,6 +25,7 @@ function find_modifiers() {
                 element['modifier_array'].forEach((element)=>{
                     let sub_li = document.createElement('li')
                     sub_li.appendChild(document.createTextNode(element))
+                    sub_li.setAttribute('class', '')
                     sub_ul.appendChild(sub_li)
                 })
                 link.appendChild(sub_ul)
