@@ -287,6 +287,7 @@ $insertOneResult = $collection->insertOne(
 
 $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 
+/*
 $cursormodifier = $collectionModifier->aggregate(
    [
      ['$match' => ['modifier_id' => ['$in' => [1,2,3,4]]]], 
@@ -297,6 +298,12 @@ $cursormodifier = $collectionModifier->aggregate(
  
    ]
  );
+*/
+
+$cursormodifier = $collectionModifier->updateMany(
+   array('modifier_id' => ['$in'=>[1,2,3,4]]),
+   array('$set' => ['current_version' => false ])
+);
 
 $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
