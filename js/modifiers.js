@@ -7,6 +7,7 @@ function find_modifiers() {
     let params = 'item=active&value=yes';
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
             document.getElementById('modifier_typ_ul').innerHTML = ""
 
