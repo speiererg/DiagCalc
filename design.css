@@ -361,3 +361,8 @@ vertical-align: middle;
   color: var(--div-seperation);
   cursor: pointer;
 }
+
+.home_sublink{
+  color: black;
+  text-decoration: none;
+}
