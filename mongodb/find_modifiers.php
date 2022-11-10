@@ -24,7 +24,7 @@ $cursor = $collection->find(
 $cursor = $collection->aggregate(
   [
     //['$match' => []],
-    [ '$group' => ['modifier_id' => ['$max' => 'lastUpdate_timestamp']]],
+    [ '$group' => ['modifier_id' => '$name']],
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
   ]
