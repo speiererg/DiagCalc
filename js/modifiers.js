@@ -20,6 +20,14 @@ function find_modifiers() {
                 let text_name = document.createTextNode(`${element['modifier_name']} (id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
                 link.appendChild(text_name)
+//Create Sub                
+                let sub_ul = document.createElement('ul')
+                element['modifier_array'].forEach((element)=>{
+                    let sub_li = document.createElement('li')
+                    sub_li.appendChild(document.createTextNode(element))
+                    sub_ul.appendChild(sub_li)
+                })
+                link.appendChild(sub_ul)
                 document.getElementById('modifier_typ_ul').appendChild(link)
                 console.log(params_link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
