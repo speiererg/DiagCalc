@@ -13,21 +13,27 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 $collection = $client->DiagCalc_Calculators->Modifiers;
 
 /*
-$cursor = $collection->find(
-  //
-  array('parameters.main' => false),
-  array(
-    'sort' => array('modifier_name' => 1),
-  )
-);
-*/
+ $cursor = $collection->find(
+ //
+ array('parameters.main' => false),
+ array(
+ 'sort' => array('modifier_name' => 1),
+ )
+ );
+ */
 $cursor = $collection->aggregate(
   [
-    ['$match' => ['parameters.main'=>false]],
-    [ '$group' => ['_id' => '$modifier_id','test'=>'$lastUpdate_timestamp']],
-    ['$project'=>['lastUpdate_timestamp'=>1]]
+    ['$match' => ['parameters.main' => false]],
+    [
+      '$group' => [
+        '_id' => '$modifier_id',
+        'lastUpdate' => ['$max' => '$lastUpdate_timestamp']
+      ]
+    ],
+    ['$project' => ['lastUpdate_timestamp' => 1]]
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
+
   ]
 );
 
