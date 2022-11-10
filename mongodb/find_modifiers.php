@@ -27,10 +27,10 @@ $cursor = $collection->aggregate(
     [
       '$group' => [
         '_id' => '$modifier_id',
-        'lastUpdate' => ['$max' => '$lastUpdate_timestamp']
+        'lastUpdate_timestamp' => ['$max' => '$lastUpdate_timestamp']
       ]
     ],
-    ['$project' => ['lastUpdate_timestamp' => 1]]
+    ['$project' => ['$lastUpdate_timestamp' => 1]]
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
 
