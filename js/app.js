@@ -36,7 +36,7 @@ function addEventListenerByLoading() {
     document.getElementById('navPageTest').addEventListener('click', function () { testMongoDB() })
     document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
     document.getElementById('navPageMappingUpdate').addEventListener('click', function () { changePage('mapping', '', '') })
-    document.getElementById('navPageModifierManagment').addEventListener('click', function () { changePage('modifier', '', '') })
+    document.getElementById('navPageModifierManagment').addEventListener('click', function () { changePage('modifiers', '', '') })
 
 }
 

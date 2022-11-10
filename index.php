@@ -57,7 +57,7 @@ if (!isset($_SESSION['loggedin'])) {
   Welcome <?php echo $_SESSION['username'] .', '. date("Y/m/d") ?>
 
   </div>
-
+  <script src="js/modifiers.js"></script>
   <script src="js/mapping.js"></script>
   <script src="js/params.js"></script>
   <script src="js/calculator.js"></script>

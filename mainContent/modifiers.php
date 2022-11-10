@@ -10,5 +10,5 @@ if (!isset($_SESSION['loggedin'])) {
 <h1 style="text-align:center;">Modifier Managment</h1>
 <h2>Modifier list</h2> 
 <p>
-<ul id="modifier_typ_ul_SNOMED">
+<ul id="modifier_typ_ul">
 </ul>
