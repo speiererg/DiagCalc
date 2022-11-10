@@ -287,19 +287,6 @@ $insertOneResult = $collection->insertOne(
 
 $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 
-/*
-$cursormodifier = $collectionModifier->aggregate(
-   [
-     ['$match' => ['modifier_id' => ['$in' => [1,2,3,4]]]], 
-     ['$set' => ['current_version' => false ]],
-    // ['$project' => ['lastUpdate_timestamp' => 1]]
-     //[ '$sort' => ['_id' => 1] ],
-     //[ '$limit' => 14 ]
- 
-   ]
- );
-*/
-
 $cursormodifier = $collectionModifier->updateMany(
    array('modifier_id' => ['$in'=>$modifiers_id_array]),
    array('$set' => ['current_version' => false ])
