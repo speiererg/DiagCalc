@@ -24,14 +24,6 @@ $collection = $client->DiagCalc_Calculators->Modifiers;
 $cursor = $collection->aggregate(
   [
     ['$match' => ['parameters.main' => false]],
-    [
-      '$group' => [
-        '_id' => '$modifier_id',
-        'lastUpdate_timestamp' => ['$max' => '$lastUpdate_timestamp'],
-        'modifier_name' => '$modifier_name'
-
-      ]
-    ],
    // ['$project' => ['lastUpdate_timestamp' => 1]]
     //[ '$sort' => ['_id' => 1] ],
     //[ '$limit' => 14 ]
