@@ -77,11 +77,14 @@ async function creating_modifier_XML(output_array_f) {
 
 function create_modifier_XML_row(modifier_id, modifier_name) {
     return XML_temp = `            
-        <ss:Row>
-        <ss:Cell>
-            <ss:Data ss:Type="String">${modifier_id}</ss:Data>
-        </ss:Cell>
-        </ss:Row>`
+    <ss:Row>
+    <ss:Cell>
+        <ss:Data ss:Type="String">${modifier_id}</ss:Data>
+    </ss:Cell>
+    <ss:Cell>
+    <ss:Data ss:Type="String">${modifier_name}</ss:Data>
+    </ss:Cell>
+    </ss:Row>`
 }
 
 
@@ -113,11 +116,14 @@ async function creating_modifier_XML(output_array_f) {
     return XML_sub_modifier_output
 }
 
-function create_sub_modifier_XML_row(modifier_id, modifier_name) {
+function create_sub_modifier_XML_row(sub_modifier_id, sub_modifier_name) {
     return XML_temp = `            
         <ss:Row>
         <ss:Cell>
-            <ss:Data ss:Type="String">${modifier_id}</ss:Data>
+            <ss:Data ss:Type="String">${sub_modifier_id}</ss:Data>
+        </ss:Cell>
+        <ss:Cell>
+        <ss:Data ss:Type="String">${sub_modifier_name}</ss:Data>
         </ss:Cell>
         </ss:Row>`
 }
