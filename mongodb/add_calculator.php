@@ -289,7 +289,7 @@ $collectionModifier = $client->DiagCalc_Calculators->Modifiers;
 
 $cursormodifier = $collectionModifier->aggregate(
    [
-     ['$match' => ['modifier_id' => ['$in' => $modifiers_id_array]]],
+     ['$match' => ['modifier_id' => ['$in' => [$modifiers_id_array]]]], 
      ['$set' => ['current_version' => false ]],
     // ['$project' => ['lastUpdate_timestamp' => 1]]
      //[ '$sort' => ['_id' => 1] ],
