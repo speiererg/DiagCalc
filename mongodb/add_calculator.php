@@ -203,7 +203,7 @@ for ($i = 1; $i <= $_POST['modifier_nbr']; $i++) {
       $modifier_id = $_POST[$modifier_id_name];
    }
    array_push($modifiers_id_array,intval($modifier_id));
-   $modifiers_array[] = array('current_version'=> true, 'calculator_id' => intval($lastId), 'calculator_name' => $mainName, 'calculator_version' => intval($_POST['select_version']) ,'lastUpdate_timestamp' => time(), 'modifier_id' => intval($modifier_id), 'modifier_name' => $_POST[$modifier_mainName], 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
+   $modifiers_array[] = array('current_version'=> true, 'calculator_id' => intval($lastId), 'calculator_name' => $mainName, 'calculator_version' => intval($_POST['select_version']) ,'lastUpdate_timestamp' => time(), 'modifier_id' => intval($modifier_id), 'modifier_name' => ucfirst($_POST[$modifier_mainName]), 'modifier_nbr' => intval($_POST['modifier_nbr']), 'modifierSub_nbr' => intval($_POST['modifierSub_nbr']), 'modifier_array' => $inputs_array, 'SNOMED_array' => $SNOMED_array, 'ICD_array' => $ICD_array, 'parameters' => $parameters_output);
 }
 
 
@@ -296,9 +296,6 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
-echo '</br> list term old:' . json_encode($modifiers_id_array);
-echo '</br> list term old:' . json_encode($cursormodifier);
-
-//header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
+header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 
 ?>
