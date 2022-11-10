@@ -87,7 +87,27 @@ function create_modifier_XML_row(modifier_id, modifier_name) {
     </ss:Row>`
 }
 
+async function download_modifier_TXT() {
+    if (modifier_array_toDownload) {
+        await creating_modifier_TXT(modifier_array_toDownload)
+        document.getElementById('button_download_modifier_TXT_submit').click()
+    } else {
+        alert('Error, no file to download, please contact the administrator')
+    }
+}
 
+async function creating_modifier_TXT(output_array_f) {
+    let TXT_modifier_output = TXT_modifier_beginn
+    output_array_f.forEach((element) => {
+        TXT_modifier_output = TXT_modifier_output + create_modifier_flatfile_row(element[0],element[1])
+    })
+    document.getElementById('input_hidden_modifier_TXT').value = TXT_modifier_output
+    return TXT_modifier_output
+}
+
+function create_modifier_flatfile_row(modifier_id,modifier_name) {
+    return TXT_temp = `1,${modifier_id}\n2,${modifier_name}\n`
+}
 
 //*** Submodifier ***//
 async function download_sub_modifier_XML() {
