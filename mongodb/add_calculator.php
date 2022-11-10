@@ -253,13 +253,13 @@ $insertOneResult2 = $collection_Index->updateOne(
       )
    )
 );
-
+/*
 echo 'Last found id' . $lastFoundId . '</br>';
 echo 'Last Modifier id' . $lastModifierId . '</br>';
 echo '</br> list term old:' . json_encode($medsp_array);
 echo '</br> list term new:' . json_encode($medsp_array_output);
 echo '</br> Output Calculator:' . json_encode($array_output);
-
+*/
 
 //Inserting the Calculators in Calculators
 $collection = $client->DiagCalc_Calculators->Calculators;
