@@ -37,6 +37,7 @@ function find_modifiers() {
                 console.log(params_link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
+            modifier_array_toDownload.sort()
             console.log(modifier_array_toDownload)
             console.log(subModifier_array_toDownload)
         }
