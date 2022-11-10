@@ -421,7 +421,7 @@ function click_radio_input(event) {
         document.getElementById(`checkbox_multiple_input_${radio_input_id}`).disabled = true
         document.getElementById(`checkbox_input_${radio_input_id}`).checked = false
         document.getElementById(`checkbox_multiple_input_${radio_input_id}`).checked = false
-        document.getElementById(`input_modifier_title_${array_hiden_ID}`).value = document.getElementById(`input${radio_input_id}_1`).value
+        document.getElementById(`input_modifier_title_${radio_input_id}`).value = document.getElementById(`input${radio_input_id}_1`).value
 
 
     }
