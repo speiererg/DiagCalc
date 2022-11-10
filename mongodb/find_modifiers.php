@@ -12,13 +12,22 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 
 $collection = $client->DiagCalc_Calculators->Modifiers;
 
-
+/*
 $cursor = $collection->find(
   //
   array('parameters.main' => false),
   array(
     'sort' => array('modifier_name' => 1),
   )
+);
+*/
+$cursor = $collection->aggregate(
+  [
+    ['$match' => []],
+    [ '$group' => ['modifier_id' => ['$max' =>['lastUpdate_timestamp']]]],
+    //[ '$sort' => ['_id' => 1] ],
+    //[ '$limit' => 14 ]
+  ]
 );
 
 echo json_encode(iterator_to_array($cursor));
