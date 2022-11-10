@@ -4,7 +4,7 @@ find_modifiers()
 
 function find_modifiers() {
     var xmlhttp = new XMLHttpRequest();
-    let params = 'item=active&value=yes';
+    let params = '';
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             console.log(this.responseText)
