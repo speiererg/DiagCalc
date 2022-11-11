@@ -19,7 +19,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
             <input type="button" id="button_edit_calculator" class="button_download" value="Edit">
           </td>
           <td>
-          <input type="button" id="button_soft_delete" class="button_download" value="Soft delete">
+          <input type="button" id="button_soft_delete" class="button_download" value="Soft deletes">
 
             <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
               <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="">
