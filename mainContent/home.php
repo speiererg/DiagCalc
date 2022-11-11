@@ -13,9 +13,8 @@ if (!isset($_SESSION['loggedin'])) {
     <option value="ready_import">Ready to import</option>
     <option value="imported">Imported</option>
     <option value="all">All with soft deleted</option>
-
 </select>
-<h1 style="text-align:center;">Index</h1>
+<h2 style="text-align:center;">Index</h2>
 <table id ="home_table">
 <tr id="home_tr">
 <td class="home_td" id="home_td1">
