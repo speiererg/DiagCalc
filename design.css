@@ -129,7 +129,7 @@ body {
 
 .CSS_contentTable td {}
 
-/* --------   Input Table Design ----------- */
+/* --------   CALCULATOR ----------- */
 #table_input {
   font-size: var(--font-size);
 
@@ -183,8 +183,6 @@ body {
 .input_modifier:read-only {
   border: grey;
 }
-
-
 
 .input_title {
   font-size: medium;
@@ -277,6 +275,21 @@ body {
   font-size: 0.7em;
   font-style: italic;
   vertical-align: bottom;
+}
+
+
+.input_information_red {
+  border: none;
+  background-color: var(--main-bg-color);
+  color: red;
+  font-size: smaller;
+}
+
+.input_information_red {
+  border: none;
+  background-color: var(--main-bg-color);
+  font-style: italic;
+  font-size: smaller;
 }
 
 /* --------   Output Table Design ----------- */
