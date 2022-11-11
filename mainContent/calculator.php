@@ -127,19 +127,19 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
           <input type="text" name="input_reviewed_coding_changed_since" id="input_reviewed_coding_changed_since" class="input_information_red" form="form_saveMongoDB" readonly> 
           <input type="hidden" name="checkbox_reviewed_coding_changed" id="checkbox_reviewed_coding_changed" value=""form="form_saveMongoDB">
           <td>
-          Reviewed by SME:<input type ="checkbox" name="checkbox_reviewed_SME" id="checkbox_reviewed_SME" form="form_saveMongoDB" class="input_disabled">
+          Reviewed by SME:<input type ="checkbox" name="checkbox_reviewed_SME" id="checkbox_reviewed_SME" form="form_saveMongoDB" class="input_disabled"></br>
           <input type="text" name="input_reviewed_SME_last" id="input_reviewed_SME_last" class="input_information_italic" form="form_saveMongoDB"readonly></br>
           <input type="text" name="input_reviewed_SME_changed_since" id="input_reviewed_SME_changed_since" class="input_information_red" form="form_saveMongoDB"readonly> 
           <input type="hidden" name="checkbox_reviewed_SME_changed" id="checkbox_reviewed_SME_changed" value=""form="form_saveMongoDB">   
         </td>
           <td>
-          Ready to import:<input type ="checkbox" name="checkbox_ready_import" id="checkbox_ready_import" form="form_saveMongoDB" class="input_disabled">
+          Ready to import:<input type ="checkbox" name="checkbox_ready_import" id="checkbox_ready_import" form="form_saveMongoDB" class="input_disabled"></br>
           <input type="text" name="input_ready_import_last" id="input_ready_import_last" class="input_information_italic" form="form_saveMongoDB"readonly></br>
           <input type="text" name="input_ready_import_changed_since" id="input_ready_import_changed_since" class="input_information_red" form="form_saveMongoDB"readonly> 
           <input type="hidden" name="checkbox_ready_import_changed" id="checkbox_ready_import_changed" value=""form="form_saveMongoDB">
           </td>
           <td>
-          Imported:<input type ="checkbox" name="checkbox_imported" id="checkbox_imported" form="form_saveMongoDB" class="input_disabled">
+          Imported:<input type ="checkbox" name="checkbox_imported" id="checkbox_imported" form="form_saveMongoDB" class="input_disabled"></br>
           <input type="text" name="input_imported_last" id="input_imported_last" class="input_information_italic" form="form_saveMongoDB"readonly></br>
           <input type="text" name="input_imported_changed_since" id="input_imported_changed_since" class="input_information_red" form="form_saveMongoDB"readonly> 
           <input type="hidden" name="checkbox_imported_changed" id="checkbox_imported_changed" value=""form="form_saveMongoDB">
