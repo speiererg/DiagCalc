@@ -161,7 +161,7 @@ function modifierSub_nbr_change(change, number) {
 }
 function getDateActual(timestamp) {
     if (timestamp) {
-        var date = new Date(timestamp * 1000);
+        var currentdate = new Date(timestamp * 1000);
     } else {
         var currentdate = new Date();
     }
