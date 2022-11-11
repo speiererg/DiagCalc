@@ -159,7 +159,15 @@ function modifierSub_nbr_change(change, number) {
     }
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
-
+function getDateActual() {
+    var currentdate = new Date();
+    var datetime = currentdate.getDate() + "/"
+        + (currentdate.getMonth() + 1) + "/"
+        + currentdate.getFullYear() + " @ "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
+    return datetime
+}
 function disable_input(toDo) {
     let DOM_readonly = document.getElementsByClassName('input_readonly')
     Array.prototype.forEach.call(DOM_readonly, (element) => { element.readOnly = toDo })

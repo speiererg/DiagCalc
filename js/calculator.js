@@ -12,7 +12,10 @@ function loading_page_calculator(paramsJS) {
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById('button_download_XML').addEventListener('click', function (event) { download_XML() })
     document.getElementById('button_download_TXT').addEventListener('click', function (event) { download_TXT() })
-
+    document.getElementById('checkbox_imported').addEventListener('click',function(){click_on_checkbox('imported')})
+    document.getElementById('checkbox_ready_import').addEventListener('click',function(){click_on_checkbox('ready_import')})
+    document.getElementById('checkbox_reviewed_SME').addEventListener('click',function(){click_on_checkbox('reviewed_SME')})
+    document.getElementById('checkbox_reviewed_coding').addEventListener('click',function(){click_on_checkbox('reviewed_coding')})
 
 
     document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
@@ -426,6 +429,13 @@ function click_radio_input(event) {
 
     }
 }
+
+function   click_on_checkbox(checkbox_typ){
+    document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
+    document.getElementById(`input_${checkbox_typ}_last`).value= getDateActual()
+
+}      
+
 
 
 function click_calculate() {
