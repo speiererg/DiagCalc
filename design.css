@@ -404,4 +404,6 @@ body {
 .home_sublink {
   color: black;
   text-decoration: none;
+  font-style:italic;
+  font-size: x-small;
 }
