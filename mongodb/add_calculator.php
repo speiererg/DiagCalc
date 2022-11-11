@@ -59,12 +59,6 @@ if ($cursor_lastModifierId->modifier_id) {
    $lastModifierId = 0;
 }
 
-
-
-
-
-
-
 if ($_POST['calculator_id'] == null) { // ***************************         if new Calculator
    $lastId = $lastFoundId + 1;
 
@@ -113,6 +107,7 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
 
    );
    if ($_POST['checkbox_reviewed_coding_changed'] == "true"){
+      echo $_POST['checkbox_reviewed_coding'];
       $updateResult = $collection_Index->updateOne(
          array('calculator_id' => intval($lastId)),
          array(
