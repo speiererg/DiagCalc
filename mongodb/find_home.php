@@ -38,7 +38,7 @@ $cursor = $collection->find(
   );
 }else if ($_POST['request'] == "to_be_reviewed_coding"){
   $cursor = $collection->find(
-    ['reviewed_coding.checked' => "false"],
+    ['reviewed_coding.checked' => null],
     ['sort' => array('mainName' => 1)]
   );
 }
