@@ -28,7 +28,7 @@ $cursor = $collection->find(
   );
 }else if ($_POST['request'] == "ready_import"){
   $cursor = $collection->find(
-    ['ready_import.checked' => "true"],
+    ['ready_import.checked' => "true", 'imported.checked' => null],
     ['sort' => array('mainName' => 1)]
   );
 }else if ($_POST['request'] == "imported"){
