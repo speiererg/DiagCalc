@@ -289,12 +289,14 @@ function deleteAllMongoDB() {
 
 function loading_home(){
     document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
-    document.getElementById('home_select').addEventListener('changes', function(event){ select_home_changed(event)})
+    document.getElementById('home_select').addEventListener('change', function(event){ select_home_changed(event)})
 }
 
 function select_home_changed(event){
     console.log(event)
     console.log('test')
+    console.log(document.getElementById('home_select').value)
+
 }
 
 
