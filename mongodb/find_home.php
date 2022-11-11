@@ -43,7 +43,6 @@ $cursor = $collection->find(
   );
 }
 
-
 echo json_encode(iterator_to_array($cursor));
 
 /*

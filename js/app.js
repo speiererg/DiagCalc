@@ -232,7 +232,7 @@ function transformToAssocArray(prmstr) {
 
 function find_home_mongoDB(request) {
     var xmlhttp = new XMLHttpRequest();
-    let params = `item=${request}`;
+    let params = `request=${request}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
