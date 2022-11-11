@@ -153,6 +153,7 @@ body {
 #tr_maindiagnose td {
   margin-left: auto;
   margin-right: auto;
+  font-weight: bold;
 }
 
 #tr_calculator_button_checkbox td{
