@@ -294,8 +294,8 @@ function loading_home(){
 
 function select_home_changed(event){
     console.log(event)
+    console.log('test')
     console.log(document.getElementById('home_select').value)
-    
 }
 
 
