@@ -148,7 +148,7 @@ function importing_calculator_index(results_findOne_index)
 {
     console.log(results_findOne_index)
     function import_calculator_index(checkbox_typ){
-        document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
+        document.getElementById(`checkbox_${checkbox_typ}`).value = "true"
         document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual(results_findOne_index[checkbox_typ]['time'])} by: ${results_findOne_index[checkbox_typ]['user']}`
         if(results_findOne_index['last_modification_timestamp'] > results_findOne_index[checkbox_typ]['time']){
             document.getElementById(`input_${checkbox_typ}_changed_since`).value= `Has been changed sinced review/import`
@@ -160,6 +160,7 @@ function importing_calculator_index(results_findOne_index)
     import_calculator_index('imported')
 
 }
+
 function edit_calculator() {
     confirmBeforeNavigate = 1
     document.getElementById('button_edit_calculator').disabled = true;
@@ -482,9 +483,8 @@ function click_radio_input(event) {
     }
 }
 
-function   click_on_checkbox(checkbox_typ){
-    console.log(checkbox_typ)
-    //document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
+function click_on_checkbox(checkbox_typ){
+    document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
     document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual()}`
 }      
 
