@@ -122,10 +122,12 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <input type="submit" name="button2" id="button_save_calculator" class="button_download" value="Save new Version" />
             </form>
           </td>
+          <td>
           Reviewed by Coding:<input type ="checkbox" name="checkbox_reviewed_coding" id="checkbox_reviewed_coding" form="form_saveMongoDB" class="input_disabled"></br>
           <input type="text" name="input_reviewed_coding_last" id="input_reviewed_coding_last" class="input_information_italic" form="form_saveMongoDB" readonly></br>
           <input type="text" name="input_reviewed_coding_changed_since" id="input_reviewed_coding_changed_since" class="input_information_red" form="form_saveMongoDB" readonly> 
           <input type="hidden" name="checkbox_reviewed_coding_changed" id="checkbox_reviewed_coding_changed" value=""form="form_saveMongoDB">
+</td>
           <td>
           Reviewed by SME:<input type ="checkbox" name="checkbox_reviewed_SME" id="checkbox_reviewed_SME" form="form_saveMongoDB" class="input_disabled"></br>
           <input type="text" name="input_reviewed_SME_last" id="input_reviewed_SME_last" class="input_information_italic" form="form_saveMongoDB"readonly></br>
