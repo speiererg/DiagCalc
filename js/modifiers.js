@@ -13,7 +13,7 @@ function find_modifiers() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
+            console.log(results_JSONs)
             document.getElementById('modifier_typ_ul').innerHTML = ""
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 let element = results_JSON[i]
@@ -27,12 +27,13 @@ function find_modifiers() {
                 //Create Sub                
                 let sub_ul = document.createElement('ul')
                 element['modifier_array'].forEach((element) => {
-                    let sub_li = document.createElement('li')
-                    sub_li.appendChild(document.createTextNode(element))
-                    sub_li.setAttribute('class', 'home_sublink')
-                    sub_ul.appendChild(sub_li)
-                    sub_modifier_array_toDownload.push([element])
-
+                    if (element) {
+                        let sub_li = document.createElement('li')
+                        sub_li.appendChild(document.createTextNode(element))
+                        sub_li.setAttribute('class', 'home_sublink')
+                        sub_ul.appendChild(sub_li)
+                        sub_modifier_array_toDownload.push([element])
+                    }
                 })
                 link.appendChild(sub_ul)
                 document.getElementById('modifier_typ_ul').appendChild(link)
@@ -97,13 +98,13 @@ async function download_modifier_TXT() {
 async function creating_modifier_TXT(output_array_f) {
     let TXT_modifier_output = TXT_modifier_beginn
     output_array_f.forEach((element) => {
-        TXT_modifier_output = TXT_modifier_output + create_modifier_flatfile_row(element[0],element[1])
+        TXT_modifier_output = TXT_modifier_output + create_modifier_flatfile_row(element[0], element[1])
     })
     document.getElementById('input_hidden_modifier_TXT').value = TXT_modifier_output
     return TXT_modifier_output
 }
 
-function create_modifier_flatfile_row(modifier_id,modifier_name) {
+function create_modifier_flatfile_row(modifier_id, modifier_name) {
     return TXT_temp = `1,${modifier_id}\n2,${modifier_name}\n`
 }
 
