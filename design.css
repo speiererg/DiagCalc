@@ -156,6 +156,8 @@ body {
 }
 
 #tr_calculator_button_checkbox td{
+  text-align: center;
+  font-style: bold;
   margin-left: auto;
   margin-right: auto;
 }
