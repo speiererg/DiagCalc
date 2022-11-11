@@ -12,10 +12,10 @@ function loading_page_calculator(paramsJS) {
     document.getElementById(`radio_input_1`).addEventListener('change', function (event) { click_radio_input(event) })
     document.getElementById('button_download_XML').addEventListener('click', function (event) { download_XML() })
     document.getElementById('button_download_TXT').addEventListener('click', function (event) { download_TXT() })
-    document.getElementById('checkbox_imported').addEventListener('click',function(){click_on_checkbox('imported')})
-    document.getElementById('checkbox_ready_import').addEventListener('click',function(){click_on_checkbox('ready_import')})
-    document.getElementById('checkbox_reviewed_SME').addEventListener('click',function(){click_on_checkbox('reviewed_SME')})
-    document.getElementById('checkbox_reviewed_coding').addEventListener('click',function(){click_on_checkbox('reviewed_coding')})
+    document.getElementById('checkbox_imported').addEventListener('click', function () { click_on_checkbox('imported') })
+    document.getElementById('checkbox_ready_import').addEventListener('click', function () { click_on_checkbox('ready_import') })
+    document.getElementById('checkbox_reviewed_SME').addEventListener('click', function () { click_on_checkbox('reviewed_SME') })
+    document.getElementById('checkbox_reviewed_coding').addEventListener('click', function () { click_on_checkbox('reviewed_coding') })
 
 
     document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
@@ -28,10 +28,10 @@ function loading_page_calculator(paramsJS) {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    if (paramsJS != "newCalculator") { 
+    if (paramsJS != "newCalculator") {
         findOne_Calculator_mongoDB(id_POST, version_POST)
-        findOne_Calculator_index_mongoDB(id_POST, version_POST) 
- 
+        findOne_Calculator_index_mongoDB(id_POST, version_POST)
+
     }
     document.getElementById(`radio_input_1`).dataset.id = 1
 }
@@ -144,15 +144,17 @@ function importing_calculator(results_findOne) {
     printing_calculator_output(output_array, 'import')
 }
 
-function importing_calculator_index(results_findOne_index)
-{
+function importing_calculator_index(results_findOne_index) {
     console.log(results_findOne_index)
-    function import_calculator_index(checkbox_typ){
-        document.getElementById(`checkbox_${checkbox_typ}`).checked = true
-        document.getElementById(`input_${checkbox_typ}_last`).value= `${getDateActual(results_findOne_index[checkbox_typ]['time'])} by: ${results_findOne_index[checkbox_typ]['user']}`
-        if(results_findOne_index['last_modification_timestamp'] > results_findOne_index[checkbox_typ]['time']){
-            document.getElementById(`input_${checkbox_typ}_changed_since`).value= `New calculation since review/import`
+    function import_calculator_index(checkbox_typ) {
+        document.getElementById(`checkbox_${checkbox_typ}`).checked = results_findOne_index[checkbox_typ]['checked']
+        if (results_findOne_index[checkbox_typ]['checked'] == "true") {
+            document.getElementById(`input_${checkbox_typ}_last`).value = `${getDateActual(results_findOne_index[checkbox_typ]['time'])} by: ${results_findOne_index[checkbox_typ]['user']}`
+            if (results_findOne_index['last_modification_timestamp'] > results_findOne_index[checkbox_typ]['time']) {
+                document.getElementById(`input_${checkbox_typ}_changed_since`).value = `New calculation since review/import`
+            }
         }
+
     }
     import_calculator_index('reviewed_coding')
     import_calculator_index('reviewed_SME')
@@ -483,10 +485,10 @@ function click_radio_input(event) {
     }
 }
 
-function click_on_checkbox(checkbox_typ){
+function click_on_checkbox(checkbox_typ) {
     document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
-    document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual()}`
-}      
+    document.getElementById(`input_${checkbox_typ}_last`).value = `Last: ${getDateActual()}`
+}
 
 
 
