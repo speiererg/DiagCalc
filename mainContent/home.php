@@ -14,7 +14,6 @@ if (!isset($_SESSION['loggedin'])) {
     <option value="imported">Imported</option>
     <option value="all">All with soft deleted</option>
 </select>
-<h2 style="text-align:center;">Index</h2>
 <table id ="home_table">
 <tr id="home_tr">
 <td class="home_td" id="home_td1">
