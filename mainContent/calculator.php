@@ -15,14 +15,16 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
     <td>
       <table>
         <tr>
-          <td>
-            <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
-              <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="">
-              <input type="submit" name="button2" class="button_download" value="Soft Delete" />
-            </form>
+        <td>
+            <input type="button" id="button_edit_calculator" class="button_download" value="Edit">
           </td>
           <td>
-            <input type="button" id="button_edit_calculator" class="button_download" value="Edit">
+          <input type="button" id="button_soft_delete" class="button_download" value="Edit">
+
+            <form id="form_deactivage_calculator" action="mongodb/deactivateOne_calculator.php" method="POST">
+              <input type="hidden" name="calculator_id" id="input_hidden_form_deactivate_calculator" value="">
+              <input type="submit" id="button_soft_delete_submit"name="button2" class="button_download" value="Soft Delete" style="display:none"/>
+            </form>
           </td>
         </tr>
       </table>

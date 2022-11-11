@@ -16,7 +16,7 @@ function loading_page_calculator(paramsJS) {
     document.getElementById('checkbox_ready_import').addEventListener('click', function () { click_on_checkbox('ready_import') })
     document.getElementById('checkbox_reviewed_SME').addEventListener('click', function () { click_on_checkbox('reviewed_SME') })
     document.getElementById('checkbox_reviewed_coding').addEventListener('click', function () { click_on_checkbox('reviewed_coding') })
-
+    document.getElementById('button_soft_delete').addEventListener('click', function () { if (confirm('Do you want to Soft Delete this calculator?')) { document.getElementById('button_soft_delete_submit').click() } })
 
     document.getElementById(`checkbox_multiple_input_1`).addEventListener('change', (event) => {
         if (document.getElementById(`checkbox_multiple_input_1`).checked == true) {
