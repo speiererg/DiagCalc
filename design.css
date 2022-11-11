@@ -278,7 +278,7 @@ body {
 }
 
 
-.input_information_red {
+.input_information_italic {
   border: 0px none;
   background-color: var(--main-bg-color);
   color: red;
