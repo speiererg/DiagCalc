@@ -19,7 +19,6 @@ function find_SNOMED_concept_mongoDB(concept) {
     let params = `concept=${concept}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            //console.log(this.responseText)
             let results_JSON = JSON.parse(this.responseText);
             document.getElementById('mapping_ul_SNOMED').innerHTML = ""
 
@@ -72,13 +71,9 @@ function mapping_diagnosis_search_onClick() {
 function find_diagnosis_concept_mongoDB(concept) {
     var xmlhttp = new XMLHttpRequest();
     let params = `concept=${concept}`;
-    console.log(params)
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
-
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
             document.getElementById('mapping_ul_diagnosis').innerHTML = ""
             results_JSON.forEach(element => {
                 document.getElementById('mapping_ul_diagnosis').appendChild(mapping_create_li(
@@ -103,6 +98,5 @@ function mapping_create_li(name, URL) {
     ahref.setAttribute('href', URL)
     ahref.appendChild(document.createTextNode(name))
     li.appendChild(ahref)
-    console.log(li)
     return li;
 }

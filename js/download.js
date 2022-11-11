@@ -5,7 +5,6 @@
 async function download_XML() {
     if (output_array) {
         await creating_XML(output_array)
-        console.log(document.getElementById('button_download_XML_submit'))
         document.getElementById('button_download_XML_submit').click()
 
     } else {
@@ -31,22 +30,19 @@ async function creating_XML(output_array_f) {
             for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
                 modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
                 if (l != modifier_length - 1) { modifier_values_4044 = modifier_values_4044 + Code_ModifierSeparator }
-                
+
             }
             modifier_values_4044 = modifier_values_4044 + Code_Return
             resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
             resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
         })
-       for(let i=1;i<=modifier_nbr;i++){
-        let modifier_name = document.getElementById(`input_modifier_title_${i}`).value
-        if (document.getElementById(`radio_input_${i}`).checked==false){
-            allowed_modifier_4040 = allowed_modifier_4040 + modifier_name + Code_Return
+        for (let i = 1; i <= modifier_nbr; i++) {
+            let modifier_name = document.getElementById(`input_modifier_title_${i}`).value
+            if (document.getElementById(`radio_input_${i}`).checked == false) {
+                allowed_modifier_4040 = allowed_modifier_4040 + modifier_name + Code_Return
 
+            }
         }
-       }
-        console.log(allowed_modifier_4040)
-
-
     }
 
     async function create_rest_XML() {
@@ -54,7 +50,7 @@ async function creating_XML(output_array_f) {
         XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
         // append Specific Diagnostic
         output_array_f.forEach((element) => {
-            XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '','', '', '')
+            XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '', '')
         })
 
         document.getElementById('input_hidden_XML_output').value = XML_output
@@ -62,7 +58,6 @@ async function creating_XML(output_array_f) {
         // finalize XML
         XML_output = XML_output + XML_calculator_end
         document.getElementById('input_XML').value = XML_output
-        console.log(XML_output)
         return XML_output
     }
     create_rest_XML()

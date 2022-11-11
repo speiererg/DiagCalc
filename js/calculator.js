@@ -45,7 +45,6 @@ function findOne_Calculator_mongoDB(id, version) {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_findOne = JSON.parse(this.responseText);
-            console.log(results_findOne)
             importing_calculator(results_findOne)
         }
     };
@@ -69,7 +68,6 @@ function findOne_Calculator_index_mongoDB(id, version) {
 }
 
 function importing_calculator(results_findOne) {
-    console.log(results_findOne['modifiers'][0])
     document.getElementById('input_maindiagnose').value = results_findOne['mainName']
     document.getElementById('input_calculator_id').value = results_findOne['calculator_id']
     document.getElementById('input_medsp_id').value = results_findOne['medsp_id']
@@ -145,7 +143,6 @@ function importing_calculator(results_findOne) {
 }
 
 function importing_calculator_index(results_findOne_index) {
-    console.log(results_findOne_index)
     function import_calculator_index(checkbox_typ) {
         document.getElementById(`checkbox_${checkbox_typ}`).checked = results_findOne_index[checkbox_typ]['checked']
         if (results_findOne_index[checkbox_typ]['checked'] == "true") {
@@ -647,7 +644,6 @@ function calculating_calculator_output(array_inputs_value, array_SNOMED_value, a
     document.getElementById('button_save_calculator').disabled = false
     document.getElementById('button_save_review').disabled = true
 
-    console.log(output_array)
     disable_input(true)
     printing_calculator_output(output_array, 'calculate')
 }
@@ -698,7 +694,6 @@ function printing_calculator_output(output_array_f, printFrom) {
     })
 
     // update hidden input for Database save
-    console.log(output_array)
     document.getElementById('input_hidden_array_output').value = JSON.stringify(output_array)
 
     //update total count

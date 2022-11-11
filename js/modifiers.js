@@ -13,8 +13,6 @@ function find_modifiers() {
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
-
             document.getElementById('modifier_typ_ul').innerHTML = ""
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 let element = results_JSON[i]
@@ -37,12 +35,9 @@ function find_modifiers() {
                 })
                 link.appendChild(sub_ul)
                 document.getElementById('modifier_typ_ul').appendChild(link)
-                console.log(params_link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
             modifier_array_toDownload.sort()
-            console.log(modifier_array_toDownload)
-            console.log(sub_modifier_array_toDownload)
         }
     };
     xmlhttp.open("POST", "mongodb/find_modifiers.php", true);
@@ -69,13 +64,11 @@ async function creating_modifier_XML(output_array_f) {
 
     output_array_f.forEach((element) => {
         XML_modifier_output = XML_modifier_output + create_modifier_XML_row(element[0], element[1])
-        console.log(XML_modifier_output)
     })
 
     // finalize XML
     XML_modifier_output = XML_modifier_output + XML_modifier_end
     document.getElementById('input_hidden_modifier_XML').value = XML_modifier_output
-    console.log(XML_modifier_output)
     return XML_modifier_output
 }
 
@@ -136,7 +129,6 @@ async function creating_sub_modifier_XML(output_array_f) {
     // finalize XML
     XML_sub_modifier_output = XML_sub_modifier_output + XML_sub_modifier_end
     document.getElementById('input_hidden_sub_modifier_XML').value = XML_sub_modifier_output
-    console.log(XML_sub_modifier_output)
     return XML_sub_modifier_output
 }
 

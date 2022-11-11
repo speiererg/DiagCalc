@@ -57,7 +57,6 @@ function changePage(page, paramsPHP, paramsJS) {
 }
 
 function changePageExecute(page, paramsPHP, paramsJS) {
-    console.log(window.location.search)
     if (window.location.search) {                                        //test if GET Parameters are passed
         let GET_object = transformToAssocArray(window.location.search)
         window.history.replaceState({}, document.title, "/" + "index.php");
@@ -261,7 +260,6 @@ function testMongoDB() {
     let params = `id=1&version=1`
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
             let results_findOne = JSON.parse(this.responseText);
             console.log(results_findOne)
         }
