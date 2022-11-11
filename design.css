@@ -155,6 +155,10 @@ body {
   margin-right: auto;
 }
 
+#tr_calculator_button_checkbox td{
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .input_maindiagnose {
   border: solid 2px var(--div-seperation);
@@ -283,6 +287,8 @@ body {
   background-color: var(--main-bg-color);
   color: red;
   font-size: x-small;
+  width:200px;
+
 }
 
 .input_information_italic {

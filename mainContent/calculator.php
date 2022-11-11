@@ -89,7 +89,7 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
       <img src="img/add.png" id="img_button_add_row" class="img_button">
       <p>
       <table>
-        <tr>
+        <tr id="tr_calculator_button_checkbox">
 
           <td>
             <form name="form" action="download/download_XML.php" method="POST">
