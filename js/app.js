@@ -159,13 +159,17 @@ function modifierSub_nbr_change(change, number) {
     }
     document.getElementById('input_hidden_modifierSub_nbr').value = modifierSub_nbr
 }
-function getDateActual() {
-    var currentdate = new Date();
+function getDateActual(timestamp) {
+    if (timestamp) {
+        var date = new Date(timestamp * 1000);
+    } else {
+        var currentdate = new Date();
+    }
     var datetime = currentdate.getDate() + "/"
         + (currentdate.getMonth() + 1) + "/"
         + currentdate.getFullYear() + " @ "
         + currentdate.getHours() + ":"
-        + currentdate.getMinutes() 
+        + currentdate.getMinutes()
     return datetime
 }
 function disable_input(toDo) {

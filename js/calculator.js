@@ -147,6 +147,10 @@ function importing_calculator(results_findOne) {
 function importing_calculator_index(results_findOne_index)
 {
     console.log(results_findOne_index)
+    function import_calculator_index(checkbox_typ){
+        document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
+        document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${results_findOne_index[checkbox_typ]['time']}`
+    }
 
 }
 function edit_calculator() {
