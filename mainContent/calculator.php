@@ -119,8 +119,8 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
               <input type="hidden" name="TXT_output" id="input_hidden_TXT_output" value="">
               <input type="hidden" name="array_output" id="input_hidden_array_output" value="">
 
-              <input type="submit" name="save_version" id="button_save_calculator" class="button_download" value="Save new Version" />
-              <input type="submit" name="save_review" id="button_save_review" class="button_download" value="Save review" />
+              <input type="submit" name="save_version" id="button_save_calculator" class="button_download" value="Save new Version"></br>
+              <input type="submit" name="save_review" id="button_save_review" class="button_download" value="Save review">
 
             </form>
           </td>
