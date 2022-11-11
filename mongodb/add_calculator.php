@@ -338,6 +338,6 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
-header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
+//header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 
 ?>
