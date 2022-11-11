@@ -28,8 +28,44 @@ function loading_page_calculator(paramsJS) {
 
     id_POST = document.getElementById('input_hidden_POST_id').value
     version_POST = document.getElementById('input_hidden_POST_version').value
-    if (paramsJS != "newCalculator") { findOne_Calculator_mongoDB(id_POST, version_POST) }
+    if (paramsJS != "newCalculator") { 
+        findOne_Calculator_mongoDB(id_POST, version_POST)
+        findOne_Calculator_index_mongoDB(id_POST, version_POST) 
+ 
+    }
     document.getElementById(`radio_input_1`).dataset.id = 1
+}
+
+
+/************* MONGODB */
+
+function findOne_Calculator_mongoDB(id, version) {
+    var xmlhttp = new XMLHttpRequest();
+    let params = `id=${id}&version=${version}`
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let results_findOne = JSON.parse(this.responseText);
+            console.log(results_findOne)
+            importing_calculator(results_findOne)
+        }
+    };
+    xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
+}
+
+function findOne_Calculator_index_mongoDB(id, version) {
+    var xmlhttp = new XMLHttpRequest();
+    let params = `id=${id}`
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let results_findOne = JSON.parse(this.responseText);
+            importing_calculator_index(results_findOne)
+        }
+    };
+    xmlhttp.open("POST", "mongodb/findOne_calculator_index.php", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
 }
 
 function importing_calculator(results_findOne) {
@@ -108,6 +144,11 @@ function importing_calculator(results_findOne) {
     printing_calculator_output(output_array, 'import')
 }
 
+function importing_calculator_index(results_findOne_index)
+{
+    console.log(results_findOne_index)
+
+}
 function edit_calculator() {
     confirmBeforeNavigate = 1
     document.getElementById('button_edit_calculator').disabled = true;
@@ -433,7 +474,6 @@ function click_radio_input(event) {
 function   click_on_checkbox(checkbox_typ){
     document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
     document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual()}`
-
 }      
 
 

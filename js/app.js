@@ -250,22 +250,6 @@ function find_home_mongoDB(id, version) {
     xmlhttp.send(params);
 }
 
-
-function findOne_Calculator_mongoDB(id, version) {
-    var xmlhttp = new XMLHttpRequest();
-    let params = `id=${id}&version=${version}`
-    xmlhttp.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-            let results_findOne = JSON.parse(this.responseText);
-            console.log(results_findOne)
-            importing_calculator(results_findOne)
-        }
-    };
-    xmlhttp.open("POST", "mongodb/findOne_calculator.php", true);
-    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xmlhttp.send(params);
-}
-
 function testMongoDB() {
     var xmlhttp = new XMLHttpRequest();
     let params = `id=1&version=1`
