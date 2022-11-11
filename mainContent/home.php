@@ -6,15 +6,14 @@ if (!isset($_SESSION['loggedin'])) {
     exit;
 }
 ?>
-<p>
-<h1 style="text-align:center;">Index</h1>
 <select id="home_select">
     <option value="all_without_sd" selected>All without soft deleted</option>
     <option value="all">All</option>
     <option value="ready_import">Ready to import</option>
     <option value="imported">Imported</option>
     <option value="to_be_reviewed_coding">To be reviewed by coding</option>
-</select>
+</select><p>
+<h1 style="text-align:center;">Index</h1>
 <table id ="home_table">
 <tr id="home_tr">
 <td class="home_td" id="home_td1">

@@ -123,14 +123,14 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             if (page == "index") {
                 addEventListenerByLoading()
                 loading_home()
-                find_home_mongoDB()
+                find_home_mongoDB('all_without_sd')
 
             }
             if (page == "mapping") {
                 loading_page_mapping()
             }
             if (page == "home") {
-                find_home_mongoDB()
+                find_home_mongoDB('all_without_sd')
                 loading_home()
             }
             if (page == "modifiers") {
@@ -230,9 +230,9 @@ function transformToAssocArray(prmstr) {
 }
 // *****************************   MongoDB Tools   *****************************
 
-function find_home_mongoDB(id, version) {
+function find_home_mongoDB(request) {
     var xmlhttp = new XMLHttpRequest();
-    let params = 'item=active&value=yes';
+    let params = `item=${request}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
@@ -293,10 +293,8 @@ function loading_home(){
 }
 
 function select_home_changed(event){
-    console.log(event)
-    console.log('test')
-    console.log(document.getElementById('home_select').value)
 
+    find_home_mongoDB(document.getElementById('home_select').value)
 }
 
 
