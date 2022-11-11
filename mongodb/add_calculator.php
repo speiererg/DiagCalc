@@ -84,7 +84,12 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
          'last_modification_Time' => $time,
          'last_modification_timestamp' => time(),
          'active' => 'yes',
-         'medsp_term' => []
+         'medsp_term' => [],
+         'reviewed_coding' => ['checked'=> $_POST['checkbox_reviewed_coding'],'time'=>time(),'user'=>$_SESSION['username']],
+         'reviewed_SME' => ['checked'=> $_POST['checkbox_reviewed_SME'],'time'=>time(),'user'=>$_SESSION['username']],
+         'ready_import' => ['checked'=> $_POST['checkbox_ready_import'],'time'=>time(),'user'=>$_SESSION['username']],
+         'imported' => ['checked'=> $_POST['checkbox_imported'],'time'=>time(),'user'=>$_SESSION['username']],
+
       ]
    );
 
@@ -107,7 +112,49 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
       )
 
    );
-
+   if ($_POST['checkbox_reviewed_coding_changed'] == "true"){
+      $updateResult = $collection_Index->updateOne(
+         array('calculator_id' => intval($lastId)),
+         array(
+            '$set' => array(
+               'reviewed_coding' => ['checked'=> $_POST['checkbox_reviewed_coding'],'time'=>time(),'user'=>$_SESSION['username']]
+            )
+         )
+   
+      ); 
+   }
+   if ($_POST['checkbox_reviewed_SME_changed'] == "true"){
+      $updateResult = $collection_Index->updateOne(
+         array('calculator_id' => intval($lastId)),
+         array(
+            '$set' => array(
+               'reviewed_SME' => ['checked'=> $_POST['checkbox_reviewed_SME'],'time'=>time(),'user'=>$_SESSION['username']]
+            )
+         )
+   
+      ); 
+   }  if ($_POST['checkbox_ready_import_changed'] == "true"){
+      $updateResult = $collection_Index->updateOne(
+         array('calculator_id' => intval($lastId)),
+         array(
+            '$set' => array(
+               'ready_import' => ['checked'=> $_POST['checkbox_ready_import'],'time'=>time(),'user'=>$_SESSION['username']]
+            )
+         )
+   
+      ); 
+   }  if ($_POST['checkbox_imported_changed'] == "true"){
+      $updateResult = $collection_Index->updateOne(
+         array('calculator_id' => intval($lastId)),
+         array(
+            '$set' => array(
+               'imported' => ['checked'=> $_POST['checkbox_imported'],'time'=>time(),'user'=>$_SESSION['username']]
+            )
+         )
+   
+      ); 
+   }
+   
    $collection3 = $client->DiagCalc_Calculators->Calculators;
 
    $insertOneResult3 = $collection3->updateMany(
