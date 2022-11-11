@@ -167,7 +167,7 @@ function getDateActual(timestamp) {
     }
     var datetime = currentdate.getDate() + "/"
         + (currentdate.getMonth() + 1) + "/"
-        + currentdate.getFullYear() + " @ "
+        + currentdate.getFullYear() + " "
         + currentdate.getHours() + ":"
         + currentdate.getMinutes()
     return datetime
