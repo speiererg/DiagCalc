@@ -292,7 +292,7 @@ function loading_home(){
     document.getElementById('select_home').addEventListener('changed', function(event){ select_home_changed(event)})
 }
 
-select_home_changed(event){
+function select_home_changed(event){
     console.log(event)
 }
 
