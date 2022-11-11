@@ -149,8 +149,15 @@ function importing_calculator_index(results_findOne_index)
     console.log(results_findOne_index)
     function import_calculator_index(checkbox_typ){
         document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
-        document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${results_findOne_index[checkbox_typ]['time']}`
+        document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual(results_findOne_index[checkbox_typ]['time'])}`
+        if(results_findOne_index[last_modification_timestamp] > results_findOne_index[checkbox_typ]['time']){
+            document.getElementById(`input_${checkbox_typ}_changed_since`).value= `Has been changed sinced review/import`
+        }
     }
+    import_calculator_index('reviewed_coding')
+    import_calculator_index('reviewed_SME')
+    import_calculator_index('ready_import')
+    import_calculator_index('imported')
 
 }
 function edit_calculator() {
