@@ -121,17 +121,17 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 }
             }
             if (page == "index") {
-                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
                 addEventListenerByLoading()
+                loading_home()
                 find_home_mongoDB()
+
             }
             if (page == "mapping") {
                 loading_page_mapping()
             }
             if (page == "home") {
                 find_home_mongoDB()
-                document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
-
+                loading_home()
             }
             if (page == "modifiers") {
                 loading_page_modifiers()
@@ -283,5 +283,18 @@ function deleteAllMongoDB() {
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
 }
+
+
+/***************** HOME */
+
+function loading_home(){
+    document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
+    document.getElementById('select_home').addEventListener('changed', function(event){ select_home_changed(event)})
+}
+
+select_home_changed(event){
+    console.log(event)
+}
+
 
 loadingIndex()
