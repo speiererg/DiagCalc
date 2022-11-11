@@ -41,6 +41,11 @@ $cursor = $collection->find(
     ['reviewed_coding.checked' => null],
     ['sort' => array('mainName' => 1)]
   );
+}else if ($_POST['request'] == "to_be_reviewed_SME"){
+  $cursor = $collection->find(
+    ['reviewed_SME.checked' => null],
+    ['sort' => array('mainName' => 1)]
+  );
 }
 
 echo json_encode(iterator_to_array($cursor));
