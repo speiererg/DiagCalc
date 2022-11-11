@@ -432,7 +432,7 @@ function click_radio_input(event) {
 
 function   click_on_checkbox(checkbox_typ){
     document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
-    document.getElementById(`input_${checkbox_typ}_last`).value= getDateActual()
+    document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual()}`
 
 }      
 

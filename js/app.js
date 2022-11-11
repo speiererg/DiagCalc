@@ -165,7 +165,7 @@ function getDateActual() {
         + (currentdate.getMonth() + 1) + "/"
         + currentdate.getFullYear() + " @ "
         + currentdate.getHours() + ":"
-        + currentdate.getMinutes() + ":"
+        + currentdate.getMinutes() 
     return datetime
 }
 function disable_input(toDo) {
