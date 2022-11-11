@@ -291,7 +291,6 @@ function loading_home(){
 }
 
 function select_home_changed(event){
-
     find_home_mongoDB(document.getElementById('home_select').value)
 }
 

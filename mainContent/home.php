@@ -9,7 +9,7 @@ if (!isset($_SESSION['loggedin'])) {
 <select id="home_select">
     <option value="all_without_sd" selected>All</option>
     <option value="to_be_reviewed_coding">To be reviewed by coding</option>
-    <option value="to_be_reviewed_SMEs">To be reviewed by SMEs</option>
+    <option value="to_be_reviewed_SME">To be reviewed by SMEs</option>
     <option value="ready_import">Ready to import</option>
     <option value="imported">Imported</option>
     <option value="all">All with soft deleted</option>
