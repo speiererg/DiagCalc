@@ -148,7 +148,7 @@ function importing_calculator_index(results_findOne_index)
 {
     console.log(results_findOne_index)
     function import_calculator_index(checkbox_typ){
-        document.getElementById(`checkbox_${checkbox_typ}`).checked = true
+        document.getElementById(`checkbox_${checkbox_typ}`).checked = strue
         document.getElementById(`input_${checkbox_typ}_last`).value= `Last: ${getDateActual(results_findOne_index[checkbox_typ]['time'])} by: ${results_findOne_index[checkbox_typ]['user']}`
         if(results_findOne_index['last_modification_timestamp'] > results_findOne_index[checkbox_typ]['time']){
             document.getElementById(`input_${checkbox_typ}_changed_since`).value= `Has been changed sinced review/import`
