@@ -107,7 +107,6 @@ if ($_POST['calculator_id'] == null) { // ***************************         if
 
    );
    if ($_POST['checkbox_reviewed_coding_changed'] == "true"){
-      echo $_POST['checkbox_reviewed_coding'];
       $updateResult = $collection_Index->updateOne(
          array('calculator_id' => intval($lastId)),
          array(
@@ -338,6 +337,6 @@ $insertOneResult = $collectionModifier->insertMany(
    $modifiers_array
 );
 
-//header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
+header('Location: ../index.php?calculator=' . $lastId . '&version=' . $_POST['select_version']);
 
 ?>
