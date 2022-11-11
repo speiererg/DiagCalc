@@ -104,6 +104,8 @@ function changePageExecute(page, paramsPHP, paramsJS) {
                 if (paramsJS == "newCalculator") {
                     document.getElementById('input_hidden_new_calculator').value = 1
                     document.getElementById('button_calculate').disabled = false
+                    document.getElementById('button_save_review').disabled = true
+                    document.getElementById('button_save_review').style.display = "none"
                     document.getElementById('button_edit_calculator').disabled = true
                     document.getElementById('button_download_XML').disabled = true
                     document.getElementById('button_download_TXT').disabled = true

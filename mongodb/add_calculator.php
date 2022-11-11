@@ -20,6 +20,7 @@ $time = date("d.m.Y h:i:sa");
 $calculator_id = $_POST['calculator_id'];
 
 if (isset($_POST['save_review'])) {
+   $lastId = $_POST['calculator_id'];
    $collection_Index = $client->DiagCalc_Calculators->Index;
    if ($_POST['checkbox_reviewed_coding_changed'] == "true") {
       $updateResult = $collection_Index->updateOne(
