@@ -39,7 +39,7 @@ function find_modifiers() {
                 document.getElementById('modifier_typ_ul').appendChild(link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
-            modifier_array_toDownload.sort()
+            modifier_array_toDownload.sort((a,b) => a.modifier_id - b.modifier_id);
         }
     };
     xmlhttp.open("POST", "mongodb/find_modifiers.php", true);
@@ -52,7 +52,6 @@ function find_modifiers() {
 
 async function download_modifier_XML() {
     if (modifier_array_toDownload) {
-        modifier_array_toDownload.sort((a,b) => a.modifier_id - b.modifier_id);
         await creating_modifier_XML(modifier_array_toDownload)
         document.getElementById('button_download_modifier_XML_submit').click()
 
