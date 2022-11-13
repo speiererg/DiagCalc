@@ -40,6 +40,7 @@ function find_modifiers() {
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
             modifier_array_toDownload.sort();
+            console.log(modifier_array_toDownload)
         }
     };
     xmlhttp.open("POST", "mongodb/find_modifiers.php", true);
