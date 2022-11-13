@@ -52,6 +52,7 @@ function find_modifiers() {
 
 async function download_modifier_XML() {
     if (modifier_array_toDownload) {
+        modifier_array_toDownload.sort((a,b) => a.modifier_id - b.modifier_id);
         await creating_modifier_XML(modifier_array_toDownload)
         document.getElementById('button_download_modifier_XML_submit').click()
 
