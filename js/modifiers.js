@@ -39,7 +39,7 @@ function find_modifiers() {
                 document.getElementById('modifier_typ_ul').appendChild(link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
-            modifier_array_toDownload.sort();
+            modifier_array_toDownload.sort((a, b) => a[0] - b[0]);
             console.log(modifier_array_toDownload)
         }
     };
