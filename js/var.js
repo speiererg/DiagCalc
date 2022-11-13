@@ -1031,8 +1031,114 @@ var XML_calculator_end = `<ss:Row>
 </Worksheet>
 </Workbook>`
 
-var XML_modifier_beginn ="<XML_Beginn>"
-var XML_modifier_end ="<XML_End>"
+var XML_modifier_beginn =`<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <LastAuthor>EACATOUT</LastAuthor>
+  <Created>So 13. Nov 2022 21:10</Created>
+  <Version>11.5606</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <DownloadComponents/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>8955</WindowHeight>
+  <WindowWidth>11115</WindowWidth>
+  <WindowTopX>720</WindowTopX>
+  <WindowTopY>345</WindowTopY>
+  <RefModeR1C1/>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Top" ss:WrapText="1"/>
+   <Borders/>
+   <Font/>
+   <Interior/>
+   <NumberFormat ss:Format="@"/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s21">
+   <Interior ss:Color="#FFFFCC" ss:Pattern="Solid"/>
+   <Font ss:Size="11" ss:Bold="1"/>
+  </Style>
+  <Style ss:ID="s22">
+   <Alignment ss:WrapText="1"/>
+   <Font ss:Size="10" ss:Color="#FFFFFF"/>
+   <Interior ss:Color="#0000FF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s23">
+   <Alignment ss:Vertical="Top"/>
+   <Interior ss:Pattern="Gray0625" ss:PatternColor="#000000"/>
+   <NumberFormat ss:Format="@"/>
+  </Style>
+  <Style ss:ID="s24">
+   <Interior ss:Color="#000000" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="@"/>
+   <Protection ss:Protected="0"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="ECT-7729 export">
+  <Table ss:ExpandedColumnCount="6" ss:ExpandedRowCount="65000" x:FullColumns="1"
+   x:FullRows="1"> 
+   <Column ss:AutoFitWidth="0" ss:Width="150"/>
+   <Column ss:AutoFitWidth="0" ss:Width="200"/>
+   <Column ss:AutoFitWidth="0" ss:Width="104"/>
+   <Column ss:AutoFitWidth="0" ss:Width="200"/>
+   <Column ss:AutoFitWidth="0" ss:Width="104"/>
+   <Column ss:AutoFitWidth="1"/>
+   <Row>
+    <Cell ss:StyleID="s21"><Data ss:Type="String">Category Import: ECT-7729</Data><Comment ss:Author="Chronicles"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma" html:Size="8"
+ html:Color="#000000">#CATEGORY_EXPORT</Font></ss:Data></Comment></Cell>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s21"/>
+    <Cell ss:StyleID="s24"/>
+   </Row>
+   <Row>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Category Number</Data><Comment ss:Author="Chronicles"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma" html:Size="8"
+ html:Color="#000000">#HEADER_ROW&#10;&#10;Enter a number here for each category item. * will not be accepted.&#10;&#10;The number entered here will be added to the offset specified when the Chronicles EACATIN category import tool is used.&#10;&#10;For example, if category XYZ has number 2 in the spreadsheet, and you specify an offset of "10" when you run EACATIN, then category XYZ will have a category number of 12.</Font></ss:Data></Comment></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Title</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Abbreviation&#10;(12 char max)</Data></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Synonym(s)</Data><Comment ss:Author="Chronicles"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma" html:Size="8"
+ html:Color="#000000">Enter as many synonyms as necessary, one per row.</Font></ss:Data></Comment></Cell>
+    <Cell ss:StyleID="s22"><Data ss:Type="String">Extra Info</Data></Cell>
+    <Cell ss:StyleID="s24"><Data ss:Type="String"></Data><Comment ss:Author="Chronicles"><ss:Data
+       xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma" html:Size="8"
+ html:Color="#000000">#LAST_COL</Font></ss:Data></Comment></Cell>
+   </Row>`
+var XML_modifier_end =`<Row>
+<Cell ss:StyleID="s24"><Data ss:Type="String"></Data><Comment ss:Author="Chronicles"><ss:Data
+   xmlns="http://www.w3.org/TR/REC-html40"><Font html:Face="Tahoma" html:Size="8"
+html:Color="#000000">#LAST_ROW</Font></ss:Data></Comment></Cell>
+<Cell ss:StyleID="s24"/>
+<Cell ss:StyleID="s24"/>
+<Cell ss:StyleID="s24"/>
+<Cell ss:StyleID="s24"/>
+<Cell ss:StyleID="s24"/>
+</Row>
+</Table>
+<WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+<Selected/>
+<FreezePanes/>
+<SplitHorizontal>2</SplitHorizontal>
+<TopRowBottomPane>2</TopRowBottomPane>
+<ActivePane>2</ActivePane>
+<ProtectObjects>False</ProtectObjects>
+<ProtectScenarios>False</ProtectScenarios>
+</WorksheetOptions>
+</Worksheet>
+</Workbook>`
 
 
 var TXT_modifier_beginn ="<TXT_Beginn>"
@@ -1041,6 +1147,5 @@ var XML_sub_modifier_beginn ="<XML_Beginn>"
 var XML_sub_modifier_end ="<XML_End>"
 
 var TXT_sub_modifier_beginn ="<TXT_Beginn>"
-
 
 

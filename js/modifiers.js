@@ -76,14 +76,14 @@ async function creating_modifier_XML(output_array_f) {
 
 function create_modifier_XML_row(modifier_id, modifier_name) {
     return XML_temp = `            
-    <ss:Row>
-    <ss:Cell>
-        <ss:Data ss:Type="String">${modifier_id}</ss:Data>
-    </ss:Cell>
-    <ss:Cell>
-    <ss:Data ss:Type="String">${modifier_name}</ss:Data>
-    </ss:Cell>
-    </ss:Row>`
+    <Row>
+    <Cell><Data ss:Type="String">${modifier_id}</Data></Cell>
+    <Cell><Data ss:Type="String">${modifier_name}</Data></Cell>
+    <Cell><Data ss:Type="String">${modifier_id}</Data></Cell>
+    <Cell><Data ss:Type="String"></Data></Cell>
+    <Cell/>
+    <Cell ss:StyleID="s24"/>
+   </Row>`
 }
 
 async function download_modifier_TXT() {
