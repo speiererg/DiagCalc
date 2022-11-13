@@ -23,7 +23,7 @@ function find_modifiers() {
                 let text_name = document.createTextNode(`${element['modifier_name']} (id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
                 link.appendChild(text_name)
-                modifier_array_toDownload.push([element['modifier_id'], element['modifier_name']])
+                modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
                 //Create Sub                
                 let sub_ul = document.createElement('ul')
                 element['modifier_array'].forEach((element) => {
