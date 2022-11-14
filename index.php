@@ -35,7 +35,7 @@ if (!isset($_SESSION['loggedin'])) {
       <a id="navPageMappingUpdate">Mapping Update</a>
       <a id="navPageModifierManagment">Modifiers Managment</a>
       <a id="navPageTest"style="display:none">TestMongoDB</a>
-      <a id="navPageDelete" style="display:inline">Delete all</a>
+      <a id="navPageDelete" style="display:none">Delete all</a>
       <a href="https://browser.ihtsdotools.org/multi-extension-search.html" target="_blank"
         rel="noopener noreferrer">SNOMED Browser</a>
       <a href="https://icd.who.int/browse10/2019/en#/" target="_blank" rel="noopener noreferrer">ICD-10 Browser</a>
