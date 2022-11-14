@@ -37,7 +37,6 @@ function find_modifiers() {
                         sub_modifier_array_toDownload.push([element])
                     }
                 })
-                link.appendChild(sub_ul)
                 document.getElementById('modifier_typ_ul').appendChild(link)
                 document.getElementById(`modifier_link_id_${element['modifier_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
