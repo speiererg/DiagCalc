@@ -15,4 +15,5 @@ setInterval(() => {
     rectangleLogin.style.bottom = `${y+(yz*0.4)}px`
 }, 1);
 
-document.getElementById('logo_spital_inselgruppe').addEventListener('click', function (event){console.log(event);event.target.setAttribute('class','logo_activated') })
+document.getElementById('logo_spital_inselgruppe').addEventListener('click', function (event){event.target.setAttribute('class','logo_activated') })
+document.getElementById('logo_spital_luzern').addEventListener('click', function (event){event.target.setAttribute('class','logo_activated') })
