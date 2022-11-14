@@ -12,6 +12,18 @@ if (!isset($_SESSION['loggedin'])) {
 <p>
 <ul id="modifier_typ_ul">
 </ul>
+<div class="container_flex">
+  <div class="item_flex">1</div>
+  <div class="item_flex">2</div>
+  <div class="item_flex">3</div>
+  <div class="item_flex">4</div>
+  <div class="item_flex">5</div>
+  <div class="item_flex">6</div>
+  <div class="item_flex">7</div>
+  <div class="item_flex">8</div>
+  <div class="item_flex">9</div>
+  <div class="item_flex">10</div>
+</div>
 <table>
         <tr>
 

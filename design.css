@@ -129,6 +129,29 @@ body {
 
 .CSS_contentTable td {}
 
+
+/******************* FLEX BOX *************************/
+.container_flex {
+  background: tomato;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: space-between;
+  justify-content: space-between;
+}
+.item_flex {
+  width: 100px;
+  height: 100px;
+  background: gold;
+  border: 1px solid black;
+  font-size: 30px;
+  line-height: 100px;
+  text-align: center;
+  margin: 10px;
+}
+.item_flex:nth-child(3n) {
+  background: silver;
+}
+
 /* --------   CALCULATOR ----------- */
 #table_input {
   font-size: var(--font-size);
