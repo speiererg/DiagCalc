@@ -13,8 +13,8 @@ if (!isset($_SESSION['loggedin'])) {
 <ul >
 </ul>
 <div class="container_flex_modifier" id="modifier_typ_ul">
-
 </div>
+<p>
 <table>
         <tr>
 
