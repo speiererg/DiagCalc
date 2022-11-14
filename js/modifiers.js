@@ -14,6 +14,8 @@ function find_modifiers() {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
+            modifier_array_toDownload=[];
+            sub_modifier_array_toDownload=[];
             document.getElementById('modifier_typ_ul').innerHTML = ""
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 let element = results_JSON[i]
