@@ -139,11 +139,9 @@ body {
 }
 .item_flex {
   width: 25%;
-  height: 100px;
   background: var(--div-color-hell);
   border: 1px solid black;
   border-radius: 3px;
-  line-height: 100px;
   text-align: center;
   margin: 10px;
 }
