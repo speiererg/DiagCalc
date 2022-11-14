@@ -21,7 +21,7 @@ function find_modifiers() {
                 link.setAttribute('class', 'item_flex_modifier')
                 link.setAttribute('id', `modifier_link_id_${element['modifier_id']}`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
-                link.appendChild(DOM_create_span_style(`${element['modifier_name']}`,'bold','','2em'))
+                link.appendChild(DOM_create_span_style(`${element['modifier_name']}`,'bold','','1.5em'))
                 link.appendChild(document.createElement('br'))
                 link.appendChild(DOM_create_span_style(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`,'','italic','0.7em'))
                 link.appendChild(document.createElement('br'))
