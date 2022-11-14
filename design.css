@@ -138,7 +138,7 @@ body {
   justify-content: space-between;
 }
 .item_flex_modifier {
-  width: 30%;
+  width: 20%;
   background: var(--div-color-hell);
   border: 1px solid black;
   border-radius: 3px;
