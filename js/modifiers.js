@@ -26,15 +26,14 @@ function find_modifiers() {
                 text_span.style.fontWeight="bold"
                 link.appendChild(text_span)
                 link.appendChild(document.createElement('br'))
-                link.appendChild(document.createTextNode(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`))
+                link.appendChild(DOM_create_span_style(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`,'','italic',''))
                 modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
                 //Create Sub                
-                let sub_ul = document.createElement('ul')
                 element['modifier_array'].forEach((element) => {
                     if (element) {
-                        let sub_li = document.createElement('li')
+                        let sub_li = document.createElement('span')
                         sub_li.appendChild(document.createTextNode(element))
-                        sub_ul.appendChild(sub_li)
+                        link.appendChild(DOM_create_span_style(element,'','italic'))
                         sub_modifier_array_toDownload.push([element])
                     }
                 })

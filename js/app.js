@@ -142,6 +142,19 @@ function changePageExecute(page, paramsPHP, paramsJS) {
     xhttp.send(paramsPHP);
 
 }
+
+// *****************************   Tools   *****************************
+
+function DOM_create_span_style(text,fontWeight,fontStyle,fontSize){
+   let span_DOM = document.createElement('span')
+   let text_DOM = document.createTextNode(text)
+   span_DOM.style.fontWeight = fontWeight
+   span_DOM.style.fontStyle = fontStyle
+   span_DOM.style.fontSize = fontSize
+   span_DOM.appendChild(text_DOM)
+   return span_DOM;
+}
+
 // *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
     if (change == "++") {
