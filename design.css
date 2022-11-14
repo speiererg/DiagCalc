@@ -131,19 +131,19 @@ body {
 
 
 /******************* FLEX BOX *************************/
-.container_flex {
+.container_flex_modifier {
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
   justify-content: space-between;
 }
-.item_flex {
+.item_flex_modifier {
   width: 25%;
   background: var(--div-color-hell);
   border: 1px solid black;
   border-radius: 3px;
   text-align: center;
-  margin: 10px;
+  margin: 2px;
 }
 
 /* --------   CALCULATOR ----------- */
