@@ -55,13 +55,14 @@ body.loggedin {
 .logo_spital {
 
 	width: 150px;
+	border:solid rgba(46, 52, 109, 0.808) 2px;
+	border-radius: 3px;
 }
 
 
 
 .logo_spital_div{
-	border:solid rgba(46, 52, 109, 0.808) 2px;
-	border-radius: 3px;
+
 	padding:0px
 
 }
