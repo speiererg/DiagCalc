@@ -139,7 +139,7 @@ body {
   justify-content: space-between;
 }
 .item_flex {
-  width: 100px;
+  width: 25%;
   height: 100px;
   background: gold;
   border: 1px solid black;
