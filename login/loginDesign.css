@@ -65,7 +65,10 @@ body.loggedin {
 	padding:0px
 
 }
-.logo_spital_div.hover {
+.logo_spital_div:hover {
+	border: 4px
+}
+.logo_spital_div:active {
 	border: 4px
 }
 
