@@ -60,7 +60,7 @@ body.loggedin {
 
 
 .logo_spital_div{
-	border:rgba(46, 52, 109, 0.808), 2px;
+	border:solid rgba(46, 52, 109, 0.808), 2px;
 	border-radius: 3px;
 
 }
