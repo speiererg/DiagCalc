@@ -132,7 +132,6 @@ body {
 
 /******************* FLEX BOX *************************/
 .container_flex {
-  background: tomato;
   display: flex;
   flex-flow: row wrap;
   align-content: space-between;
@@ -141,15 +140,12 @@ body {
 .item_flex {
   width: 25%;
   height: 100px;
-  background: gold;
+  background: var(--div-color-hell);
   border: 1px solid black;
-  font-size: 30px;
+  border-radius: 3px;
   line-height: 100px;
   text-align: center;
   margin: 10px;
-}
-.item_flex:nth-child(3n) {
-  background: silver;
 }
 
 /* --------   CALCULATOR ----------- */
