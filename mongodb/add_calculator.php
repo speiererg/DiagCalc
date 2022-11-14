@@ -9,7 +9,7 @@ require '../vendor/autoload.php';
 require '../../conf/connect.php';
 
 // ***************   PARAMETERS ***********************
-$var_last_modifier_id = 800000
+$var_last_modifier_id = 800000;
 
 $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
