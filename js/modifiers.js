@@ -31,9 +31,9 @@ function find_modifiers() {
                 //Create Sub                
                 element['modifier_array'].forEach((element) => {
                     if (element) {
-                        let sub_li = document.createElement('span')
-                        sub_li.appendChild(document.createTextNode(element))
                         link.appendChild(DOM_create_span_style(element,'','italic'))
+                        link.appendChild(document.createElement('br'))
+
                         sub_modifier_array_toDownload.push([element])
                     }
                 })
