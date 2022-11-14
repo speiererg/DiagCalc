@@ -59,18 +59,13 @@ body.loggedin {
 	border-radius: 3px;
 }
 
-
-
-.logo_spital_div{
-
-	padding:0px
-
-}
-.logo_spital_div:hover {
+.logo_spital:hover {
 	border:solid rgba(46, 52, 109, 0.808) 4px;
 }
-.logo_spital_div:active {
-	border:solid rgba(46, 52, 109, 0.808) 4px;
+
+.logo_activated{
+	border:solid rgba(46, 52, 109, 0.808) 6px;
+	border-radius: 3px;
 }
 
 .content {

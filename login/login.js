@@ -14,3 +14,5 @@ setInterval(() => {
     rectangleLogin.style.left = `${x+(xz*0.4)}px`
     rectangleLogin.style.bottom = `${y+(yz*0.4)}px`
 }, 1);
+
+document.getElementById('logo_spital_inselgruppe').addEventListener('click', function (event){event.setAttribute('class','logo_activated') })
