@@ -48,6 +48,19 @@ body{
 body.loggedin {
 	background-color: #f3f4f7;
 }
+
+
+/* ************* SPITAL **************/
+
+.logo_spital {
+	border:rgba(46, 52, 109, 0.808), 2px;
+	width: 70px;
+}
+
+.logo_spital.hover {
+	border:rgba(46, 52, 109, 0.808), 4px
+}
+
 .content {
 	width: 100%;
 	padding-left:10%;
