@@ -21,12 +21,9 @@ function find_modifiers() {
                 link.setAttribute('class', 'item_flex_modifier')
                 link.setAttribute('id', `modifier_link_id_${element['modifier_id']}`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
-                let text_span = document.createElement('span')
-                text_span.appendChild(document.createTextNode(`${element['modifier_name']}`))
-                text_span.style.fontWeight="bold"
-                link.appendChild(text_span)
+                link.appendChild(DOM_create_span_style(`${element['modifier_name']}`,'bold','','1em'))
                 link.appendChild(document.createElement('br'))
-                link.appendChild(DOM_create_span_style(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`,'','italic',''))
+                link.appendChild(DOM_create_span_style(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`,'','italic','0.6em'))
                 link.appendChild(document.createElement('br'))
                 modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
                 //Create Sub                
