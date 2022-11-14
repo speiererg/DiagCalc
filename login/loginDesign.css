@@ -53,9 +53,9 @@ body.loggedin {
 /* ************* SPITAL **************/
 
 .logo_spital {
-
 	border:solid rgba(46, 52, 109, 0.808) 2px;
 	border-radius: 3px;
+	width: 150px;
 }
 
 .logo_spital:hover {
@@ -63,7 +63,6 @@ body.loggedin {
 }
 
 .logo_activated{
-	width: 150px;
 	border:solid rgba(46, 52, 109, 0.808) 4px;
 	border-radius: 3px;
 }
