@@ -7,6 +7,10 @@ if (!isset($_SESSION['loggedin'])) {
 }
 require '../vendor/autoload.php';
 require '../../conf/connect.php';
+
+// ***************   PARAMETERS ***********************
+$var_last_modifier_id = 800000
+
 $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
 
@@ -107,7 +111,7 @@ if (isset($_POST['save_version'])) {
    if ($cursor_lastModifierId->modifier_id) {
       $lastModifierId = intval($cursor_lastModifierId->modifier_id);
    } else {
-      $lastModifierId = 0;
+      $lastModifierId = $var_last_modifier_id;
    }
 
    if ($_POST['calculator_id'] == null) { // ***************************         if new Calculator
