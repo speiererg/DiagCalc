@@ -146,7 +146,7 @@ function importing_calculator_index(results_findOne_index) {
     function import_calculator_index(checkbox_typ) {
         document.getElementById(`checkbox_${checkbox_typ}`).checked = results_findOne_index[checkbox_typ]['checked']
         if (results_findOne_index[checkbox_typ]['checked'] == "true") {
-            document.getElementById(`input_${checkbox_typ}_last`).value = `${getDateActual(results_findOne_index[checkbox_typ]['time'])} by: ${results_findOne_index[checkbox_typ]['user']}`
+            document.getElementById(`input_${checkbox_typ}_last`).value = `${getDateActual(results_findOne_index[checkbox_typ]['time'])} by ${results_findOne_index[checkbox_typ]['user']}`
             if (results_findOne_index['last_modification_timestamp'] > results_findOne_index[checkbox_typ]['time']) {
                 document.getElementById(`input_${checkbox_typ}_changed_since`).value = `New calculation since review/import`
             }
@@ -484,7 +484,7 @@ function click_radio_input(event) {
 
 function click_on_checkbox(checkbox_typ) {
     document.getElementById(`checkbox_${checkbox_typ}_changed`).value = "true"
-    document.getElementById(`input_${checkbox_typ}_last`).value = `Last: ${getDateActual()}`
+    document.getElementById(`input_${checkbox_typ}_last`).value = `Now`
 }
 
 
