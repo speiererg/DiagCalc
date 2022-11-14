@@ -63,6 +63,7 @@ body.loggedin {
 }
 
 .logo_activated{
+	width: 150px;
 	border:solid rgba(46, 52, 109, 0.808) 4px;
 	border-radius: 3px;
 }
