@@ -27,11 +27,12 @@ function find_modifiers() {
                 link.appendChild(text_span)
                 link.appendChild(document.createElement('br'))
                 link.appendChild(DOM_create_span_style(`id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}(Version:${element['calculator_version']})`,'','italic',''))
+                link.appendChild(document.createElement('br'))
                 modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
                 //Create Sub                
                 element['modifier_array'].forEach((element) => {
                     if (element) {
-                        link.appendChild(DOM_create_span_style(element,'','italic'))
+                        link.appendChild(DOM_create_span_style(element,'','',''))
                         link.appendChild(document.createElement('br'))
 
                         sub_modifier_array_toDownload.push([element])
