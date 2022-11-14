@@ -138,12 +138,17 @@ body {
   justify-content: space-between;
 }
 .item_flex_modifier {
-  width: 25%;
+  width: 30%;
   background: var(--div-color-hell);
   border: 1px solid black;
   border-radius: 3px;
   text-align: center;
   margin: 2px;
+}
+
+.item_flex_modifier:hover{
+  cursor: pointer;
+
 }
 
 /* --------   CALCULATOR ----------- */
