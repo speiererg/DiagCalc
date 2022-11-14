@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>Login DiagCalc MedSP</title>
-		<link href="loginDesign.css" rel="stylesheet" type="text/css">
-	</head>
-	<body>
-		<div class="login">
 
-			<body class="loggedin">
-				<nav class="navtop">
-					<div>
-						<h1>DiagCalculator by MedSP</h1>
-						<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-					</div>
-				</nav>
-	<div class="content">
-		<h1> Welcome to DiagCalculator <img src="../../img/logo.png" style="height:40px;vertical-align:middle"></h1> 	
-		<h2>Login</h2>
-		</br>
-			<form action="authenticate.php" method="post">
-				<label for="username">
-					<i class="fas fa-user"></i>
-				</label>
-				<input type="text" name="username" placeholder="Username" id="username" required autofocus> 
-				<label for="password">
-					<i class="fas fa-lock"></i>
-				</label>
-				<input type="password" name="password" placeholder="Password" id="password" required>
-				<input type="submit" value="Login">
-			</form>
-			<p></p>
-			<table>
-				<tr class="logo_spital_div"><img src="../img/logo/inselgruppe.png" class="logo_spital"></tr>
-			</table>
+<head>
+	<meta charset="utf-8">
+	<title>Login DiagCalc MedSP</title>
+	<link href="loginDesign.css" rel="stylesheet" type="text/css">
+</head>
 
+<body>
+	<div class="login">
+
+		<body class="loggedin">
+			<nav class="navtop">
+				<div>
+					<h1>DiagCalculator by MedSP</h1>
+					<a href="logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+				</div>
+			</nav>
+			<div class="content">
+				<h1> Welcome to DiagCalculator <img src="../../img/logo.png" style="height:40px;vertical-align:middle">
+				</h1>
+				<h2>Login</h2>
+				</br>
+				<form action="authenticate.php" method="post">
+					<label for="username">
+						<i class="fas fa-user"></i>
+					</label>
+					<input type="text" name="username" placeholder="Username" id="username" required autofocus>
+					<label for="password">
+						<i class="fas fa-lock"></i>
+					</label>
+					<input type="password" name="password" placeholder="Password" id="password" required>
+					<input type="submit" value="Login">
+				</form>
 
 
-	</div>
-	
-	<div>
-		<div id ="rectangleLogin" style="width:30px;height:100px;border-radius:20px;background-color:#6b9bda;left:101px;position:absolute;bottom:100px;"></div>
-	</div>
-	<script src="login.js"></script> 
-	</body>
+				<table>
+					<tr class="logo_spital_div"><img src="../img/logo/inselgruppe.png" class="logo_spital"></tr>
+				</table>
+
+			</div>
+
+			<div>
+				<div id="rectangleLogin"
+					style="width:30px;height:100px;border-radius:20px;background-color:#6b9bda;left:101px;position:absolute;bottom:100px;">
+				</div>
+			</div>
+			<script src="login.js"></script>
+		</body>
+
 </html>
