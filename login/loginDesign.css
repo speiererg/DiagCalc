@@ -59,6 +59,7 @@ body.loggedin {
 }
 
 .logo_spital:hover {
+	cursor: pointer;
 	border:solid rgba(46, 52, 109, 0.808) 4px;
 }
 
