@@ -57,7 +57,7 @@ body.loggedin {
 	opacity: 0.7;
 	border-radius: 3px;
 	width: 150px;
-	height: 45px;
+	height: 40px;
 }
 
 .logo_spital:hover {
@@ -67,7 +67,6 @@ body.loggedin {
 }
 
 .logo_activated{
-	width: 150px;
 	opacity: 1;
 	border:solid rgba(46, 52, 109, 0.808) 2px;
 	border-radius: 3px;
