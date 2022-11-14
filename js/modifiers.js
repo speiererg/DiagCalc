@@ -20,9 +20,10 @@ function find_modifiers() {
                 let link = document.createElement('div')
                 link.setAttribute('class', 'item_flex')
                 link.setAttribute('id', `modifier_link_id_${element['modifier_id']}`)
-                let text_name = document.createTextNode(`${element['modifier_name']} (id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`)
                 let params_link = `calculator_id=${element['calculator_id']}&version=${element['calculator_version']}`
-                link.appendChild(text_name)
+                link.appendChild(document.createTextNode(`${element['modifier_name']}`).style.fontWeight = "bold")
+                link.appendChild(document.createElement('br'))
+                link.appendChild(document.createTextNode(`(id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`))
                 modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
                 //Create Sub                
                 let sub_ul = document.createElement('ul')
