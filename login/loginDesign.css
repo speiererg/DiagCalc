@@ -53,11 +53,16 @@ body.loggedin {
 /* ************* SPITAL **************/
 
 .logo_spital {
-	border:rgba(46, 52, 109, 0.808), 2px;
+
 	width: 150px;
 }
 
-.logo_spital.hover {
+
+
+.logo_spital_div{
+	border:rgba(46, 52, 109, 0.808), 2px;
+}
+.logo_spital_div.hover {
 	border:rgba(46, 52, 109, 0.808), 4px
 }
 
