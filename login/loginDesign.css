@@ -66,10 +66,10 @@ body.loggedin {
 
 }
 .logo_spital_div:hover {
-	border: 4px
+	border:solid rgba(46, 52, 109, 0.808) 2px;
 }
 .logo_spital_div:active {
-	border: 4px
+	border:solid rgba(46, 52, 109, 0.808) 2px;
 }
 
 .content {
