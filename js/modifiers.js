@@ -24,7 +24,7 @@ function find_modifiers() {
                 let text_span = document.createElement('span')
                 text_span.appendChild(document.createTextNode(`${element['modifier_name']}`))
                 text_span.style.fontWeight="bold"
-                link.appendChild(text_link)
+                link.appendChild(text_span)
                 link.appendChild(document.createElement('br'))
                 link.appendChild(document.createTextNode(`(id: ${element['modifier_id']}, DiagCalc: ${element['calculator_name']}[Version:${element['calculator_version']}])`))
                 modifier_array_toDownload.push([parseInt(element['modifier_id']), element['modifier_name']])
