@@ -52,7 +52,6 @@ async function get_array_download_diag_calc_ready(id_array) {
             results_JSON.forEach((element) => {
                 array_output_array.push(element['output_array'])
             })
-            console.log(array_output_array)
             creating_diag_calc_ready_XML(array_output_array)
         }
     };
@@ -63,7 +62,7 @@ async function get_array_download_diag_calc_ready(id_array) {
 }
 
 async function creating_diag_calc_ready_XML(array_output_array_f) {
-    let XML_output = XML_calculator_beginn
+    var XML_output = XML_calculator_beginn
 
     array_output_array_f.forEach((element) => {
         create_one_calc_XML(element)
