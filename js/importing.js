@@ -37,8 +37,9 @@ function find_importing_mongoDB(request) {
 // *********************** DOWNLOAD ***********************************/
 
 async function download_importing_calc_XML() {
+    console.log(XML_output)
+
         await get_array_download_diag_calc_ready(ready_import_id_array)
-        console.log(XML_output)
         document.getElementById('button_download__diagCalc_ready_import_XML_submit').click()
 }
 
