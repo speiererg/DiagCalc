@@ -40,6 +40,8 @@ function get_array_download_diag_calc_ready(id_array){
     let params = `calculator_id_array=${id_array}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
+            console.log(this.responseText)
+
             let results_JSON = JSON.parse(this.responseText);
             console.log(results_JSON)
         }
