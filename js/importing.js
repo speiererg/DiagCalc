@@ -69,16 +69,16 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
 
 
 
+    async function create_one_calc_XML(output_array_f) {
 
 
-
+        let allowed_modifier_4040 = ""
+        let resolved_term_4043 = ""
+        let resolved_term_name_4043dot = ""
+        let modifier_values_4044 = ""
 
         async function create_array_main_diagnosis(output_array_f) {
             //append main Diagnostic
-            let allowed_modifier_4040 = ""
-            let resolved_term_4043 = ""
-            let resolved_term_name_4043dot = ""
-            let modifier_values_4044 = ""
 
             main_Diagnostic = output_array_f.shift();
             output_array_f.forEach((element) => {
@@ -98,10 +98,9 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
                 }
             }
             */
-           return allowed_modifier_4040,resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044,main_Diagnostic
         }
 
-        async function create_rest_XML(output_array_f) {
+        async function create_rest_XML() {
             await (create_array_main_diagnosis(output_array_f))
             XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
             // append Specific Diagnostic
@@ -112,10 +111,12 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             // finalize XML
             return XML_output
         }
+        await create_rest_XML()
+    }
 
     async function general_XML_creation() {
         array_output_array_f.forEach((element) => {
-            create_rest_XML(element)
+            create_one_calc_XML(element)
         })
     }
 
