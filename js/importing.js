@@ -46,6 +46,7 @@ function get_array_download_diag_calc_ready(id_array) {
                 array_output_array.push(element['output_array'])
             })
             console.log(array_output_array)
+            creating_diag_calc_ready_XML(array_output_array)
         }
     };
     xmlhttp.open("POST", "mongodb/find_calculator_output_array.php", true);
