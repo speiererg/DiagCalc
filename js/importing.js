@@ -79,6 +79,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             let resolved_term_4043 = ""
             let resolved_term_name_4043dot = ""
             let modifier_values_4044 = ""
+
             main_Diagnostic = output_array_f.shift();
             output_array_f.forEach((element) => {
                 for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
@@ -97,6 +98,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
                 }
             }
             */
+           return allowed_modifier_4040,resolved_term_4043,resolved_term_name_4043dot,modifier_values_4044,main_Diagnostic
         }
 
         async function create_rest_XML(output_array_f) {
