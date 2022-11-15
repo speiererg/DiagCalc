@@ -34,6 +34,7 @@ if (!isset($_SESSION['loggedin'])) {
       <a id="navPageCalculator">New Calculator</a>
       <a id="navPageMappingUpdate">Mapping Update</a>
       <a id="navPageModifierManagment">Modifiers Managment</a>
+      <a id="navPageImportingTools">Importing Tools</a>
       <a id="navPageTest"style="display:none">TestMongoDB</a>
       <a id="navPageDelete" style="display:none">Delete all</a>
       <a href="https://browser.ihtsdotools.org/?perspective=full&conceptId1=404684003&edition=MAIN/SNOMEDCT-CH/2022-06-07&release=&languages=de" target="_blank"
@@ -57,6 +58,8 @@ if (!isset($_SESSION['loggedin'])) {
   Welcome <?php echo $_SESSION['username'] .', '. date("Y/m/d") ?>
 
   </div>
+  <script src="js/importing.js"></script>
+
   <script src="js/modifiers.js"></script>
   <script src="js/mapping.js"></script>
   <script src="js/params.js"></script>

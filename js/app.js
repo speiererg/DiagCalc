@@ -39,7 +39,9 @@ function addEventListenerByLoading() {
     document.getElementById('navPageDelete').addEventListener('click', function () { deleteAllMongoDB() })
     document.getElementById('navPageMappingUpdate').addEventListener('click', function () { changePage('mapping', '', '') })
     document.getElementById('navPageModifierManagment').addEventListener('click', function () { changePage('modifiers', '', '') })
+    document.getElementById('navPageImportingTools').addEventListener('click', function () { changePage('importing', '', '') })
 
+    
 }
 
 
@@ -134,6 +136,9 @@ function changePageExecute(page, paramsPHP, paramsJS) {
             }
             if (page == "modifiers") {
                 loading_page_modifiers()
+            }
+            if (page == "importing") {
+                loading_page_importing()
             }
         }
     }

@@ -7,12 +7,14 @@ if (!isset($_SESSION['loggedin'])) {
 }
 ?>
 <p>
-<h1 style="text-align:center;">Modifier Managment</h1>
-<h2>Modifier list</h2> 
+<h1 style="text-align:center;">Importing Tools</h1>
+<h2>Ready to Import</h2> 
 <p>
-<div class="container_flex_modifier" id="modifier_typ_ul">
-</div>
+
+<ul id="importing_diagnostic_ul">
+</ul>
 <p>
+    
 <table>
         <tr>
 
