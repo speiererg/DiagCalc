@@ -12,7 +12,7 @@ $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword 
 $calculator_id_array = $_POST['calculator_id_array'];
 $calculator_id_array = array_map('intval', explode(",", $calculator_id_array));
 
-$collection = $client->DiagCalc_Calculators->Index;
+$collection = $client->DiagCalc_Calculators->Calculator;
 
 $cursor = $collection->find(
     ['calculator_id' => ['$in' => $calculator_id_array]],
