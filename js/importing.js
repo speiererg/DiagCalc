@@ -107,7 +107,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             // finalize XML
             return XML_output
         }
-        create_rest_XML()
+        await create_rest_XML()
     }
 
     async function general_XML_creation(){
