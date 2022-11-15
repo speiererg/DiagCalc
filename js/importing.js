@@ -118,7 +118,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
 
     async function general_XML_creation() {
         array_output_array_f.forEach((element) => {
-            create_one_calc_XML(element)
+            await create_one_calc_XML(element)
         })
     }
 
