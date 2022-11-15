@@ -1,6 +1,7 @@
 function loading_page_importing() {
     find_importing_mongoDB('ready_import')
-    document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { })
+    document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { get_array_download_diag_calc_ready(ready_import_id_array)})
+    ready_import_id_array=[]
 }
 
 function find_importing_mongoDB(request) {
@@ -12,6 +13,7 @@ function find_importing_mongoDB(request) {
             document.getElementById('importing_diagnostic_ul').innerHTML = ""
 
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
+                ready_import_id_array.push(results_JSON[i]['calculator_id'])
                 let link = document.createElement('li')
                 link.setAttribute('class', 'home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['calculator_id']}`)
@@ -33,7 +35,9 @@ function find_importing_mongoDB(request) {
 
 // *********************** DOWNLOAD ***********************************/
 
-
+function get_array_download_diag_calc_ready(id_array){
+    console.log(id_array)
+}
 
 async function creating_diag_calc_ready_XML(output_array_f) {
     let XML_output = XML_calculator_beginn
