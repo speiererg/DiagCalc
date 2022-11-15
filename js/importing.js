@@ -2,7 +2,7 @@ function loading_page_importing() {
     find_importing_mongoDB('ready_import')
     document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { download_importing_calc_XML() })
     ready_import_id_array = []
-    var XML_output=""
+    var XML_output = ""
 }
 
 function find_importing_mongoDB(request) {
@@ -37,7 +37,7 @@ function find_importing_mongoDB(request) {
 // *********************** DOWNLOAD ***********************************/
 
 async function download_importing_calc_XML() {
-        await get_array_download_diag_calc_ready(ready_import_id_array)
+    await get_array_download_diag_calc_ready(ready_import_id_array)
 }
 
 
@@ -53,8 +53,8 @@ async function get_array_download_diag_calc_ready(id_array) {
                 array_output_array.push(element['output_array'])
             })
             console.log(array_output_array)
-            //creating_diag_calc_ready_XML(array_output_array)
-        
+            creating_diag_calc_ready_XML(array_output_array)
+
         }
     };
     xmlhttp.open("POST", "mongodb/find_calculator_output_array.php", true);
@@ -66,20 +66,20 @@ async function get_array_download_diag_calc_ready(id_array) {
 async function creating_diag_calc_ready_XML(array_output_array_f) {
     var XML_output = XML_calculator_beginn
 
- 
 
 
-    async function create_one_calc_XML(output_array_f) {
-        //append main Diagnostic
-        let allowed_modifier_4040 = ""
-        let resolved_term_4043 = ""
-        let resolved_term_name_4043dot = ""
-        let modifier_values_4044 = ""
 
 
-        main_Diagnostic = output_array_f.shift();
+
+
 
         async function create_array_main_diagnosis(output_array_f) {
+            //append main Diagnostic
+            let allowed_modifier_4040 = ""
+            let resolved_term_4043 = ""
+            let resolved_term_name_4043dot = ""
+            let modifier_values_4044 = ""
+            main_Diagnostic = output_array_f.shift();
             output_array_f.forEach((element) => {
                 for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
                     modifier_values_4044 = modifier_values_4044 + element['modifier_array'][l]
@@ -99,7 +99,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             */
         }
 
-        async function create_rest_XML() {
+        async function create_rest_XML(output_array_f) {
             await (create_array_main_diagnosis(output_array_f))
             XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
             // append Specific Diagnostic
@@ -110,13 +110,11 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             // finalize XML
             return XML_output
         }
-        await create_rest_XML()
-    }
 
-    async function general_XML_creation(){
+    async function general_XML_creation() {
         array_output_array_f.forEach((element) => {
-            create_one_calc_XML(element)
-        })   
+            create_rest_XML(element)
+        })
     }
 
     await general_XML_creation()
