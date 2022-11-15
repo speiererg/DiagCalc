@@ -2,6 +2,7 @@ function loading_page_importing() {
     find_importing_mongoDB('ready_import')
     document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { download_importing_calc_XML() })
     ready_import_id_array = []
+    var XML_output=""
 }
 
 function find_importing_mongoDB(request) {
