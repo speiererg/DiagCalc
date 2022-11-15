@@ -116,14 +116,15 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
         await create_rest_XML(output_array_f)
     }
 
-    async function general_XML_creation() {
+    async function general_XML_creation(array_output_array_f) {
+        console.log(array_output_array_f.length)
         for(let k=0;k<array_output_array_f.length;k++){
             await create_one_calc_XML(array_output_array_f[k])
 
         }
     }
 
-    await general_XML_creation()
+    await general_XML_creation(array_output_array_f)
     XML_output = XML_output + XML_calculator_end
     document.getElementById('input_hidden_diag_calc_XML').value = XML_output
     console.log(XML_output)
