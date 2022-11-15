@@ -17,6 +17,6 @@ if (!isset($_SESSION['loggedin'])) {
      <form name="form" action="download/download_diagCalc_ready_import_XML.php" method="POST">
     <input type="hidden" name="input_hidden_diag_calc_XML" id="input_hidden_diag_calc_XML" value="">
     <input type="button" class="button_download" id="button_download_diagCalc_ready_import_XML"value="Download all DiagCalc ready to import XML" />
-              <input type="submit" name="button1" class="button_download" id="button_download__diagCalc_ready_import_XML_submit" style="display:none"/>
+     <input type="submit" name="button1" class="button_download" id="button_download__diagCalc_ready_import_XML_submit" style="display:none"/>
             </form>
             <p>
