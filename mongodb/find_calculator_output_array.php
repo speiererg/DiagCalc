@@ -10,9 +10,7 @@ require '../../conf/connect.php';
 $client = new MongoDB\Client('mongodb+srv://' . $DBusername . ':' . $DBpassword . '@' . $DBservername . '/?retryWrites=true&w=majority');
 
 $calculator_id_array = $_POST['calculator_id_array'];
-echo $calculator_id_array;
-$calculator_id_array = explode(",", $calculator_id_array);
-echo json_encode($calculator_id_array);
+$calculator_id_array = array_map('intval', explode(",", $calculator_id_array));
 
 $collection = $client->DiagCalc_Calculators->Index;
 
