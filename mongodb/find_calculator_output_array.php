@@ -2,8 +2,8 @@
 session_start();
 // If the user is not logged in redirect to the login page...
 if (!isset($_SESSION['loggedin'])) {
-  header('Location: login/login.html');
-  exit;
+    header('Location: login/login.html');
+    exit;
 }
 require '../vendor/autoload.php';
 require '../../conf/connect.php';
@@ -15,18 +15,18 @@ $calculator_id_array = array_map('intval', explode(",", $calculator_id_array));
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $cursor = $collection->find(
-    ['calculator_id' => ['$in' => $calculator_id_array],'current_version'=>true],
-  ['calculator_id'=>1,'output_array'=>1,'_id'=>0]
+    ['calculator_id' => ['$in' => $calculator_id_array], 'current_version' => true],
+    ['projection'=>['calculator_id' => 1, 'output_array' => 1, '_id' => 0]]
 );
 
 
 echo json_encode(iterator_to_array($cursor));
 
 /*
- echo "<pre>";
- print_r($cursor);
- echo "</pre>";
- */
+echo "<pre>";
+print_r($cursor);
+echo "</pre>";
+*/
 ?>
 
 
