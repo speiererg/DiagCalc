@@ -36,7 +36,7 @@ function find_importing_mongoDB(request) {
 
 // *********************** DOWNLOAD ***********************************/
 
-async function download_importing_calc_XML() {
+function download_importing_calc_XML() {
     console.log(XML_output)
 
         await get_array_download_diag_calc_ready(ready_import_id_array)
