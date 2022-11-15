@@ -40,10 +40,12 @@ function get_array_download_diag_calc_ready(id_array){
     let params = `calculator_id_array=${id_array}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
-            console.log(this.responseText)
-
             let results_JSON = JSON.parse(this.responseText);
-            console.log(results_JSON)
+            let array_output_array =[]
+            results_JSON.forEach((element)=>{
+                array_output_array.push(element['output_array'])
+            })
+            console.log(array_output_array)
         }
     };
     xmlhttp.open("POST", "mongodb/find_calculator_output_array.php", true);
