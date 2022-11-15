@@ -99,15 +99,14 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
                 XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '', '')
             })
 
-            document.getElementById('input_hidden_XML_output').value = XML_output
-
             // finalize XML
-            document.getElementById('input_XML').value = XML_output
             return XML_output
         }
         create_rest_XML()
     }
     XML_output = XML_output + XML_calculator_end
+    document.getElementById('input_hidden_diag_calc_XML').value = XML_output
+
     console.log(XML_output)
 
 }
