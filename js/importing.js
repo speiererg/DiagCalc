@@ -17,7 +17,7 @@ function find_importing_mongoDB(request) {
                 let link = document.createElement('li')
                 link.setAttribute('class', 'home_link')
                 link.setAttribute('id', `home_link_id${results_JSON[i]['calculator_id']}`)
-                let text_name = document.createTextNode(`${results_JSON[i]['mainName']} (Vers.${results_JSON[i]['lastVersion']})`)
+                let text_name = document.createTextNode(`${results_JSON[i]['mainName']} (Id:${results_JSON[i]['calculator_id']} Vers.${results_JSON[i]['lastVersion']})`)
                 let params_link = `calculator_id=${results_JSON[i]['calculator_id']}&version=${results_JSON[i]['lastVersion']}`
                 link.appendChild(text_name)
                 document.getElementById('importing_diagnostic_ul').appendChild(link)
@@ -36,7 +36,18 @@ function find_importing_mongoDB(request) {
 // *********************** DOWNLOAD ***********************************/
 
 function get_array_download_diag_calc_ready(id_array){
-    console.log(id_array)
+    var xmlhttp = new XMLHttpRequest();
+    let params = `calculator_id_array=${id_array}`;
+    xmlhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            let results_JSON = JSON.parse(this.responseText);
+            console.log(results_JSON)
+        }
+    };
+    xmlhttp.open("POST", "mongodb/find_calculator_output_array.php", true);
+    xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+    xmlhttp.send(params);
+    console.log()
 }
 
 async function creating_diag_calc_ready_XML(output_array_f) {
