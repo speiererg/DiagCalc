@@ -63,9 +63,9 @@ async function get_array_download_diag_calc_ready(id_array) {
 async function creating_diag_calc_ready_XML(array_output_array_f) {
     var XML_output = XML_calculator_beginn
 
-    array_output_array_f.forEach((element) => {
-        create_one_calc_XML(element)
-    })
+ 
+
+
     function create_one_calc_XML(output_array_f) {
         //append main Diagnostic
         let allowed_modifier_4040 = ""
@@ -109,6 +109,14 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
         }
         create_rest_XML()
     }
+
+    async function general_XML_creation(){
+        array_output_array_f.forEach((element) => {
+            create_one_calc_XML(element)
+        })   
+    }
+
+    await general_XML_creation()
     XML_output = XML_output + XML_calculator_end
     document.getElementById('input_hidden_diag_calc_XML').value = XML_output
     console.log(XML_output)
