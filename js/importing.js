@@ -21,6 +21,7 @@ function find_importing_mongoDB(request) {
                 document.getElementById(`home_link_id${results_JSON[i]['calculator_id']}`).addEventListener('click', function () { changePage(`calculator`, params_link, '') })
             }
 
+            
         }
     };
     xmlhttp.open("POST", "mongodb/find_home.php", true);
