@@ -169,7 +169,8 @@ if (isset($_POST['save_version'])) {
          array(
             '$set' => array(
                'mainName' => $mainName,
-               'lastVersion' => intval($_POST['select_version'])
+               'lastVersion' => intval($_POST['select_version']),
+               'current_version'=>false
             )
          )
 
@@ -336,6 +337,7 @@ if (isset($_POST['save_version'])) {
          'parameters' => $parameters_output_forMongo,
          'updateMapping' => false,
          'medsp_term' => $medsp_array_output,
+         'current_version' =>true
       ]
    );
 
