@@ -15,7 +15,7 @@ $calculator_id_array = array_map('intval', explode(",", $calculator_id_array));
 $collection = $client->DiagCalc_Calculators->Calculators;
 
 $cursor = $collection->find(
-    ['calculator_id' => ['$in' => $calculator_id_array]],
+    ['calculator_id' => ['$in' => $calculator_id_array],'current_version'=>true],
   ['_id'=>0, 'calculator_id'=>1,'output_array'=>1]
 );
 
