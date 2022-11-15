@@ -36,11 +36,8 @@ function find_importing_mongoDB(request) {
 
 // *********************** DOWNLOAD ***********************************/
 
-function download_importing_calc_XML() {
-    console.log(XML_output)
-
+async function download_importing_calc_XML() {
         await get_array_download_diag_calc_ready(ready_import_id_array)
-        document.getElementById('button_download__diagCalc_ready_import_XML_submit').click()
 }
 
 
@@ -114,4 +111,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
     }
     XML_output = XML_output + XML_calculator_end
     document.getElementById('input_hidden_diag_calc_XML').value = XML_output
+    console.log(XML_output)
+    document.getElementById('button_download__diagCalc_ready_import_XML_submit').click()
+
 }
