@@ -7,14 +7,14 @@ function loading_page_importing() {
 
 function find_importing_mongoDB(request) {
     ready_import_id_array = []
-    
+
     var xmlhttp = new XMLHttpRequest();
     let params = `request=${request}`;
     xmlhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
             document.getElementById('importing_diagnostic_ul').innerHTML = ""
-
+console.log(results_JSON)
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 ready_import_id_array.push(results_JSON[i]['calculator_id'])
                 let link = document.createElement('li')
