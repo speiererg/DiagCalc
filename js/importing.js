@@ -68,7 +68,7 @@ async function get_array_download_diag_calc_ready(id_array) {
 async function creating_diag_calc_ready_XML(array_output_array_f, array_modifiers) {
     var XML_output = XML_calculator_beginn
 
-    async function create_one_calc_XML(output_array_f) {
+    async function create_one_calc_XML(output_array_f,array_modifiers_f) {
 
         let allowed_modifier_4040 = ""
         let resolved_term_4043 = ""
@@ -92,9 +92,9 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
             console.log(array_modifiers)
             
             for (let i9 = 0; i9 < array_modifiers.length; i9++) {
-                console.log(array_modifiers[i9])
-                if (array_modifiers[i9]['parameters']['main']==false) {
-                    allowed_modifier_4040 = allowed_modifier_4040 + array_modifiers[i9]['modifier_name'] + Code_Return
+                console.log(array_modifiers_f[i9])
+                if (array_modifiers_f[i9]['parameters']['main']==false) {
+                    allowed_modifier_4040 = allowed_modifier_4040 + array_modifiers_f[i9]['modifier_name'] + Code_Return
                 }
             }
             
@@ -119,7 +119,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
     async function iterative_XML_creation(array_output_array_f) {
         console.log(array_output_array_f.length)
         for (let k = 0; k < array_output_array_f.length; k++) {
-            await create_one_calc_XML(array_output_array_f[k])
+            await create_one_calc_XML(array_output_array_f[k],array_modifiers[k])
         }
     }
 
