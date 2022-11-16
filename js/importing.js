@@ -1,9 +1,9 @@
 function loading_page_importing() {
     find_importing_mongoDB('ready_import')
     document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { download_importing_calc_XML() })
-    ready_import_id_array = []
-    var XML_output = ""
-}
+    document.getElementById('import_select').addEventListener('change', function(event){ select_import_changed(event)})
+
+    ready_import_id_array = []}
 
 function find_importing_mongoDB(request) {
     var xmlhttp = new XMLHttpRequest();
@@ -33,6 +33,9 @@ function find_importing_mongoDB(request) {
     xmlhttp.send(params);
 }
 
+function select_import_changed(event){
+    find_home_mongoDB(document.getElementById('import_select').value)
+}
 
 // *********************** DOWNLOAD ***********************************/
 

@@ -8,9 +8,15 @@ if (!isset($_SESSION['loggedin'])) {
 ?>
 <p>
 <h1 style="text-align:center;">Importing Tools</h1>
-<h2>Ready to Import</h2> 
 <p>
-
+<select id="import_select">
+    <option value="all_without_sd">All</option>
+    <option value="to_be_reviewed_coding">To be reviewed by coding</option>
+    <option value="to_be_reviewed_SME">To be reviewed by SMEs</option>
+    <option value="ready_import" selected>Ready to import</option>
+    <option value="imported">Imported</option>
+    <option value="all">All with soft deleted</option>
+</select>
 <ul id="importing_diagnostic_ul">
 </ul>
 <p>
