@@ -92,7 +92,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
             console.log(array_modifiers)
             
             for (let i9 = 0; i9 < array_modifiers.length; i9++) {
-                console.log(array_modifiers[i9]['parameters'])
+                console.log(array_modifiers[i9])
                 if (array_modifiers[i9]['parameters']['main']==false) {
                     allowed_modifier_4040 = allowed_modifier_4040 + array_modifiers[i9]['modifier_name'] + Code_Return
                 }
