@@ -89,6 +89,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
                 resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
                 resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
             })
+            console.log(array_modifiers)
             /*
             for (let i = 0; i < array_modifiers.length; i++) {
                 if (array_modifiers[i]['parameters']['main']==false) {
