@@ -66,11 +66,7 @@ async function get_array_download_diag_calc_ready(id_array) {
 async function creating_diag_calc_ready_XML(array_output_array_f) {
     var XML_output = XML_calculator_beginn
 
-
-
-
     async function create_one_calc_XML(output_array_f) {
-
 
         let allowed_modifier_4040 = ""
         let resolved_term_4043 = ""
@@ -100,10 +96,8 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             */
         }
 
-        async function create_rest_XML(output_array_f1) {
-            console.log(output_array_f1)
+        async function create_array_rest_diagnosis(output_array_f1) {
             await (create_array_main_diagnosis(output_array_f1))
-            console.log(main_Diagnostic)
             XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
             // append Specific Diagnostic
             output_array_f1.forEach((element) => {
@@ -113,21 +107,19 @@ async function creating_diag_calc_ready_XML(array_output_array_f) {
             // finalize XML
             return XML_output
         }
-        await create_rest_XML(output_array_f)
+        await create_array_rest_diagnosis(output_array_f)
     }
 
-    async function general_XML_creation(array_output_array_f) {
+    async function iterative_XML_creation(array_output_array_f) {
         console.log(array_output_array_f.length)
         for(let k=0;k<array_output_array_f.length;k++){
             await create_one_calc_XML(array_output_array_f[k])
-
         }
     }
 
-    await general_XML_creation(array_output_array_f)
+    await iterative_XML_creation(array_output_array_f)
     XML_output = XML_output + XML_calculator_end
     document.getElementById('input_hidden_diag_calc_XML').value = XML_output
-    console.log(XML_output)
     document.getElementById('button_download__diagCalc_ready_import_XML_submit').click()
 
 }
