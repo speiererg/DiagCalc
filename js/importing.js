@@ -100,6 +100,7 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
         async function create_array_rest_diagnosis(output_array_f1) {
             // append Specific Diagnostic
             await create_array_main_diagnosis(output_array_f1)
+            console.log(allowed_modifier_4040)
             XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
             output_array_f1.forEach((element) => {
                 XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '', '')
