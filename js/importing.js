@@ -34,7 +34,7 @@ function find_importing_mongoDB(request) {
 }
 
 function select_import_changed(event){
-    find_home_mongoDB(document.getElementById('import_select').value)
+    find_importing_mongoDB(document.getElementById('import_select').value)
 }
 
 // *********************** DOWNLOAD ***********************************/
