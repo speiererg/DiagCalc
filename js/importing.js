@@ -3,9 +3,11 @@ function loading_page_importing() {
     document.getElementById('button_download_diagCalc_ready_import_XML').addEventListener('click', function () { download_importing_calc_XML() })
     document.getElementById('import_select').addEventListener('change', function(event){ select_import_changed(event)})
 
-    ready_import_id_array = []}
+    }
 
 function find_importing_mongoDB(request) {
+    ready_import_id_array = []
+    
     var xmlhttp = new XMLHttpRequest();
     let params = `request=${request}`;
     xmlhttp.onreadystatechange = function () {
