@@ -16,7 +16,7 @@ $collection = $client->DiagCalc_Calculators->Calculators;
 
 $cursor = $collection->find(
     ['calculator_id' => ['$in' => $calculator_id_array], 'current_version' => true],
-    ['projection'=>['calculator_id' => 1, 'output_array' => 1, '_id' => 0]]
+    ['projection'=>['calculator_id' => 1, 'output_array' => 1, 'modifier_array'=>1, '_id' => 0]]
 );
 
 
