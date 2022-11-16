@@ -90,9 +90,8 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
                 resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
             })
             for (let i = 0; i < array_modifiers.length; i++) {
-                let modifier_name = document.getElementById(`input_modifier_title_${i}`).value
-                if (document.getElementById(`radio_input_${i}`).checked == false) {
-                    allowed_modifier_4040 = allowed_modifier_4040 + modifier_name + Code_Return
+                if (array_modifiers[i]['parameters']['main']==false) {
+                    allowed_modifier_4040 = allowed_modifier_4040 + array_modifiers['modifier_name'] + Code_Return
                 }
             }
 
