@@ -14,7 +14,6 @@ function find_importing_mongoDB(request) {
         if (this.readyState == 4 && this.status == 200) {
             let results_JSON = JSON.parse(this.responseText);
             document.getElementById('importing_diagnostic_ul').innerHTML = ""
-console.log(results_JSON)
             for (let i = 0; i < Object.keys(results_JSON).length; i++) {
                 ready_import_id_array.push(results_JSON[i]['calculator_id'])
                 let link = document.createElement('li')
@@ -59,7 +58,6 @@ async function get_array_download_diag_calc_ready(id_array) {
                 array_output_array.push(element['output_array'])
                 array_modifiers.push(element['modifiers'])
             })
-            console.log(array_output_array)
             creating_diag_calc_ready_XML(array_output_array, array_modifiers)
 
         }
@@ -67,7 +65,6 @@ async function get_array_download_diag_calc_ready(id_array) {
     xmlhttp.open("POST", "mongodb/find_calculator_output_array.php", true);
     xmlhttp.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xmlhttp.send(params);
-    console.log()
 }
 
 async function creating_diag_calc_ready_XML(array_output_array_f, array_modifiers) {
@@ -82,7 +79,6 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
 
         async function create_array_main_diagnosis(output_array_f) {
             //append main Diagnostic
-
             main_Diagnostic = output_array_f.shift();
             output_array_f.forEach((element) => {
                 for (let l = 0, modifier_length = element['modifier_array'].length; l < modifier_length; l++) {
@@ -93,11 +89,8 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
                 modifier_values_4044 = modifier_values_4044 + Code_Return
                 resolved_term_4043 = resolved_term_4043 + `medsp_id_${element['medsp_id']}` + Code_Return
                 resolved_term_name_4043dot = resolved_term_name_4043dot + element['diagnostic_name'] + Code_Return
-            })
-            console.log(array_modifiers)
-            
+            })            
             for (let i9 = 0; i9 < array_modifiers_f.length; i9++) {
-                console.log(array_modifiers_f[i9])
                 if (array_modifiers_f[i9]['parameters']['main']==false) {
                     allowed_modifier_4040 = allowed_modifier_4040 + array_modifiers_f[i9]['modifier_name'] + Code_Return
                 }
@@ -109,20 +102,16 @@ async function creating_diag_calc_ready_XML(array_output_array_f, array_modifier
         async function create_array_rest_diagnosis(output_array_f1) {
             // append Specific Diagnostic
             await create_array_main_diagnosis(output_array_f1)
-            console.log(allowed_modifier_4040)
             XML_output = XML_output + createXMLRow(`medsp_id_${main_Diagnostic['medsp_id']}`, 'MedSP', main_Diagnostic['diagnostic_name'], 'Created by MedSP', JSON.stringify(main_Diagnostic['ICD_array']), allowed_modifier_4040, resolved_term_4043, resolved_term_name_4043dot, modifier_values_4044)
             output_array_f1.forEach((element) => {
                 XML_output = XML_output + createXMLRow(`medsp_id_${element['medsp_id']}`, 'MedSP', element['diagnostic_name'], 'Created by MedSP', JSON.stringify(element['ICD_array']), '', '', '', '')
             })
-
-            // finalize XML
             return XML_output
         }
         await create_array_rest_diagnosis(output_array_f)
     }
 
     async function iterative_XML_creation(array_output_array_f) {
-        console.log(array_output_array_f.length)
         for (let k = 0; k < array_output_array_f.length; k++) {
             await create_one_calc_XML(array_output_array_f[k],array_modifiers[k])
         }
