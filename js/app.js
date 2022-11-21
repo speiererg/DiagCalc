@@ -208,7 +208,7 @@ function drop(ev, typ) {
     if (typ == "calculator") {
 
         let DOM_drag = document.getElementsByClassName('div_drag_right_calculator')
-        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "0.5" })
+        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "0.3" })
     }
 }
 // *****************************   Tools   *****************************
