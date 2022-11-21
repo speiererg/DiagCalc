@@ -167,12 +167,19 @@ function DOM_create_td(class_f,id_f){
     return new_DOM;
  }
 
-function DOM_create_div(class_f,id_f){
+function DOM_create_div_drag(class_f,id_f){
     let new_DOM = document.createElement('div')
     new_DOM.setAttribute('class',class_f)
     new_DOM.setAttribute('id',id_f)
+    new_DOM.setAttribute('draggable','true')
+    new_DOM.setAttribute('ondragover','allowDrop(event)')
     return new_DOM;
  }
+
+ //********************* Drag and Drop ************** */
+ function allowDrop(ev) {
+    ev.preventDefault();
+  }
 
 // *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
