@@ -195,7 +195,7 @@ function drag(ev, typ) {
     ev.dataTransfer.setData(typ, ev.target.id);
     if (typ == "calculator") {
         let DOM_drag = document.getElementsByClassName('div_drag_right_calculator')
-        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "1" })
+        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "0.7" })
     }
 }
 
