@@ -278,6 +278,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
 
 
+    
     // Create Modifier Title
     let column_input_title = document.createElement('td')
     let input_title = document.createElement('input')

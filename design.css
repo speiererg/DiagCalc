@@ -331,6 +331,12 @@ body {
   width:180px;
 }
 
+.div_drag_calculator{
+  background-color: red;
+  width:50px;
+  height:10px;
+}
+
 /* --------   Output Table Design ----------- */
 
 

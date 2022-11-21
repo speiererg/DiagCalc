@@ -48,6 +48,13 @@ echo "<input type='hidden' name='input_hidden_POST_version' id='input_hidden_POS
   <tr>
     <td>
       <table id="table_input">
+        <tr id="tr_calculator_drag">
+          <div id="div_calculator_drag_1" class="div_drag_calculator"></div>
+          <div id="div_calculator_drag_after_1" class="div_drag_calculator"></div>
+          <td>
+
+</td>
+</tr>
       <tr id="tr_input_modifier_id">
           <td id="td_input_modifier_id_1" class="td_modifier_id"> 
             <span id="span_modifier_id_1" >Modifier X</span>
