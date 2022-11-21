@@ -179,7 +179,7 @@ function DOM_create_div_drag(class_f,id_f,drag){
  }
 
  function DOM_create_img(src,class_f,id_f){
-    let new_DOM = document.createElement('div')
+    let new_DOM = document.createElement('img')
     new_DOM.setAttribute('class',class_f)
     new_DOM.setAttribute('src',src)
     new_DOM.setAttribute('id',id_f)
