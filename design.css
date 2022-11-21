@@ -333,6 +333,7 @@ body {
 
 .div_drag_calculator{
   background-color: var(--div-color-hell);
+  background-repeat: no-repeat;
   width:100px;
   height:20px;
   margin-left:2px;
@@ -343,6 +344,7 @@ body {
 }
 .div_drag_right_calculator{
   background-color: var(--div-color-hell);
+  background-repeat: no-repeat;
   width:35px;
   height:20px;
   margin-left:2px;
