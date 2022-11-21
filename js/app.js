@@ -178,6 +178,14 @@ function DOM_create_div_drag(class_f,id_f,drag){
     return new_DOM;
  }
 
+ function DOM_create_img(src,class_f,id_f){
+    let new_DOM = document.createElement('div')
+    new_DOM.setAttribute('class',class_f)
+    new_DOM.setAttribute('src',src)
+    new_DOM.setAttribute('id',id_f)
+    return new_DOM;
+ }
+
  //********************* Drag and Drop ************** */
  function allowDrop(ev) {
     ev.preventDefault();
