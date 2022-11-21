@@ -337,7 +337,7 @@ body {
   height:20px;
   margin-left:2px;
   margin-right: 2px;
-  display:inline;
+  display:inline-block;
 }
 
 /* --------   Output Table Design ----------- */
