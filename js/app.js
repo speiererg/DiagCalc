@@ -148,7 +148,7 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
 }
 
-// *****************************   Tools   *****************************
+// *****************************   DOM Tools   *****************************
 
 function DOM_create_span_style(text,fontWeight,fontStyle,fontSize){
    let span_DOM = document.createElement('span')
@@ -159,6 +159,20 @@ function DOM_create_span_style(text,fontWeight,fontStyle,fontSize){
    span_DOM.appendChild(text_DOM)
    return span_DOM;
 }
+
+function DOM_create_td(class_f,id_f){
+    let new_DOM = document.createElement('td')
+    new_DOM.setAttribute('class',class_f)
+    new_DOM.setAttribute('id',id_f)
+    return new_DOM;
+ }
+
+function DOM_create_div(class_f,id_f){
+    let new_DOM = document.createElement('div')
+    new_DOM.setAttribute('class',class_f)
+    new_DOM.setAttribute('id',id_f)
+    return new_DOM;
+ }
 
 // *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
