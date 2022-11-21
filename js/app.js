@@ -167,12 +167,11 @@ function DOM_create_td(class_f,id_f){
     return new_DOM;
  }
 
-function DOM_create_div_drag(class_f,id_f,drag,backgroundImage_f){
+function DOM_create_div_drag(class_f,id_f,drag){
     let new_DOM = document.createElement('div')
     new_DOM.setAttribute('class',class_f)
     new_DOM.setAttribute('id',id_f)
     new_DOM.setAttribute('draggable','true')
-    new_DOM.style.backgroundImage = `url(${backgroundImage_f})`
     new_DOM.setAttribute('ondragover','allowDrop(event)')
     new_DOM.setAttribute('ondrop',`drop(event,"${drag}")`)
     new_DOM.setAttribute('ondragstart',`drag(event,"${drag}")`)

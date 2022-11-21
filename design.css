@@ -332,6 +332,7 @@ body {
 }
 
 .div_drag_calculator{
+  background-image: url("img/drag.jpg");
   background-color: var(--div-color-hell);
   background-repeat: no-repeat;
   background-size: 20px 20px;
@@ -345,10 +346,10 @@ body {
   display:inline-block;
 }
 .div_drag_right_calculator{
+  background-image: url("img/right.png");
   background-color: var(--div-color-hell);
   background-repeat: no-repeat;
   background-position: center;
-
   background-size: 20px 20px;
   width:35px;
   height:20px;
