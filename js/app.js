@@ -174,7 +174,7 @@ function DOM_create_div_drag(class_f, id_f, drag,draggable_f) {
     new_DOM.setAttribute('draggable', draggable_f)
     new_DOM.setAttribute('ondragover', 'allowDrop(event)')
     new_DOM.setAttribute('ondrop', `drop(event,"${drag}")`)
-    new_DOM.setAttribute('ondragstart', `drag(event,"${drag}")`)
+    if (draggable_f == true){new_DOM.setAttribute('ondragstart', `drag(event,"${drag}")`)}
     return new_DOM;
 }
 
