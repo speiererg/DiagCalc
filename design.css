@@ -346,6 +346,7 @@ body {
   display:inline-block;
 }
 .div_drag_right_calculator{
+  opacity: 0.5;
   background-image: url("img/right.png");
   background-color: var(--div-color-hell);
   background-repeat: no-repeat;
