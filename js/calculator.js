@@ -249,8 +249,8 @@ function addInputColumn(params_addColumn, id_insert_column) {
 
 // Create Drag tools
 let column_calculator_drag = DOM_create_td(``,`td_calculator_drag_${modifier_nbr_new}`)
-column_calculator_drag.appendChild(DOM_create_div_drag('div_drag_calculator',`div_calculator_drag_${modifier_nbr_new}`,'calculator'))
-column_calculator_drag.appendChild(DOM_create_div_drag('div_drag_right_calculator',`div_calculator_drag_after_${modifier_nbr_new}`,'calculator'))
+column_calculator_drag.appendChild(DOM_create_div_drag('div_drag_calculator',`div_calculator_drag_${modifier_nbr_new}`,'calculator'),true)
+column_calculator_drag.appendChild(DOM_create_div_drag('div_drag_right_calculator',`div_calculator_drag_after_${modifier_nbr_new}`,'calculator')false)
 document.getElementById('tr_calculator_drag').appendChild(column_calculator_drag)
 
 
