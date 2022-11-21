@@ -191,7 +191,6 @@ function DOM_create_div_drag(class_f,id_f,drag){
     ev.preventDefault();
     var data = ev.dataTransfer.getData(typ);
     console.log(data)
-    ev.target.appendChild(document.getElementById(data));
   }
 // *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
