@@ -41,7 +41,7 @@ function addEventListenerByLoading() {
     document.getElementById('navPageModifierManagment').addEventListener('click', function () { changePage('modifiers', '', '') })
     document.getElementById('navPageImportingTools').addEventListener('click', function () { changePage('importing', '', '') })
 
-    
+
 }
 
 
@@ -150,61 +150,67 @@ function changePageExecute(page, paramsPHP, paramsJS) {
 
 // *****************************   DOM Tools   *****************************
 
-function DOM_create_span_style(text,fontWeight,fontStyle,fontSize){
-   let span_DOM = document.createElement('span')
-   let text_DOM = document.createTextNode(text)
-   span_DOM.style.fontWeight = fontWeight
-   span_DOM.style.fontStyle = fontStyle
-   span_DOM.style.fontSize = fontSize
-   span_DOM.appendChild(text_DOM)
-   return span_DOM;
+function DOM_create_span_style(text, fontWeight, fontStyle, fontSize) {
+    let span_DOM = document.createElement('span')
+    let text_DOM = document.createTextNode(text)
+    span_DOM.style.fontWeight = fontWeight
+    span_DOM.style.fontStyle = fontStyle
+    span_DOM.style.fontSize = fontSize
+    span_DOM.appendChild(text_DOM)
+    return span_DOM;
 }
 
-function DOM_create_td(class_f,id_f){
+function DOM_create_td(class_f, id_f) {
     let new_DOM = document.createElement('td')
-    new_DOM.setAttribute('class',class_f)
-    new_DOM.setAttribute('id',id_f)
+    new_DOM.setAttribute('class', class_f)
+    new_DOM.setAttribute('id', id_f)
     return new_DOM;
- }
+}
 
-function DOM_create_div_drag(class_f,id_f,drag){
+function DOM_create_div_drag(class_f, id_f, drag) {
     let new_DOM = document.createElement('div')
-    new_DOM.setAttribute('class',class_f)
-    new_DOM.setAttribute('id',id_f)
-    new_DOM.setAttribute('draggable','true')
-    new_DOM.setAttribute('ondragover','allowDrop(event)')
-    new_DOM.setAttribute('ondrop',`drop(event,"${drag}")`)
-    new_DOM.setAttribute('ondragstart',`drag(event,"${drag}")`)
+    new_DOM.setAttribute('class', class_f)
+    new_DOM.setAttribute('id', id_f)
+    new_DOM.setAttribute('draggable', 'true')
+    new_DOM.setAttribute('ondragover', 'allowDrop(event)')
+    new_DOM.setAttribute('ondrop', `drop(event,"${drag}")`)
+    new_DOM.setAttribute('ondragstart', `drag(event,"${drag}")`)
     return new_DOM;
- }
+}
 
- function DOM_create_img(src,class_f,id_f){
+function DOM_create_img(src, class_f, id_f) {
     let new_DOM = document.createElement('img')
-    new_DOM.setAttribute('class',class_f)
-    new_DOM.setAttribute('src',src)
-    new_DOM.setAttribute('id',id_f)
+    new_DOM.setAttribute('class', class_f)
+    new_DOM.setAttribute('src', src)
+    new_DOM.setAttribute('id', id_f)
     return new_DOM;
- }
+}
 
- //********************* Drag and Drop ************** */
- function allowDrop(ev) {
+//********************* Drag and Drop ************** */
+function allowDrop(ev) {
     ev.preventDefault();
-  }
+}
 
-  function drag(ev,typ) {
+function drag(ev, typ) {
     ev.dataTransfer.setData(typ, ev.target.id);
-    if (typ=="calculator"){
+    if (typ == "calculator") {
         let DOM_drag = document.getElementsByClassName('div_drag_right_calculator')
-        Array.prototype.forEach.call(DOM_readonly, (element) => { element.style.opacity = "1" })
+        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "1" })
     }
-  }
-  
-  function drop(ev,typ) {
+}
+
+function drop(ev, typ) {
     ev.preventDefault();
     var data = ev.dataTransfer.getData(typ);
+
     console.log(data)
     console.log(ev.target.id)
-  }
+    if (typ == "calculator") {
+
+        let DOM_drag = document.getElementsByClassName('div_drag_right_calculator')
+        Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "0.5" })
+    }
+}
 // *****************************   Tools   *****************************
 function modifier_nbr_change(change, number) {
     if (change == "++") {
@@ -348,12 +354,12 @@ function deleteAllMongoDB() {
 
 /***************** HOME */
 
-function loading_home(){
+function loading_home() {
     document.getElementById('home_tr').setAttribute('height', window.innerHeight - 200)
-    document.getElementById('home_select').addEventListener('change', function(event){ select_home_changed(event)})
+    document.getElementById('home_select').addEventListener('change', function (event) { select_home_changed(event) })
 }
 
-function select_home_changed(event){
+function select_home_changed(event) {
     find_home_mongoDB(document.getElementById('home_select').value)
 }
 
