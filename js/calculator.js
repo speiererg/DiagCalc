@@ -250,7 +250,7 @@ function addInputColumn(params_addColumn, id_insert_column) {
 // Create Drag tools
 let column_calculator_drag = DOM_create_td(``,`td_calculator_drag_${modifier_nbr_new}`)
 let div_drag_1 = DOM_create_div_drag('div_drag_calculator',`div_calculator_drag_${modifier_nbr_new}`,'calculator')
-div_drag_1.appendChild(DOM_create_img('img/drag.jpg','img_button',''))
+div_drag_1.appendChild(DOM_create_img('img/drag.jpg','img_drag',''))
 column_calculator_drag.appendChild(div_drag_1)
 let div_drag_2 = DOM_create_div_drag('div_drag_calculator',`div_calculator_drag_after_${modifier_nbr_new}`,'calculator')
 div_drag_2.appendChild(DOM_create_img('img/right.png','img_drag',''))
