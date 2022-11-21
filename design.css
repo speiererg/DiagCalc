@@ -333,11 +333,21 @@ body {
 
 .div_drag_calculator{
   background-color: var(--div-color-hell);
-  width:70px;
+  width:100px;
   height:20px;
   margin-left:2px;
   margin-right: 2px;
-  border-radius: 3px;
+  border-radius: 6px;
+  border: 1px solid var(--div-color-dunkel);
+  display:inline-block;
+}
+.div_drag_right_calculator{
+  background-color: var(--div-color-hell);
+  width:35px;
+  height:20px;
+  margin-left:2px;
+  margin-right: 2px;
+  border-radius: 6px;
   border: 1px solid var(--div-color-dunkel);
   display:inline-block;
 }
