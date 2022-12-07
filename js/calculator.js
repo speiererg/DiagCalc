@@ -184,14 +184,27 @@ function edit_calculator() {
 function drag_column(sOrigin,sTarget){
     sOrigin = sOrigin.slice(20)
     sTarget = sTarget.slice(20)
+
+    let input_array_move = []
+    for(i=1;i<modifier_nbr;i++){
+        let input_subarray_move = {};
+        input_subarray_move.modifierId = document.getElementById(`span_modifier_id_${i}`)
+        input_subarray_move.modifierTitle = document.getElementById(`td_input_modifier_title_${i}`)
+        console.log(input_subarray_move)
+    }
+
     if(sTarget.includes('after') == false){
         move_column(parseInt(sOrigin),parseInt(sTarget))
     }else if (sTarget.includes('after') == true){
-        sTarget = sTarget.slice(6)
+        sTarget = parseInt(sTarget.slice(6))
+        sOrigin = parseInt(sOrigin)
         console.log('after',sOrigin,sTarget,modifier_nbr)
+        if(sOrigin>sTarget){
+
+        }
     }
 }
-function move_column(sOrigin,sTarget){
+function move_column(sOrigin,sTarget,aArray){
     console.log(sOrigin,sTarget)
 }
 
