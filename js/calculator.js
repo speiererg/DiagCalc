@@ -182,7 +182,7 @@ function edit_calculator() {
 
 function move_column(sOrigin,sTarget){
     console.log(sOrigin.slice(20),sTarget.slice(20))
-    console.log(sTarget.prototype.includes('after'))
+    console.log(sTarget.includes('after'))
 }
 function addInputRow() {
     let row_input = document.createElement('tr')
