@@ -188,8 +188,12 @@ function drag_column(sOrigin,sTarget){
     let input_array_move = []
     for(i=1;i<modifier_nbr;i++){
         let input_subarray_move = {};
-        input_subarray_move.modifierId = document.getElementById(`span_modifier_id_${i}`).value
-        input_subarray_move.modifierTitle = document.getElementById(`td_input_modifier_title_${i}`).value
+        input_subarray_move.modifierId = document.getElementById(`input_modifier_id_${i}`).value
+        input_subarray_move.modifierTitle = document.getElementById(`input_modifier_title_${i}`).value
+        input_subarray_move.modifierSelect = document.getElementById(`select_input_${i}`).value
+        input_subarray_move.isMain = document.getElementById(`select_input_${i}`).value
+        input_subarray_move.isNotrequired = document.getElementById(`checkbox_input_${i}`).value
+        input_subarray_move.isMultiple = document.getElementById(`checkbox_multiple_input_${i}`).value
         console.log(input_subarray_move)
     }
 
