@@ -181,7 +181,7 @@ function edit_calculator() {
 }
 
 function move_column(sOrigin,sTarget){
-    console.log(sOrigin.slice(10),sTarget.slice(10))
+    console.log(sOrigin.slice(20),sTarget.slice(20))
 }
 function addInputRow() {
     let row_input = document.createElement('tr')
