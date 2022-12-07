@@ -188,8 +188,8 @@ function drag_column(sOrigin,sTarget){
     let input_array_move = []
     for(i=1;i<modifier_nbr;i++){
         let input_subarray_move = {};
-        input_subarray_move.modifierId = document.getElementById(`span_modifier_id_${i}`)
-        input_subarray_move.modifierTitle = document.getElementById(`td_input_modifier_title_${i}`)
+        input_subarray_move.modifierId = document.getElementById(`span_modifier_id_${i}`).value
+        input_subarray_move.modifierTitle = document.getElementById(`td_input_modifier_title_${i}`).value
         console.log(input_subarray_move)
     }
 
