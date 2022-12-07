@@ -180,10 +180,21 @@ function edit_calculator() {
 
 }
 
-function move_column(sOrigin,sTarget){
-    console.log(sOrigin.slice(20),sTarget.slice(20))
-    console.log(sTarget.includes('after'))
+
+function drag_column(sOrigin,sTarget){
+    sOrigin = sOrigin.slice(20)
+    sTarget = sTarget.slice(20)
+    if(sTarget.includes('after') == false){
+        move_column(parseInt(sOrigin),parseInt(sTarget))
+    }else if (sTarget.includes('after') == true){
+        sTarget = sTarget.slice(6)
+        console.log('after',sOrigin,sTarget,modifier_nbr)
+    }
 }
+function move_column(sOrigin,sTarget){
+    console.log(sOrigin,sTarget)
+}
+
 function addInputRow() {
     let row_input = document.createElement('tr')
     let modifierSub_nbr_new = modifierSub_nbr + 1

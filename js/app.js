@@ -204,7 +204,7 @@ function drop(ev, typ) {
     var data = ev.dataTransfer.getData(typ);
 
     if (typ == "calculator") {
-        move_column(data,ev.target.id)
+        drag_column(data,ev.target.id)
         let DOM_drag = document.getElementsByClassName('div_drag_right_calculator')
         Array.prototype.forEach.call(DOM_drag, (element) => { element.style.opacity = "0.3" })
     }
